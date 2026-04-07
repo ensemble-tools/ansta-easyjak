@@ -265,7 +265,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
         <polyline points="16 7 22 7 22 13"></polyline>
       </svg>
       <div>
-        <div class="nav-title">Voltage Predictor</div>
+        <div class="nav-title" data-i18n="navTitle">Easy Low-Effort Clear Calculator</div>
         <div class="nav-sub" data-i18n="navSub">Ensemble Stars!! Music · Easy</div>
       </div>
     </div>
@@ -571,6 +571,7 @@ let currentLang = (() => {
 
 const I18N = {
   en: {
+    navTitle: 'Easy Low-Effort Clear Calculator',
     navSub: 'Ensemble Stars!! Music · Easy',
     tab1: 'Clear Prediction', tab2: 'Song Search', tab3: 'Guide',
     cardLabel1: 'Clear Combo Prediction',
@@ -594,7 +595,7 @@ const I18N = {
     contactTitle: 'Contact & Bug Reports',
     contactText1: 'For prediction errors, missing data, or other inquiries, please reach out via email below.',
     contactText2: 'Providing measured data helps improve model accuracy.',
-    contactSub: 'Subject: [Voltage Predictor] Inquiry',
+    contactSub: 'Subject: [Easy Low-Effort Clear Calculator] Inquiry',
     devPredTitle: 'How Prediction Works', devPerfTitle: 'Model Performance',
     devPredText1: 'Predicts the VOLTAGE Easy clear note count using a linear regression model.',
     devPredText2: 'Trained on 169 measured songs.',
@@ -611,6 +612,7 @@ const I18N = {
     ],
   },
   ja: {
+    navTitle: 'あんスタ イージー省エネクリア計算機',
     navSub: 'あんさんぶるスターズ!! Music · Easy',
     tab1: 'クリア予測', tab2: '楽曲検索', tab3: 'ガイド',
     cardLabel1: 'クリアコンボ予測',
@@ -634,7 +636,7 @@ const I18N = {
     contactTitle: 'エラー報告・お問い合わせ',
     contactText1: '予測値の誤り、データの欠落、その他のお問い合わせは下記メールにご連絡ください。',
     contactText2: '実測データをご提供いただくと、モデルの精度向上に役立ちます。',
-    contactSub: '件名：[Voltage Predictor] お問い合わせ',
+    contactSub: '件名：[あんスタ イージー省エネクリア計算機] お問い合わせ',
     devPredTitle: '予測方法', devPerfTitle: 'モデル性能指標',
     devPredText1: 'あんさんぶるスターズ!! Music の VOLTAGE Easy クリアノーツ数を線形回帰モデルで予測します。',
     devPredText2: '実測データ 169曲 を学習に使用しました。',
@@ -677,6 +679,7 @@ function applyI18n() {
     el.placeholder = t(el.dataset.i18nPlaceholder);
   });
   document.getElementById('langToggleBtn').textContent = t('langToggle');
+  document.title = t('navTitle');
   const notices = t('notices');
   if (Array.isArray(notices)) {
     document.getElementById('noticeList').innerHTML = notices.map(n =>

@@ -989,7 +989,7 @@ function runPredict() {
 
   measuredValue = null;
   if (currentSong && currentSong.measured !== null) measuredValue = currentSong.measured;
-  currentVideoUrl = currentSong ? currentSong.video : null;
+  currentVideoUrl = currentSong ? (currentSong.videoClear || currentSong.video) : null;
   showResult(notes, etS, etE);
 }
 
@@ -1279,7 +1279,7 @@ function renderTable() {
     const clearVal = s.measured !== null ? s.measured : s.predicted;
     // 탭2 Video: measured 없는 곡은 — 표시
     const videoCell = (s.measured !== null && s.video)
-      ? `<a class="video-link" href="${s.video}" target="_blank" title="영상 열기">
+      ? `<a class="video-link" href="${s.videoClear || s.video}" target="_blank" title="영상 열기">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
             <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>

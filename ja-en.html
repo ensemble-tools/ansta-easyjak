@@ -907,7 +907,7 @@ function runPredict() {
   }
   predictedValue = Math.ceil(Math.round(startPt*10)/10);
   measuredValue = (currentSong && currentSong.measured !== null) ? currentSong.measured : null;
-  currentVideoUrl = currentSong ? currentSong.video : null;
+  currentVideoUrl = currentSong ? (currentSong.videoClear || currentSong.video) : null;
   showResult(notes, etS, etE);
 }
 
@@ -1173,7 +1173,7 @@ function renderTable() {
       : `<span class="clear-dot" style="background:#d1d5db"></span>`;
     const clearVal = s.measured !== null ? s.measured : s.predicted;
     const videoCell = (s.measured !== null && s.video)
-      ? `<a class="video-link" href="${s.video}" target="_blank" title="Open video">
+      ? `<a class="video-link" href="${s.videoClear || s.video}" target="_blank" title="Open video">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
             <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>

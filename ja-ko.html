@@ -303,7 +303,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
         <polyline points="16 7 22 7 22 13"></polyline>
       </svg>
       <div>
-        <div class="nav-title">Voltage Predictor</div>
+        <div class="nav-title" data-i18n="navTitle">앙스타 이지작 계산기</div>
         <div class="nav-sub" data-i18n="navSub">앙상블스타즈!! Music · Easy</div>
       </div>
     </div>
@@ -624,6 +624,7 @@ let currentLang = (() => {
 // ── i18n 사전 ──────────────────────────────────────
 const I18N = {
   ko: {
+    navTitle: '앙스타 이지작 계산기',
     navSub: '앙상블스타즈!! Music · Easy',
     tab1: '클리어 예측', tab2: '악곡 검색', tab3: '안내',
     cardLabel1: '클리어 콤보 예측',
@@ -647,7 +648,7 @@ const I18N = {
     contactTitle: '오류 신고 및 문의',
     contactText1: '예측값 오류, 데이터 누락, 기타 문의사항이 있으시면 아래 이메일로 연락해 주세요.',
     contactText2: '실측 데이터를 제공해 주시면 모델 정확도 향상에 도움이 됩니다.',
-    contactSub: '제목: [Voltage Predictor] 문의내용',
+    contactSub: '제목: [앙스타 이지작 계산기] 문의내용',
     devPredTitle: '예측 방법', devPerfTitle: '모델 성능 지표',
     devPredText1: '앙상블스타즈!! Music의 VOLTAGE 이지작 클리어 노트수를 선형 회귀 모델로 예측합니다.',
     devPredText2: '실측 데이터 169곡을 학습에 사용했습니다.',
@@ -663,6 +664,7 @@ const I18N = {
     ],
   },
   ja: {
+    navTitle: 'あんスタ イージー省エネクリア計算機',
     navSub: 'あんさんぶるスターズ!! Music · Easy',
     tab1: 'クリア予測', tab2: '楽曲検索', tab3: 'ガイド',
     cardLabel1: 'クリアコンボ予測',
@@ -686,7 +688,7 @@ const I18N = {
     contactTitle: 'エラー報告・お問い合わせ',
     contactText1: '予測値の誤り、データの欠落、その他のお問い合わせは下記メールにご連絡ください。',
     contactText2: '実測データをご提供いただくと、モデルの精度向上に役立ちます。',
-    contactSub: '件名：[Voltage Predictor] お問い合わせ',
+    contactSub: '件名：[あんスタ イージー省エネクリア計算機] お問い合わせ',
     devPredTitle: '予測方法', devPerfTitle: 'モデル性能指標',
     devPredText1: 'あんさんぶるスターズ!! Music の VOLTAGE Easy クリアノーツ数を線形回帰モデルで予測します。',
     devPredText2: '実測データ 169曲 を学習に使用しました。',
@@ -731,6 +733,7 @@ function applyI18n() {
     el.placeholder = t(el.dataset.i18nPlaceholder);
   });
   document.getElementById('langToggleBtn').textContent = t('langToggle');
+  document.title = t('navTitle');
   // 공지사항 렌더링
   const notices = t('notices');
   if (Array.isArray(notices)) {

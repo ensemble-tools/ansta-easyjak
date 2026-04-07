@@ -56,17 +56,17 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 }
 .lang-toggle-btn {
   padding: 5px 12px;
-  border: 1px solid rgba(255,255,255,0.4);
+  border: 2px solid rgba(255,255,255,0.85);
   border-radius: 6px;
   background: transparent;
-  color: rgba(255,255,255,0.8);
+  color: white;
   font-size: 12px;
   cursor: pointer;
   font-family: inherit;
   transition: all .2s;
   margin-bottom: 6px;
 }
-.lang-toggle-btn:hover { background: rgba(255,255,255,0.15); color: white; }
+.lang-toggle-btn:hover { background: rgba(255,255,255,0.2); }
 
 /* ── Layout ── */
 .page { max-width: 1200px; margin: 0 auto; padding: 24px 24px 60px; display: flex; flex-direction: column; gap: 16px; }
@@ -121,7 +121,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .result-card.visible { display: block; }
 .result-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 2px; }
 .result-song-title { font-size: 16px; font-weight: 700; color: var(--navy); }
-.result-song-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 16px; }
+.result-song-meta { font-size: 12px; color: var(--text-main); margin-bottom: 16px; }
 
 .result-mode-badge { display: inline-block; padding: 6px 16px; border-radius: 10px; font-size: 14px; font-weight: 700; }
 .result-mode-badge.measured { background: #d1fae5; color: #065f46; }
@@ -145,7 +145,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .video-yt-badge { position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.65); color: white; font-size: 10px; padding: 3px 8px; border-radius: 4px; font-family: 'Inter', sans-serif; }
 
 /* ── Progress Bar ── */
-.bar-section { padding: 44px 0 36px; position: relative; }
+.bar-section { padding: 44px 0 36px; position: relative; max-width: 80%; }
 .bar-track { height: 14px; border-radius: 7px; display: flex; overflow: hidden; background: #e5e7eb; }
 .bar-left { height: 100%; background: #d1d5db; }
 .bar-et { height: 100%; background: var(--amber); }
@@ -364,7 +364,6 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
       <div class="result-header">
         <div>
           <div class="result-song-title" id="resultTitle">—</div>
-          <div class="result-song-title-sub" id="resultTitleSub" style="font-size:13px;color:var(--text-muted);margin-top:2px"></div>
         </div>
         <div id="resultBadge" class="result-mode-badge measured" style="display:none"></div>
       </div>
@@ -996,13 +995,10 @@ function runPredict() {
 function showResult(notes, etS, etE) {
   if (currentSong) {
     document.getElementById('resultTitle').textContent = currentSong.title_ja;
-    const sub = currentLang === 'ko' ? currentSong.title_ko : currentSong.title_ja_reading;
-    document.getElementById('resultTitleSub').textContent = sub || '';
     document.getElementById('resultMeta').textContent =
       `${currentSong.unit} · ${currentSong.type} · ${CATEGORY_LABEL[currentSong.category]||currentSong.category} · ${notes}`;
   } else {
     document.getElementById('resultTitle').textContent = t('directInput');
-    document.getElementById('resultTitleSub').textContent = '';
     document.getElementById('resultMeta').textContent = `${notes}${etS ? ` · ET ${etS}~${etE}` : ''}`;
   }
 

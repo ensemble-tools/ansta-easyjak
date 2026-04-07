@@ -1,0 +1,306 @@
+﻿category,type,unit,title_ja,total_notes,duration,clear_start_measured,clear_start_predicted,clear_notes,clear_ratio,model_used,video_url
+starmaker,Flash,fine,오와라나이,158,2:39,,86,96,54.4,단순 회귀,
+starmaker,Brilliant,fine,Holy Angel's Carol,138,2:29,,75,85,54.3,단순 회귀,
+starmaker,Glitter,fine,날개짓 포르티시모,120,2:30,,66,76,55.0,단순 회귀,
+starmaker,Sparkle,fine,Neo Sanctuary,161,2:31,88.0,88,98,54.7,3변수 OLS,https://youtu.be/w43HDVmTbgY?si=uVSQaOXt3hyTAUgF
+starmaker,Flash,fine,크로싱 하트,100,2:41,,55,65,55.0,단순 회귀,
+starmaker,Flash,fine,애니곡,140,2:31,,76,86,54.3,단순 회귀,
+starmaker,Sparkle,fine,Miracle Dream Traveler,125,2:05,,68,78,54.4,단순 회귀,
+starmaker,Brilliant,fine,Angelic Grace,135,2:55,76.0,75,85,55.6,3변수 OLS,https://youtu.be/8BBx4GHIDG0?si=B_RB4pLW2elj2mMA
+starmaker,Brilliant,fine,Never-ending Stage!!!!,175,2:36,,95,105,54.3,단순 회귀,
+starmaker,Sparkle,fine,RAINBOW CIRCUS,138,2:21,,75,85,54.3,단순 회귀,
+starmaker,Flash,fine,스타라이트 퍼레이드,109,2:32,,60,70,55.0,단순 회귀,
+starmaker,Sparkle,fine,The Tempest Night,124,2:32,67.0,67,77,54.0,3변수 OLS,https://youtu.be/_FWZ9hdzcAc?si=3pAErtZR7uV_DLUU
+starmaker,Glitter,fine,프리마베라,175,2:26,,95,105,54.3,단순 회귀,
+starmaker,Brilliant,fine,Feathers of Ark,171,2:51,100.0,94,104,55.0,3변수 OLS,https://youtu.be/6LsFhiMT7L8?si=bIVV2vwi9g5MmTm1
+starmaker,Glitter,fine,Ghostic Treat House,127,2:47,,69,79,54.3,단순 회귀,
+starmaker,Flash,fine,Dreaming Ocean,150,2:45,79.0,83,93,55.3,3변수 OLS,https://youtu.be/lBlFMcZZDYo?si=Yfb4-LnhlMOMrsap
+starmaker,Glitter,fine,Fairy Tale Library,144,2:47,79.0,80,90,55.6,3변수 OLS,https://youtu.be/i_9X3lDctpQ?si=cvcudSJnNbmK4U0E
+starmaker,Brilliant,Trickstar,ONLY YOUR STARS!,97,2:27,,53,63,54.6,단순 회귀,
+starmaker,Sparkle,Trickstar,Rebellion Star,111,2:38,,61,71,55.0,단순 회귀,
+starmaker,Glitter,Trickstar,인피니트 스타,118,2:19,,64,74,54.2,단순 회귀,
+starmaker,All,Trickstar,キセキ,165,2:35,,90,100,54.5,단순 회귀,
+starmaker,Brilliant,Trickstar,HEART→BEATER!!!!,125,2:27,,68,78,54.4,단순 회귀,
+starmaker,Sparkle,Trickstar,BREAKTHROUGH!,215,2:32,,116,126,54.0,단순 회귀,
+starmaker,Flash,Trickstar,1st 싱어롱,157,2:19,,85,95,54.1,단순 회귀,
+starmaker,Sparkle,Trickstar,CHERRY HAPPY STREAM ,147,2:07,,80,90,54.4,단순 회귀,
+starmaker,Glitter,Trickstar,웰컴 투 트릭스타 나이트,107,2:18,,59,69,55.1,단순 회귀,
+starmaker,Glitter,Trickstar,행복의 노래,164,2:43,93.0,91,101,55.5,3변수 OLS,https://youtu.be/kdWHcVWhbOE?si=qpTCHv7CueVuHAxr
+starmaker,Flash,Trickstar,Unstoppable Love!,164,2:42,,89,99,54.3,단순 회귀,
+starmaker,Brilliant,Trickstar,(RE)PLAY,185,2:30,,100,110,54.1,단순 회귀,
+starmaker,Flash,Trickstar,BIGBANG REFLECTION!!,109,2:30,58.0,61,71,56.0,3변수 OLS,https://youtu.be/5H7bJ5ANRXU?si=CTWoFM6vJI78uz4D
+starmaker,Glitter,Trickstar,Finder Girl (파인더 걸),136,2:40,68.0,72,82,52.9,3변수 OLS,https://youtu.be/AJkCL1amVks?si=chIYI3I3qK9YWfk0
+starmaker,Brilliant,Trickstar,데이드림 리얼리티,174,2:32,,94,104,54.0,단순 회귀,
+starmaker,Sparkle,Trickstar,Romantic Xday!,158,2:46,,86,96,54.4,단순 회귀,
+starmaker,Glitter,Trickstar,와챠가나두,161,2:48,84.0,88,98,54.7,3변수 OLS,https://youtu.be/sTQfBtuHjHQ?si=vuFBXaVP20egtg4h
+starmaker,Sparkle,Trickstar,CELEBRATE!!,161,2:45,91.0,90,100,55.9,3변수 OLS,https://youtu.be/RHqdIxWxgNA?si=AEi41bRsrNOyshAj
+starmaker,Flash,유성대,메테오 레인저,170,2:35,,92,102,54.1,단순 회귀,
+starmaker,Sparkle,유성대,アンリミテッド☆パワー!!!!!,129,2:16,,70,80,54.3,단순 회귀,
+starmaker,Glitter,유성대,슈퍼노바 레볼루스타,136,2:24,,74,84,54.4,단순 회귀,
+starmaker,Sparkle,유성대,流星花火,129,2:10,,70,80,54.3,단순 회귀,
+starmaker,Flash,유성대,메테오 스크럼블,184,2:37,,100,110,54.3,단순 회귀,
+starmaker,Brilliant,유성대,青春Emergency,233,2:39,133.0,125,135,53.6,3변수 OLS,https://youtu.be/Y1qHQvEATuk?si=rRwJSbZ_y9NlJeG5
+starmaker,Glitter,유성대,GROWING STARRY DAYS,105,2:12,,58,68,55.2,단순 회귀,
+starmaker,Brilliant,유성대,NEW DAYBREAK,178,3:01,101.0,97,107,54.5,3변수 OLS,https://youtu.be/LnbOJVHwMY4?si=TNJFVTd2sPgKlYpu
+starmaker,Sparkle,유성대,Heart Heat Beat,154,2:47,85.0,83,93,53.9,3변수 OLS,https://youtu.be/BilzVweD09E?si=IFXLT82pvK3VtFfe
+starmaker,Brilliant,유성대,夢ノ咲流星隊歌,164,2:32,,89,99,54.3,단순 회귀,
+starmaker,Glitter,유성대,햄타로,86,2:20,,47,57,54.7,단순 회귀,
+starmaker,Brilliant,유성대,彗星HALATION,155,2:27,,84,94,54.2,단순 회귀,
+starmaker,Sparkle,유성대,熱血☆流星忍法帖,202,2:36,115.0,109,119,54.0,3변수 OLS,https://youtu.be/PQPsI-R5hqQ?si=AFXBCy2MtwIzWB4B
+starmaker,Flash,유성대,Colors Arise,205,2:39,,111,121,54.1,단순 회귀,
+starmaker,Brilliant,유성대,RELAX PARADISE,199,2:50,109.0,109,119,54.8,3변수 OLS,https://youtu.be/XTpbKX-HEN0?si=b9msXZh4VC0_C7ss
+starmaker,Glitter,유성대,보쿠라노 스텔라,150,2:44,78.0,78,88,52.0,3변수 OLS,https://youtu.be/C6glaT_nRp4?si=a-270axm7x7O3utV
+starmaker,Brilliant,유성대,WILDLAND SURVIVOR,100,2:29,50.0,53,63,53.0,3변수 OLS,https://youtu.be/uFJyBU4DbOI?si=2CSyGuTsGVT8FJeH
+starmaker,Glitter,유성대,OVERFLOW LIGHT UP!!!!!,185,2:36,103.0,99,109,53.5,3변수 OLS,https://youtu.be/kqELo6ZQHx8
+starmaker,Sparkle,ALKALOID,Kiss of Life,142,2:12,,77,87,54.2,단순 회귀,
+starmaker,Brilliant,ALKALOID,翼モラトリアム,110,2:18,,60,70,54.5,단순 회귀,
+starmaker,Glitter,ALKALOID,Distorted Heart,202,2:28,,109,119,54.0,단순 회귀,
+starmaker,Brilliant,ALKALOID,You’re Speculation,188,2:18,,102,112,54.3,단순 회귀,
+starmaker,Glitter,ALKALOID,빨치산,171,2:42,,93,103,54.4,단순 회귀,
+starmaker,Flash,ALKALOID,휴머노이드,162,2:35,,88,98,54.3,단순 회귀,
+starmaker,Glitter,ALKALOID,Black Out See Saw 워커커,212,2:34,111.0,113,123,53.3,3변수 OLS,https://youtu.be/a2cGfyx96Jg?si=uolJkqE1f82g48MH
+starmaker,Brilliant,ALKALOID,Across the universe,122,2:52,65.0,62,72,50.8,3변수 OLS,https://youtu.be/0jLzTGFVl4Y?si=b-QDAVP7v4J2eB1J
+starmaker,Glitter,ALKALOID,밤달,138,2:32,,75,85,54.3,단순 회귀,
+starmaker,Flash,ALKALOID,Living on the edge,188,2:11,,102,112,54.3,단순 회귀,
+starmaker,Sparkle,ALKALOID,Believe 4 leaves,145,2:45,,79,89,54.5,단순 회귀,
+starmaker,Flash,ALKALOID,VERMILION,175,2:54,96.0,97,107,55.4,3변수 OLS,https://youtu.be/SHlgs0qGqUs?si=JYdJVbStRgwwPG8f
+starmaker,Sparkle,ALKALOID,UNDYING HOLY LOVE,156,2:48,91.0,86,96,55.1,3변수 OLS,https://youtu.be/3ZaWkpmu8co?si=h0LhzG8_q0GhKT6W
+starmaker,Flash,ALKALOID,SAKE OF LOVE,192,3:12,99.0,101,111,52.6,3변수 OLS,https://youtu.be/xZ8zgJmMjEY?si=3psYxq3c6zn8YLQD
+starmaker,Sparkle,ALKALOID,SunnyTrip Summer,127,3:05,71.0,70,80,55.1,3변수 OLS,https://youtu.be/Sfd-1SMuVsM?si=u7TQr70fSsLhWtjF
+starmaker,Sparkle,ALKALOID,フラジール,127,2:14,,69,79,54.3,단순 회귀,
+starmaker,Flash,fine,Musica Vita!,154,2:37,83.0,85,95,55.2,3변수 OLS,https://youtu.be/50kz0jhNNZY
+starmaker,Flash,ALKALOID,코토노하 칸타빌레,222,2:25,124.0,117,127,52.7,3변수 OLS,https://youtu.be/x54i9zUFLAA?si=rUnzY6MRD5uxtPH0
+cosmic,Glitter,Eden,THE GENESIS,144,2:34,,78,88,54.2,단순 회귀,
+cosmic,Sparkle,Eden,Dance in the Apocalypse,183,2:18,,99,109,54.1,단순 회귀,
+cosmic,Sparkle,Eden,Majestic Magic,173,2:41,,94,104,54.3,단순 회귀,
+cosmic,Glitter,Eden,Awakening Myth,202,2:27,,109,119,54.0,단순 회귀,
+cosmic,Glitter,Eden,KEEP OUT,236,2:56,124.0,126,136,53.4,3변수 OLS,https://youtu.be/pfVXpX1aV4I?si=G8NZNZ9Z5Qd48ok1
+cosmic,Sparkle,Eden,Psyche's Butterfly,174,2:51,96.0,95,105,54.6,3변수 OLS,https://youtu.be/4ifRZCs4jsA?si=Uz_Fps3GG7G0PLEl
+cosmic,Brilliant,Eden,楽園追放 -Faith Conquest-,139,2:23,76.0,77,87,55.4,3변수 OLS,https://youtu.be/NgUj9Obrllk?si=QyZJ4NxiZMwAT-8g
+cosmic,Flash,Eden,EXCEED,219,2:36,114.0,117,127,53.4,3변수 OLS,https://youtu.be/xQGLhtIgjYc?si=Oo-kP3k4u-kbGYu6
+cosmic,Flash,Eden,Deep Eclipse,151,2:46,,82,92,54.3,단순 회귀,
+cosmic,Brilliant,Eden,Absolute Perfection,156,2:49,87.0,87,97,55.8,3변수 OLS,https://youtu.be/F9-sXx1Q7YU?si=1mwAtQ6cleLxRjdg
+cosmic,Glitter,Eden,원환의 리플랙션(円環のRefraction),163,2:40,87.0,88,98,54.0,3변수 OLS,https://youtu.be/q8VFnfYCVV4?si=xWot2jbWbANgp010
+cosmic,Flash,Eden,할로윈 (大いなる愛の前に全ては巡り来る),192,2:43,108.0,105,115,54.7,3변수 OLS,https://youtu.be/xxHW9ymTQm8?si=abDChT9U7Y-LarIN
+cosmic,Flash,Eve,Sunlit Smile!,133,2:24,72.0,74,84,55.6,3변수 OLS,https://youtu.be/-DwLLdPSAZM?si=3aiIr2M94EkyZy9D
+cosmic,Brilliant,Adam,The Beast of the End,161,2:07,91.0,90,100,55.9,3변수 OLS,https://youtu.be/o4WK5110vY4?si=N3thKNrAzMye_HLm
+cosmic,Sparkle,Eve,Trap For You,192,2:30,106.0,104,114,54.2,3변수 OLS,https://youtu.be/5gd7Qh1DOwQ?si=2_p63RqU-nnNRS0j
+cosmic,Glitter,Adam,Ruler's Truth,210,2:21,112.0,115,125,54.8,3변수 OLS,https://youtu.be/WxT9n_aB8B8?si=ov3SlhyFUThDI0AJ
+cosmic,Sparkle,Adam,Melting Rouge Soul,180,2:53,93.0,95,105,52.8,3변수 OLS,https://youtu.be/--ND22eAXbs?si=N1-qxGNPwiul6Gw6
+cosmic,Brilliant,Eve,Ruby Love,185,2:47,105.0,102,112,55.1,3변수 OLS,https://youtu.be/mxHmoh0IUww?si=WkwyfV92PE5cQnZQ
+cosmic,Brilliant,Valkyrie,魅惑劇,129,2:07,,70,80,54.3,단순 회귀,
+cosmic,Glitter,Valkyrie,Mémoire Antique,121,2:15,,66,76,54.5,단순 회귀,
+cosmic,Flash,Valkyrie,Last Lament,110,2:16,61.0,60,70,54.5,3변수 OLS,https://youtu.be/5FeV2Qqwl34?si=99Hzg47XFiktAoFI
+cosmic,Flash,Valkyrie,오늘 밤 달의 저택에서(今宵月の館にて),197,2:23,,107,117,54.3,단순 회귀,
+cosmic,Sparkle,Valkyrie,凱旋歌,128,2:31,,70,80,54.7,단순 회귀,
+cosmic,Brilliant,Valkyrie,礼賛歌,122,2:26,,67,77,54.9,단순 회귀,
+cosmic,Sparkle,Valkyrie,祝福のLibrary,151,2:51,,82,92,54.3,단순 회귀,
+cosmic,Brilliant,Valkyrie,麗しのナイチンゲール,119,2:48,66.0,66,76,55.5,3변수 OLS,https://youtu.be/qzX_1S2Jh2s?si=r02Jq0Fy7dJpNygU
+cosmic,Sparkle,Valkyrie,勇侠青春謳,155,2:49,,84,94,54.2,단순 회귀,
+cosmic,Glitter,Valkyrie,Eternal Weaving,125,2:15,68.0,70,80,56.0,3변수 OLS,https://youtu.be/bziktRLR0iU?si=bvRbJTSwyZpt939H
+cosmic,Flash,Valkyrie,Acanthe,159,2:40,82.0,83,93,52.2,3변수 OLS,https://youtu.be/YtC9FUS6HFM?si=ZRQptDv4Mlm2Znl7
+cosmic,Glitter,Valkyrie,미궁전자회랑(迷宮電子回廊),144,2:53,76.0,77,87,53.5,3변수 OLS,https://youtu.be/R4DsM3TFwxs?si=x12g6alKsftJT_fe
+cosmic,Flash,Valkyrie,Le temps des fleurs,140,2:43,74.0,74,84,52.9,3변수 OLS,https://youtu.be/AUsKGj2Fzw8?si=flJrASOwqXPMNrjd
+cosmic,Flash,Valkyrie,별의 명동이 울려퍼졌을 때 (星の鳴動響きし時に),162,2:51,90.0,88,98,54.3,3변수 OLS,https://youtu.be/DiaxIJbyf34?si=RB65ei8PFi0F41CQ
+cosmic,Glitter,Valkyrie,행복론 (幸福論),136,2:50,74.0,73,83,53.7,3변수 OLS,https://youtu.be/Adxx0A2kdjM?si=O5FvfplTEmNM5ozJ
+cosmic,Flash,Crazy:B,Crazy Roulette,151,2:37,,82,92,54.3,단순 회귀,
+cosmic,Glitter,Crazy:B,Be The Party Bee!,153,2:16,,83,93,54.2,단순 회귀,
+cosmic,Sparkle,Crazy:B,PARANOIA STREET,165,2:29,,90,100,54.5,단순 회귀,
+cosmic,Brilliant,Crazy:B,RISKY VENUS,129,2:05,,70,80,54.3,단순 회귀,
+cosmic,Glitter,Crazy:B,레몬 스퀴시,122,2:22,,67,77,54.9,단순 회귀,
+cosmic,Flash,Crazy:B,Noisy:Beep,161,2:33,,87,97,54.0,단순 회귀,
+cosmic,Glitter,Crazy:B,NA NA NA SUMMER NIGHT BeeAT,153,2:43,83.0,82,92,53.6,3변수 OLS,https://youtu.be/ueARJH0lOpo
+cosmic,Brilliant,Crazy:B,Foolish Alien,183,2:31,,99,109,54.1,단순 회귀,
+cosmic,Brilliant,Crazy:B,U.S.A.,181,2:40,,98,108,54.1,단순 회귀,
+cosmic,Brilliant,Crazy:B,Honeycomb Summer,172,2:34,,93,103,54.1,단순 회귀,
+cosmic,Sparkle,Crazy:B,指先のアリアドネ,151,2:42,,82,92,54.3,단순 회귀,
+cosmic,Flash,Crazy:B,Helter-Spider,132,2:31,73.0,72,82,54.5,3변수 OLS,https://youtu.be/7Z90uJrZ6hE?si=pO4-opLZiJ-x4hMc
+cosmic,Sparkle,Crazy:B,Crazy Anthem,183,2:46,90.0,97,107,53.0,3변수 OLS,https://youtu.be/qkNuxf18RuI?si=5sTvCN81PP7Gac_C
+cosmic,Flash,Crazy:B,SAKE OF LOVE (사케 오브 러브),192,3:12,99.0,101,111,52.6,3변수 OLS,https://youtu.be/xZ8zgJmMjEY?si=o2PAmywwvB5TIhSq
+cosmic,Flash,Crazy:B,UTAKATA DANCE FLOOR,145,2:37,79.0,81,91,55.9,3변수 OLS,https://youtu.be/KKOmwmcLAJc?si=rCPw5XBjTdNEdANm
+cosmic,Glitter,Crazy:B,KING,217,2:24,,117,127,53.9,단순 회귀,
+cosmic,Brilliant,Crazy:B,니키 감사제 (ハニートラップ・マリアージュ),194,2:48,104.0,106,116,54.6,3변수 OLS,https://youtu.be/iay7pagyxjU?si=VMR_M1XZY8mszB2R
+cosmic,Sparkle,2wink,歓迎☆トゥ・ウィンク雑技団,128,2:16,,70,80,54.7,단순 회귀,
+cosmic,Flash,2wink,TRICK with TREAT!!(with UNDEAD),184,2:37,,100,110,54.3,단순 회귀,
+cosmic,Glitter,2wink,Play “Tag”,125,2:23,69.0,70,80,56.0,3변수 OLS,https://youtu.be/VHeL3Sqkato?si=-f06LAiDWw4_qlVZ
+cosmic,Brilliant,2wink,ハートプリズム・シンメトリー,202,2:37,111.0,111,121,55.0,3변수 OLS,https://youtu.be/8igMnhpcuh0?si=aSSG9db_pQlY21zp
+cosmic,Brilliant,2wink,Mischievous Party Time!!,195,2:31,105.0,106,116,54.4,3변수 OLS,https://youtu.be/n2Rk_IoB5zM?si=R1HA1Qx8yBzlADKV
+cosmic,Glitter,2wink,레몬 스쿼시 치어스,122,2:22,,67,77,54.9,단순 회귀,
+cosmic,Glitter,2wink,슈가 스파이스,178,2:31,97.0,96,106,53.9,3변수 OLS,https://youtu.be/Cg2Fk383B4E?si=9b6iAO2LnkMwtRMs
+cosmic,Brilliant,2wink,トゥウィンクル空中戦,239,2:27,,129,139,54.0,단순 회귀,
+cosmic,Glitter,2wink,POLYPHONIC WORLD,129,2:25,74.0,73,83,56.6,3변수 OLS,https://youtu.be/JXRfwxSW2uM?si=GKeAlZB7lIBj5jc5
+cosmic,Flash,2wink,2winkle Star Beat☆,184,2:29,102.0,98,108,53.3,3변수 OLS,https://youtu.be/PuRUA2vcJ1A?si=UWOJjOYtOgK_akES
+cosmic,Flash,2wink,텔 유어 월드,116,2:44,,63,73,54.3,단순 회귀,
+cosmic,Flash,2wink,Fighting Dreamer,141,2:30,76.0,75,85,53.2,3변수 OLS,https://youtu.be/lxzSzDkWGzc?si=6GaDYUesvrfU3tO3
+cosmic,Sparkle,2wink,Swee2wink Love Letter,156,2:35,,85,95,54.5,단순 회귀,
+cosmic,Sparkle,2wink,Turbulent Storm,147,2:36,,80,90,54.4,단순 회귀,
+cosmic,Flash,2wink,럽미 몬스터(Love×me⇄monsteR),217,2:34,116.0,119,129,54.8,3변수 OLS,https://youtu.be/C853sWzXfWI?si=ad2MiORPV0daDFAR
+cosmic,Flash,2wink,Twin Wedding Vows,104,2:23,57.0,58,68,55.8,3변수 OLS,https://youtu.be/OvVvv1qL6mA?si=iOjtGIA8H3mWQJpU
+cosmic,Flash,2wink,감사제(来来☆2winkイリュージョン),181,2:21,99.0,99,109,54.7,3변수 OLS,https://youtu.be/Sag56BWbyBM?si=cQOEFl2-KAFcKEjf
+rhythm_link,Flash,UNDEAD,Melody in the Dark,152,2:37,,83,93,54.6,단순 회귀,https://youtu.be/eoQE_n5ITSU?si=rdxhHahQ6kgSC5mi
+rhythm_link,Glitter,UNDEAD,Valentine Eve's Nightmare,164,2:30,,89,99,54.3,단순 회귀,https://youtu.be/OMv6CprdegM?si=20wVqjLyD_tJ_aBg
+rhythm_link,Brilliant,UNDEAD,Gate of the Abyss,132,2:29,,72,82,54.5,단순 회귀,https://youtu.be/FXtZNEwGTNM?si=B1FQOqAc1My09wi8
+rhythm_link,Glitter,UNDEAD,DESTRUCTION ROAD,119,2:22,,65,75,54.6,단순 회귀,https://youtu.be/AEadVvbIDTs?si=7EB3HtgDU2T4aXPM
+rhythm_link,Brilliant,UNDEAD,IMMORAL WORLD,126,1:57,,69,79,54.8,단순 회귀,https://youtu.be/5ibK0HTyCqE
+rhythm_link,Sparkle,UNDEAD,PERFECTLY-IMPERFECT,193,2:35,,105,115,54.4,단순 회귀,https://youtu.be/XpS8WT--GMA?si=WC61RpYpJ5Md186S
+rhythm_link,Flash,UNDEAD,허니밀크,154,2:39,,84,94,54.5,단순 회귀,https://youtu.be/e2zo1oC_ouE?si=pXVOHxaCM-T51DyL
+rhythm_link,Flash,UNDEAD,죄의 밑바닥 (罪の底),184,2:54,106.0,99,109,53.8,3변수 OLS,https://youtu.be/VfIUZw1CkrE?si=qarf0WyZqsIVIcar
+rhythm_link,Brilliant,UNDEAD,Savage Love Affair,172,2:26,98.0,93,103,54.1,3변수 OLS,https://youtu.be/VjQw-7CczQY?si=fAWVQfIi3NFds-hw
+rhythm_link,Brilliant,UNDEAD,Darkness 4,106,2:05,,58,68,54.7,단순 회귀,https://youtu.be/f1QLJm01eJg?si=xWj4yhalHluzvXnU
+rhythm_link,Sparkle,UNDEAD,Nightless World,111,2:04,57.0,61,71,55.0,3변수 OLS,https://youtu.be/U9qxWETQMDE?si=7Tu0qSDB0-I-rI26
+rhythm_link,Sparkle,UNDEAD,FORBIDDEN RAIN,119,2:15,,65,75,54.6,단순 회귀,
+rhythm_link,Glitter,UNDEAD,Sustain Memories,137,2:48,71.0,73,83,53.3,3변수 OLS,https://youtu.be/7U1RsunFOc8?si=l9aqJXkrTgCHCE57
+rhythm_link,Glitter,UNDEAD,Resurrection of Soul,201,2:46,108.0,111,121,55.2,3변수 OLS,https://youtu.be/2QRK5t-U_F0?si=11m1UzWIRi4isplT
+rhythm_link,Sparkle,UNDEAD,SWINGIN' PARONIRIA,160,2:28,85.0,89,99,55.6,3변수 OLS,https://youtu.be/u21aGJ2glLs?si=-Y2tKw3cwpKPAczL
+rhythm_link,Flash,UNDEAD,Wanderlust Sailing,208,2:25,114.0,113,123,54.3,3변수 OLS,https://youtu.be/kkncT21bzKo?si=13QU37Tcg7dQd-RE
+rhythm_link,Brilliant,Ra*bits,Joyful×Box*,100,2:28,,55,65,55.0,단순 회귀,
+rhythm_link,Flash,Ra*bits,Love Ra*bits Party!!,140,2:27,,76,86,54.3,단순 회귀,
+rhythm_link,Sparkle,Ra*bits,メルティ♡キッチン,142,2:23,,77,87,54.2,단순 회귀,
+rhythm_link,Glitter,Ra*bits,Milky Starry Charm,142,2:29,,77,87,54.2,단순 회귀,
+rhythm_link,Brilliant,Ra*bits,ポケットに宇宙,128,2:37,,70,80,54.7,단순 회귀,
+rhythm_link,Glitter,Ra*bits,메이드인 도키메키,161,2:29,,87,97,54.0,단순 회귀,
+rhythm_link,Sparkle,Ra*bits,野うさぎマーチ♪,125,2:16,,68,78,54.4,단순 회귀,
+rhythm_link,Brilliant,Ra*bits,ヒカリスペクトル,163,2:55,93.0,90,100,55.2,3변수 OLS,https://youtu.be/4TBnL26Tv6c?si=ASXdvkO7M4yv_rWD
+rhythm_link,Sparkle,Ra*bits,うさぎの森の音楽会,159,2:38,89.0,84,94,52.8,3변수 OLS,https://youtu.be/D6X5kz65g6g?si=YmzByWmUP_MqsUdN
+rhythm_link,Brilliant,Ra*bits,Dream Collection,112,2:11,,61,71,54.5,단순 회귀,
+rhythm_link,Flash,Ra*bits,Love it Love it,165,2:43,,90,100,54.5,단순 회귀,
+rhythm_link,Flash,Ra*bits,FALLIN' LOVE=IT'S WONDERLAND,190,2:41,106.0,104,114,54.7,3변수 OLS,https://youtu.be/C4CCRKRYMT0?si=9y4q4Y30JaTguMW6
+rhythm_link,Sparkle,Ra*bits,ハレノヒSugar Wave,160,2:33,88.0,87,97,54.4,3변수 OLS,https://youtu.be/x0EDfvN_BSk?si=_LyBPi_2gLvZgyHJ
+rhythm_link,Glitter,Ra*bits,토모야 클막,170,2:43,90.0,90,100,52.9,3변수 OLS,https://youtu.be/uZfLdLld0YM
+rhythm_link,Brilliant,Ra*bits,JUMPIN' LUCK BEAT,214,2:42,126.0,117,127,54.7,3변수 OLS,https://youtu.be/jpr4ob5gjfA?si=dPY8ei2TGtRMquao
+rhythm_link,Brilliant,Ra*bits,RaRaRa*Station!,189,2:55,106.0,103,113,54.5,3변수 OLS,https://youtu.be/R7FmVIDgs_w
+rhythm_link,Brilliant,홍월,百花繚乱、紅月夜,200,2:23,,108,118,54.0,단순 회귀,
+rhythm_link,Flash,홍월,연홍빛 약속,133,2:30,,72,82,54.1,단순 회귀,
+rhythm_link,Glitter,홍월,무슨 검,136,2:32,,74,84,54.4,단순 회귀,
+rhythm_link,Sparkle,홍월,祭夜絵巻,167,2:23,,91,101,54.5,단순 회귀,
+rhythm_link,Flash,홍월,월화무쌍 붉은춤(月下無双、紅の舞),190,2:35,,103,113,54.2,단순 회귀,
+rhythm_link,Brilliant,홍월,剣戟の舞,144,2:21,,78,88,54.2,단순 회귀,
+rhythm_link,Flash,홍월,실,168,2:52,89.0,91,101,54.2,3변수 OLS,https://youtu.be/11C7MwwRWMw?si=eP8rjwufD6VBbDat
+rhythm_link,Brilliant,홍월,夜空、然りとて鵲は,114,2:18,,62,72,54.4,단순 회귀,
+rhythm_link,Brilliant,홍월,百花繚乱、紅月夜 (2025 ver.),206,2:35,117.0,112,122,54.4,3변수 OLS,https://youtu.be/lqf2x1GKkVg?si=rLLmjwR7Etv-CCk0
+rhythm_link,Glitter,홍월,홍월 이로하,168,2:08,95.0,92,102,54.8,3변수 OLS,https://youtu.be/TE9kO9CtHZY?si=LH0kVRGBhb1fCYtf
+rhythm_link,Glitter,홍월,월광기담,155,2:43,,84,94,54.2,단순 회귀,
+rhythm_link,Glitter,홍월,써머버드,141,2:40,,77,87,54.6,단순 회귀,
+rhythm_link,Sparkle,홍월,金色千夜夢舞台,217,2:46,,117,127,53.9,단순 회귀,
+rhythm_link,Sparkle,홍월,天翔KAGETSU,198,2:53,106.0,107,117,54.0,3변수 OLS,https://youtu.be/iI7IE1ZbDUg?si=N3jxe0eHlE8JPqwL
+rhythm_link,Glitter,홍월,LOUDEST BUGS,222,2:31,115.0,119,129,53.6,3변수 OLS,https://youtu.be/mqMkkKZJDSA?si=ETeu8rR1mFg0JRLj
+rhythm_link,Sparkle,MELLOW DEAR US,Dear World (マスターピース ver.),180,2:29,102.0,98,108,54.4,단순 회귀,https://youtu.be/6OgHDJn3iPE?si=MThi_08vZH1ffs7q
+rhythm_link,Sparkle,MELLOW DEAR US,Dear World,158,2:41,87.0,86,96,54.4,3변수 OLS,https://youtu.be/VPpQsQ4DYF4?si=ilsluz4VPIhgCK5E
+rhythm_link,Flash,MELLOW DEAR US,BUBBLE GUM DANCE,153,2:29,84.0,82,92,53.6,3변수 OLS,https://youtu.be/-9ozN9GEx4I?si=EgQ4ceHvqMFK-RiA
+rhythm_link,Sparkle,홍월,炎纏焰踊千変万火,208,2:45,110.0,108,118,51.9,3변수 OLS,https://youtu.be/-gtAqdLXUnA?si=usSk2BkRptKbsvGo
+new_dimension,Glitter,Knights,Voice of Sword,135,2:36,75.0,73,83,54.1,3변수 OLS,https://youtu.be/Y_dfB-rMwAI?si=dvrZtDh0k9CVKzi7
+new_dimension,Brilliant,Knights,Silent Oath,106,2:10,,58,68,54.7,단순 회귀,
+new_dimension,Sparkle,Knights,Grateful allegiance,96,2:10,53.0,54,64,56.2,3변수 OLS,https://youtu.be/Mt-aFDzGxeo?si=SsXIJ93sfdVntKuH
+new_dimension,Flash,Knights,Fight for Judge,159,2:32,85.0,86,96,54.1,3변수 OLS,https://youtu.be/OnR5oh8N_Rw?si=lbXe3Yie2sTODL70
+new_dimension,Glitter,Knights,Promise Swords,172,2:48,88.0,93,103,54.1,3변수 OLS,https://youtu.be/VMLQm7BKu4c?si=EcvAURc3Mpfjm99G
+new_dimension,Brilliant,Knights,Article of Faith,144,2:26,80.0,80,90,55.6,3변수 OLS,https://youtu.be/bljn1rmENg0?si=PLuOYXy1R_irARCe
+new_dimension,Flash,Knights,Wonderful Happiness,175,2:49,96.0,96,106,54.9,3변수 OLS,https://youtu.be/Kgi-GfMs9dc
+new_dimension,Glitter,Knights,Castle of my Heart,159,2:51,89.0,82,92,51.6,3변수 OLS,https://youtu.be/oZB7A0CkQt8?si=DYp4d7xGgDZD8KAP
+new_dimension,Sparkle,Knights,Knights the Phantom Thief,116,2:24,67.0,64,74,55.2,3변수 OLS,https://youtu.be/IPTEOEH7LcE?si=hDLlPj-ILaqI-6Bk
+new_dimension,Sparkle,Knights,Little Romance,137,2:41,71.0,76,86,55.5,3변수 OLS,https://youtu.be/hXvSF8dbEfk?si=LGwVnyJ2wOzUTql0
+new_dimension,Flash,Knights,Mystic Fragrance,145,2:20,83.0,81,91,55.9,3변수 OLS,https://youtu.be/6Q0cZ3sxJaQ?si=croDhuyG7Jrs-4jd
+new_dimension,Glitter,Knights,Coruscate Breeze,142,2:49,79.0,78,88,54.9,3변수 OLS,https://youtu.be/W_hPeGRVwdY?si=ORyljHeY0ax9uoEC
+new_dimension,Brilliant,Knights,Or the Beautiful Golden Drop,189,2:56,100.0,101,111,53.4,3변수 OLS,https://youtu.be/tNKnEgJ60P0?si=i6DT4rRIRsZ1pGlW
+new_dimension,Brilliant,Knights,Luminous Crown,141,2:40,74.0,76,86,53.9,3변수 OLS,https://youtu.be/yB08ylHfQng?si=pZFwY2RRnCM2OYuT
+new_dimension,Brilliant,Knights,Heart Collector,164,2:54,93.0,90,100,54.9,3변수 OLS,https://youtu.be/-xnmtYualr4?si=SEqJGkWSPzQjE0l9
+new_dimension,Sparkle,Switch,Temptation Magic,103,2:17,,56,66,54.4,단순 회귀,
+new_dimension,Brilliant,Switch,エメラルドプラネット,143,2:29,,78,88,54.5,단순 회귀,
+new_dimension,Flash,Switch,노킹 판타지,106,2:15,,58,68,54.7,단순 회귀,
+new_dimension,Glitter,Switch,I ”Witch” You A Happy Halloween! 할로윈 ,145,2:28,80.0,81,91,55.9,3변수 OLS,https://youtu.be/F6Y2z7BtlBM?si=jABXQDsbLDHz2_-v
+new_dimension,Glitter,Switch,매직 포 유어 스위치,178,2:36,,97,107,54.5,단순 회귀,
+new_dimension,Flash,Switch,갤럭시 데스티니,103,2:13,,56,66,54.4,단순 회귀,
+new_dimension,Glitter,Switch,"Seven Days ""Prismagic"" (스위치 트립)",143,2:47,75.0,80,90,55.9,3변수 OLS,https://youtu.be/g9Pp5b45YCo?si=ivNyZPn8r7he9S0A
+new_dimension,Flash,Switch,이스터 카니발,198,2:33,104.0,106,116,53.5,3변수 OLS,https://youtu.be/qw0zoJpOqQw?si=vYztjSdMyfWE3WAV
+new_dimension,Flash,Switch,A little bit UP!!,135,2:46,74.0,75,85,55.6,3변수 OLS,https://youtu.be/QiE_mrDMqbk?si=zhN9g92tTnNMDUep
+new_dimension,Brilliant,Switch,オモイノカケラ,130,1:58,,71,81,54.6,단순 회귀,
+new_dimension,Brilliant,Switch,Brilliant Smile,198,2:44,105.0,108,118,54.5,3변수 OLS,https://youtu.be/yeuMMCHFfUA?si=bIUqgaAyNBLXOb-C
+new_dimension,Sparkle,Switch,Romancing Cruise,148,2:36,,81,91,54.7,단순 회귀,
+new_dimension,Sparkle,Switch,Chocola-Tic After School,142,2:47,80.0,78,88,54.9,3변수 OLS,https://youtu.be/maUqiZk7sCk?si=eaLE2Dma927sP_Sy
+new_dimension,Flash,Switch,Wish upon a MUSIC!!,142,2:51,72.0,76,86,53.5,3변수 OLS,https://youtu.be/7WzOUpKOHtI?si=gtdElgxFjN0TkBHj
+new_dimension,Glitter,Switch,Switching Journey,146,2:41,86.0,81,91,55.5,3변수 OLS,https://youtu.be/xafCUkCr94I?si=d85wmfxusbd-YBSd
+new_dimension,Glitter,MaM,블루밍,141,2:11,,77,87,54.6,단순 회귀,
+new_dimension,Sparkle,MaM,君印 Be Ambitious!!,131,2:11,,71,81,54.2,단순 회귀,
+new_dimension,Brilliant,MaM,Festive!,121,2:13,,66,76,54.5,단순 회귀,
+new_dimension,Flash,MaM,유쾌통쾌 That's alright! 다라닥닥,202,2:32,103.0,109,119,54.0,3변수 OLS,https://youtu.be/XJA4yTIcSi8?si=ZvPsX922n-R_dMu7
+new_dimension,Brilliant,MaM,辻風に吹かれて,141,2:28,,77,87,54.6,단순 회귀,
+new_dimension,Flash,MaM,핸즈크레프트,121,2:45,62.0,65,75,53.7,3변수 OLS,https://youtu.be/wU4xQ9hyhcA?si=nrPSlUDVggN3HZL6
+new_dimension,Glitter,MaM,헬로 뉴이어,101,2:48,57.0,56,66,55.4,3변수 OLS,https://youtu.be/XqU_u7YF_4k?si=DT0ibUjxmDgR-hQf
+new_dimension,Brilliant,MaM,ハロウィン・ランデブー,181,2:51,98.0,99,109,54.7,3변수 OLS,https://youtu.be/ypuz0XTP_Yw?si=-bc4zHdJ3OHuzBtG
+new_dimension,Flash,DF,Stippling,132,2:14,,72,82,54.5,단순 회귀,
+new_dimension,Glitter,DF,네뷸라,160,2:46,85.0,86,96,53.8,3변수 OLS,https://youtu.be/nvW4Sb5j_os?si=EHgZ9zRV5LBZ163p
+new_dimension,Sparkle,DF,=EYE=,151,2:26,84.0,82,92,54.3,3변수 OLS,https://youtu.be/5W8iksoImZ0?si=RadE3upquKGY4kBb
+new_dimension,Brilliant,DF,No name yet,147,2:32,85.0,80,90,54.4,3변수 OLS,https://youtu.be/1fxv7EJyDrQ?si=o917z-_sV068A4e8
+new_dimension,Brilliant,DF,Bye-Bye Buddy,194,2:43,112.0,106,116,54.6,3변수 OLS,https://youtu.be/igayZQFSmGY?si=fNzUBk-sJJ79XuMA
+new_dimension,Flash,S-Pri,상애선언,211,2:56,111.0,111,121,52.6,3변수 OLS,https://youtu.be/LejZx0toLQc?si=b_Xe4v94YcifbF2R
+new_dimension,Glitter,S-Pri,스키스키 헌터,201,2:43,104.0,109,119,54.2,3변수 OLS,https://youtu.be/LXhAtH7jCJU?si=oBePbPTzIGawjaek
+new_dimension,Sparkle,S-Pri,Be My Princess♡,193,2:47,107.0,105,115,54.4,3변수 OLS,https://youtu.be/3kSEGCzfomw?si=3YJt9cUK8qg9D5xP
+new_dimension,Glitter,S-Pri,베리베리 스위트 화이트,149,2:13,83.0,82,92,55.0,3변수 OLS,https://youtu.be/tk7kSTGCa5A?si=EvjRSwA-spA-_bzv
+new_dimension,Glitter,S-Pri,칸나 하코,166,2:33,90.0,91,101,54.8,3변수 OLS,https://youtu.be/e4JWzY_Iki4?si=wYLh8wMhGAsWHKOA
+new_dimension,Glitter,MaM,Light on the Orbit 감사제,131,2:41,73.0,73,83,55.7,3변수 OLS,https://youtu.be/swjbhhjcaIw?si=pTMzetSaGciJYK56
+new_dimension,Brilliant,Knights,Secret Masquerade,183,2:41,99.0,98,108,53.6,3변수 OLS,https://youtu.be/4HxEhn3UljA
+others,All,주년,BRAND NEW STARS!!,118,2:08,68.0,66,76,55.9,3변수 OLS,https://youtu.be/7g4vefHWPvc?si=LivgcBOApU2IiUuq
+others,All,기타,Stars' Ensemble!,80,2:39,,44,54,55.0,단순 회귀,
+others,Brilliant,Jin & Akiomi,Rainbow Stairway,121,2:25,61.0,66,76,54.5,3변수 OLS,https://youtu.be/5eGMuT05V34?si=vDXVzhUiJnl-Oic2
+others,Sparkle,추억,Eccentric Party Night!!,127,2:28,,69,79,54.3,단순 회귀,
+others,Flash,추억,제뉴인,123,2:13,,67,77,54.5,단순 회귀,
+others,Brilliant,추억,Death Game Holic,235,2:32,,127,137,54.0,단순 회귀,
+others,Glitter,추억,Crush of Judgment 나킬,154,2:24,87.0,84,94,54.5,3변수 OLS,https://youtu.be/v6xB4TsnL1k?si=4HFlYuhsvrr4dC-o
+others,Sparkle,추억,ROCK ROAR,208,2:40,,113,123,54.3,단순 회귀,
+others,Sparkle,추억,"We'll be ""Knights""",99,2:19,59.0,56,66,56.6,3변수 OLS,https://youtu.be/BZdA8fqqojc?si=017TRTtHsKgxz6x0
+others,Sparkle,추억,聖少年遊戯,160,2:20,,87,97,54.4,단순 회귀,
+others,Sparkle,드림유닛,瞬きSign☆,179,2:46,96.0,98,108,54.7,3변수 OLS,https://youtu.be/V-kfyMIHYQw?si=dNTAJpxaa9dlLF0J
+others,Brilliant,드림유닛,セツナDrops,91,2:32,53.0,52,62,57.1,3변수 OLS,https://youtu.be/Dy_Urf3pbwo?si=m1LYuI1XcJdOBMmW
+others,Brilliant,드림유닛,LOCK YOUR GAZE,157,2:09,77.0,84,94,53.5,3변수 OLS,https://youtu.be/p7d6v93yPVc
+others,Sparkle,만우절,あんさんぶる体操!!,176,2:51,,96,106,54.5,단순 회귀,
+others,Glitter,셔플,에투제,151,2:30,,82,92,54.3,단순 회귀,
+others,All,주년,Walk with your smile,103,2:00,57.0,58,68,56.3,3변수 OLS,https://youtu.be/WbBI2QjyTrk?si=HXwT_0D2eFAChgc_
+others,Brilliant,셔플,Midnight Butlers,141,2:05,,77,87,54.6,단순 회귀,
+others,Glitter,셔플,블랑코,98,2:09,,54,64,55.1,단순 회귀,
+others,All,새해,年越しあんさんぶる！！2020→2021,210,3:19,109.0,113,123,53.8,3변수 OLS,https://youtu.be/RqGC-mI6A8k?si=CT-UaETRgT9WQEZU
+others,Sparkle,만우절,エンドレスヴィーデ,132,2:31,67.0,72,82,54.5,단순 회귀,https://youtu.be/1NfFzQ6ipzA?si=qp2-tsTyzkyuAQc7
+others,All,주년,Walk with your smile (Acoustic Ver.),167,3:04,89.0,91,101,54.5,단순 회귀,https://youtu.be/kPruu3fcEZI?si=aLbN4tkSZLsuwiuZ
+others,All,주년,FUSIONIC STARS!!,214,2:46,111.0,116,126,54.2,3변수 OLS,https://youtu.be/2MkdWOiUKpQ?si=QlnzDnryT0IQN5Uq
+others,Brilliant,셔플,"Aisle, be with you",169,2:39,,92,102,54.4,단순 회귀,
+others,Glitter,셔플,문라디,146,2:15,,79,89,54.1,단순 회귀,
+others,Glitter,셔플,Noir Neige (흑설),166,2:42,86.0,88,98,53.0,3변수 OLS,https://youtu.be/Um2Snuz-uy4?si=ocerjGdxYoFGCTk5
+others,All,새해,年越しあんさんぶる！！2021→2022,210,3:25,103.0,114,124,54.3,3변수 OLS,https://youtu.be/uFvTZ6udsRs?si=v1IplzAPa8F8PCYE
+others,All,기타,Life is so Dramatic!!,194,2:46,100.0,105,115,54.1,단순 회귀,https://youtu.be/tLhUaM7Y-c8?si=E8ZTd9s2Th_nqxzU
+others,All,만우절,BUKUBU NEW STARS!!,160,2:11,,87,97,54.4,단순 회귀,
+others,Sparkle,셔플,パラダイム・リバーシ！,161,2:29,,87,97,54.0,단순 회귀,
+others,All,주년,Surprising Thanks!!,159,2:28,91.0,88,98,55.3,3변수 OLS,https://youtu.be/N7I7l6fLAlE?si=slYdJjtLp6zNwFix
+others,Sparkle,셔플,FIST OF SOUL,176,2:41,104.0,97,107,55.1,3변수 OLS,https://youtu.be/wOKpdmTdyRY?si=C8lbXFln5FVuq5jz
+others,Sparkle,셔플,Heart aid Cafeteria,142,2:42,,77,87,54.2,단순 회귀,
+others,Flash,셔플,Have you been naughty or nice?,218,2:24,,118,128,54.1,단순 회귀,
+others,All,새해,年越しあんさんぶる！！2022→2023,253,3:40,129.0,137,147,54.2,3변수 OLS,https://youtu.be/kNPHVS4gDNs?si=uU9tJozm-mDltkhl
+others,Brilliant,만우절,앙상블 트레이닝,83,2:51,47.0,47,57,56.6,3변수 OLS,https://youtu.be/Q3pKOW2HvdY?si=VcC52PYzQ8RiFMOy
+others,Glitter,추억,익센파 Mix,175,2:47,,95,105,54.3,단순 회귀,
+others,Brilliant,기타,Twilight Pentagram 팬타그램,186,2:53,99.0,97,107,52.2,3변수 OLS,https://youtu.be/wf5sxYlZIAE?si=xVfs6g8MJQ__faHC
+others,Glitter,기타,Dawning Angels,194,2:49,108.0,106,116,54.6,3변수 OLS,https://youtu.be/5qLQm9m3tgc?si=YF9UwrPItDDJBVqQ
+others,All,주년,One with One,208,2:50,105.0,113,123,54.3,단순 회귀,https://youtu.be/fywI-2pTEG4?si=CG19aekVbHlyu-oh
+others,All,만우절,両片思いの交差点で、君にまた逢いたくて,131,2:30,,71,81,54.2,단순 회귀,
+others,All,주년,LIMIT BREAK DREAMERS,172,2:53,89.0,91,101,52.9,3변수 OLS,https://youtu.be/YGrLwg4f8Ak?si=_pPbLBs7pjwV0Y6n
+others,Sparkle,셔플,Ringing evil phone,149,2:50,89.0,82,92,55.0,3변수 OLS,https://youtu.be/sICZ_Yed7PQ?si=dh8SbmUDJSaNOmGu
+others,Brilliant,셔플,喪失寓意 -LOST BALLADE-,128,2:33,69.0,67,77,52.3,3변수 OLS,https://youtu.be/XAxsfjzjYy0?si=DPqdp_7JuiPfEuJP
+others,All,콜라보,We Are Light,199,2:41,106.0,108,118,54.3,단순 회귀,https://youtu.be/w1UBqwrN6X4?si=n-d_lJIwTmFNx0IK
+others,Flash,콜라보,퓨전,174,2:27,,94,104,54.0,단순 회귀,
+others,Flash,콜라보,B100d Hunter 블러드헌터,184,2:29,98.0,100,110,54.3,단순 회귀,https://youtu.be/VYWclWI1W1g?si=NEk4Szc0tA40feiJ
+others,Flash,셔플,타천사,158,2:32,,86,96,54.4,단순 회귀,
+others,All,주년,BRIGHTEST STARS!!,188,2:27,98.0,100,110,53.2,3변수 OLS,https://youtu.be/UqntUWTtpjM?si=C7iAnC2mjPdlK_fg
+others,Glitter,콜라보,세이크리드 루인,234,2:27,125.0,127,137,54.3,단순 회귀,https://youtu.be/GuYM8DPXMvQ?si=MbjrJ9_U4KuugnEo
+others,Flash,셔플,군연지원 (루리마츠리),135,2:42,72.0,76,86,56.3,3변수 OLS,https://youtu.be/jVyJe-QNo44?si=3w-vbS4s22BlxQLk
+others,All,콜라보,RISE STAR'S SPIRITS,215,2:55,125.0,116,126,54.0,단순 회귀,https://youtu.be/lGQHOxTyiy0?si=GRG9U3h0cFx6T_z2
+others,Flash,셔플,쿠마쿠마 레스큐,236,2:38,131.0,128,138,54.2,3변수 OLS,https://youtu.be/y5kr3aLLFvc?si=TwIgnQh_ArdGINnG
+others,Sparkle,셔플_10주년,僕のウィーク・ポイント,111,2:31,60.0,62,72,55.9,3변수 OLS,https://youtu.be/KFwxsDZRM9A?si=vV2YocFoYiHhLI1-
+others,Brilliant,셔플_10주년,Graceful Punishment,138,2:28,75.0,75,85,54.3,3변수 OLS,https://youtu.be/NI0Piax6irk?si=2_qHUnhCK70hVJ5b
+others,Flash,셔플_10주년,Deep into you (10번 셔플),131,2:27,65.0,70,80,53.4,3변수 OLS,https://youtu.be/tbQOph7J-8A?si=o4U7l2NqwyPq-Sgf
+others,Flash,셔플_10주년,러뷰&피스 전설 (3번 셔플),229,2:48,128.0,124,134,54.1,3변수 OLS,https://youtu.be/SEvHxWd77Cc?si=EQbbnTxJf4vxs9vT
+others,Glitter,셔플_10주년,Ai$ 아이도루(8번 셔플),244,2:32,132.0,133,143,54.5,3변수 OLS,https://youtu.be/7Yn1DNogFtU?si=OMcESI8CFW0h9Otg
+others,Sparkle,셔플_10주년,It's (k)not lov?,131,2:42,71.0,71,81,54.2,3변수 OLS,https://youtu.be/-6NJnCkHlIg?si=NTyN4CVprzll_j0U
+others,Flash,셔플_10주년,그것은 잔상의 소실점 2번,120,2:39,66.0,64,74,53.3,3변수 OLS,https://youtu.be/PbXpKSAmNoQ?si=ht3jSujYglY6WHcj
+others,Sparkle,Jin & Akiomi,ハナニナレ！,139,2:21,76.0,75,85,54.0,3변수 OLS,https://youtu.be/-4pHM037Amg?si=Iw9FwIodUw8lZv1G
+others,Glitter,셔플_10주년,9번 셔플,128,2:37,73.0,70,80,54.7,3변수 OLS,https://youtu.be/GNsBVexvaAU?si=NlUnECKI_KsfKwxl
+others,Brilliant,셔플_10주년,Fight is Only Fate (4번 셔플),250,2:39,132.0,136,146,54.4,3변수 OLS,https://youtu.be/pWZPZgVbcMM?si=zpI52u1HqwFY4zgr
+others,Sparkle,셔플_10주년,プロローグのそのあとへ,144,2:22,77.0,79,89,54.9,3변수 OLS,https://youtu.be/R83wURX7lwA?si=-06ZD0ViXPupk8by
+others,Brilliant,콜라보,오보로(朧),193,2:11,104.0,105,115,54.4,단순 회귀,https://youtu.be/_Qnf978dzwo?si=Lf4bo3rkKCNVo8xD
+others,All,주년,BRIGHTEST STARS!! (Mainstream Megasphere ver.),223,2:30,122.0,121,131,54.3,단순 회귀,https://youtu.be/4ViA8nIcIBk?si=gM-dhxmCLVcqFku2
+others,Flash,만우절,페르소나 아비스,230,2:37,122.0,123,133,53.5,3변수 OLS,https://youtu.be/xXfJwP6_-2Q

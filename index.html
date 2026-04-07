@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voltage Predictor</title>
+<script>
+(function(){
+  var lang = navigator.language || '';
+  if (lang.startsWith('ko'))      location.replace('ja-ko.html?lang=ko');
+  else if (lang.startsWith('ja')) location.replace('ja-ko.html?lang=ja');
+  else                            location.replace('ja-en.html');
+})();
+</script>
+</head>
+<body></body>
+</html>

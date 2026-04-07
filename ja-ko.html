@@ -1287,7 +1287,7 @@ function renderTable() {
       : `<span class="no-video">—</span>`;
     const mainTitle = getDisplayTitle(s);
     const subTitle = currentLang === 'ko'
-      ? (s.title_ko ? s.title_ja : (s.title_ja_reading || ''))
+      ? ''
       : (s.title_ja_reading || '');
     return `<tr>
       <td><span class="type-badge" style="background:${c.bg};color:${c.color}">${s.type}</span></td>

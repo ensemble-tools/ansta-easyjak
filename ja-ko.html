@@ -36,10 +36,10 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .nav-brand-row { display: flex; align-items: center; gap: 10px; padding: 14px 0 10px; }
 .nav-icon { width: 28px; height: 28px; color: white; flex-shrink: 0; }
 .nav-title { color: white; font-size: 20px; font-weight: 700; line-height: 1.2; }
-.nav-bottom-row { display: flex; align-items: center; justify-content: space-between; }
+.nav-bottom-row { display: flex; align-items: center; justify-content: space-between; padding: 4px 0 10px; }
 .nav-tabs { display: flex; gap: 2px; }
 .nav-tab {
-  padding: 10px 20px;
+  padding: 6px 16px;
   color: rgba(255,255,255,0.65);
   font-size: 13px; font-weight: 600;
   background: none; border: none;
@@ -75,7 +75,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 
 /* ── Cards ── */
 .card { background: var(--white); border-radius: 14px; border: 0.5px solid var(--border); box-shadow: var(--shadow); padding: 24px; }
-.card-label { font-size: 13px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 14px; }
+.card-label { font-size: 13px; font-weight: 600; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 14px; }
 
 /* ── Search ── */
 .search-wrap { position: relative; margin-bottom: 16px; }
@@ -103,7 +103,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 
 /* ── Input grid ── */
 .input-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
-.input-group label { display: block; font-size: 13px; color: var(--text-sub); margin-bottom: 5px; }
+.input-group label { display: block; font-size: 13px; color: var(--text-main); margin-bottom: 5px; }
 .input-group label span { color: var(--navy); font-size: 10px; margin-left: 2px; }
 .num-input { width: 100%; height: 40px; padding: 0 12px; background: var(--input-bg); border: 1.5px solid var(--border); border-radius: 8px; font-size: 14px; font-weight: 500; color: var(--text-main); font-family: 'Inter', monospace; outline: none; transition: border-color .2s; }
 .num-input:focus { border-color: var(--navy); }
@@ -123,7 +123,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .result-song-title { font-size: 16px; font-weight: 700; color: var(--navy); }
 .result-song-meta { font-size: 12px; color: var(--text-main); margin-bottom: 16px; }
 
-.result-mode-badge { display: inline-block; padding: 6px 16px; border-radius: 10px; font-size: 14px; font-weight: 700; }
+.result-mode-badge { display: inline-block; padding: 6px 16px; border-radius: 10px; font-size: 14px; font-weight: 700; min-width: 80px; text-align: center; }
 .result-mode-badge.measured { background: #d1fae5; color: #065f46; }
 .result-mode-badge.predicted { background: var(--navy-pale); color: var(--navy); }
 
@@ -158,6 +158,12 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .bar-lbl { position: absolute; font-size: 12px; color: var(--text-sub); transform: translateX(-50%); white-space: nowrap; font-weight: 500; }
 .bar-lbl.left { transform: none; left: 0; }
 .bar-lbl.right { transform: none; right: 0; left: auto; }
+.bar-edge-marker { position: absolute; top: 0; display: flex; flex-direction: column; }
+.bar-edge-marker.left-edge { left: 0; align-items: flex-start; }
+.bar-edge-marker.right-edge { right: 0; align-items: flex-end; }
+.bar-edge-marker-label { background: #eaecef; color: #6b7280; font-size: 12px; font-weight: 600; padding: 3px 8px; border-radius: 4px; white-space: nowrap; margin-bottom: 3px; }
+.bar-edge-marker-arrow-left { width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid #eaecef; margin-left: 8px; }
+.bar-edge-marker-arrow-right { width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid #eaecef; margin-right: 8px; }
 .bar-edge-label { position: absolute; top: 4px; font-size: 12px; color: var(--text-sub); font-weight: 500; white-space: nowrap; }
 .bar-edge-label.left { left: 0; }
 .bar-edge-label.right { right: 0; }
@@ -167,7 +173,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 
 /* ── Stats Bar ── */
 .stats-card { padding: 18px 24px; }
-.stats-grid { display: grid; grid-template-columns: repeat(5,1fr); }
+.stats-grid { display: grid; grid-template-columns: repeat(3,1fr); }
 .stat-item { text-align: center; padding: 4px 8px; }
 .stat-item + .stat-item { border-left: 0.5px solid var(--border-light); }
 .stat-val { font-size: 22px; font-weight: 700; color: var(--navy); font-family: 'Inter', sans-serif; }
@@ -328,7 +334,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
   <div id="tab-predict" class="tab-pane active">
 
     <div class="card">
-      <div class="card-label" data-i18n="cardLabel1">클리어 콤보 예측</div>
+      <div class="card-label" data-i18n="cardLabel1">클리어 콤보 시작점 예측</div>
 
       <div class="search-wrap" id="searchWrap">
         <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -347,17 +353,17 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 
       <div class="input-grid">
         <div class="input-group">
-          <label><span data-i18n="labelNotes">총 노트수</span> <span>*</span></label>
+          <label style="font-size:15px"><span data-i18n="labelNotes">총 노트수</span> <span>*</span></label>
           <input class="num-input" id="inputNotes" type="number" placeholder="예: 161" min="80" max="300"
             oninput="onNotesManualEdit()">
         </div>
         <div class="input-group">
           <label data-i18n="labelETStart">ET 시작 콤보</label>
-          <input class="num-input" id="inputETStart" type="number" placeholder="선택사항">
+          <input class="num-input" id="inputETStart" type="number" placeholder="선택사항" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
         </div>
         <div class="input-group">
           <label data-i18n="labelETEnd">ET 종료 콤보</label>
-          <input class="num-input" id="inputETEnd" type="number" placeholder="선택사항">
+          <input class="num-input" id="inputETEnd" type="number" placeholder="선택사항" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
         </div>
       </div>
 
@@ -386,12 +392,18 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
           <div class="bar-marker-label" id="barMarkerLabel">Clear: —</div>
           <div class="bar-marker-arrow"></div>
         </div>
-        <span class="bar-edge-label left">0 combo</span>
-        <span class="bar-edge-label right" id="lblTotal"></span>
         <div class="bar-track">
           <div class="bar-left" id="barLeft"></div>
           <div class="bar-et" id="barEt"></div>
           <div class="bar-right" id="barRight"></div>
+        </div>
+        <div class="bar-edge-marker left-edge">
+          <div class="bar-edge-marker-label">0</div>
+          <div class="bar-edge-marker-arrow-left"></div>
+        </div>
+        <div class="bar-edge-marker right-edge" id="markerTotal" style="display:none">
+          <div class="bar-edge-marker-label" id="lblTotal"></div>
+          <div class="bar-edge-marker-arrow-right"></div>
         </div>
         <div class="bar-labels">
           <span class="bar-lbl" id="lblETStart" style="display:none"></span>
@@ -410,7 +422,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
       </div>
 
       <div class="video-section" id="videoSection" style="display:none">
-        <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px">
+        <div style="display:flex;align-items:baseline;gap:32px;margin-bottom:8px">
           <span class="video-label" data-i18n="videoLabel">참고 영상</span>
           <span style="font-size:11px;color:var(--text-muted)" data-i18n="videoCoverNote">커버송은 영상을 제공하지 않습니다.</span>
         </div>
@@ -427,19 +439,11 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
         </div>
         <div class="stat-item">
           <div class="stat-val" id="statMeasured">—</div>
-          <div class="stat-lbl" data-i18n="statMeasuredLabel">실측 완료</div>
+          <div class="stat-lbl" data-i18n="statMeasuredLabel">확인 완료</div>
         </div>
         <div class="stat-item">
-          <div class="stat-val">0.97</div>
-          <div class="stat-lbl" data-i18n="statR2Label">정확도 R²</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-val">±2.8</div>
-          <div class="stat-lbl" data-i18n="statMAELabel">평균 오차</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-val" style="font-size:13px;padding-top:6px">3변수 OLS</div>
-          <div class="stat-lbl" data-i18n="statModelLabel">사용 모델</div>
+          <div class="stat-val" id="statUnmeasured">—</div>
+          <div class="stat-lbl" data-i18n="statUnmeasuredLabel">미확인</div>
         </div>
       </div>
     </div>
@@ -634,13 +638,12 @@ const I18N = {
     navTitle: '앙스타 이지작 계산기',
     navSub: '앙상블스타즈!! Music · Easy',
     tab1: '클리어 예측', tab2: '악곡 검색', tab3: '안내',
-    cardLabel1: '클리어 콤보 예측',
+    cardLabel1: '클리어 콤보 시작점 예측',
     searchPlaceholder: '곡 제목 또는 유닛 검색...',
     labelNotes: '총 노트수', labelETStart: 'ET 시작 콤보', labelETEnd: 'ET 종료 콤보',
     predictBtn: '예측하기',
-    statTotalLabel: '전체 수록곡', statMeasuredLabel: '실측 완료',
-    statR2Label: '정확도 R²', statMAELabel: '평균 오차', statModelLabel: '사용 모델',
-    badgeMeasured: '실측값', badgePredicted: '예측값',
+    statTotalLabel: '전체 수록곡', statMeasuredLabel: '확인 완료', statUnmeasuredLabel: '미확인',
+    badgeMeasured: '확인 완료', badgePredicted: '예측',
     videoLabel: '참고 영상', videoCoverNote: '커버송은 영상을 제공하지 않습니다.', videoPlay: '▶ 클릭하여 재생',
     legendClear: '클리어 시작점', legendET: '앙상블 타임 구간',
     sidebarTypeTitle: 'Song Type', sidebarUnitTitle: 'Units', sidebarDurTitle: 'Duration',
@@ -650,7 +653,9 @@ const I18N = {
     tableHint: '곡 길이는 풀콤보 기준',
     colType: 'Type', colUnit: 'Unit', colTitle: 'Title',
     colNotes: 'Notes', colDur: 'Duration', colClear: 'Clear', colVideo: 'Video',
-    errNotes: '총 노트수를 입력해주세요', comboPrefix: '총',
+    errNotes: '총 노트수를 입력해주세요', errNotesMin: '80이상 정수를 입력하세요', errNotesMax: '300이하 정수를 입력하세요',
+    errETMin: '0이상 정수를 입력하세요', errETBoth: 'ET 시작/종료 콤보를 모두 입력해주세요', errETOrder: 'ET 종료 콤보는 시작 콤보보다 커야 합니다', errETMax: 'ET 종료 콤보는 총 노트수 이하여야 합니다',
+    comboPrefix: '총',
     directInput: '직접 입력', noResult: '검색 결과가 없어요', tableEmpty: '검색 결과가 없어요',
     noticeTitle: '공지사항',
     contactTitle: '오류 신고 및 문의',
@@ -679,8 +684,7 @@ const I18N = {
     searchPlaceholder: '楽曲名またはユニット検索...',
     labelNotes: '総ノーツ数', labelETStart: 'ET開始コンボ', labelETEnd: 'ET終了コンボ',
     predictBtn: '予測する',
-    statTotalLabel: '収録楽曲', statMeasuredLabel: '実測済み',
-    statR2Label: '精度 R²', statMAELabel: '平均誤差', statModelLabel: '使用モデル',
+    statTotalLabel: '収録楽曲', statMeasuredLabel: '確認済み', statUnmeasuredLabel: '未確認',
     badgeMeasured: '実測値', badgePredicted: '予測値',
     videoLabel: '参考動画', videoCoverNote: 'カバー曲は動画を提供していません。', videoPlay: '▶ クリックして再生',
     legendClear: 'クリア開始点', legendET: 'アンサンブルタイム区間',
@@ -860,6 +864,7 @@ const PAGE_SIZE = 30;
   applyI18n();
   document.getElementById('statTotal').textContent = SONGS.length;
   document.getElementById('statMeasured').textContent = SONGS.filter(s=>s.measured!==null).length;
+  document.getElementById('statUnmeasured').textContent = SONGS.filter(s=>s.measured===null).length;
   if (!SHOW_DEV_INFO) {
     document.querySelectorAll('.dev-only').forEach(el => el.style.display = 'none');
   }
@@ -877,8 +882,10 @@ function switchTab(name, el) {
 }
 
 function onNotesManualEdit() {
+  const el = document.getElementById('inputNotes');
+  el.value = el.value.replace(/[^0-9]/g, '');
   if (!currentSong) return;
-  const entered = parseInt(document.getElementById('inputNotes').value);
+  const entered = parseInt(el.value);
   if (entered !== currentSong.totalNotes) {
     currentSong = null; currentVideoUrl = null; measuredValue = null;
     document.getElementById('searchInput').value = '';
@@ -1000,11 +1007,13 @@ function runPredict() {
   if (isNaN(notes) || notes < 1) { showPredictError(t('errNotes'), ['inputNotes']); return; }
   if (notes < 80) { showPredictError(t('errNotesMin'), ['inputNotes']); return; }
   if (notes > 300) { showPredictError(t('errNotesMax'), ['inputNotes']); return; }
+  if (etSRaw !== '' && (etSRaw.includes('.') || parseInt(etSRaw) < 0)) { showPredictError(t('errETMin'), ['inputETStart']); return; }
+  if (etERaw !== '' && (etERaw.includes('.') || parseInt(etERaw) < 0)) { showPredictError(t('errETMin'), ['inputETEnd']); return; }
   if ((etS !== null) !== (etE !== null)) {
     showPredictError(t('errETBoth'), etS === null ? ['inputETStart'] : ['inputETEnd']); return;
   }
   if (etS !== null && etE !== null) {
-    if (etS < 1 || etE < 1) { showPredictError(t('errETMin'), ['inputETStart','inputETEnd']); return; }
+    if (etS < 0 || etE < 0) { showPredictError(t('errETMin'), ['inputETStart','inputETEnd']); return; }
     if (etS >= etE) { showPredictError(t('errETOrder'), ['inputETStart','inputETEnd']); return; }
     if (etE > notes) { showPredictError(t('errETMax'), ['inputETEnd']); return; }
   }
@@ -1031,10 +1040,10 @@ function showResult(notes, etS, etE) {
     const tc = TYPE_COLOR[currentSong.type] || TYPE_COLOR['All'];
     document.getElementById('resultMeta').innerHTML =
       `<span class="type-badge" style="background:${tc.bg};color:${tc.color};font-size:11px;padding:2px 7px;border-radius:4px;font-weight:600;margin-right:6px">${currentSong.type}</span>`
-      + `<span style="font-size:12px;color:var(--text-main)">${currentSong.unit} · ${t('labelNotes')}: ${notes}</span>`;
+      + `<span style="font-size:12px;color:var(--text-main)">${currentSong.unit}</span>`;
   } else {
     document.getElementById('resultTitle').textContent = t('directInput');
-    document.getElementById('resultMeta').textContent = `${notes}${etS ? ` · ET ${etS}~${etE}` : ''}`;
+    document.getElementById('resultMeta').textContent = etS ? `ET ${etS}~${etE}` : '';
   }
 
   const displayVal = measuredValue !== null ? measuredValue : predictedValue;
@@ -1122,6 +1131,7 @@ function updateBar(notes, etS, etE, val) {
   if (etE) { lblE.style.display=''; lblE.style.left=etEPos+'%'; lblE.textContent=`${etE}`; }
   else { lblE.style.display='none'; }
   document.getElementById('lblTotal').textContent = `${notes}`;
+  document.getElementById('markerTotal').style.display = '';
 }
 
 document.addEventListener('keydown', e => {

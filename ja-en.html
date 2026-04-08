@@ -582,7 +582,7 @@ const I18N = {
     legendClear: 'Clear start point', legendET: 'Ensemble Time range',
     sidebarTypeTitle: 'Song Type', sidebarUnitTitle: 'Units', sidebarDurTitle: 'Duration',
     typeAll: 'All', unitReset: 'Clear all',
-    durAll: 'All', durShort: '~ 2:10', durMid: '2:10 ~ 2:40', durLong: '2:40 ~ 3:10',
+    durAll: 'All', durShort: '~ 2:10', durMid: '2:11 ~ 2:40', durLong: '2:41 ~',
     tableSearchPlaceholder: 'Search songs...',
     tableHint: 'Duration is based on full combo',
     colType: 'Type', colUnit: 'Unit', colTitle: 'Title',
@@ -623,7 +623,7 @@ const I18N = {
     legendClear: 'クリア開始点', legendET: 'アンサンブルタイム区間',
     sidebarTypeTitle: 'Song Type', sidebarUnitTitle: 'Units', sidebarDurTitle: 'Duration',
     typeAll: '全て', unitReset: '全解除',
-    durAll: '全て', durShort: '~ 2:10', durMid: '2:10 ~ 2:40', durLong: '2:40 ~ 3:10',
+    durAll: '全て', durShort: '~ 2:10', durMid: '2:11 ~ 2:40', durLong: '2:41 ~',
     tableSearchPlaceholder: '楽曲を検索...',
     tableHint: '曲の長さはフルコンボ基準',
     colType: 'Type', colUnit: 'Unit', colTitle: 'Title',
@@ -720,6 +720,10 @@ const CATEGORY_LABEL = {
   "starmaker": "STAR MAKER", "cosmic": "Cosmic",
   "rhythm_link": "Rhythm Link", "new_dimension": "New Dimension", "others": "Others"
 };
+
+const UNIT_GROUPS = { 'Adam·Eve': ['Adam','Eve'], 'MaM·DF': ['MaM','DF'] };
+const UNIT_TO_GROUP = {};
+Object.entries(UNIT_GROUPS).forEach(([g, ms]) => ms.forEach(u => { UNIT_TO_GROUP[u] = g; }));
 
 const UNIT_CATEGORY = {
   'fine': 'starmaker', 'Trickstar': 'starmaker', '유성대': 'starmaker', 'ALKALOID': 'starmaker',
@@ -921,7 +925,7 @@ function showResult(notes, etS, etE) {
   if (currentSong) {
     document.getElementById('resultTitle').textContent = currentSong.title_ja;
     document.getElementById('resultMeta').textContent =
-      `${currentSong.unit} · ${currentSong.type} · ${CATEGORY_LABEL[currentSong.category]||currentSong.category} · ${notes} notes`;
+      `${currentSong.type} / ${currentSong.unit} / ${t('labelNotes')}: ${notes}`;
   } else {
     document.getElementById('resultTitle').textContent = t('directInput');
     document.getElementById('resultMeta').textContent = `${notes} notes${etS ? ` · ET ${etS}~${etE}` : ''}`;
@@ -1067,7 +1071,8 @@ function buildUnitTree() {
     s.units.forEach(u => {
       const cat = UNIT_CATEGORY[u] || 'others';
       if (!catUnits[cat]) catUnits[cat] = [];
-      if (!catUnits[cat].includes(u)) catUnits[cat].push(u);
+      const display = UNIT_TO_GROUP[u] || u;
+      if (!catUnits[cat].includes(display)) catUnits[cat].push(display);
     });
   });
   document.getElementById('unitTree').innerHTML = catOrder.filter(c=>catUnits[c].length>0).map(c => {
@@ -1079,10 +1084,19 @@ function buildUnitTree() {
         </div>
       </div>
       <div class="unit-children" id="gc-${c}">
-        ${catUnits[c].map(u=>`<label class="unit-child">
-          <input type="checkbox" class="unit-cb" data-cat="${c}" data-unit="${u}" onchange="onUnitChange()">
-          <span class="unit-child-label">${u}</span>
-        </label>`).join('')}
+        ${catUnits[c].map(u => {
+          const members = UNIT_GROUPS[u];
+          if (members) {
+            return `<label class="unit-child">
+              <input type="checkbox" class="unit-cb" data-units="${members.join(',')}" onchange="onUnitChange()">
+              <span class="unit-child-label">${u}</span>
+            </label>`;
+          }
+          return `<label class="unit-child">
+            <input type="checkbox" class="unit-cb" data-unit="${u}" onchange="onUnitChange()">
+            <span class="unit-child-label">${u}</span>
+          </label>`;
+        }).join('')}
       </div>
     </div>`;
   }).join('');
@@ -1095,7 +1109,10 @@ function toggleGroup(cat) {
 
 function onUnitChange() {
   const checked = new Set();
-  document.querySelectorAll('.unit-cb:checked').forEach(c => checked.add(c.dataset.unit));
+  document.querySelectorAll('.unit-cb:checked').forEach(cb => {
+    if (cb.dataset.units) cb.dataset.units.split(',').forEach(u => checked.add(u));
+    else checked.add(cb.dataset.unit);
+  });
   activeUnits = checked.size > 0 ? checked : null;
   document.getElementById('unitResetBtn').style.display = checked.size > 0 ? '' : 'none';
   currentPage = 1; renderTable();
@@ -1139,8 +1156,8 @@ function renderTable() {
     if (activeType !== null && s.type !== activeType) return false;
     if (activeUnits && !s.units.some(u => activeUnits.has(u))) return false;
     if (activeDur==='short' && s.durationSec>130) return false;
-    if (activeDur==='mid' && (s.durationSec<130||s.durationSec>160)) return false;
-    if (activeDur==='long' && (s.durationSec<160||s.durationSec>190)) return false;
+    if (activeDur==='mid' && (s.durationSec<131||s.durationSec>160)) return false;
+    if (activeDur==='long' && s.durationSec<161) return false;
     if (q) {
       const match =
         normalize(s.title_ja).includes(q) ||

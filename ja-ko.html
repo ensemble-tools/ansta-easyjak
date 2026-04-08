@@ -75,7 +75,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 
 /* ── Cards ── */
 .card { background: var(--white); border-radius: 14px; border: 0.5px solid var(--border); box-shadow: var(--shadow); padding: 24px; }
-.card-label { font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 14px; }
+.card-label { font-size: 13px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 14px; }
 
 /* ── Search ── */
 .search-wrap { position: relative; margin-bottom: 16px; }
@@ -103,7 +103,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 
 /* ── Input grid ── */
 .input-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
-.input-group label { display: block; font-size: 11px; color: var(--text-sub); margin-bottom: 5px; }
+.input-group label { display: block; font-size: 13px; color: var(--text-sub); margin-bottom: 5px; }
 .input-group label span { color: var(--navy); font-size: 10px; margin-left: 2px; }
 .num-input { width: 100%; height: 40px; padding: 0 12px; background: var(--input-bg); border: 1.5px solid var(--border); border-radius: 8px; font-size: 14px; font-weight: 500; color: var(--text-main); font-family: 'Inter', monospace; outline: none; transition: border-color .2s; }
 .num-input:focus { border-color: var(--navy); }
@@ -131,10 +131,11 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .combo-display { display: flex; align-items: baseline; justify-content: center; gap: 10px; padding: 20px 0 22px; }
 .combo-num { font-size: 52px; font-weight: 700; color: var(--navy); line-height: 1; font-family: 'Inter', sans-serif; }
 .combo-unit { font-size: 20px; font-weight: 600; color: var(--navy); opacity: 0.55; font-family: 'Inter', sans-serif; }
+.combo-prefix { font-size: 20px; font-weight: 600; color: var(--navy); opacity: 0.55; font-family: inherit; display: none; }
 
 /* Video */
 .video-section { margin-top: 20px; }
-.video-label { font-size: 12px; color: var(--text-sub); margin-bottom: 8px; font-weight: 500; }
+.video-label { font-size: 13px; color: var(--text-sub); font-weight: 500; }
 .video-thumb-wrap { position: relative; border-radius: 10px; overflow: hidden; aspect-ratio: 16/9; background: #111; cursor: pointer; }
 .video-thumb-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity .2s; }
 .video-thumb-wrap:hover img { opacity: 0.82; }
@@ -372,6 +373,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
       <div class="result-song-meta" id="resultMeta"></div>
 
       <div class="combo-display">
+        <span class="combo-prefix" id="comboPrefixLabel"></span>
         <span class="combo-num" id="resultCombo">—</span>
         <span class="combo-unit" id="comboUnitLabel">combo</span>
       </div>
@@ -394,7 +396,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
         </div>
         <div class="bar-legend">
           <div class="legend-item">
-            <div class="legend-dot" style="background:var(--navy)"></div>
+            <div class="legend-dot" style="background:#7a94bf"></div>
             <span data-i18n="legendClear">클리어 시작점</span>
           </div>
           <div class="legend-item">
@@ -405,7 +407,10 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
       </div>
 
       <div class="video-section" id="videoSection" style="display:none">
-        <div class="video-label" data-i18n="videoLabel">참고 영상</div>
+        <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px">
+          <span class="video-label" data-i18n="videoLabel">참고 영상</span>
+          <span style="font-size:11px;color:var(--text-muted)" data-i18n="videoCoverNote">커버송은 영상을 제공하지 않습니다.</span>
+        </div>
         <div class="video-thumb-wrap" id="videoThumbWrap"></div>
       </div>
     </div>
@@ -633,7 +638,7 @@ const I18N = {
     statTotalLabel: '전체 수록곡', statMeasuredLabel: '실측 완료',
     statR2Label: '정확도 R²', statMAELabel: '평균 오차', statModelLabel: '사용 모델',
     badgeMeasured: '실측값', badgePredicted: '예측값',
-    videoLabel: '참고 영상', videoPlay: '▶ 클릭하여 재생',
+    videoLabel: '참고 영상', videoCoverNote: '커버송은 영상을 제공하지 않습니다.', videoPlay: '▶ 클릭하여 재생',
     legendClear: '클리어 시작점', legendET: '앙상블 타임 구간',
     sidebarTypeTitle: 'Song Type', sidebarUnitTitle: 'Units', sidebarDurTitle: 'Duration',
     typeAll: '전체', unitReset: '전체 해제',
@@ -642,6 +647,7 @@ const I18N = {
     tableHint: '곡 길이는 풀콤보 기준',
     colType: 'Type', colUnit: 'Unit', colTitle: 'Title',
     colNotes: 'Notes', colDur: 'Duration', colClear: 'Clear', colVideo: 'Video',
+    errNotes: '총 노트수를 입력해주세요', comboPrefix: '총',
     directInput: '직접 입력', noResult: '검색 결과가 없어요', tableEmpty: '검색 결과가 없어요',
     noticeTitle: '공지사항',
     contactTitle: '오류 신고 및 문의',
@@ -673,7 +679,7 @@ const I18N = {
     statTotalLabel: '収録楽曲', statMeasuredLabel: '実測済み',
     statR2Label: '精度 R²', statMAELabel: '平均誤差', statModelLabel: '使用モデル',
     badgeMeasured: '実測値', badgePredicted: '予測値',
-    videoLabel: '参考動画', videoPlay: '▶ クリックして再生',
+    videoLabel: '参考動画', videoCoverNote: 'カバー曲は動画を提供していません。', videoPlay: '▶ クリックして再生',
     legendClear: 'クリア開始点', legendET: 'アンサンブルタイム区間',
     sidebarTypeTitle: 'Song Type', sidebarUnitTitle: 'Units', sidebarDurTitle: 'Duration',
     typeAll: '全て', unitReset: '全解除',
@@ -682,6 +688,7 @@ const I18N = {
     tableHint: '曲の長さはフルコンボ基準',
     colType: 'Type', colUnit: 'Unit', colTitle: 'Title',
     colNotes: 'Notes', colDur: 'Duration', colClear: 'Clear', colVideo: 'Video',
+    errNotes: 'ノーツ数を入力してください', comboPrefix: '計',
     directInput: '直接入力', noResult: '検索結果がありません', tableEmpty: '検索結果がありません',
     noticeTitle: 'お知らせ',
     contactTitle: 'エラー報告・お問い合わせ',
@@ -1029,6 +1036,8 @@ function showResult(notes, etS, etE) {
   const badge = document.getElementById('resultBadge');
   document.getElementById('resultCombo').textContent = displayVal;
   document.getElementById('comboUnitLabel').textContent = 'combo';
+  const pfx = document.getElementById('comboPrefixLabel');
+  pfx.textContent = t('comboPrefix'); pfx.style.display = '';
   if (measuredValue !== null) {
     badge.textContent = t('badgeMeasured');
     badge.className = 'result-mode-badge measured';
@@ -1044,7 +1053,8 @@ function showResult(notes, etS, etE) {
   // 탭1 참고영상: measured 유무 관계없이 video 있으면 표시
   const vs = document.getElementById('videoSection');
   const wrap = document.getElementById('videoThumbWrap');
-  document.getElementById('videoSection').querySelector('.video-label').textContent = t('videoLabel');
+  document.getElementById('videoSection').querySelector('[data-i18n="videoLabel"]').textContent = t('videoLabel');
+  document.getElementById('videoSection').querySelector('[data-i18n="videoCoverNote"]').textContent = t('videoCoverNote');
   if (currentVideoUrl) {
     const videoId = extractYoutubeId(currentVideoUrl);
     if (videoId) {
@@ -1178,6 +1188,11 @@ function buildUnitTree() {
       const display = UNIT_TO_GROUP[u] || u;
       if (!catUnits[cat].includes(display)) catUnits[cat].push(display);
     });
+  });
+  const cosmicOrder = ['Eden','Valkyrie','Crazy:B','2wink','Adam·Eve'];
+  catUnits['cosmic'].sort((a,b) => {
+    const ia = cosmicOrder.indexOf(a); const ib = cosmicOrder.indexOf(b);
+    return (ia===-1?99:ia) - (ib===-1?99:ib);
   });
   const othersOrder = ['주년·기념·만우절','셔플','콜라보·드림유닛','추억·J&A·기타'];
   catUnits['others'].sort((a,b) => {

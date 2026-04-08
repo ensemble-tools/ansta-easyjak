@@ -56,7 +56,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 .tab-pane { display: none; }
 .tab-pane.active { display: block; }
 .card { background: var(--white); border-radius: 14px; border: 0.5px solid var(--border); box-shadow: var(--shadow); padding: 24px; }
-.card-label { font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 14px; }
+.card-label { font-size: 13px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 14px; }
 
 .search-wrap { position: relative; margin-bottom: 16px; }
 .search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--navy); opacity: 0.45; pointer-events: none; width: 16px; height: 16px; }
@@ -81,7 +81,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 .dropdown-empty { padding: 16px 14px; font-size: 13px; color: var(--text-muted); text-align: center; }
 
 .input-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
-.input-group label { display: block; font-size: 11px; color: var(--text-sub); margin-bottom: 5px; }
+.input-group label { display: block; font-size: 13px; color: var(--text-sub); margin-bottom: 5px; }
 .input-group label span { color: var(--navy); font-size: 10px; margin-left: 2px; }
 .num-input { width: 100%; height: 40px; padding: 0 12px; background: var(--input-bg); border: 1.5px solid var(--border); border-radius: 8px; font-size: 14px; font-weight: 500; color: var(--text-main); font-family: 'Inter', monospace; outline: none; transition: border-color .2s; }
 .num-input:focus { border-color: var(--navy); }
@@ -104,9 +104,10 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 .combo-display { display: flex; align-items: baseline; justify-content: center; gap: 10px; padding: 20px 0 22px; }
 .combo-num { font-size: 52px; font-weight: 700; color: var(--navy); line-height: 1; font-family: 'Inter', sans-serif; }
 .combo-unit { font-size: 20px; font-weight: 600; color: var(--navy); opacity: 0.55; font-family: 'Inter', sans-serif; }
+.combo-prefix { font-size: 20px; font-weight: 600; color: var(--navy); opacity: 0.55; font-family: inherit; display: none; }
 
 .video-section { margin-top: 20px; }
-.video-label { font-size: 12px; color: var(--text-sub); margin-bottom: 8px; font-weight: 500; }
+.video-label { font-size: 13px; color: var(--text-sub); font-weight: 500; }
 .video-thumb-wrap { position: relative; border-radius: 10px; overflow: hidden; aspect-ratio: 16/9; background: #111; cursor: pointer; }
 .video-thumb-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity .2s; }
 .video-thumb-wrap:hover img { opacity: 0.82; }
@@ -333,6 +334,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
       <div class="result-song-meta" id="resultMeta"></div>
 
       <div class="combo-display">
+        <span class="combo-prefix" id="comboPrefixLabel"></span>
         <span class="combo-num" id="resultCombo">—</span>
         <span class="combo-unit" id="comboUnitLabel">combo</span>
       </div>
@@ -355,7 +357,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
         </div>
         <div class="bar-legend">
           <div class="legend-item">
-            <div class="legend-dot" style="background:var(--navy)"></div>
+            <div class="legend-dot" style="background:#7a94bf"></div>
             <span data-i18n="legendClear">Clear start point</span>
           </div>
           <div class="legend-item">
@@ -366,7 +368,10 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
       </div>
 
       <div class="video-section" id="videoSection" style="display:none">
-        <div class="video-label" data-i18n="videoLabel">Reference Video</div>
+        <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px">
+          <span class="video-label" data-i18n="videoLabel">Reference Video</span>
+          <span style="font-size:11px;color:var(--text-muted)" data-i18n="videoCoverNote">Cover songs do not have a reference video.</span>
+        </div>
         <div class="video-thumb-wrap" id="videoThumbWrap"></div>
       </div>
     </div>
@@ -947,6 +952,8 @@ function showResult(notes, etS, etE) {
   const badge = document.getElementById('resultBadge');
   document.getElementById('resultCombo').textContent = displayVal;
   document.getElementById('comboUnitLabel').textContent = 'combo';
+  const pfx = document.getElementById('comboPrefixLabel');
+  pfx.textContent = t('comboPrefix'); pfx.style.display = '';
   badge.textContent = measuredValue !== null ? t('badgeMeasured') : t('badgePredicted');
   badge.className = 'result-mode-badge ' + (measuredValue !== null ? 'measured' : 'predicted');
   badge.style.display = 'inline-block';
@@ -955,7 +962,8 @@ function showResult(notes, etS, etE) {
 
   const vs = document.getElementById('videoSection');
   const wrap = document.getElementById('videoThumbWrap');
-  vs.querySelector('.video-label').textContent = t('videoLabel');
+  vs.querySelector('[data-i18n="videoLabel"]').textContent = t('videoLabel');
+  vs.querySelector('[data-i18n="videoCoverNote"]').textContent = t('videoCoverNote');
   if (currentVideoUrl) {
     const videoId = extractYoutubeId(currentVideoUrl);
     if (videoId) { renderVideoThumb(wrap, videoId, currentVideoUrl); vs.style.display = 'block'; }
@@ -1026,6 +1034,8 @@ I18N.ja.errETBoth = 'ET開始・終了は両方入力するか、両方空欄に
 I18N.ja.errETMin = 'ETコンボは1以上である必要があります。';
 I18N.ja.errETOrder = 'ET開始コンボは終了コンボより小さくしてください。';
 I18N.ja.errETMax = 'ET終了コンボが総ノーツ数を超えています。';
+I18N.en.comboPrefix = ''; I18N.en.videoCoverNote = 'Cover songs do not have a reference video.';
+I18N.ja.comboPrefix = '計'; I18N.ja.videoCoverNote = 'カバー曲は動画を提供していません。';
 
 document.addEventListener('keydown', e => {
   if (e.key==='Enter' && document.activeElement.classList.contains('num-input')) runPredict();
@@ -1086,6 +1096,11 @@ function buildUnitTree() {
       const display = UNIT_TO_GROUP[u] || u;
       if (!catUnits[cat].includes(display)) catUnits[cat].push(display);
     });
+  });
+  const cosmicOrder = ['Eden','Valkyrie','Crazy:B','2wink','Adam·Eve'];
+  catUnits['cosmic'].sort((a,b) => {
+    const ia = cosmicOrder.indexOf(a); const ib = cosmicOrder.indexOf(b);
+    return (ia===-1?99:ia) - (ib===-1?99:ib);
   });
   const othersOrder = ['주년·기념·만우절','셔플','콜라보·드림유닛','추억·J&A·기타'];
   catUnits['others'].sort((a,b) => {

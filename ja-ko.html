@@ -780,6 +780,13 @@ const CATEGORY_LABEL = {
   "others": "Others"
 };
 
+const UNIT_CATEGORY = {
+  'fine': 'starmaker', 'Trickstar': 'starmaker', '유성대': 'starmaker', 'ALKALOID': 'starmaker',
+  'Eden': 'cosmic', 'Adam': 'cosmic', 'Eve': 'cosmic', 'Valkyrie': 'cosmic', 'Crazy:B': 'cosmic', '2wink': 'cosmic',
+  'UNDEAD': 'rhythm_link', '홍월': 'rhythm_link', 'Ra*bits': 'rhythm_link', 'MELLOW DEAR US': 'rhythm_link',
+  'Knights': 'new_dimension', 'Switch': 'new_dimension', 'MaM': 'new_dimension', 'DF': 'new_dimension', 'S-Pri': 'new_dimension',
+};
+
 // ── 상태 ──────────────────────────────────────────
 let currentSong = null;
 let currentVideoUrl = null;
@@ -1143,13 +1150,6 @@ function selectType(t_val, el) {
   currentPage = 1;
   renderTable();
 }
-
-const UNIT_CATEGORY = {
-  'fine': 'starmaker', 'Trickstar': 'starmaker', '유성대': 'starmaker', 'ALKALOID': 'starmaker',
-  'Eden': 'cosmic', 'Adam': 'cosmic', 'Eve': 'cosmic', 'Valkyrie': 'cosmic', 'Crazy:B': 'cosmic', '2wink': 'cosmic',
-  'UNDEAD': 'rhythm_link', '홍월': 'rhythm_link', 'Ra*bits': 'rhythm_link', 'MELLOW DEAR US': 'rhythm_link',
-  'Knights': 'new_dimension', 'Switch': 'new_dimension', 'MaM': 'new_dimension', 'DF': 'new_dimension', 'S-Pri': 'new_dimension',
-};
 
 function buildUnitTree() {
   const catOrder = ['starmaker','cosmic','rhythm_link','new_dimension','others'];

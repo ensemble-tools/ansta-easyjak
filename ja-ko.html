@@ -152,8 +152,8 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .bar-et { height: 100%; background: var(--amber); }
 .bar-right { height: 100%; background: #d1d5db; }
 .bar-marker { position: absolute; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; top: 0; }
-.bar-marker-label { background: #7a94bf; color: white; font-size: 13px; font-weight: 600; padding: 4px 10px; border-radius: 4px; white-space: nowrap; margin-bottom: 3px; }
-.bar-marker-arrow { width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 7px solid #7a94bf; }
+.bar-marker-label { background: #dce6f5; color: #1e4a8a; font-size: 13px; font-weight: 600; padding: 4px 10px; border-radius: 4px; white-space: nowrap; margin-bottom: 3px; }
+.bar-marker-arrow { width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 7px solid #dce6f5; }
 .bar-labels { position: relative; height: 20px; margin-top: 6px; }
 .bar-lbl { position: absolute; font-size: 12px; color: var(--text-sub); transform: translateX(-50%); white-space: nowrap; font-weight: 500; }
 .bar-lbl.left { transform: none; left: 0; }
@@ -161,7 +161,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .bar-edge-marker { position: absolute; top: 0; display: flex; flex-direction: column; }
 .bar-edge-marker.left-edge { left: 0; align-items: flex-start; }
 .bar-edge-marker.right-edge { right: 0; align-items: flex-end; }
-.bar-edge-marker-label { background: #eaecef; color: #6b7280; font-size: 12px; font-weight: 600; padding: 3px 8px; border-radius: 4px; white-space: nowrap; margin-bottom: 3px; }
+.bar-edge-marker-label { background: #eaecef; color: #6b7280; font-size: 12px; font-weight: 600; padding: 3px 8px; border-radius: 4px; white-space: nowrap; margin-bottom: 3px; min-width: 36px; text-align: center; }
 .bar-edge-marker-arrow-left { width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid #eaecef; margin-left: 8px; }
 .bar-edge-marker-arrow-right { width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid #eaecef; margin-right: 8px; }
 .bar-edge-label { position: absolute; top: 4px; font-size: 12px; color: var(--text-sub); font-weight: 500; white-space: nowrap; }
@@ -560,7 +560,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
             </svg>
           </div>
           <div>
-            <div class="contact-email">your@gmail.com</div>
+            <div class="contact-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bfc6d0cacdffd8d2ded6d391dcd0d2">[email&#160;protected]</a></div>
             <div class="contact-text" data-i18n="contactSub">[Voltage Predictor] 문의내용</div>
           </div>
         </div>
@@ -620,7 +620,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
   <img id="titleHoverImg" src="" alt="">
 </div>
 
-<script src="songs.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="songs.js"></script>
 <script>
 // ── 배포 설정 ──────────────────────────────────────
 const SHOW_DEV_INFO = true;
@@ -653,9 +653,9 @@ const I18N = {
     tableSearchPlaceholder: '곡 검색...',
     tableHint: '곡 길이는 풀콤보 기준',
     colType: '곡 속성', colUnit: '유닛', colTitle: '제목',
-    colNotes: '노트 수', colDur: '곡 길이', colClear: '시작점', colVideo: '링크',
+    colNotes: '노트 수', colDur: '곡 길이', colClear: '시작 콤보', colVideo: '링크',
     errNotes: '총 노트수를 입력해주세요', errNotesMin: '80이상 정수를 입력하세요', errNotesMax: '300이하 정수를 입력하세요',
-    errETMin: '0이상 정수를 입력하세요', errETBoth: 'ET 시작/종료 콤보를 모두 입력해주세요', errETOrder: 'ET 종료 콤보는 시작 콤보보다 커야 합니다', errETMax: 'ET 종료 콤보는 총 노트수 이하여야 합니다',
+    errETMin: '0이상 정수를 입력하세요', errETBoth: 'ET 시작/종료 콤보를 모두 입력해주세요', errETOrder: 'ET 종료 콤보는 시작 콤보보다 커야 합니다', errETDiff: 'ET 종료 - 시작 콤보 차이는 최소 4 이상이어야 합니다', errETMax: 'ET 종료 콤보는 총 노트수 이하여야 합니다',
     comboPrefix: '총',
     directInput: '직접 입력', noResult: '검색 결과가 없어요', tableEmpty: '검색 결과가 없어요',
     noticeTitle: '공지사항',
@@ -696,7 +696,7 @@ const I18N = {
     tableHint: '曲の長さはフルコンボ基準',
     colType: '属性', colUnit: 'ユニット', colTitle: 'タイトル',
     colNotes: 'ノーツ数', colDur: '曲の長さ', colClear: '開始点', colVideo: 'リンク',
-    errNotes: 'ノーツ数を入力してください', comboPrefix: '計',
+    errNotes: 'ノーツ数を入力してください', errETDiff: 'ET終了 - 開始コンボの差は最低4以上必要です', comboPrefix: '計',
     directInput: '直接入力', noResult: '検索結果がありません', tableEmpty: '検索結果がありません',
     noticeTitle: 'お知らせ',
     contactTitle: 'エラー報告・お問い合わせ',
@@ -847,15 +847,16 @@ const PAGE_SIZE = 30;
     if (!td || !td.dataset.video) { tooltip.style.display = 'none'; return; }
     const vid = getYtId(td.dataset.video);
     if (!vid) { tooltip.style.display = 'none'; return; }
-    tooltipImg.src = `https://img.youtube.com/vi/${vid}/mqdefault.jpg`;
+    tooltipImg.src = `https://img.youtube.com/vi/${vid}/maxresdefault.jpg`;
+    tooltipImg.onerror = () => { tooltipImg.src = `https://img.youtube.com/vi/${vid}/hqdefault.jpg`; tooltipImg.onerror = null; };
     tooltip.style.display = 'block';
   });
   tbody.addEventListener('mousemove', e => {
     if (tooltip.style.display === 'none') return;
     const x = e.clientX + 18;
     const y = e.clientY - 80;
-    tooltip.style.left = Math.min(x, window.innerWidth - 198) + 'px';
-    tooltip.style.top = Math.max(Math.min(y, window.innerHeight - 298), 8) + 'px';
+    tooltip.style.left = Math.min(x, window.innerWidth - 298) + 'px';
+    tooltip.style.top = Math.max(Math.min(y, window.innerHeight - 176), 8) + 'px';
   });
   tbody.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; });
 })();
@@ -931,7 +932,7 @@ function renderDropdown(q) {
       : `<span class="dropdown-dot" style="background:#d1d5db"></span>`;
     const idx = SONGS.indexOf(s);
     const mainTitle = getDisplayTitle(s);
-    const subTitle = s.title_ko && currentLang === 'ko' ? s.title_ja : (s.title_ja_reading || '');
+    const subTitle = s.title_ko && s.title_ko !== s.title_ja && currentLang === 'ko' ? s.title_ja : (s.title_ja_reading || '');
     return `<button class="dropdown-item" onclick="selectSong(${idx})">
       <div class="dropdown-item-title">${mainTitle}</div>
       ${subTitle ? `<div class="dropdown-item-sub">${subTitle}</div>` : ''}
@@ -1016,6 +1017,7 @@ function runPredict() {
   if (etS !== null && etE !== null) {
     if (etS < 0 || etE < 0) { showPredictError(t('errETMin'), ['inputETStart','inputETEnd']); return; }
     if (etS >= etE) { showPredictError(t('errETOrder'), ['inputETStart','inputETEnd']); return; }
+    if (etE - etS < 4) { showPredictError(t('errETDiff'), ['inputETStart','inputETEnd']); return; }
     if (etE > notes) { showPredictError(t('errETMax'), ['inputETEnd']); return; }
   }
   clearPredictError();
@@ -1120,16 +1122,23 @@ function updateBar(notes, etS, etE, val) {
   const clearPos = Math.min(Math.max((val/notes)*100, 1), 98);
   const etSPos = etS ? (etS/notes*100) : 0;
   const etEPos = etE ? (etE/notes*100) : 0;
-  document.getElementById('barLeft').style.width = etSPos+'%';
-  document.getElementById('barEt').style.width = Math.max(etEPos-etSPos,0)+'%';
-  document.getElementById('barRight').style.width = (100-etEPos)+'%';
+  // barLeft(회색)에 최소 너비를 줘서 노란색이 0 마커를 침범하지 않도록 함
+  const barLeftPct = etS ? Math.max(etSPos, 3) : 0;
+  // ET 구간(노란색)에 최소 시각적 폭을 보장해 아주 짧은 ET도 식별 가능하도록 함
+  const MIN_ET_WIDTH = 6;
+  const etEndVisual = etE ? Math.min(Math.max(etEPos, barLeftPct + MIN_ET_WIDTH), 100) : barLeftPct;
+  const barEl = document.getElementById('barLeft');
+  barEl.style.width = barLeftPct+'%';
+  barEl.style.minWidth = '0';
+  document.getElementById('barEt').style.width = Math.max(etEndVisual-barLeftPct,0)+'%';
+  document.getElementById('barRight').style.width = (100-etEndVisual)+'%';
   document.getElementById('barMarker').style.left = clearPos+'%';
   document.getElementById('barMarkerLabel').textContent = `Clear: ${val}`;
   const lblS = document.getElementById('lblETStart');
   const lblE = document.getElementById('lblETEnd');
-  if (etS) { lblS.style.display=''; lblS.style.left=etSPos+'%'; lblS.textContent=`ET ${etS}`; }
+  if (etS) { lblS.style.display=''; lblS.style.left=Math.max(etSPos,3)+'%'; lblS.textContent=etS; }
   else { lblS.style.display='none'; }
-  if (etE) { lblE.style.display=''; lblE.style.left=etEPos+'%'; lblE.textContent=`${etE}`; }
+  if (etE) { lblE.style.display=''; lblE.style.left=Math.min(etEndVisual,97)+'%'; lblE.textContent=etE; }
   else { lblE.style.display='none'; }
   document.getElementById('lblTotal').textContent = `${notes}`;
   document.getElementById('markerTotal').style.display = '';
@@ -1443,14 +1452,25 @@ function goPage(p) {
   const totalPages = Math.ceil(SONGS.filter(s => {
     if (activeType!==null && s.type!==activeType) return false;
     if (activeUnits && !s.units.some(u => activeUnits.has(u))) return false;
+    const q = normalize((document.getElementById('tableSearch')||{value:''}).value);
+    if (activeDur==='short' && s.durationSec>140) return false;
+    if (activeDur==='mid1' && (s.durationSec<141||s.durationSec>150)) return false;
+    if (activeDur==='mid2' && (s.durationSec<151||s.durationSec>160)) return false;
+    if (activeDur==='long' && s.durationSec<161) return false;
+    if (q) {
+      const match =
+        normalize(s.title_ja).includes(q) ||
+        (s.title_ja_reading && normalize(s.title_ja_reading).includes(q)) ||
+        (s.title_ko && normalize(s.title_ko).includes(q)) ||
+        (s.title_ko_reading && normalize(s.title_ko_reading).includes(q)) ||
+        s.units.some(u => normalize(u).includes(q));
+      if (!match) return false;
+    }
     return true;
   }).length / PAGE_SIZE);
-  if (p<1||p>totalPages) return;
-  currentPage=p;
+  currentPage = Math.max(1, Math.min(p, totalPages));
   renderTable();
-  document.querySelector('.table-panel').scrollIntoView({behavior:'smooth',block:'start'});
 }
 </script>
-
 </body>
 </html>

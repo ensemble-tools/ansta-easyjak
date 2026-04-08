@@ -209,7 +209,17 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .dur-chip { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; border: 1.5px solid var(--border); background: var(--input-bg); color: var(--text-sub); cursor: pointer; transition: all .15s; font-family: inherit; }
 .dur-chip.active { background: var(--navy); color: white; border-color: var(--navy); }
 .table-panel { background: var(--white); border-radius: 14px; border: 0.5px solid var(--border); box-shadow: var(--shadow); overflow: hidden; }
-.table-search-bar { padding: 10px 20px; border-bottom: 1px solid var(--border-light); display: flex; align-items: center; gap: 16px; }
+.table-search-bar { border-bottom: 1px solid var(--border-light); display: flex; flex-direction: column; }
+.table-search-top { display: flex; align-items: center; gap: 10px; padding: 10px 20px; }
+.search-mode-select { height: 36px; padding: 0 8px; background: var(--input-bg); border: 1.5px solid var(--border); border-radius: 8px; font-size: 13px; color: var(--text-main); font-family: inherit; outline: none; cursor: pointer; transition: border-color .2s; flex-shrink: 0; }
+.search-mode-select:focus { border-color: var(--navy); }
+.unit-filter-panel { padding: 2px 20px 12px; }
+.unit-filter-inner { display: flex; flex-wrap: wrap; gap: 2px 8px; align-items: center; }
+.unit-filter-sep { width: 100%; height: 0; border-top: 1px solid var(--border-light); margin: 6px 0; }
+.unit-filter-item { display: flex; align-items: center; gap: 5px; padding: 3px 6px; border-radius: 5px; cursor: pointer; font-size: 12px; color: var(--text-sub); transition: background .15s; user-select: none; }
+.unit-filter-item:hover { background: var(--bg); }
+.unit-filter-item input[type=checkbox] { width: 13px; height: 13px; cursor: pointer; accent-color: var(--navy); flex-shrink: 0; }
+.unit-filter-reset-row { display: flex; justify-content: flex-end; margin-top: 6px; }
 .table-search-wrap { position: relative; flex: 1; }
 .table-search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; width: 14px; height: 14px; }
 .table-search-input { width: 100%; height: 36px; padding: 0 12px 0 32px; background: var(--input-bg); border: 1.5px solid var(--border); border-radius: 8px; font-size: 13px; color: var(--text-main); font-family: inherit; outline: none; transition: border-color .2s; }
@@ -462,15 +472,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
           <div class="type-chips" id="typeChips"></div>
         </div>
 
-        <div class="sidebar-section">
-          <div class="sidebar-title" style="display:flex;align-items:center;justify-content:space-between">
-            <span data-i18n="sidebarUnitTitle">Units</span>
-            <button class="unit-reset-btn" onclick="resetUnits()" id="unitResetBtn" style="display:none" data-i18n="unitReset">전체 해제</button>
-          </div>
-          <div class="unit-tree" id="unitTree"></div>
-        </div>
-
-        <div class="sidebar-section">
+<div class="sidebar-section">
           <div class="sidebar-title" data-i18n="sidebarDurTitle">Duration</div>
           <div class="dur-chips" id="durChips">
             <button class="dur-chip active" onclick="setDur('all',this)" data-i18n="durAll">전체</button>
@@ -486,20 +488,27 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
       <!-- 테이블 패널 -->
       <div class="table-panel">
         <div class="table-search-bar">
-          <div class="table-search-wrap">
-            <svg class="table-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-            </svg>
-            <input class="table-search-input" id="tableSearch" type="text" placeholder="곡 검색..."
-              data-i18n-placeholder="tableSearchPlaceholder"
-              oninput="currentPage=1;onTableSearchInput()">
-            <button class="search-clear" id="tableSearchClear" onclick="clearTableSearch()">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          <div class="table-search-top">
+            <select class="search-mode-select" id="searchModeSelect" onchange="onSearchModeChange()">
+              <option value="song">곡 검색</option>
+              <option value="unit">유닛 검색</option>
+            </select>
+            <div class="table-search-wrap" id="tableSearchWrap">
+              <svg class="table-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
               </svg>
-            </button>
+              <input class="table-search-input" id="tableSearch" type="text" placeholder="곡 검색..."
+                data-i18n-placeholder="tableSearchPlaceholder"
+                oninput="currentPage=1;onTableSearchInput()">
+              <button class="search-clear" id="tableSearchClear" onclick="clearTableSearch()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+              </button>
+            </div>
+            <div class="table-hint" data-i18n="tableHint">곡 길이는 풀콤보 기준</div>
           </div>
-          <div class="table-hint" data-i18n="tableHint">곡 길이는 풀콤보 기준</div>
+          <div class="unit-filter-panel" id="unitFilterPanel" style="display:none"></div>
         </div>
 
         <div style="overflow-x:hidden">
@@ -829,6 +838,7 @@ let activeDur = 'all';
 let sortKey = null;
 let sortDir = 1;
 let currentPage = 1;
+let searchMode = 'song';
 const PAGE_SIZE = 30;
 
 // ── 제목 호버 썸네일 ──────────────────────────────
@@ -871,7 +881,7 @@ const PAGE_SIZE = 30;
     document.querySelectorAll('.dev-only').forEach(el => el.style.display = 'none');
   }
   buildTypeChips();
-  buildUnitTree();
+  buildUnitFilterPanel();
   renderTable();
 })();
 
@@ -1202,91 +1212,78 @@ function selectType(t_val, el) {
   renderTable();
 }
 
-function buildUnitTree() {
-  const catOrder = ['starmaker','cosmic','rhythm_link','new_dimension','others'];
-  const catUnits = {};
-  catOrder.forEach(c => { catUnits[c] = []; });
-  SONGS.forEach(s => {
-    s.units.forEach(u => {
-      const cat = UNIT_CATEGORY[u] || 'others';
-      if (!catUnits[cat]) catUnits[cat] = [];
-      const display = UNIT_TO_GROUP[u] || u;
-      if (!catUnits[cat].includes(display)) catUnits[cat].push(display);
+function buildUnitFilterPanel() {
+  const esc = s => s.replace(/&/g,'&amp;').replace(/"/g,'&quot;');
+  const groups = [
+    [
+      { label:'fine',          unit:'fine' },
+      { label:'Trickstar',     unit:'Trickstar' },
+      { label:'유성대',         unit:'유성대' },
+      { label:'ALKALOID',      unit:'ALKALOID' },
+    ],
+    [
+      { label:'Eden',          unit:'Eden' },
+      { label:'Valkyrie',      unit:'Valkyrie' },
+      { label:'Crazy:B',       unit:'Crazy:B' },
+      { label:'2wink',         unit:'2wink' },
+      { label:'Adam·Eve',      units:'Adam,Eve' },
+    ],
+    [
+      { label:'UNDEAD',        unit:'UNDEAD' },
+      { label:'Ra*bits',       unit:'Ra*bits' },
+      { label:'홍월',           unit:'홍월' },
+      { label:'MELLOW DEAR US',unit:'MELLOW DEAR US' },
+    ],
+    [
+      { label:'Knights',       unit:'Knights' },
+      { label:'Switch',        unit:'Switch' },
+      { label:'MaM·DF',        units:'MaM,DF' },
+      { label:'S-Pri',         unit:'S-Pri' },
+    ],
+    [
+      { label:'주년·기념·만우절',  units:'주년,만우절,새해' },
+      { label:'셔플',            units:'셔플,셔플_10주년' },
+      { label:'콜라보·드림유닛',  units:'콜라보,드림유닛' },
+      { label:'추억·J&A·기타',   units:'추억,J&A,기타' },
+    ],
+  ];
+  const inner = document.createElement('div');
+  inner.className = 'unit-filter-inner';
+  groups.forEach((group, gi) => {
+    if (gi > 0) {
+      const sep = document.createElement('div');
+      sep.className = 'unit-filter-sep';
+      inner.appendChild(sep);
+    }
+    group.forEach(item => {
+      const lbl = document.createElement('label');
+      lbl.className = 'unit-filter-item';
+      const dataAttr = item.units
+        ? `data-units="${esc(item.units)}"`
+        : `data-unit="${esc(item.unit)}"`;
+      lbl.innerHTML = `<input type="checkbox" class="unit-cb" ${dataAttr} onchange="onUnitChange()"><span>${esc(item.label)}</span>`;
+      inner.appendChild(lbl);
     });
   });
-  const starmakerOrder = ['fine','Trickstar','유성대','ALKALOID'];
-  catUnits['starmaker'].sort((a,b) => {
-    const ia = starmakerOrder.indexOf(a); const ib = starmakerOrder.indexOf(b);
-    return (ia===-1?99:ia) - (ib===-1?99:ib);
-  });
-  const cosmicOrder = ['Eden','Valkyrie','Crazy:B','2wink','Adam·Eve'];
-  catUnits['cosmic'].sort((a,b) => {
-    const ia = cosmicOrder.indexOf(a); const ib = cosmicOrder.indexOf(b);
-    return (ia===-1?99:ia) - (ib===-1?99:ib);
-  });
-  const rhythmOrder = ['UNDEAD','Ra*bits','홍월','MELLOW DEAR US'];
-  catUnits['rhythm_link'].sort((a,b) => {
-    const ia = rhythmOrder.indexOf(a); const ib = rhythmOrder.indexOf(b);
-    return (ia===-1?99:ia) - (ib===-1?99:ib);
-  });
-  const newDimOrder = ['Knights','Switch','MaM·DF','S-Pri'];
-  catUnits['new_dimension'].sort((a,b) => {
-    const ia = newDimOrder.indexOf(a); const ib = newDimOrder.indexOf(b);
-    return (ia===-1?99:ia) - (ib===-1?99:ib);
-  });
-  const othersOrder = ['주년·기념·만우절','셔플','콜라보·드림유닛','추억·J&A·기타'];
-  catUnits['others'].sort((a,b) => {
-    const ia = othersOrder.indexOf(a); const ib = othersOrder.indexOf(b);
-    return (ia===-1?99:ia) - (ib===-1?99:ib);
-  });
-  const wrap = document.getElementById('unitTree');
-  wrap.innerHTML = catOrder.filter(c=>catUnits[c].length>0).map(c => {
-    const label = CATEGORY_LABEL[c] || c;
-    const units = catUnits[c];
-    return `<div class="unit-group">
-      <div class="unit-group-header" onclick="toggleGroup('${c}')">
-        <div class="unit-group-header-left">
-          <svg class="unit-group-chevron" id="chev-${c}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-          <span class="unit-group-name">${label}</span>
-        </div>
-      </div>
-      <div class="unit-children" id="gc-${c}">
-        ${c === 'others' ? (() => {
-          const esc = s => s.replace(/&/g,'&amp;');
-          const subgroupOrder = ['주년·기념·만우절','셔플','콜라보·드림유닛','추억·J&A·기타'];
-          return subgroupOrder.filter(sg => units.includes(sg)).map(sg => {
-            const members = UNIT_GROUPS[sg];
-            const dispLabel = sg.replace(/&/g,'&amp;');
-            const dataAttr = members
-              ? `data-units="${esc(members.join(','))}"`
-              : `data-unit="${esc(sg)}"`;
-            return `<label class="unit-child">
-              <input type="checkbox" class="unit-cb" ${dataAttr} onchange="onUnitChange()">
-              <span class="unit-child-label">${dispLabel}</span>
-            </label>`;
-          }).join('');
-        })() : units.map(u => {
-          const esc = s => s.replace(/&/g,'&amp;');
-          const members = UNIT_GROUPS[u];
-          if (members) {
-            return `<label class="unit-child">
-              <input type="checkbox" class="unit-cb" data-units="${esc(members.join(','))}" onchange="onUnitChange()">
-              <span class="unit-child-label">${esc(u)}</span>
-            </label>`;
-          }
-          return `<label class="unit-child">
-            <input type="checkbox" class="unit-cb" data-unit="${esc(u)}" onchange="onUnitChange()">
-            <span class="unit-child-label">${esc(u)}</span>
-          </label>`;
-        }).join('')}
-      </div>
-    </div>`;
-  }).join('');
+  const resetRow = document.createElement('div');
+  resetRow.className = 'unit-filter-reset-row';
+  resetRow.innerHTML = `<button class="unit-reset-btn" onclick="resetUnits()" id="unitResetBtn" style="display:none">전체 해제</button>`;
+  const wrap = document.getElementById('unitFilterPanel');
+  wrap.innerHTML = '';
+  wrap.appendChild(inner);
+  wrap.appendChild(resetRow);
 }
 
-function toggleGroup(cat) {
-  document.getElementById('gc-'+cat).classList.toggle('open');
-  document.getElementById('chev-'+cat).classList.toggle('open');
+function onSearchModeChange() {
+  searchMode = document.getElementById('searchModeSelect').value;
+  const isUnit = searchMode === 'unit';
+  document.getElementById('tableSearchWrap').style.display = isUnit ? 'none' : '';
+  document.getElementById('unitFilterPanel').style.display = isUnit ? '' : 'none';
+  if (isUnit) {
+    clearTableSearch();
+  } else {
+    resetUnits();
+  }
 }
 
 function onUnitChange() {
@@ -1339,7 +1336,7 @@ function sortBy(key) {
 }
 
 function renderTable() {
-  const q = normalize((document.getElementById('tableSearch')||{value:''}).value);
+  const q = searchMode === 'song' ? normalize((document.getElementById('tableSearch')||{value:''}).value) : '';
   let list = SONGS.filter(s => {
     if (activeType !== null && s.type !== activeType) return false;
     if (activeUnits && !s.units.some(u => activeUnits.has(u))) return false;
@@ -1452,7 +1449,7 @@ function goPage(p) {
   const totalPages = Math.ceil(SONGS.filter(s => {
     if (activeType!==null && s.type!==activeType) return false;
     if (activeUnits && !s.units.some(u => activeUnits.has(u))) return false;
-    const q = normalize((document.getElementById('tableSearch')||{value:''}).value);
+    const q = searchMode === 'song' ? normalize((document.getElementById('tableSearch')||{value:''}).value) : '';
     if (activeDur==='short' && s.durationSec>140) return false;
     if (activeDur==='mid1' && (s.durationSec<141||s.durationSec>150)) return false;
     if (activeDur==='mid2' && (s.durationSec<151||s.durationSec>160)) return false;

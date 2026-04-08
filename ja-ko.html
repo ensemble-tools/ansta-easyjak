@@ -664,7 +664,7 @@ const I18N = {
     colType: '곡 속성', colUnit: '유닛', colTitle: '제목',
     colNotes: '노트 수', colDur: '곡 길이', colClear: '시작 콤보', colVideo: '링크',
     errNotes: '총 노트수를 입력해주세요', errNotesMin: '80이상 정수를 입력하세요', errNotesMax: '300이하 정수를 입력하세요',
-    errETMin: '0이상 정수를 입력하세요', errETBoth: 'ET 시작/종료 콤보를 모두 입력해주세요', errETOrder: 'ET 종료 콤보는 시작 콤보보다 커야 합니다', errETDiff: 'ET 종료 - 시작 콤보 차이는 최소 4 이상이어야 합니다', errETMax: 'ET 종료 콤보는 총 노트수 이하여야 합니다',
+    errETMin: '0이상 정수를 입력하세요', errETBoth: 'ET 시작/종료 콤보를 모두 입력해주세요', errETOrder: 'ET 종료 콤보는 시작 콤보보다 커야 합니다', errETDiff: 'ET 시작 콤보와 종료 콤보 간격은 4이상이어야 합니다.', errETMax: 'ET 종료 콤보는 총 노트수 이하여야 합니다',
     comboPrefix: '총',
     directInput: '직접 입력', noResult: '검색 결과가 없어요', tableEmpty: '검색 결과가 없어요',
     noticeTitle: '공지사항',
@@ -1056,7 +1056,7 @@ function showResult(notes, etS, etE) {
       + `<span style="font-size:12px;color:var(--text-main)">${currentSong.unit}</span>`;
   } else {
     document.getElementById('resultTitle').textContent = t('directInput');
-    document.getElementById('resultMeta').textContent = etS ? `ET ${etS}~${etE}` : '';
+    document.getElementById('resultMeta').textContent = etS ? `앙상블 타임 구간 ${etS}-${etE}` : '';
   }
 
   const displayVal = measuredValue !== null ? measuredValue : predictedValue;

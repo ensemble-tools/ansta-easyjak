@@ -1,7 +1,7 @@
 ﻿category,type,unit,title_ja,total_notes,duration,clear_start_measured,clear_start_predicted,clear_ratio,model_used,video_url,video_url_clear
 starmaker,Brilliant,Trickstar,ONLY YOUR STARS!,97,2:27,,53,54.6,단순 회귀,https://youtu.be/9EHa8QdCNNk,https://youtu.be/9EHa8QdCNNk?t=73
 starmaker,Sparkle,Trickstar,Rebellion Star,111,2:38,,61,55.0,단순 회귀,https://youtu.be/_csxhmkSiuI,https://youtu.be/_csxhmkSiuI?t=79
-starmaker,Glitter,Trickstar,Infinite Star,118,2:19,,64,54.2,단순 회귀,https://youtu.be/Pa7OHwnUJ1U,https://youtu.be/Pa7OHwnUJ1U?t=69
+starmaker,Glitter,Trickstar,Infinite Star,118,2:19,,65,55.1,단순 회귀,https://youtu.be/Pa7OHwnUJ1U,https://youtu.be/Pa7OHwnUJ1U?t=69
 starmaker,All,Trickstar,キセキ,165,2:35,,90,54.5,단순 회귀,https://youtu.be/4kAgCzyB1eE,https://youtu.be/4kAgCzyB1eE?t=77
 starmaker,Brilliant,Trickstar,HEART→BEATER!!!!,125,2:27,,68,54.4,단순 회귀,https://youtu.be/XOFK7Fky-Gc,https://youtu.be/XOFK7Fky-Gc?t=73
 starmaker,Sparkle,Trickstar,BREAKTHROUGH!,215,2:32,,116,54.0,단순 회귀,https://youtu.be/dIt-TjOxH3A,https://youtu.be/dIt-TjOxH3A?t=76
@@ -105,15 +105,15 @@ cosmic,Flash,Valkyrie,星の鳴動響きし時に,162,2:51,90,88,54.3,3변수 OL
 cosmic,Glitter,Valkyrie,幸福論,136,2:50,74,73,53.7,3변수 OLS,https://youtu.be/Adxx0A2kdjM?si=O5FvfplTEmNM5ozJ,https://youtu.be/Adxx0A2kdjM?t=97
 cosmic,Flash,Crazy:B,Crazy Roulette,151,2:37,,82,54.3,단순 회귀,https://youtu.be/OXvsFlL7KW4,https://youtu.be/OXvsFlL7KW4?t=78
 cosmic,Glitter,Crazy:B,Be The Party Bee!,153,2:16,,83,54.2,단순 회귀,https://youtu.be/xk5rEz3jF_4,https://youtu.be/xk5rEz3jF_4?t=68
-cosmic,Sparkle,Crazy:B,PARANOIA STREET,165,2:29,,90,54.5,단순 회귀,https://youtu.be/WQYTA2Yr9-s,https://youtu.be/WQYTA2Yr9-s?t=74
+cosmic,Sparkle,Crazy:B,PARANOIA STREET,165,2:29,,90,54.5,3변수 OLS,https://youtu.be/WQYTA2Yr9-s,https://youtu.be/WQYTA2Yr9-s?t=74
 cosmic,Brilliant,Crazy:B,RISKY VENUS,129,2:05,,70,54.3,단순 회귀,https://youtu.be/D-W5tEwjH1U,https://youtu.be/D-W5tEwjH1U?t=62
 cosmic,Glitter,Crazy:B,LEMON SQUASH CHEERS!,122,2:22,,67,54.9,단순 회귀,https://youtu.be/3r8c7tkPRQQ,https://youtu.be/3r8c7tkPRQQ?t=71
 cosmic,Flash,Crazy:B,Noisy:Beep,161,2:33,,88,54.7,단순 회귀,https://youtu.be/nzFJv_r4hfg,https://youtu.be/nzFJv_r4hfg?t=76
 cosmic,Glitter,Crazy:B,NA NA NA SUMMER NIGHT BeeAT,153,2:43,83,82,53.6,3변수 OLS,https://youtu.be/ueARJH0lOpo,https://youtu.be/ueARJH0lOpo?t=84
-cosmic,Brilliant,Crazy:B,Foolish Alien,183,2:31,,99,54.1,단순 회귀,https://youtu.be/ERPrve2gwcQ,https://youtu.be/ERPrve2gwcQ?t=75
+cosmic,Brilliant,Crazy:B,Foolish Alien,183,2:31,,98,53.6,3변수 OLS,https://youtu.be/ERPrve2gwcQ,https://youtu.be/ERPrve2gwcQ?t=75
 cosmic,Brilliant,Crazy:B,U.S.A.,181,2:40,,98,54.1,단순 회귀,,
 cosmic,Brilliant,Crazy:B,Honeycomb Summer,172,2:34,,93,54.1,단순 회귀,https://youtu.be/152gjLosTKs,https://youtu.be/152gjLosTKs?t=77
-cosmic,Sparkle,Crazy:B,指先のアリアドネ,151,2:42,,82,54.3,단순 회귀,https://youtu.be/Ru2pSeh79NA,https://youtu.be/Ru2pSeh79NA?t=81
+cosmic,Sparkle,Crazy:B,指先のアリアドネ,151,2:42,,83,55.0,3변수 OLS,https://youtu.be/Ru2pSeh79NA,https://youtu.be/Ru2pSeh79NA?t=81
 cosmic,Flash,Crazy:B,Helter-Spider,132,2:31,73,72,54.5,3변수 OLS,https://youtu.be/7Z90uJrZ6hE?si=pO4-opLZiJ-x4hMc,https://youtu.be/7Z90uJrZ6hE?t=67
 cosmic,Sparkle,Crazy:B,Crazy Anthem,183,2:46,90,97,53.0,3변수 OLS,https://youtu.be/qkNuxf18RuI?si=5sTvCN81PP7Gac_C,https://youtu.be/qkNuxf18RuI?t=83
 cosmic,Flash,Crazy:B,UTAKATA DANCE FLOOR,145,2:37,79,81,55.9,3변수 OLS,https://youtu.be/KKOmwmcLAJc?si=rCPw5XBjTdNEdANm,https://youtu.be/KKOmwmcLAJc?t=78
@@ -132,7 +132,7 @@ cosmic,Flash,2wink,Tell Your World,116,2:44,,63,54.3,단순 회귀,,
 cosmic,Flash,2wink,Fighting Dreamer,141,2:30,76,76,53.9,3변수 OLS,https://youtu.be/lxzSzDkWGzc?si=6GaDYUesvrfU3tO3,https://youtu.be/lxzSzDkWGzc?t=80
 cosmic,Sparkle,2wink,Swee2wink Love Letter,156,2:35,,85,54.5,단순 회귀,https://youtu.be/Ti7XbA1jvzw,https://youtu.be/Ti7XbA1jvzw?t=77
 cosmic,Sparkle,2wink,Turbulent Storm,147,2:36,,80,54.4,단순 회귀,https://youtu.be/tFor8QIXJpk,https://youtu.be/tFor8QIXJpk?t=78
-cosmic,Flash,2wink,Love×me⇄monsteR,217,2:34,116,119,54.8,3변수 OLS,https://youtu.be/C853sWzXfWI?si=ad2MiORPV0daDFAR,https://youtu.be/C853sWzXfWI?t=76
+cosmic,Flash,2wink,Love×me⇄monsteR,217,2:34,116,118,54.4,3변수 OLS,https://youtu.be/C853sWzXfWI?si=ad2MiORPV0daDFAR,https://youtu.be/C853sWzXfWI?t=76
 cosmic,Flash,2wink,Twin Wedding Vows,104,2:23,57,58,55.8,3변수 OLS,https://youtu.be/OvVvv1qL6mA?si=iOjtGIA8H3mWQJpU,https://youtu.be/OvVvv1qL6mA?t=66
 cosmic,Flash,2wink,来来☆2winkイリュージョン,181,2:21,99,99,54.7,3변수 OLS,https://youtu.be/Sag56BWbyBM?si=cQOEFl2-KAFcKEjf,https://youtu.be/Sag56BWbyBM?t=62
 rhythm_link,Flash,UNDEAD,Melody in the Dark,152,2:37,,83,54.6,단순 회귀,https://youtu.be/eoQE_n5ITSU,https://youtu.be/eoQE_n5ITSU?t=78
@@ -192,7 +192,7 @@ new_dimension,Sparkle,Knights,Grateful allegiance,96,2:10,53,54,56.2,3변수 OLS
 new_dimension,Flash,Knights,Fight for Judge,159,2:32,85,86,54.1,3변수 OLS,https://youtu.be/OnR5oh8N_Rw?si=lbXe3Yie2sTODL70,https://youtu.be/OnR5oh8N_Rw?t=79
 new_dimension,Glitter,Knights,Promise Swords,172,2:48,88,93,54.1,3변수 OLS,https://youtu.be/VMLQm7BKu4c?si=EcvAURc3Mpfjm99G,https://youtu.be/VMLQm7BKu4c?t=84
 new_dimension,Brilliant,Knights,Article of Faith,144,2:26,80,80,55.6,3변수 OLS,https://youtu.be/bljn1rmENg0?si=PLuOYXy1R_irARCe,https://youtu.be/bljn1rmENg0?t=69
-new_dimension,Flash,Knights,Wonderful Happiness,175,2:49,96,96,54.9,3변수 OLS,https://youtu.be/Kgi-GfMs9dc,https://youtu.be/Kgi-GfMs9dc?t=81
+new_dimension,Flash,Knights,Wonderful Happiness,175,2:49,96,95,54.3,3변수 OLS,https://youtu.be/Kgi-GfMs9dc,https://youtu.be/Kgi-GfMs9dc?t=81
 new_dimension,Glitter,Knights,Castle of my Heart,159,2:51,89,82,51.6,3변수 OLS,https://youtu.be/oZB7A0CkQt8?si=DYp4d7xGgDZD8KAP,https://youtu.be/oZB7A0CkQt8?t=102
 new_dimension,Sparkle,Knights,Knights the Phantom Thief,116,2:24,67,64,55.2,3변수 OLS,https://youtu.be/IPTEOEH7LcE?si=hDLlPj-ILaqI-6Bk,https://youtu.be/IPTEOEH7LcE?t=70
 new_dimension,Sparkle,Knights,Little Romance,137,2:41,71,76,55.5,3변수 OLS,https://youtu.be/hXvSF8dbEfk?si=LGwVnyJ2wOzUTql0,https://youtu.be/hXvSF8dbEfk?t=70
@@ -275,7 +275,7 @@ others,Glitter,추억,Eccentric Party Night!! Mix,175,2:47,,95,54.3,단순 회�
 others,Brilliant,기타,Twilight Pentagram,186,2:53,99,97,52.2,3변수 OLS,https://youtu.be/wf5sxYlZIAE?si=xVfs6g8MJQ__faHC,https://youtu.be/wf5sxYlZIAE?t=94
 others,Glitter,기타,Dawning Angels,194,2:49,108,106,54.6,3변수 OLS,https://youtu.be/5qLQm9m3tgc?si=YF9UwrPItDDJBVqQ,https://youtu.be/5qLQm9m3tgc?t=83
 others,All,주년,One with One,208,2:50,105,113,54.3,단순 회귀,https://youtu.be/fywI-2pTEG4?si=CG19aekVbHlyu-oh,https://youtu.be/fywI-2pTEG4?t=70
-others,All,만우절,両片思いの交差点で、君にまた逢いたくて,131,2:30,,71,54.2,단순 회귀,https://youtu.be/a4l6fwUjuz4,https://youtu.be/a4l6fwUjuz4?t=75
+others,All,만우절,両片思いの交差点で、君にまた逢いたくて,131,2:30,,74,56.5,3변수 OLS,https://youtu.be/a4l6fwUjuz4,https://youtu.be/a4l6fwUjuz4?t=75
 others,All,주년,LIMIT BREAK DREAMERS,172,2:53,89,91,52.9,3변수 OLS,https://youtu.be/YGrLwg4f8Ak?si=_pPbLBs7pjwV0Y6n,https://youtu.be/YGrLwg4f8Ak?t=92
 others,Sparkle,셔플,Ringing evil phone,149,2:50,89,82,55.0,3변수 OLS,https://youtu.be/sICZ_Yed7PQ?si=dh8SbmUDJSaNOmGu,https://youtu.be/sICZ_Yed7PQ?t=85
 others,Brilliant,셔플,喪失寓意 -LOST BALLADE-,128,2:33,69,68,53.1,3변수 OLS,https://youtu.be/XAxsfjzjYy0?si=DPqdp_7JuiPfEuJP,https://youtu.be/XAxsfjzjYy0?t=87
@@ -301,4 +301,4 @@ others,Brilliant,셔플_10주년,Fight is Only Fate,250,2:39,132,136,54.4,3변�
 others,Sparkle,셔플_10주년,プロローグのそのあとへ,144,2:22,77,79,54.9,3변수 OLS,https://youtu.be/R83wURX7lwA?si=-06ZD0ViXPupk8by,https://youtu.be/R83wURX7lwA?t=71
 others,Brilliant,콜라보,朧,193,2:11,104,105,54.4,단순 회귀,https://youtu.be/_Qnf978dzwo?si=Lf4bo3rkKCNVo8xD,https://youtu.be/_Qnf978dzwo?t=66
 others,All,주년,BRIGHTEST STARS!! (Mainstream Megasphere ver.),223,2:30,122,121,54.3,단순 회귀,https://youtu.be/4ViA8nIcIBk?si=gM-dhxmCLVcqFku2,https://youtu.be/4ViA8nIcIBk?t=82
-others,Flash,만우절,ペルソナアビス,230,2:37,122,123,53.5,3변수 OLS,https://youtu.be/xXfJwP6_-2Q,https://youtu.be/xXfJwP6_-2Q?t=79
+others,Flash,만우절,ペルソナアビス,230,2:37,122,124,53.9,단순 회귀,https://youtu.be/xXfJwP6_-2Q,https://youtu.be/xXfJwP6_-2Q?t=79

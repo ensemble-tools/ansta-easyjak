@@ -1,5 +1,5 @@
 // songs.js — Voltage Predictor 곡 데이터 & 모델 파라미터
-// 총 303곡 | R²=0.9688 | MAE=2.65콤보
+// 총 303곡 | R²=0.9687 | MAE=2.66콤보
 // ※ enstars_regression_v3.py 로 자동 생성 — 직접 수정 비권장
 
 const SONGS = [
@@ -64,7 +64,7 @@ const SONGS = [
     "category": "starmaker",
     "video": "https://youtu.be/Pa7OHwnUJ1U",
     "videoClear": "https://youtu.be/Pa7OHwnUJ1U?t=69",
-    "predicted": 64
+    "predicted": 65
   },
   {
     "type": "All",
@@ -2253,8 +2253,8 @@ const SONGS = [
     "title_ko_reading": "파라노이아 스트리트",
     "totalNotes": 165,
     "duration": "2:29",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 104,
+    "etEnd": 130,
     "measured": null,
     "category": "cosmic",
     "video": "https://youtu.be/WQYTA2Yr9-s",
@@ -2359,13 +2359,13 @@ const SONGS = [
     "title_ko_reading": "풀리쉬 에일리언",
     "totalNotes": 183,
     "duration": "2:31",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 51,
+    "etEnd": 80,
     "measured": null,
     "category": "cosmic",
     "video": "https://youtu.be/ERPrve2gwcQ",
     "videoClear": "https://youtu.be/ERPrve2gwcQ?t=75",
-    "predicted": 99
+    "predicted": 98
   },
   {
     "type": "Brilliant",
@@ -2423,13 +2423,13 @@ const SONGS = [
     "title_ko_reading": null,
     "totalNotes": 151,
     "duration": "2:42",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 74,
+    "etEnd": 114,
     "measured": null,
     "category": "cosmic",
     "video": "https://youtu.be/Ru2pSeh79NA",
     "videoClear": "https://youtu.be/Ru2pSeh79NA?t=81",
-    "predicted": 82
+    "predicted": 83
   },
   {
     "type": "Flash",
@@ -2829,7 +2829,7 @@ const SONGS = [
     "category": "cosmic",
     "video": "https://youtu.be/C853sWzXfWI?si=ad2MiORPV0daDFAR",
     "videoClear": "https://youtu.be/C853sWzXfWI?t=76",
-    "predicted": 119
+    "predicted": 118
   },
   {
     "type": "Flash",
@@ -4091,7 +4091,7 @@ const SONGS = [
     "category": "new_dimension",
     "video": "https://youtu.be/Kgi-GfMs9dc",
     "videoClear": "https://youtu.be/Kgi-GfMs9dc?t=81",
-    "predicted": 96
+    "predicted": 95
   },
   {
     "type": "Glitter",
@@ -5825,16 +5825,16 @@ const SONGS = [
     "title_ja": "両片思いの交差点で、君にまた逢いたくて",
     "title_ja_reading": null,
     "title_ko": "양방향 짝사랑의 교차점에서, 너와 다시 만나고 싶어서",
-    "title_ko_reading": null,
+    "title_ko_reading": "교차로 스크럼블",
     "totalNotes": 131,
     "duration": "2:30",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 87,
+    "etEnd": 127,
     "measured": null,
     "category": "others",
     "video": "https://youtu.be/a4l6fwUjuz4",
     "videoClear": "https://youtu.be/a4l6fwUjuz4?t=75",
-    "predicted": 71
+    "predicted": 74
   },
   {
     "type": "All",
@@ -6374,29 +6374,29 @@ const SONGS = [
     "title_ko_reading": null,
     "totalNotes": 230,
     "duration": "2:37",
-    "etStart": 122,
-    "etEnd": 111,
+    "etStart": 0,
+    "etEnd": 0,
     "measured": 122,
     "category": "others",
     "video": "https://youtu.be/xXfJwP6_-2Q",
     "videoClear": "https://youtu.be/xXfJwP6_-2Q?t=79",
-    "predicted": 123
+    "predicted": 124
   }
 ];
 
 const MODEL_PARAMS = {
-  "intercept": -3.4514301302340584,
+  "intercept": -3.3087896658482663,
   "coefs": [
-    0.5354840878926385,
-    -3.4623218231183914,
-    9.749512952318014
+    0.5347813550581463,
+    -3.2180480787332173,
+    9.509151187258437
   ],
   "simpleCoef": 0.5284872938399934,
   "simpleInt": 2.455947831580275,
   "safetyMargin": 10,
-  "meanEtStart": 0.49826009725293147,
-  "meanEtEnd": 0.663989315064882,
+  "meanEtStart": 0.4980551629513024,
+  "meanEtEnd": 0.6651446056343897,
   "trainSize": 169,
-  "r2": 0.9688429970697244,
-  "mae": 2.652626316485668
+  "r2": 0.9687491425071155,
+  "mae": 2.6611992513357876
 };

@@ -854,7 +854,7 @@ const PAGE_SIZE = 30;
     if (tooltip.style.display === 'none') return;
     const x = e.clientX + 18;
     const y = e.clientY - 80;
-    tooltip.style.left = Math.min(x, window.innerWidth - 298) + 'px';
+    tooltip.style.left = Math.min(x, window.innerWidth - 198) + 'px';
     tooltip.style.top = Math.max(Math.min(y, window.innerHeight - 298), 8) + 'px';
   });
   tbody.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; });

@@ -115,7 +115,7 @@ def fetch_clear_seconds(video_id: str, api_key: str) -> int | None:
     if not items:
         return None
     description = items[0]["snippet"]["description"]
-    match = re.search(r"(\d{2}):(\d{2}) Clear\([^)]+\)", description)
+    match = re.search(r"(\d{1,2}):(\d{2}) Clear\([^)]+\)", description)
     if not match:
         return None
     minutes, seconds = int(match.group(1)), int(match.group(2))

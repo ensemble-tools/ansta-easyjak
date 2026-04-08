@@ -158,6 +158,9 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .bar-lbl { position: absolute; font-size: 12px; color: var(--text-sub); transform: translateX(-50%); white-space: nowrap; font-weight: 500; }
 .bar-lbl.left { transform: none; left: 0; }
 .bar-lbl.right { transform: none; right: 0; left: auto; }
+.bar-edge-label { position: absolute; top: 4px; font-size: 12px; color: var(--text-sub); font-weight: 500; white-space: nowrap; }
+.bar-edge-label.left { left: 0; }
+.bar-edge-label.right { right: 0; }
 .bar-legend { display: flex; gap: 16px; margin-top: 12px; padding-top: 12px; border-top: 0.5px solid var(--border-light); }
 .legend-item { display: flex; align-items: center; gap: 5px; font-size: 12px; color: var(--text-sub); font-weight: 500; }
 .legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
@@ -383,16 +386,16 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
           <div class="bar-marker-label" id="barMarkerLabel">Clear: —</div>
           <div class="bar-marker-arrow"></div>
         </div>
+        <span class="bar-edge-label left">0 combo</span>
+        <span class="bar-edge-label right" id="lblTotal"></span>
         <div class="bar-track">
           <div class="bar-left" id="barLeft"></div>
           <div class="bar-et" id="barEt"></div>
           <div class="bar-right" id="barRight"></div>
         </div>
         <div class="bar-labels">
-          <span class="bar-lbl left">0 combo</span>
           <span class="bar-lbl" id="lblETStart" style="display:none"></span>
           <span class="bar-lbl" id="lblETEnd" style="display:none"></span>
-          <span class="bar-lbl right" id="lblTotal"></span>
         </div>
         <div class="bar-legend">
           <div class="legend-item">
@@ -1025,8 +1028,10 @@ function runPredict() {
 function showResult(notes, etS, etE) {
   if (currentSong) {
     document.getElementById('resultTitle').textContent = currentSong.title_ja;
-    document.getElementById('resultMeta').textContent =
-      `${currentSong.type} · ${currentSong.unit} · ${t('labelNotes')}: ${notes}`;
+    const tc = TYPE_COLOR[currentSong.type] || TYPE_COLOR['All'];
+    document.getElementById('resultMeta').innerHTML =
+      `<span class="type-badge" style="background:${tc.bg};color:${tc.color};font-size:11px;padding:2px 7px;border-radius:4px;font-weight:600;margin-right:6px">${currentSong.type}</span>`
+      + `<span style="font-size:12px;color:var(--text-main)">${currentSong.unit} · ${t('labelNotes')}: ${notes}</span>`;
   } else {
     document.getElementById('resultTitle').textContent = t('directInput');
     document.getElementById('resultMeta').textContent = `${notes}${etS ? ` · ET ${etS}~${etE}` : ''}`;

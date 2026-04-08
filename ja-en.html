@@ -101,7 +101,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 .result-mode-badge { display: inline-block; padding: 6px 16px; border-radius: 10px; font-size: 14px; font-weight: 700; }
 .result-mode-badge.measured { background: #d1fae5; color: #065f46; }
 .result-mode-badge.predicted { background: var(--navy-pale); color: var(--navy); }
-.combo-display { display: flex; align-items: baseline; justify-content: center; gap: 10px; padding: 20px 0 24px; }
+.combo-display { display: flex; align-items: baseline; justify-content: center; gap: 10px; padding: 20px 0 8px; }
 .combo-num { font-size: 52px; font-weight: 700; color: var(--navy); line-height: 1; font-family: 'Inter', sans-serif; }
 .combo-unit { font-size: 20px; font-weight: 600; color: var(--navy); opacity: 0.55; font-family: 'Inter', sans-serif; }
 
@@ -116,8 +116,8 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 .video-play-icon { width: 22px; height: 22px; color: var(--navy); fill: var(--navy); margin-left: 4px; }
 .video-yt-badge { position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.65); color: white; font-size: 10px; padding: 3px 8px; border-radius: 4px; font-family: 'Inter', sans-serif; }
 
-.bar-section { padding: 44px 0 36px; position: relative; max-width: 420px; }
-.bar-track { height: 20px; border-radius: 10px; display: flex; overflow: hidden; background: #e5e7eb; }
+.bar-section { padding: 44px 0 36px; position: relative; width: 85%; margin-left: auto; margin-right: auto; display: block; }
+.bar-track { height: 22px; border-radius: 11px; display: flex; overflow: hidden; background: #e5e7eb; }
 .bar-left { height: 100%; background: #d1d5db; }
 .bar-et { height: 100%; background: var(--amber); }
 .bar-right { height: 100%; background: #d1d5db; }
@@ -346,7 +346,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
           <div class="bar-right" id="barRight"></div>
         </div>
         <div class="bar-labels">
-          <span class="bar-lbl left">0</span>
+          <span class="bar-lbl left">0 combo</span>
           <span class="bar-lbl" id="lblETStart" style="display:none"></span>
           <span class="bar-lbl" id="lblETEnd" style="display:none"></span>
           <span class="bar-lbl right" id="lblTotal"></span>
@@ -1052,13 +1052,23 @@ function selectType(t_val, el) {
   currentPage = 1; renderTable();
 }
 
+const UNIT_CATEGORY = {
+  'fine': 'starmaker', 'Trickstar': 'starmaker', '유성대': 'starmaker', 'ALKALOID': 'starmaker',
+  'Eden': 'cosmic', 'Adam': 'cosmic', 'Eve': 'cosmic', 'Valkyrie': 'cosmic', 'Crazy:B': 'cosmic', '2wink': 'cosmic',
+  'UNDEAD': 'rhythm_link', '홍월': 'rhythm_link', 'Ra*bits': 'rhythm_link', 'MELLOW DEAR US': 'rhythm_link',
+  'Knights': 'new_dimension', 'Switch': 'new_dimension', 'MaM': 'new_dimension', 'DF': 'new_dimension', 'S-Pri': 'new_dimension',
+};
+
 function buildUnitTree() {
   const catOrder = ['starmaker','cosmic','rhythm_link','new_dimension','others'];
   const catUnits = {};
   catOrder.forEach(c => { catUnits[c] = []; });
   SONGS.forEach(s => {
-    if (!catUnits[s.category]) catUnits[s.category] = [];
-    s.units.forEach(u => { if (!catUnits[s.category].includes(u)) catUnits[s.category].push(u); });
+    s.units.forEach(u => {
+      const cat = UNIT_CATEGORY[u] || 'others';
+      if (!catUnits[cat]) catUnits[cat] = [];
+      if (!catUnits[cat].includes(u)) catUnits[cat].push(u);
+    });
   });
   document.getElementById('unitTree').innerHTML = catOrder.filter(c=>catUnits[c].length>0).map(c => {
     return `<div class="unit-group">

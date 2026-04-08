@@ -385,7 +385,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
           <div class="bar-right" id="barRight"></div>
         </div>
         <div class="bar-labels">
-          <span class="bar-lbl left">0</span>
+          <span class="bar-lbl left">0 combo</span>
           <span class="bar-lbl" id="lblETStart" style="display:none"></span>
           <span class="bar-lbl" id="lblETEnd" style="display:none"></span>
           <span class="bar-lbl right" id="lblTotal"></span>
@@ -1144,14 +1144,22 @@ function selectType(t_val, el) {
   renderTable();
 }
 
+const UNIT_CATEGORY = {
+  'fine': 'starmaker', 'Trickstar': 'starmaker', '유성대': 'starmaker', 'ALKALOID': 'starmaker',
+  'Eden': 'cosmic', 'Adam': 'cosmic', 'Eve': 'cosmic', 'Valkyrie': 'cosmic', 'Crazy:B': 'cosmic', '2wink': 'cosmic',
+  'UNDEAD': 'rhythm_link', '홍월': 'rhythm_link', 'Ra*bits': 'rhythm_link', 'MELLOW DEAR US': 'rhythm_link',
+  'Knights': 'new_dimension', 'Switch': 'new_dimension', 'MaM': 'new_dimension', 'DF': 'new_dimension', 'S-Pri': 'new_dimension',
+};
+
 function buildUnitTree() {
   const catOrder = ['starmaker','cosmic','rhythm_link','new_dimension','others'];
   const catUnits = {};
   catOrder.forEach(c => { catUnits[c] = []; });
   SONGS.forEach(s => {
-    if (!catUnits[s.category]) catUnits[s.category] = [];
     s.units.forEach(u => {
-      if (!catUnits[s.category].includes(u)) catUnits[s.category].push(u);
+      const cat = UNIT_CATEGORY[u] || 'others';
+      if (!catUnits[cat]) catUnits[cat] = [];
+      if (!catUnits[cat].includes(u)) catUnits[cat].push(u);
     });
   });
   const wrap = document.getElementById('unitTree');

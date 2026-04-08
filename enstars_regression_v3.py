@@ -143,46 +143,48 @@ def calc_midpoint_url(video_url: str, duration_str: str | None) -> str | None:
 
 
 def fill_clear_urls(path: str, api_key: str):
-    """엑셀에서 video_url을 읽어 video_url_clear를 채우고 저장."""
+    """엑셀 전체 시트에서 video_url을 읽어 video_url_clear를 채우고 저장."""
     import openpyxl
     wb = openpyxl.load_workbook(path)
-    ws = wb.active
-
-    # 헤더 행에서 열 인덱스 찾기 (1-based)
-    header = [cell.value for cell in ws[1]]
-    try:
-        col_url = header.index("video_url") + 1
-        col_clear = header.index("video_url_clear") + 1
-    except ValueError as e:
-        print(f"  오류: 헤더를 찾을 수 없음 — {e}")
-        return
 
     filled = 0
     skipped_existing = 0
     not_found = 0
 
-    for row in ws.iter_rows(min_row=2):
-        url_cell = row[col_url - 1]
-        clear_cell = row[col_clear - 1]
-
-        if not url_cell.value:
-            continue
-        if clear_cell.value:
-            skipped_existing += 1
+    for sheet_name in wb.sheetnames:
+        ws = wb[sheet_name]
+        header = [cell.value for cell in ws[1]]
+        if "video_url" not in header or "video_url_clear" not in header:
+            print(f"  [{sheet_name}] video_url / video_url_clear 헤더 없음 — 건너뜀")
             continue
 
-        video_id = extract_video_id(str(url_cell.value))
-        if not video_id:
-            not_found += 1
-            continue
+        col_url = header.index("video_url") + 1
+        col_clear = header.index("video_url_clear") + 1
+        col_measured = header.index("clear_start_measured") + 1 if "clear_start_measured" in header else None
 
-        t = fetch_clear_seconds(video_id, api_key)
-        if t is None:
-            not_found += 1
-            continue
+        for row in ws.iter_rows(min_row=2):
+            url_cell = row[col_url - 1]
+            clear_cell = row[col_clear - 1]
+            is_measured = col_measured and row[col_measured - 1].value not in (None, "")
 
-        clear_cell.value = f"https://youtu.be/{video_id}?t={t}"
-        filled += 1
+            if not url_cell.value:
+                continue
+            if clear_cell.value and not is_measured:
+                skipped_existing += 1
+                continue
+
+            video_id = extract_video_id(str(url_cell.value))
+            if not video_id:
+                not_found += 1
+                continue
+
+            t = fetch_clear_seconds(video_id, api_key)
+            if t is None:
+                not_found += 1
+                continue
+
+            clear_cell.value = f"https://youtu.be/{video_id}?t={t}"
+            filled += 1
 
     wb.save(path)
     print(f"\n✓ video_url_clear 채우기 완료: {path}")
@@ -274,10 +276,10 @@ def predict_all(df: pd.DataFrame, result: dict) -> pd.DataFrame:
 
     X = df[["total_notes", "et_start_ratio", "et_end_ratio"]]
     df["clear_start_predicted"] = model.predict(X).round().astype(int)
+    df["clear_start_measured"] = pd.to_numeric(df["clear_start_measured"], errors="coerce").round().astype("Int64")
 
     has_et = df["et_start"].notna() & (df["et_start"] > 0)
     df["model_used"] = np.where(has_et, "3변수 OLS", "단순 회귀")
-    df["clear_notes"] = df["clear_start_predicted"] + SAFETY_MARGIN
     df["clear_ratio"] = (df["clear_start_predicted"] / df["total_notes"] * 100).round(1)
 
     return df
@@ -366,8 +368,7 @@ def export_songs_js(df_pred: pd.DataFrame, result: dict, out_path: str = "songs.
         else:
             video_clear = None
 
-        predicted_val = float(row["clear_start_predicted"])
-        clear_notes_val = int(row["clear_start_predicted"]) + SAFETY_MARGIN
+        predicted_val = int(round(float(row["clear_start_predicted"])))
 
         songs.append({
             "type":             str(row["type"]),
@@ -387,7 +388,6 @@ def export_songs_js(df_pred: pd.DataFrame, result: dict, out_path: str = "songs.
             "video":            video,
             "videoClear":       video_clear,
             "predicted":        predicted_val,
-            "clearNotes":       clear_notes_val,
         })
 
     # 모델 파라미터 (프론트에서 직접 계산할 수 있도록)
@@ -488,6 +488,20 @@ def main():
 
     df_pred = predict_all(df, result)
 
+    # 미확인 곡 중 video_url_clear가 없으면 duration 절반 지점 URL 자동 생성
+    if "video_url_clear" not in df_pred.columns:
+        df_pred["video_url_clear"] = None
+    mask = (
+        df_pred["clear_start_measured"].isna()
+        & df_pred["video_url"].notna()
+        & (df_pred["video_url"].astype(str).str.strip() != "")
+        & (df_pred["video_url_clear"].isna() | (df_pred["video_url_clear"].astype(str).str.strip() == ""))
+    )
+    df_pred.loc[mask, "video_url_clear"] = df_pred.loc[mask].apply(
+        lambda r: calc_midpoint_url(str(r["video_url"]).strip(), parse_duration(r.get("duration"))),
+        axis=1,
+    )
+
     # --export 플래그가 있으면 바로 출력하고 종료
     if do_export:
         export_songs_js(df_pred, result, out_path)
@@ -497,7 +511,7 @@ def main():
     df_show = df_pred.drop_duplicates(subset=["title_ja", "total_notes"])
     cols = [
         "category", "type", "unit", "title_ja", "total_notes", "duration",
-        "clear_start_measured", "clear_start_predicted", "clear_notes",
+        "clear_start_measured", "clear_start_predicted",
         "clear_ratio", "model_used",
     ]
     print(f"\n전체 예측 결과 ({len(df_show)}곡):")
@@ -525,10 +539,11 @@ def main():
                 export_songs_js(df_pred, result, js_out)
 
             elif cmd == "2":
-                default_csv = path.rsplit(".", 1)[0] + "_result_v3.csv"
-                csv_in = input(f"저장 경로 [{default_csv}]: ").strip()
-                csv_out = csv_in if csv_in else default_csv
-                df_show[cols + ["video_url"]].to_csv(csv_out, index=False, encoding="utf-8-sig")
+                csv_out = path.rsplit(".", 1)[0] + "_result_v3.csv"
+                save_cols = cols + ["video_url"]
+                if "video_url_clear" in df_show.columns:
+                    save_cols += ["video_url_clear"]
+                df_show[save_cols].to_csv(csv_out, index=False, encoding="utf-8-sig")
                 print(f"✓ CSV 저장: {csv_out}")
 
             elif cmd == "3":

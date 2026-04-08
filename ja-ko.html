@@ -252,7 +252,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .video-link:hover { opacity: 1; }
 .no-video { color: var(--text-muted); font-size: 12px; }
 .title-hover-tooltip { position: fixed; z-index: 300; background: var(--white); border: 1px solid var(--border); border-radius: 10px; box-shadow: var(--shadow-md); overflow: hidden; pointer-events: none; display: none; }
-.title-hover-tooltip img { display: block; width: 220px; height: 220px; object-fit: cover; object-position: center center; }
+.title-hover-tooltip img { display: block; width: 280px; height: 280px; object-fit: cover; object-position: center center; }
 .table-empty { padding: 48px; text-align: center; color: var(--text-muted); font-size: 14px; }
 .table-count { padding: 10px 20px; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border-light); }
 
@@ -474,9 +474,10 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
           <div class="sidebar-title" data-i18n="sidebarDurTitle">Duration</div>
           <div class="dur-chips" id="durChips">
             <button class="dur-chip active" onclick="setDur('all',this)" data-i18n="durAll">전체</button>
-            <button class="dur-chip" onclick="setDur('short',this)" data-i18n="durShort">~ 2:10</button>
-            <button class="dur-chip" onclick="setDur('mid',this)" data-i18n="durMid">2:10 ~ 2:40</button>
-            <button class="dur-chip" onclick="setDur('long',this)" data-i18n="durLong">2:40 ~ 3:10</button>
+            <button class="dur-chip" onclick="setDur('short',this)" data-i18n="durShort">~ 2:20</button>
+            <button class="dur-chip" onclick="setDur('mid1',this)" data-i18n="durMid1">2:21 ~ 2:30</button>
+            <button class="dur-chip" onclick="setDur('mid2',this)" data-i18n="durMid2">2:31 ~ 2:40</button>
+            <button class="dur-chip" onclick="setDur('long',this)" data-i18n="durLong">2:41 ~</button>
           </div>
         </div>
 
@@ -648,7 +649,7 @@ const I18N = {
     legendClear: '클리어 시작점', legendET: '앙상블 타임 구간',
     sidebarTypeTitle: 'Song Type', sidebarUnitTitle: 'Units', sidebarDurTitle: 'Duration',
     typeAll: '전체', unitReset: '전체 해제',
-    durAll: '전체', durShort: '~ 2:10', durMid: '2:11 ~ 2:40', durLong: '2:41 ~',
+    durAll: '전체', durShort: '~ 2:20', durMid1: '2:21 ~ 2:30', durMid2: '2:31 ~ 2:40', durLong: '2:41 ~',
     tableSearchPlaceholder: '곡 검색...',
     tableHint: '곡 길이는 풀콤보 기준',
     colType: 'Type', colUnit: 'Unit', colTitle: 'Title',
@@ -690,7 +691,7 @@ const I18N = {
     legendClear: 'クリア開始点', legendET: 'アンサンブルタイム区間',
     sidebarTypeTitle: 'Song Type', sidebarUnitTitle: 'Units', sidebarDurTitle: 'Duration',
     typeAll: '全て', unitReset: '全解除',
-    durAll: '全て', durShort: '~ 2:10', durMid: '2:11 ~ 2:40', durLong: '2:41 ~',
+    durAll: '全て', durShort: '~ 2:20', durMid1: '2:21 ~ 2:30', durMid2: '2:31 ~ 2:40', durLong: '2:41 ~',
     tableSearchPlaceholder: '楽曲を検索...',
     tableHint: '曲の長さはフルコンボ基準',
     colType: 'Type', colUnit: 'Unit', colTitle: 'Title',
@@ -853,8 +854,8 @@ const PAGE_SIZE = 30;
     if (tooltip.style.display === 'none') return;
     const x = e.clientX + 18;
     const y = e.clientY - 80;
-    tooltip.style.left = Math.min(x, window.innerWidth - 238) + 'px';
-    tooltip.style.top = Math.max(Math.min(y, window.innerHeight - 238), 8) + 'px';
+    tooltip.style.left = Math.min(x, window.innerWidth - 298) + 'px';
+    tooltip.style.top = Math.max(Math.min(y, window.innerHeight - 298), 8) + 'px';
   });
   tbody.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; });
 })();
@@ -1204,9 +1205,24 @@ function buildUnitTree() {
       if (!catUnits[cat].includes(display)) catUnits[cat].push(display);
     });
   });
+  const starmakerOrder = ['fine','Trickstar','유성대','ALKALOID'];
+  catUnits['starmaker'].sort((a,b) => {
+    const ia = starmakerOrder.indexOf(a); const ib = starmakerOrder.indexOf(b);
+    return (ia===-1?99:ia) - (ib===-1?99:ib);
+  });
   const cosmicOrder = ['Eden','Valkyrie','Crazy:B','2wink','Adam·Eve'];
   catUnits['cosmic'].sort((a,b) => {
     const ia = cosmicOrder.indexOf(a); const ib = cosmicOrder.indexOf(b);
+    return (ia===-1?99:ia) - (ib===-1?99:ib);
+  });
+  const rhythmOrder = ['UNDEAD','Ra*bits','홍월','MELLOW DEAR US'];
+  catUnits['rhythm_link'].sort((a,b) => {
+    const ia = rhythmOrder.indexOf(a); const ib = rhythmOrder.indexOf(b);
+    return (ia===-1?99:ia) - (ib===-1?99:ib);
+  });
+  const newDimOrder = ['Knights','Switch','MaM·DF','S-Pri'];
+  catUnits['new_dimension'].sort((a,b) => {
+    const ia = newDimOrder.indexOf(a); const ib = newDimOrder.indexOf(b);
     return (ia===-1?99:ia) - (ib===-1?99:ib);
   });
   const othersOrder = ['주년·기념·만우절','셔플','콜라보·드림유닛','추억·J&A·기타'];
@@ -1318,8 +1334,9 @@ function renderTable() {
   let list = SONGS.filter(s => {
     if (activeType !== null && s.type !== activeType) return false;
     if (activeUnits && !s.units.some(u => activeUnits.has(u))) return false;
-    if (activeDur==='short' && s.durationSec>130) return false;
-    if (activeDur==='mid' && (s.durationSec<131||s.durationSec>160)) return false;
+    if (activeDur==='short' && s.durationSec>140) return false;
+    if (activeDur==='mid1' && (s.durationSec<141||s.durationSec>150)) return false;
+    if (activeDur==='mid2' && (s.durationSec<151||s.durationSec>160)) return false;
     if (activeDur==='long' && s.durationSec<161) return false;
     if (q) {
       const match =

@@ -5279,11 +5279,11 @@ const SONGS = [
   },
   {
     "type": "Brilliant",
-    "unit": "Jin & Akiomi",
+    "unit": "J&A",
     "units": [
-      "Jin & Akiomi"
+      "J&A"
     ],
-    "unitGroup": "Jin & Akiomi",
+    "unitGroup": "J&A",
     "title_ja": "Rainbow Stairway",
     "title_ja_reading": null,
     "title_ko": "Rainbow Stairway",
@@ -6533,11 +6533,11 @@ const SONGS = [
   },
   {
     "type": "Sparkle",
-    "unit": "Jin & Akiomi",
+    "unit": "J&A",
     "units": [
-      "Jin & Akiomi"
+      "J&A"
     ],
-    "unitGroup": "Jin & Akiomi",
+    "unitGroup": "J&A",
     "title_ja": "ハナニナレ！",
     "title_ja_reading": null,
     "title_ko": "꽃이 되어라!",

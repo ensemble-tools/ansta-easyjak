@@ -101,7 +101,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 .result-mode-badge { display: inline-block; padding: 6px 16px; border-radius: 10px; font-size: 14px; font-weight: 700; }
 .result-mode-badge.measured { background: #d1fae5; color: #065f46; }
 .result-mode-badge.predicted { background: var(--navy-pale); color: var(--navy); }
-.combo-display { display: flex; align-items: baseline; justify-content: center; gap: 10px; padding: 20px 0 8px; }
+.combo-display { display: flex; align-items: baseline; justify-content: center; gap: 10px; padding: 20px 0 22px; }
 .combo-num { font-size: 52px; font-weight: 700; color: var(--navy); line-height: 1; font-family: 'Inter', sans-serif; }
 .combo-unit { font-size: 20px; font-weight: 600; color: var(--navy); opacity: 0.55; font-family: 'Inter', sans-serif; }
 
@@ -122,8 +122,8 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 .bar-et { height: 100%; background: var(--amber); }
 .bar-right { height: 100%; background: #d1d5db; }
 .bar-marker { position: absolute; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; top: 0; }
-.bar-marker-label { background: var(--navy); color: white; font-size: 13px; font-weight: 600; padding: 4px 10px; border-radius: 4px; white-space: nowrap; margin-bottom: 3px; }
-.bar-marker-arrow { width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 7px solid var(--navy); }
+.bar-marker-label { background: #7a94bf; color: white; font-size: 13px; font-weight: 600; padding: 4px 10px; border-radius: 4px; white-space: nowrap; margin-bottom: 3px; }
+.bar-marker-arrow { width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 7px solid #7a94bf; }
 .bar-labels { position: relative; height: 20px; margin-top: 6px; }
 .bar-lbl { position: absolute; font-size: 12px; color: var(--text-sub); transform: translateX(-50%); white-space: nowrap; font-weight: 500; }
 .bar-lbl.left { transform: none; left: 0; }
@@ -160,6 +160,8 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 .unit-child:hover { background: var(--bg); }
 .unit-child input[type=checkbox] { width: 13px; height: 13px; cursor: pointer; accent-color: var(--navy); }
 .unit-child-label { font-size: 12px; color: var(--text-sub); cursor: pointer; }
+.unit-subgroup-label { font-size: 11px; font-weight: 600; color: var(--text-muted); padding: 6px 4px 2px 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+.unit-subgroup-label:not(:first-child) { margin-top: 4px; border-top: 1px solid var(--border); padding-top: 8px; }
 .dur-chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .dur-chip { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; border: 1.5px solid var(--border); background: var(--input-bg); color: var(--text-sub); cursor: pointer; transition: all .15s; font-family: inherit; }
 .dur-chip.active { background: var(--navy); color: white; border-color: var(--navy); }
@@ -439,7 +441,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
           </div>
           <div class="table-hint" data-i18n="tableHint">Duration is based on full combo</div>
         </div>
-        <div style="overflow-x:auto">
+        <div style="overflow-x:hidden">
           <table class="songs-table">
             <thead>
               <tr>
@@ -721,7 +723,13 @@ const CATEGORY_LABEL = {
   "rhythm_link": "Rhythm Link", "new_dimension": "New Dimension", "others": "Others"
 };
 
-const UNIT_GROUPS = { 'Adam·Eve': ['Adam','Eve'], 'MaM·DF': ['MaM','DF'] };
+const UNIT_GROUPS = {
+  'Adam·Eve': ['Adam','Eve'], 'MaM·DF': ['MaM','DF'],
+  '주년·기념·만우절': ['주년','만우절','새해'],
+  '셔플': ['셔플','셔플_10주년'],
+  '콜라보·드림유닛': ['콜라보','드림유닛'],
+  '추억·J&A·기타': ['추억','J&A','기타'],
+};
 const UNIT_TO_GROUP = {};
 Object.entries(UNIT_GROUPS).forEach(([g, ms]) => ms.forEach(u => { UNIT_TO_GROUP[u] = g; }));
 
@@ -730,6 +738,10 @@ const UNIT_CATEGORY = {
   'Eden': 'cosmic', 'Adam': 'cosmic', 'Eve': 'cosmic', 'Valkyrie': 'cosmic', 'Crazy:B': 'cosmic', '2wink': 'cosmic',
   'UNDEAD': 'rhythm_link', '홍월': 'rhythm_link', 'Ra*bits': 'rhythm_link', 'MELLOW DEAR US': 'rhythm_link',
   'Knights': 'new_dimension', 'Switch': 'new_dimension', 'MaM': 'new_dimension', 'DF': 'new_dimension', 'S-Pri': 'new_dimension',
+  '주년': 'others', '만우절': 'others', '새해': 'others',
+  '셔플': 'others', '셔플_10주년': 'others',
+  '콜라보': 'others', '드림유닛': 'others',
+  '추억': 'others', 'J&A': 'others', '기타': 'others',
 };
 
 let currentSong = null, currentVideoUrl = null, measuredValue = null, predictedValue = null;
@@ -925,7 +937,7 @@ function showResult(notes, etS, etE) {
   if (currentSong) {
     document.getElementById('resultTitle').textContent = currentSong.title_ja;
     document.getElementById('resultMeta').textContent =
-      `${currentSong.type} / ${currentSong.unit} / ${t('labelNotes')}: ${notes}`;
+      `${currentSong.type} · ${currentSong.unit} · ${t('labelNotes')}: ${notes}`;
   } else {
     document.getElementById('resultTitle').textContent = t('directInput');
     document.getElementById('resultMeta').textContent = `${notes} notes${etS ? ` · ET ${etS}~${etE}` : ''}`;
@@ -1075,6 +1087,11 @@ function buildUnitTree() {
       if (!catUnits[cat].includes(display)) catUnits[cat].push(display);
     });
   });
+  const othersOrder = ['주년·기념·만우절','셔플','콜라보·드림유닛','추억·J&A·기타'];
+  catUnits['others'].sort((a,b) => {
+    const ia = othersOrder.indexOf(a); const ib = othersOrder.indexOf(b);
+    return (ia===-1?99:ia) - (ib===-1?99:ib);
+  });
   document.getElementById('unitTree').innerHTML = catOrder.filter(c=>catUnits[c].length>0).map(c => {
     return `<div class="unit-group">
       <div class="unit-group-header" onclick="toggleGroup('${c}')">
@@ -1084,17 +1101,32 @@ function buildUnitTree() {
         </div>
       </div>
       <div class="unit-children" id="gc-${c}">
-        ${catUnits[c].map(u => {
+        ${c === 'others' ? (() => {
+          const esc = s => s.replace(/&/g,'&amp;');
+          const subgroupOrder = ['주년·기념·만우절','셔플','콜라보·드림유닛','추억·J&A·기타'];
+          return subgroupOrder.filter(sg => catUnits[c].includes(sg)).map(sg => {
+            const members = UNIT_GROUPS[sg];
+            const dispLabel = sg.replace(/&/g,'&amp;');
+            const dataAttr = members
+              ? `data-units="${esc(members.join(','))}"`
+              : `data-unit="${esc(sg)}"`;
+            return `<label class="unit-child">
+              <input type="checkbox" class="unit-cb" ${dataAttr} onchange="onUnitChange()">
+              <span class="unit-child-label">${dispLabel}</span>
+            </label>`;
+          }).join('');
+        })() : catUnits[c].map(u => {
+          const esc = s => s.replace(/&/g,'&amp;');
           const members = UNIT_GROUPS[u];
           if (members) {
             return `<label class="unit-child">
-              <input type="checkbox" class="unit-cb" data-units="${members.join(',')}" onchange="onUnitChange()">
-              <span class="unit-child-label">${u}</span>
+              <input type="checkbox" class="unit-cb" data-units="${esc(members.join(','))}" onchange="onUnitChange()">
+              <span class="unit-child-label">${esc(u)}</span>
             </label>`;
           }
           return `<label class="unit-child">
-            <input type="checkbox" class="unit-cb" data-unit="${u}" onchange="onUnitChange()">
-            <span class="unit-child-label">${u}</span>
+            <input type="checkbox" class="unit-cb" data-unit="${esc(u)}" onchange="onUnitChange()">
+            <span class="unit-child-label">${esc(u)}</span>
           </label>`;
         }).join('')}
       </div>

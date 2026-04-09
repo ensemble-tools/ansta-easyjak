@@ -187,6 +187,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .sidebar-section { margin-bottom: 20px; }
 .sidebar-section:last-child { margin-bottom: 0; }
 .sidebar-hint { display: flex; align-items: flex-start; gap: 5px; font-size: 14px; font-weight: 700; color: var(--text-sub); line-height: 1.5; }
+.sidebar-hint span { white-space: pre-line; }
 .sidebar-title { font-size: 12px; font-weight: 700; color: var(--text-main); margin-bottom: 10px; }
 .type-chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .type-chip { padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; border: 1.5px solid transparent; cursor: pointer; transition: all .15s; font-family: inherit; }
@@ -667,7 +668,7 @@ const I18N = {
     durAll: '전체', durShort: '~ 2:20', durMid1: '2:21 ~ 2:30', durMid2: '2:31 ~ 2:40', durLong: '2:41 ~',
     tableSearchPlaceholder: '곡 검색...',
     tableHint: '곡 길이는 풀콤보 기준',
-    sidebarUnitHint: '유닛 검색은 상단 검색바의 콤보박스에서 선택',
+    sidebarUnitHint: '유닛 검색은 상단 검색바의\n콤보박스에서 선택',
     colType: '곡 속성', colUnit: '유닛', colTitle: '제목',
     colNotes: '노트 수', colDur: '곡 길이', colClear: '시작 콤보', colVideo: '링크',
     errNotes: '총 노트수를 입력해주세요', errNotesMin: '80이상 정수를 입력하세요', errNotesMax: '300이하 정수를 입력하세요',
@@ -1413,9 +1414,7 @@ function renderTable() {
         </a>`
       : `<span class="no-video">—</span>`;
     const mainTitle = getDisplayTitle(s);
-    const subTitle = currentLang === 'ko'
-      ? ''
-      : (s.title_ja_reading || '');
+    const subTitle = '';
     return `<tr>
       <td><span class="type-badge" style="background:${c.bg};color:${c.color}">${s.type}</span></td>
       <td class="col-unit">${s.unit}</td>

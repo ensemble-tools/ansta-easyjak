@@ -444,6 +444,29 @@ const SONGS = [
     "predicted": 89
   },
   {
+    "type": "Glitter",
+    "unit": "Trickstar",
+    "units": [
+      "Trickstar"
+    ],
+    "unitGroup": "Trickstar",
+    "title_ja": "虹色のSeasons",
+    "title_ja_reading": "にじいろのしーずんず",
+    "title_ko": "무지개 빛의 Seasons",
+    "title_ko_reading": "니지이로 노 시즌즈 시즌스",
+    "title_en": "虹色のSeasons",
+    "title_en_reading": "Nijiiro No Seasons",
+    "totalNotes": 116,
+    "duration": "2:31",
+    "etStart": 80,
+    "etEnd": 110,
+    "measured": null,
+    "category": "starmaker",
+    "video": "https://youtu.be/7wCP6U9RQxw",
+    "videoClear": "https://youtu.be/7wCP6U9RQxw?t=75",
+    "predicted": 66
+  },
+  {
     "type": "Flash",
     "unit": "fine",
     "units": [
@@ -1644,29 +1667,6 @@ const SONGS = [
     "video": "https://youtu.be/x54i9zUFLAA?si=rUnzY6MRD5uxtPH0",
     "videoClear": "https://youtu.be/x54i9zUFLAA?t=84",
     "predicted": 118
-  },
-  {
-    "type": "Glitter",
-    "unit": "Trickstar",
-    "units": [
-      "Trickstar"
-    ],
-    "unitGroup": "Trickstar",
-    "title_ja": "虹色のSeasons",
-    "title_ja_reading": "にじいろのしーずんず",
-    "title_ko": "무지개 빛의 Seasons",
-    "title_ko_reading": "니지이로 노 시즌즈 시즌스",
-    "title_en": "虹色のSeasons",
-    "title_en_reading": "Nijiiro No Seasons",
-    "totalNotes": 116,
-    "duration": "2:31",
-    "etStart": 80,
-    "etEnd": 110,
-    "measured": null,
-    "category": "starmaker",
-    "video": "https://youtu.be/7wCP6U9RQxw",
-    "videoClear": "https://youtu.be/7wCP6U9RQxw?t=75",
-    "predicted": 66
   },
   {
     "type": "Glitter",

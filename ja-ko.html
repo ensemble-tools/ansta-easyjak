@@ -234,10 +234,10 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .songs-table th:nth-child(1) { width: 112px; }
 .songs-table th:nth-child(2) { width: 165px; }
 .songs-table th:nth-child(3) { width: auto; }
-.songs-table th:nth-child(4) { width: 84px; }
-.songs-table th:nth-child(5) { width: 108px; }
-.songs-table th:nth-child(6) { width: 84px; }
-.songs-table th:nth-child(7) { width: 52px; }
+.songs-table th:nth-child(4) { width: 84px; text-align: center; }
+.songs-table th:nth-child(5) { width: 108px; text-align: center; }
+.songs-table th:nth-child(6) { width: 84px; text-align: center; }
+.songs-table th:nth-child(7) { width: 68px; }
 .songs-table th.sortable { cursor: pointer; user-select: none; }
 .songs-table th.sortable:hover { color: var(--navy); }
 .sort-icon { display: inline-block; margin-left: 4px; opacity: 0.5; font-size: 10px; }
@@ -247,7 +247,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .col-unit { font-size: 12px; color: var(--text-sub); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .col-title { font-weight: 500; }
 .col-title-sub { font-size: 11px; color: var(--text-muted); margin-top: 2px; font-weight: 400; }
-.col-num { font-family: 'Inter', monospace; text-align: right; }
+.col-num { font-family: 'Inter', monospace; text-align: center; }
 .col-dur { font-family: 'Inter', monospace; color: var(--text-sub); text-align: center; }
 .col-video { text-align: center; }
 .paging-bar { display: flex; align-items: center; justify-content: center; gap: 4px; padding: 12px 20px; border-top: 0.5px solid var(--border-light); }
@@ -663,12 +663,12 @@ const I18N = {
     badgeMeasured: '확인 완료', badgePredicted: '예측',
     videoLabel: '참고 영상', videoCoverNote: '커버송은 영상을 제공하지 않습니다.', videoPlay: '▶ 클릭하여 재생',
     legendClear: '클리어 시작점', legendET: '앙상블 타임 구간',
-    sidebarTypeTitle: 'Song Type', sidebarUnitTitle: 'Units', sidebarDurTitle: 'Duration',
+    sidebarTypeTitle: '곡 속성', sidebarUnitTitle: 'Units', sidebarDurTitle: '곡 길이',
     typeAll: '전체', unitReset: '전체 해제',
     durAll: '전체', durShort: '~ 2:20', durMid1: '2:21 ~ 2:30', durMid2: '2:31 ~ 2:40', durLong: '2:41 ~',
     tableSearchPlaceholder: '곡 검색...',
     tableHint: '곡 길이는 풀콤보 기준',
-    sidebarUnitHint: '유닛 검색은 상단 검색바의\n콤보박스에서 선택',
+    sidebarUnitHint: '유닛 검색은 상단 검색바의\n콤보박스에서 선택하세요.',
     colType: '곡 속성', colUnit: '유닛', colTitle: '제목',
     colNotes: '노트 수', colDur: '곡 길이', colClear: '시작 콤보', colVideo: '링크',
     errNotes: '총 노트수를 입력해주세요', errNotesMin: '80이상 정수를 입력하세요', errNotesMax: '300이하 정수를 입력하세요',
@@ -706,14 +706,14 @@ const I18N = {
     badgeMeasured: '実測値', badgePredicted: '予測値',
     videoLabel: '参考動画', videoCoverNote: 'カバー曲は動画を提供していません。', videoPlay: '▶ クリックして再生',
     legendClear: 'クリア開始点', legendET: 'アンサンブルタイム区間',
-    sidebarTypeTitle: 'Song Type', sidebarUnitTitle: 'Units', sidebarDurTitle: 'Duration',
+    sidebarTypeTitle: '曲の属性', sidebarUnitTitle: 'Units', sidebarDurTitle: '曲の長さ',
     typeAll: '全て', unitReset: '全解除',
     durAll: '全て', durShort: '~ 2:20', durMid1: '2:21 ~ 2:30', durMid2: '2:31 ~ 2:40', durLong: '2:41 ~',
     tableSearchPlaceholder: '楽曲を検索...',
     tableHint: '曲の長さはフルコンボ基準',
-    sidebarUnitHint: 'ユニット検索は上部検索バーのコンボボックスから選択',
+    sidebarUnitHint: 'ユニット検索は上部検索バーのコンボボックスから選択してください。',
     colType: '属性', colUnit: 'ユニット', colTitle: 'タイトル',
-    colNotes: 'ノーツ数', colDur: '曲の長さ', colClear: '開始点', colVideo: 'リンク',
+    colNotes: 'ノーツ数', colDur: '曲の長さ', colClear: '開始Cb', colVideo: 'リンク',
     errNotes: 'ノーツ数を入力してください', errETDiff: 'ET終了 - 開始コンボの差は最低4以上必要です', comboPrefix: '計',
     directInput: '直接入力', noResult: '検索結果がありません', tableEmpty: '検索結果がありません',
     noticeTitle: 'お知らせ',

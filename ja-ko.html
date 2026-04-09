@@ -497,8 +497,8 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
         <div class="table-search-bar">
           <div class="table-search-top">
             <select class="search-mode-select" id="searchModeSelect" onchange="onSearchModeChange()">
-              <option value="song">곡 검색</option>
-              <option value="unit">유닛 검색</option>
+              <option value="song" data-i18n="searchModeSong">곡 검색</option>
+              <option value="unit" data-i18n="searchModeUnit">유닛 검색</option>
             </select>
             <div class="table-search-wrap" id="tableSearchWrap">
               <svg class="table-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -666,6 +666,7 @@ const I18N = {
     sidebarTypeTitle: '곡 속성', sidebarUnitTitle: 'Units', sidebarDurTitle: '곡 길이',
     typeAll: '전체', unitReset: '전체 해제',
     durAll: '전체', durShort: '~ 2:20', durMid1: '2:21 ~ 2:30', durMid2: '2:31 ~ 2:40', durLong: '2:41 ~',
+    searchModeSong: '곡 검색', searchModeUnit: '유닛 검색',
     tableSearchPlaceholder: '곡 검색...',
     tableHint: '곡 길이는 풀콤보 기준',
     sidebarUnitHint: '유닛 검색은 상단 검색바의\n콤보박스에서 선택하세요.',
@@ -709,6 +710,7 @@ const I18N = {
     sidebarTypeTitle: '曲の属性', sidebarUnitTitle: 'Units', sidebarDurTitle: '曲の長さ',
     typeAll: '全て', unitReset: '全解除',
     durAll: '全て', durShort: '~ 2:20', durMid1: '2:21 ~ 2:30', durMid2: '2:31 ~ 2:40', durLong: '2:41 ~',
+    searchModeSong: '楽曲検索', searchModeUnit: 'ユニット検索',
     tableSearchPlaceholder: '楽曲を検索...',
     tableHint: '曲の長さはフルコンボ基準',
     sidebarUnitHint: 'ユニット検索は上部検索バーのコンボボックスから選択してください。',
@@ -961,7 +963,7 @@ function renderDropdown(q) {
       : `<span class="dropdown-dot" style="background:#d1d5db"></span>`;
     const idx = SONGS.indexOf(s);
     const mainTitle = getDisplayTitle(s);
-    const subTitle = s.title_ko && s.title_ko !== s.title_ja && currentLang === 'ko' ? s.title_ja : (s.title_ja_reading || '');
+    const subTitle = s.title_ko && s.title_ko !== s.title_ja && currentLang === 'ko' ? s.title_ja : '';
     return `<button class="dropdown-item" onclick="selectSong(${idx})">
       <div class="dropdown-item-title">${mainTitle}</div>
       ${subTitle ? `<div class="dropdown-item-sub">${subTitle}</div>` : ''}

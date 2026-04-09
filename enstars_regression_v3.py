@@ -142,11 +142,13 @@ def calc_midpoint_url(video_url: str, duration_str: str | None) -> str | None:
     return f"https://youtu.be/{vid}?t={mid_sec}"
 
 
-def fill_clear_urls(path: str, api_key: str):
-    """엑셀 전체 시트에서 video_url을 읽어 video_url_clear를 채우고 저장."""
+def fill_clear_urls(path: str, api_key: str) -> dict:
+    """엑셀 전체 시트에서 video_url을 읽어 video_url_clear를 채우고 저장.
+    반환값: {video_url: video_url_clear} — df_pred 인메모리 패치용."""
     import openpyxl
     wb = openpyxl.load_workbook(path)
 
+    filled_map = {}  # video_url → video_url_clear
     filled = 0
     skipped_existing = 0
     not_found = 0
@@ -165,11 +167,14 @@ def fill_clear_urls(path: str, api_key: str):
         for row in ws.iter_rows(min_row=2):
             url_cell = row[col_url - 1]
             clear_cell = row[col_clear - 1]
-            is_measured = col_measured and row[col_measured - 1].value not in (None, "")
 
             if not url_cell.value:
                 continue
-            if clear_cell.value and not is_measured:
+            # measured 없는 곡은 API 호출 안 함 (duration 절반으로 처리)
+            if not col_measured or row[col_measured - 1].value in (None, ""):
+                continue
+            # if clear_cell.value and not is_measured:  # 최초에만 실행 (모두 비어있을 때)
+            if clear_cell.value:
                 skipped_existing += 1
                 continue
 
@@ -183,7 +188,9 @@ def fill_clear_urls(path: str, api_key: str):
                 not_found += 1
                 continue
 
-            clear_cell.value = f"https://youtu.be/{video_id}?t={t}"
+            clear_url = f"https://youtu.be/{video_id}?t={t}"
+            clear_cell.value = clear_url
+            filled_map[str(url_cell.value).strip()] = clear_url
             filled += 1
 
     wb.save(path)
@@ -191,6 +198,7 @@ def fill_clear_urls(path: str, api_key: str):
     print(f"  채운 항목: {filled}개")
     print(f"  이미 있어서 건너뜀: {skipped_existing}개")
     print(f"  타임스탬프 못 찾음: {not_found}개")
+    return filled_map
 
 
 # ── 데이터 로드 ────────────────────────────────────────────
@@ -362,6 +370,8 @@ def export_songs_js(df_pred: pd.DataFrame, result: dict, out_path: str = "songs.
         title_en_reading = row.get("title_en_reading", None)
 
         # video_url_clear: 엑셀 수동 입력값 우선, 없는 예측곡은 duration 절반 지점 자동 생성
+        # ※ 미실측 곡의 절반 지점 URL은 메모리(df_pred)에서만 계산되며 엑셀에는 저장되지 않음
+        #    → songs.js / CSV에는 반영되지만 엑셀 칼럼은 의도적으로 비워둠
         raw_clear = row.get("video_url_clear", None)
         if pd.notna(raw_clear) and str(raw_clear).strip():
             video_clear = str(raw_clear).strip()
@@ -583,7 +593,27 @@ def main():
                 if not api_key:
                     print("  API 키가 없습니다. .env 파일에 YT_API_KEY를 설정하거나 입력해 주세요.")
                 else:
-                    fill_clear_urls(path, api_key)
+                    filled_map = fill_clear_urls(path, api_key)
+                    if filled_map:
+                        # df_pred 인메모리 패치
+                        mask = df_pred["video_url"].astype(str).str.strip().isin(filled_map)
+                        df_pred.loc[mask, "video_url_clear"] = df_pred.loc[mask, "video_url"].map(
+                            lambda v: filled_map.get(str(v).strip())
+                        )
+                        save_yn = input("songs.js / CSV도 저장할까요? (y/n): ").strip().lower()
+                        if save_yn == "y":
+                            export_songs_js(df_pred, result, out_path)
+                            csv_out = path.rsplit(".", 1)[0] + "_result_v3.csv"
+                            save_cols = [
+                                "category", "type", "unit", "title_ja", "title_ja_reading",
+                                "title_ko", "title_ko_reading", "title_en", "title_en_reading",
+                                "total_notes", "duration", "et_start", "et_end",
+                                "clear_start_measured", "clear_start_predicted",
+                                "clear_ratio", "model_used", "video_url", "video_url_clear",
+                            ]
+                            save_cols = [c for c in save_cols if c in df_pred.columns]
+                            df_pred[save_cols].to_csv(csv_out, index=False, encoding="utf-8-sig")
+                            print(f"✓ songs.js / CSV 저장 완료")
 
         except KeyboardInterrupt:
             print("\n종료.")

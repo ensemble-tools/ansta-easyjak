@@ -358,6 +358,8 @@ def export_songs_js(df_pred: pd.DataFrame, result: dict, out_path: str = "songs.
         title_ja_reading = row.get("title_ja_reading", None)
         title_ko = row.get("title_ko", None)
         title_ko_reading = row.get("title_ko_reading", None)
+        title_en = row.get("title_en", None)
+        title_en_reading = row.get("title_en_reading", None)
 
         # video_url_clear: 엑셀 수동 입력값 우선, 없는 예측곡은 duration 절반 지점 자동 생성
         raw_clear = row.get("video_url_clear", None)
@@ -370,7 +372,7 @@ def export_songs_js(df_pred: pd.DataFrame, result: dict, out_path: str = "songs.
 
         predicted_val = int(round(float(row["clear_start_predicted"])))
 
-        songs.append({
+        song = {
             "type":             str(row["type"]),
             "unit":             " / ".join(units),
             "units":            units,
@@ -379,6 +381,8 @@ def export_songs_js(df_pred: pd.DataFrame, result: dict, out_path: str = "songs.
             "title_ja_reading": str(title_ja_reading) if pd.notna(title_ja_reading) else None,
             "title_ko":         str(title_ko) if pd.notna(title_ko) else None,
             "title_ko_reading": str(title_ko_reading) if pd.notna(title_ko_reading) else None,
+            "title_en":         str(title_en) if pd.notna(title_en) else None,
+            "title_en_reading": str(title_en_reading) if pd.notna(title_en_reading) else None,
             "totalNotes":       key[1],
             "duration":         duration_str,
             "etStart":          et_s,
@@ -388,7 +392,12 @@ def export_songs_js(df_pred: pd.DataFrame, result: dict, out_path: str = "songs.
             "video":            video,
             "videoClear":       video_clear,
             "predicted":        predicted_val,
-        })
+        }
+        if not song.get("title_ko"):
+            song["title_ko"] = title_ja
+        if not song.get("title_en"):
+            song["title_en"] = title_ja
+        songs.append(song)
 
     # 모델 파라미터 (프론트에서 직접 계산할 수 있도록)
     params = {
@@ -540,9 +549,14 @@ def main():
 
             elif cmd == "2":
                 csv_out = path.rsplit(".", 1)[0] + "_result_v3.csv"
-                save_cols = cols + ["video_url"]
-                if "video_url_clear" in df_show.columns:
-                    save_cols += ["video_url_clear"]
+                save_cols = [
+                    "category", "type", "unit", "title_ja", "title_ja_reading",
+                    "title_ko", "title_ko_reading", "title_en", "title_en_reading",
+                    "total_notes", "duration", "et_start", "et_end",
+                    "clear_start_measured", "clear_start_predicted",
+                    "clear_ratio", "model_used", "video_url", "video_url_clear",
+                ]
+                save_cols = [c for c in save_cols if c in df_show.columns]
                 df_show[save_cols].to_csv(csv_out, index=False, encoding="utf-8-sig")
                 print(f"✓ CSV 저장: {csv_out}")
 

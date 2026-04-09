@@ -17,6 +17,8 @@
 
 > 코드 변경 요청이 오면 `ja-ko.html`만 수정한다.  
 > `ja-en.html` 수정은 사용자가 "ja-en도 수정해줘" 라고 명시할 때만 한다.
+>  title_en, title_en_reading은 데이터 파이프라인(py → songs.js,     
+  csv)에만 반영하고, ja-ko.html에 영문 UI 작업은 명시적 지시가 있을 때만 작업한다.
 
 ---
 

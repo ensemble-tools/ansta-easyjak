@@ -273,13 +273,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 164,
     "duration": "2:42",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 109,
+    "etEnd": 137,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/9f4pZWaulEk",
     "videoClear": "https://youtu.be/9f4pZWaulEk?t=81",
-    "predicted": 89
+    "predicted": 90
   },
   {
     "type": "Brilliant",
@@ -297,8 +297,8 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 185,
     "duration": "2:30",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 62,
+    "etEnd": 121,
     "measured": null,
     "category": "starmaker",
     "video": null,
@@ -366,13 +366,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 174,
     "duration": "2:32",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 83,
+    "etEnd": 119,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/PWVmhaaHXII",
     "videoClear": "https://youtu.be/PWVmhaaHXII?t=70",
-    "predicted": 94
+    "predicted": 95
   },
   {
     "type": "Sparkle",
@@ -389,13 +389,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 158,
     "duration": "2:46",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 53,
+    "etEnd": 81,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/m_mSsqcrcrk",
     "videoClear": "https://youtu.be/m_mSsqcrcrk?t=89",
-    "predicted": 86
+    "predicted": 85
   },
   {
     "type": "Glitter",
@@ -481,13 +481,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 158,
     "duration": "2:39",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 55,
+    "etEnd": 83,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/UA9fdW1gOuM",
     "videoClear": "https://youtu.be/UA9fdW1gOuM?t=79",
-    "predicted": 86
+    "predicted": 85
   },
   {
     "type": "Brilliant",
@@ -504,13 +504,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 138,
     "duration": "2:29",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 92,
+    "etEnd": 115,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/9slbQUOH24o",
     "videoClear": "https://youtu.be/9slbQUOH24o?t=74",
-    "predicted": 75
+    "predicted": 76
   },
   {
     "type": "Glitter",
@@ -527,8 +527,8 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 120,
     "duration": "2:30",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 57,
+    "etEnd": 93,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/hn84sb3HaGs",
@@ -573,13 +573,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 140,
     "duration": "2:31",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 105,
+    "etEnd": 123,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/Yg6LdDOISS0",
     "videoClear": "https://youtu.be/Yg6LdDOISS0?t=75",
-    "predicted": 76
+    "predicted": 78
   },
   {
     "type": "Sparkle",
@@ -596,13 +596,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 125,
     "duration": "2:05",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 49,
+    "etEnd": 67,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/QcuFx2rlx1I",
     "videoClear": "https://youtu.be/QcuFx2rlx1I?t=62",
-    "predicted": 68
+    "predicted": 67
   },
   {
     "type": "Brilliant",
@@ -642,8 +642,8 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 175,
     "duration": "2:36",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 94,
+    "etEnd": 130,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/t6aHtSCYUYQ",
@@ -665,13 +665,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 138,
     "duration": "2:21",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 94,
+    "etEnd": 129,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/dvqtrOHVmxg",
     "videoClear": "https://youtu.be/dvqtrOHVmxg?t=70",
-    "predicted": 75
+    "predicted": 77
   },
   {
     "type": "Flash",
@@ -689,13 +689,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 109,
     "duration": "2:32",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 66,
+    "etEnd": 106,
     "measured": null,
     "category": "starmaker",
     "video": null,
     "videoClear": null,
-    "predicted": 60
+    "predicted": 62
   },
   {
     "type": "Sparkle",
@@ -735,13 +735,13 @@ const SONGS = [
     "title_en_reading": "Koi wa Primavera",
     "totalNotes": 175,
     "duration": "2:26",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 70,
+    "etEnd": 90,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/PmAoDJUZAks",
     "videoClear": "https://youtu.be/PmAoDJUZAks?t=73",
-    "predicted": 95
+    "predicted": 94
   },
   {
     "type": "Brilliant",
@@ -781,13 +781,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 127,
     "duration": "2:47",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 32,
+    "etEnd": 44,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/SmfCe6uZn-U",
     "videoClear": "https://youtu.be/SmfCe6uZn-U?t=97",
-    "predicted": 69
+    "predicted": 67
   },
   {
     "type": "Flash",
@@ -873,8 +873,8 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 170,
     "duration": "2:35",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 58,
+    "etEnd": 98,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/BJsz4o9CUnY",
@@ -896,13 +896,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 129,
     "duration": "2:16",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 108,
+    "etEnd": 125,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/bF_M1JEm7xE",
     "videoClear": "https://youtu.be/bF_M1JEm7xE?t=68",
-    "predicted": 70
+    "predicted": 72
   },
   {
     "type": "Glitter",
@@ -919,13 +919,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 136,
     "duration": "2:24",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 94,
+    "etEnd": 130,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/l4KzCeYOhjU",
     "videoClear": "https://youtu.be/l4KzCeYOhjU?t=72",
-    "predicted": 74
+    "predicted": 76
   },
   {
     "type": "Sparkle",
@@ -942,13 +942,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 129,
     "duration": "2:10",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 88,
+    "etEnd": 107,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/tKlwN-OZwtY",
     "videoClear": "https://youtu.be/tKlwN-OZwtY?t=65",
-    "predicted": 70
+    "predicted": 71
   },
   {
     "type": "Flash",
@@ -965,13 +965,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 184,
     "duration": "2:37",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 155,
+    "etEnd": 168,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/HxL_jT44kEQ",
     "videoClear": "https://youtu.be/HxL_jT44kEQ?t=78",
-    "predicted": 100
+    "predicted": 101
   },
   {
     "type": "Brilliant",
@@ -1012,13 +1012,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 105,
     "duration": "2:12",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 71,
+    "etEnd": 98,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/lppyNYUiFOU",
     "videoClear": "https://youtu.be/lppyNYUiFOU?t=66",
-    "predicted": 58
+    "predicted": 59
   },
   {
     "type": "Brilliant",
@@ -1081,13 +1081,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 164,
     "duration": "2:32",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 126,
+    "etEnd": 154,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/6yP7wdXqWRk",
     "videoClear": "https://youtu.be/6yP7wdXqWRk?t=76",
-    "predicted": 89
+    "predicted": 91
   },
   {
     "type": "Glitter",
@@ -1105,13 +1105,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 86,
     "duration": "2:20",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 37,
+    "etEnd": 49,
     "measured": null,
     "category": "starmaker",
     "video": null,
     "videoClear": null,
-    "predicted": 48
+    "predicted": 47
   },
   {
     "type": "Brilliant",
@@ -1128,13 +1128,13 @@ const SONGS = [
     "title_en_reading": "Suisei",
     "totalNotes": 155,
     "duration": "2:27",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 53,
+    "etEnd": 73,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/SRqm1z0_QbI",
     "videoClear": "https://youtu.be/SRqm1z0_QbI?t=73",
-    "predicted": 84
+    "predicted": 83
   },
   {
     "type": "Sparkle",
@@ -1174,8 +1174,8 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 205,
     "duration": "2:39",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 96,
+    "etEnd": 132,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/_rhwln0u64w",
@@ -1289,13 +1289,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 142,
     "duration": "2:12",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 95,
+    "etEnd": 118,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/OzHUew5b4is",
     "videoClear": "https://youtu.be/OzHUew5b4is?t=66",
-    "predicted": 77
+    "predicted": 78
   },
   {
     "type": "Brilliant",
@@ -1312,13 +1312,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 110,
     "duration": "2:18",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 91,
+    "etEnd": 108,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/6dVZCvO65_A",
     "videoClear": "https://youtu.be/6dVZCvO65_A?t=69",
-    "predicted": 60
+    "predicted": 62
   },
   {
     "type": "Glitter",
@@ -1335,13 +1335,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 202,
     "duration": "2:28",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 148,
+    "etEnd": 156,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/30wieYZHkr0",
     "videoClear": "https://youtu.be/30wieYZHkr0?t=74",
-    "predicted": 109
+    "predicted": 110
   },
   {
     "type": "Brilliant",
@@ -1358,13 +1358,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 188,
     "duration": "2:18",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 64,
+    "etEnd": 88,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/-eLnpssD2Do",
     "videoClear": "https://youtu.be/-eLnpssD2Do?t=69",
-    "predicted": 102
+    "predicted": 101
   },
   {
     "type": "Glitter",
@@ -1382,8 +1382,8 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 171,
     "duration": "2:42",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 113,
+    "etEnd": 131,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/_FzAZlrVuFQ",
@@ -1405,13 +1405,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 162,
     "duration": "2:35",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 34,
+    "etEnd": 59,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/lQnCadrXbtc",
     "videoClear": "https://youtu.be/lQnCadrXbtc?t=77",
-    "predicted": 88
+    "predicted": 86
   },
   {
     "type": "Glitter",
@@ -1475,13 +1475,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 138,
     "duration": "2:32",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 100,
+    "etEnd": 116,
     "measured": null,
     "category": "starmaker",
     "video": null,
     "videoClear": null,
-    "predicted": 75
+    "predicted": 76
   },
   {
     "type": "Flash",
@@ -1498,13 +1498,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 188,
     "duration": "2:11",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 66,
+    "etEnd": 102,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/QOdcQ7jfFXk",
     "videoClear": "https://youtu.be/QOdcQ7jfFXk?t=65",
-    "predicted": 102
+    "predicted": 101
   },
   {
     "type": "Sparkle",
@@ -1521,13 +1521,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 145,
     "duration": "2:45",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 26,
+    "etEnd": 50,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/A2cgV5Mi5Q0",
     "videoClear": "https://youtu.be/A2cgV5Mi5Q0?t=82",
-    "predicted": 79
+    "predicted": 77
   },
   {
     "type": "Flash",
@@ -1637,8 +1637,8 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 127,
     "duration": "2:14",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 0,
+    "etEnd": 0,
     "measured": null,
     "category": "starmaker",
     "video": "https://youtu.be/USUGutMn7-U",

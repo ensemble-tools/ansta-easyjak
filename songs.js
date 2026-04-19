@@ -1,5 +1,5 @@
 // songs.js — Voltage Predictor 곡 데이터 & 모델 파라미터
-// 총 304곡 | R²=0.9699 | MAE=2.63콤보
+// 총 305곡 | R²=0.9699 | MAE=2.63콤보
 // ※ enstars_regression_v3.py 로 자동 생성 — 직접 수정 비권장
 
 const SONGS = [
@@ -13,7 +13,7 @@ const SONGS = [
     "title_ja": "ONLY YOUR STARS!",
     "title_ja_reading": "おんりー ゆあ すたーず",
     "title_ko": "ONLY YOUR STARS!",
-    "title_ko_reading": "온리 유어 스타즈",
+    "title_ko_reading": "온리 유어 스타즈 온유스",
     "title_en": "ONLY YOUR STARS!",
     "title_en_reading": null,
     "totalNotes": 97,
@@ -45,8 +45,8 @@ const SONGS = [
     "etEnd": 84,
     "measured": null,
     "category": "starmaker",
-    "video": "https://youtu.be/_csxhmkSiuI",
-    "videoClear": "https://youtu.be/_csxhmkSiuI?t=79",
+    "video": "https://youtu.be/9_hZkKXcpc8",
+    "videoClear": "https://youtu.be/9_hZkKXcpc8?t=79",
     "predicted": 61
   },
   {
@@ -254,8 +254,8 @@ const SONGS = [
     "etEnd": 158,
     "measured": 93,
     "category": "starmaker",
-    "video": "https://youtu.be/kdWHcVWhbOE?si=qpTCHv7CueVuHAxr",
-    "videoClear": "https://youtu.be/kdWHcVWhbOE?t=84",
+    "video": "https://youtu.be/hocWB7DRH8Q",
+    "videoClear": "https://youtu.be/hocWB7DRH8Q?t=84",
     "predicted": 91
   },
   {
@@ -347,8 +347,8 @@ const SONGS = [
     "etEnd": 53,
     "measured": 68,
     "category": "starmaker",
-    "video": "https://youtu.be/AJkCL1amVks?si=chIYI3I3qK9YWfk0",
-    "videoClear": "https://youtu.be/AJkCL1amVks?t=75",
+    "video": "https://youtu.be/wvbHCvOs3HM",
+    "videoClear": "https://youtu.be/wvbHCvOs3HM?t=75",
     "predicted": 72
   },
   {
@@ -416,8 +416,8 @@ const SONGS = [
     "etEnd": 123,
     "measured": 84,
     "category": "starmaker",
-    "video": "https://youtu.be/sTQfBtuHjHQ?si=vuFBXaVP20egtg4h",
-    "videoClear": "https://youtu.be/sTQfBtuHjHQ?t=74",
+    "video": "https://youtu.be/H9vtFwjrQgg",
+    "videoClear": "https://youtu.be/H9vtFwjrQgg?t=74",
     "predicted": 88
   },
   {
@@ -439,8 +439,8 @@ const SONGS = [
     "etEnd": 156,
     "measured": 91,
     "category": "starmaker",
-    "video": "https://youtu.be/RHqdIxWxgNA?si=AEi41bRsrNOyshAj",
-    "videoClear": "https://youtu.be/RHqdIxWxgNA?t=78",
+    "video": "https://youtu.be/j3eh33w14-U",
+    "videoClear": "https://youtu.be/j3eh33w14-U?t=78",
     "predicted": 89
   },
   {
@@ -1780,8 +1780,8 @@ const SONGS = [
     "etEnd": 90,
     "measured": 124,
     "category": "cosmic",
-    "video": "https://youtu.be/pfVXpX1aV4I?si=G8NZNZ9Z5Qd48ok1",
-    "videoClear": "https://youtu.be/pfVXpX1aV4I?t=100",
+    "video": "https://youtu.be/VL8AClkDZ1g",
+    "videoClear": "https://youtu.be/VL8AClkDZ1g?t=100",
     "predicted": 126
   },
   {
@@ -1803,8 +1803,8 @@ const SONGS = [
     "etEnd": 132,
     "measured": 96,
     "category": "cosmic",
-    "video": "https://youtu.be/4ifRZCs4jsA?si=Uz_Fps3GG7G0PLEl",
-    "videoClear": "https://youtu.be/4ifRZCs4jsA?t=85",
+    "video": "https://youtu.be/Lt7CAgipfMQ",
+    "videoClear": "https://youtu.be/Lt7CAgipfMQ?t=85",
     "predicted": 95
   },
   {
@@ -1849,8 +1849,8 @@ const SONGS = [
     "etEnd": 83,
     "measured": 114,
     "category": "cosmic",
-    "video": "https://youtu.be/xQGLhtIgjYc?si=Oo-kP3k4u-kbGYu6",
-    "videoClear": "https://youtu.be/xQGLhtIgjYc?t=84",
+    "video": "https://youtu.be/nhGPOGdozZU",
+    "videoClear": "https://youtu.be/nhGPOGdozZU?t=79",
     "predicted": 117
   },
   {
@@ -2726,8 +2726,8 @@ const SONGS = [
     "etEnd": 71,
     "measured": 90,
     "category": "cosmic",
-    "video": "https://youtu.be/qkNuxf18RuI?si=5sTvCN81PP7Gac_C",
-    "videoClear": "https://youtu.be/qkNuxf18RuI?t=83",
+    "video": "https://youtu.be/VFlMY2s2bZw",
+    "videoClear": "https://youtu.be/VFlMY2s2bZw?t=83",
     "predicted": 97
   },
   {
@@ -2749,8 +2749,8 @@ const SONGS = [
     "etEnd": 140,
     "measured": 79,
     "category": "cosmic",
-    "video": "https://youtu.be/KKOmwmcLAJc?si=rCPw5XBjTdNEdANm",
-    "videoClear": "https://youtu.be/KKOmwmcLAJc?t=78",
+    "video": "https://youtu.be/JP_kc2uh-Zc",
+    "videoClear": "https://youtu.be/JP_kc2uh-Zc?t=78",
     "predicted": 81
   },
   {
@@ -2795,8 +2795,8 @@ const SONGS = [
     "etEnd": 147,
     "measured": 104,
     "category": "cosmic",
-    "video": "https://youtu.be/iay7pagyxjU?si=VMR_M1XZY8mszB2R",
-    "videoClear": "https://youtu.be/iay7pagyxjU?t=75",
+    "video": "https://youtu.be/rbswb1AtcMI",
+    "videoClear": "https://youtu.be/rbswb1AtcMI?t=75",
     "predicted": 106
   },
   {
@@ -3363,7 +3363,7 @@ const SONGS = [
     "title_ja": "Savage Love Affair",
     "title_ja_reading": "さべーじらぶあふぇあ",
     "title_ko": "Savage Love Affair",
-    "title_ko_reading": "새비지 러브 어페어",
+    "title_ko_reading": "새비지 세비지 러브 어페어",
     "title_en": "Savage Love Affair",
     "title_en_reading": null,
     "totalNotes": 172,
@@ -3372,8 +3372,8 @@ const SONGS = [
     "etEnd": 105,
     "measured": 98,
     "category": "rhythm_link",
-    "video": "https://youtu.be/VjQw-7CczQY?si=fAWVQfIi3NFds-hw",
-    "videoClear": "https://youtu.be/VjQw-7CczQY?t=70",
+    "video": "https://youtu.be/BY8UObWf63E",
+    "videoClear": "https://youtu.be/BY8UObWf63E?t=70",
     "predicted": 93
   },
   {
@@ -3464,8 +3464,8 @@ const SONGS = [
     "etEnd": 58,
     "measured": 71,
     "category": "rhythm_link",
-    "video": "https://youtu.be/7U1RsunFOc8?si=l9aqJXkrTgCHCE57",
-    "videoClear": "https://youtu.be/7U1RsunFOc8?t=92",
+    "video": "https://youtu.be/vNfFkAQut54",
+    "videoClear": "https://youtu.be/vNfFkAQut54?t=92",
     "predicted": 73
   },
   {
@@ -3501,7 +3501,7 @@ const SONGS = [
     "title_ja": "SWINGIN' PARONIRIA",
     "title_ja_reading": "すうぃんぎんぱろにりあ",
     "title_ko": "SWINGIN' PARONIRIA",
-    "title_ko_reading": "스윙인 파로니리아",
+    "title_ko_reading": "스윙인 스윙잉 파로니리아",
     "title_en": "SWINGIN' PARONIRIA",
     "title_en_reading": null,
     "totalNotes": 160,
@@ -3510,8 +3510,8 @@ const SONGS = [
     "etEnd": 151,
     "measured": 85,
     "category": "rhythm_link",
-    "video": "https://youtu.be/u21aGJ2glLs?si=-Y2tKw3cwpKPAczL",
-    "videoClear": "https://youtu.be/u21aGJ2glLs?t=73",
+    "video": "https://youtu.be/Qglp9UFV-jE",
+    "videoClear": "https://youtu.be/Qglp9UFV-jE?t=73",
     "predicted": 89
   },
   {
@@ -3533,8 +3533,8 @@ const SONGS = [
     "etEnd": 163,
     "measured": 114,
     "category": "rhythm_link",
-    "video": "https://youtu.be/kkncT21bzKo?si=13QU37Tcg7dQd-RE",
-    "videoClear": "https://youtu.be/kkncT21bzKo?t=64",
+    "video": "https://youtu.be/25wwrs21XHg",
+    "videoClear": "https://youtu.be/25wwrs21XHg?t=64",
     "predicted": 113
   },
   {
@@ -3663,7 +3663,7 @@ const SONGS = [
     "title_ja": "メイド・イン・トキメキ♪",
     "title_ja_reading": "めいどいんときめき",
     "title_ko": "메이드・인・두근두근♪",
-    "title_ko_reading": "메이드 인 도키메키",
+    "title_ko_reading": "메이드 인 도키메키 토키메키",
     "title_en": "メイド・イン・トキメキ♪",
     "title_en_reading": null,
     "totalNotes": 161,
@@ -4362,8 +4362,8 @@ const SONGS = [
     "etEnd": 84,
     "measured": 75,
     "category": "new_dimension",
-    "video": "https://youtu.be/Y_dfB-rMwAI?si=dvrZtDh0k9CVKzi7",
-    "videoClear": "https://youtu.be/Y_dfB-rMwAI?t=83",
+    "video": "https://youtu.be/6YjLTl1PTf0",
+    "videoClear": "https://youtu.be/6YjLTl1PTf0?t=83",
     "predicted": 73
   },
   {
@@ -4376,18 +4376,18 @@ const SONGS = [
     "title_ja": "Silent Oath",
     "title_ja_reading": "さいれんとおーす",
     "title_ko": "Silent Oath",
-    "title_ko_reading": "사일런트 오쓰",
+    "title_ko_reading": "사일런트 오쓰 오스",
     "title_en": "Silent Oath",
     "title_en_reading": null,
     "totalNotes": 106,
     "duration": "2:10",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 59,
+    "etEnd": 87,
     "measured": null,
     "category": "new_dimension",
     "video": "https://youtu.be/-9drSFz9jB8",
     "videoClear": "https://youtu.be/-9drSFz9jB8?t=65",
-    "predicted": 58
+    "predicted": 59
   },
   {
     "type": "Sparkle",
@@ -4431,8 +4431,8 @@ const SONGS = [
     "etEnd": 110,
     "measured": 85,
     "category": "new_dimension",
-    "video": "https://youtu.be/OnR5oh8N_Rw?si=lbXe3Yie2sTODL70",
-    "videoClear": "https://youtu.be/OnR5oh8N_Rw?t=79",
+    "video": "https://youtu.be/CjaVMrD-Tko",
+    "videoClear": "https://youtu.be/CjaVMrD-Tko?t=79",
     "predicted": 87
   },
   {
@@ -4454,8 +4454,8 @@ const SONGS = [
     "etEnd": 105,
     "measured": 88,
     "category": "new_dimension",
-    "video": "https://youtu.be/VMLQm7BKu4c?si=EcvAURc3Mpfjm99G",
-    "videoClear": "https://youtu.be/VMLQm7BKu4c?t=84",
+    "video": "https://youtu.be/U8Xi-KZ32eI",
+    "videoClear": "https://youtu.be/U8Xi-KZ32eI?t=84",
     "predicted": 93
   },
   {
@@ -4477,8 +4477,8 @@ const SONGS = [
     "etEnd": 137,
     "measured": 80,
     "category": "new_dimension",
-    "video": "https://youtu.be/bljn1rmENg0?si=PLuOYXy1R_irARCe",
-    "videoClear": "https://youtu.be/bljn1rmENg0?t=69",
+    "video": "https://youtu.be/6IxBoVNMRXg",
+    "videoClear": "https://youtu.be/6IxBoVNMRXg?t=69",
     "predicted": 80
   },
   {
@@ -4523,8 +4523,8 @@ const SONGS = [
     "etEnd": 6,
     "measured": 89,
     "category": "new_dimension",
-    "video": "https://youtu.be/oZB7A0CkQt8?si=DYp4d7xGgDZD8KAP",
-    "videoClear": "https://youtu.be/oZB7A0CkQt8?t=102",
+    "video": "https://youtu.be/tosISqsoYDY",
+    "videoClear": "https://youtu.be/tosISqsoYDY?t=102",
     "predicted": 82
   },
   {
@@ -4546,8 +4546,8 @@ const SONGS = [
     "etEnd": 96,
     "measured": 67,
     "category": "new_dimension",
-    "video": "https://youtu.be/IPTEOEH7LcE?si=hDLlPj-ILaqI-6Bk",
-    "videoClear": "https://youtu.be/IPTEOEH7LcE?t=70",
+    "video": "https://youtu.be/jlJIFna2utw",
+    "videoClear": "https://youtu.be/jlJIFna2utw?t=70",
     "predicted": 64
   },
   {
@@ -4569,8 +4569,8 @@ const SONGS = [
     "etEnd": 115,
     "measured": 71,
     "category": "new_dimension",
-    "video": "https://youtu.be/hXvSF8dbEfk?si=LGwVnyJ2wOzUTql0",
-    "videoClear": "https://youtu.be/hXvSF8dbEfk?t=70",
+    "video": "https://youtu.be/MkJZ_jOKMGc",
+    "videoClear": "https://youtu.be/MkJZ_jOKMGc?t=70",
     "predicted": 76
   },
   {
@@ -4592,8 +4592,8 @@ const SONGS = [
     "etEnd": 130,
     "measured": 83,
     "category": "new_dimension",
-    "video": "https://youtu.be/6Q0cZ3sxJaQ?si=croDhuyG7Jrs-4jd",
-    "videoClear": "https://youtu.be/6Q0cZ3sxJaQ?t=69",
+    "video": "https://youtu.be/WlTBntd2QLw",
+    "videoClear": "https://youtu.be/WlTBntd2QLw?t=69",
     "predicted": 80
   },
   {
@@ -4638,8 +4638,8 @@ const SONGS = [
     "etEnd": 89,
     "measured": 100,
     "category": "new_dimension",
-    "video": "https://youtu.be/tNKnEgJ60P0?si=i6DT4rRIRsZ1pGlW",
-    "videoClear": "https://youtu.be/tNKnEgJ60P0?t=89",
+    "video": "https://youtu.be/xOITbCObCcY",
+    "videoClear": "https://youtu.be/xOITbCObCcY?t=89",
     "predicted": 101
   },
   {
@@ -4661,8 +4661,8 @@ const SONGS = [
     "etEnd": 68,
     "measured": 74,
     "category": "new_dimension",
-    "video": "https://youtu.be/yB08ylHfQng?si=pZFwY2RRnCM2OYuT",
-    "videoClear": "https://youtu.be/yB08ylHfQng?t=79",
+    "video": "https://youtu.be/wsF1LCrXGns",
+    "videoClear": "https://youtu.be/wsF1LCrXGns?t=79",
     "predicted": 76
   },
   {
@@ -4703,13 +4703,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 103,
     "duration": "2:17",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 77,
+    "etEnd": 95,
     "measured": null,
     "category": "new_dimension",
-    "video": "https://youtu.be/3Buku5C2Os4",
-    "videoClear": "https://youtu.be/3Buku5C2Os4?t=68",
-    "predicted": 57
+    "video": "https://youtu.be/YJdlXuDICkw",
+    "videoClear": "https://youtu.be/YJdlXuDICkw?t=68",
+    "predicted": 58
   },
   {
     "type": "Brilliant",
@@ -4726,13 +4726,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 143,
     "duration": "2:29",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 118,
+    "etEnd": 136,
     "measured": null,
     "category": "new_dimension",
-    "video": "https://youtu.be/HQUGD183gVo",
-    "videoClear": "https://youtu.be/HQUGD183gVo?t=74",
-    "predicted": 78
+    "video": "https://youtu.be/p4Uw0asx5EQ",
+    "videoClear": "https://youtu.be/p4Uw0asx5EQ?t=74",
+    "predicted": 80
   },
   {
     "type": "Flash",
@@ -4744,18 +4744,18 @@ const SONGS = [
     "title_ja": "Knockin' Fantasy",
     "title_ja_reading": "のっきんふぁんたじー",
     "title_ko": "Knockin' Fantasy",
-    "title_ko_reading": "노킹 판타지",
+    "title_ko_reading": "노킹 녹킹 판타지",
     "title_en": "Knockin' Fantasy",
     "title_en_reading": null,
     "totalNotes": 106,
     "duration": "2:15",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 61,
+    "etEnd": 92,
     "measured": null,
     "category": "new_dimension",
-    "video": "https://youtu.be/2mo3uD9QZM8",
-    "videoClear": "https://youtu.be/2mo3uD9QZM8?t=67",
-    "predicted": 58
+    "video": "https://youtu.be/d2wtfp-t1AM",
+    "videoClear": "https://youtu.be/d2wtfp-t1AM?t=67",
+    "predicted": 60
   },
   {
     "type": "Glitter",
@@ -4795,13 +4795,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 178,
     "duration": "2:36",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 66,
+    "etEnd": 109,
     "measured": null,
     "category": "new_dimension",
-    "video": "https://youtu.be/pjOcPCzbPL8",
-    "videoClear": "https://youtu.be/pjOcPCzbPL8?t=78",
-    "predicted": 97
+    "video": "https://youtu.be/CesOYwPy9Ow",
+    "videoClear": "https://youtu.be/CesOYwPy9Ow?t=78",
+    "predicted": 96
   },
   {
     "type": "Flash",
@@ -4818,13 +4818,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 103,
     "duration": "2:13",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 71,
+    "etEnd": 95,
     "measured": null,
     "category": "new_dimension",
-    "video": "https://youtu.be/d8HEPOvr6bQ",
-    "videoClear": "https://youtu.be/d8HEPOvr6bQ?t=66",
-    "predicted": 57
+    "video": "https://youtu.be/YXsxrokqrYI",
+    "videoClear": "https://youtu.be/YXsxrokqrYI?t=66",
+    "predicted": 58
   },
   {
     "type": "Glitter",
@@ -4845,8 +4845,8 @@ const SONGS = [
     "etEnd": 139,
     "measured": 75,
     "category": "new_dimension",
-    "video": "https://youtu.be/g9Pp5b45YCo?si=ivNyZPn8r7he9S0A",
-    "videoClear": "https://youtu.be/g9Pp5b45YCo?t=73",
+    "video": "https://youtu.be/FTztJP6sKNQ",
+    "videoClear": "https://youtu.be/FTztJP6sKNQ?t=73",
     "predicted": 80
   },
   {
@@ -4891,8 +4891,8 @@ const SONGS = [
     "etEnd": 118,
     "measured": 74,
     "category": "new_dimension",
-    "video": "https://youtu.be/QiE_mrDMqbk?si=zhN9g92tTnNMDUep",
-    "videoClear": "https://youtu.be/QiE_mrDMqbk?t=77",
+    "video": "https://youtu.be/EMOT0fKHBsQ",
+    "videoClear": "https://youtu.be/EMOT0fKHBsQ?t=77",
     "predicted": 75
   },
   {
@@ -4910,13 +4910,13 @@ const SONGS = [
     "title_en_reading": "Omoi no Kakera",
     "totalNotes": 130,
     "duration": "1:58",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 72,
+    "etEnd": 125,
     "measured": null,
     "category": "new_dimension",
     "video": "https://youtu.be/uSruBdslukc",
     "videoClear": "https://youtu.be/uSruBdslukc?t=59",
-    "predicted": 71
+    "predicted": 73
   },
   {
     "type": "Brilliant",
@@ -4956,13 +4956,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 148,
     "duration": "2:36",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 41,
+    "etEnd": 62,
     "measured": null,
     "category": "new_dimension",
     "video": "https://youtu.be/Ist9YG28Q2E",
     "videoClear": "https://youtu.be/Ist9YG28Q2E?t=78",
-    "predicted": 81
+    "predicted": 79
   },
   {
     "type": "Sparkle",
@@ -5006,8 +5006,8 @@ const SONGS = [
     "etEnd": 58,
     "measured": 72,
     "category": "new_dimension",
-    "video": "https://youtu.be/7WzOUpKOHtI?si=gtdElgxFjN0TkBHj",
-    "videoClear": "https://youtu.be/7WzOUpKOHtI?t=86",
+    "video": "https://youtu.be/OMnDbSq289Y",
+    "videoClear": "https://youtu.be/OMnDbSq289Y?t=86",
     "predicted": 76
   },
   {
@@ -5048,13 +5048,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 141,
     "duration": "2:11",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 105,
+    "etEnd": 129,
     "measured": null,
     "category": "new_dimension",
     "video": "https://youtu.be/1engaOH1-EA",
     "videoClear": "https://youtu.be/1engaOH1-EA?t=65",
-    "predicted": 77
+    "predicted": 78
   },
   {
     "type": "Sparkle",
@@ -5071,8 +5071,8 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 131,
     "duration": "2:11",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 75,
+    "etEnd": 94,
     "measured": null,
     "category": "new_dimension",
     "video": "https://youtu.be/M2SlMp8nDF0",
@@ -5531,13 +5531,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 80,
     "duration": "2:39",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 58,
+    "etEnd": 70,
     "measured": null,
     "category": "others",
     "video": "https://youtu.be/XdWP9imu1TY",
     "videoClear": "https://youtu.be/XdWP9imu1TY?t=79",
-    "predicted": 44
+    "predicted": 46
   },
   {
     "type": "Brilliant",
@@ -5572,18 +5572,18 @@ const SONGS = [
     "title_ja": "Eccentric Party Night!!",
     "title_ja_reading": "えきせんとりっくぱーてぃーないと",
     "title_ko": "Eccentric Party Night!!",
-    "title_ko_reading": "익센트릭 파티 나이트",
+    "title_ko_reading": "익센트릭 파티 나이트 익센파",
     "title_en": "Eccentric Party Night!!",
     "title_en_reading": null,
     "totalNotes": 127,
     "duration": "2:28",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 82,
+    "etEnd": 119,
     "measured": null,
     "category": "others",
     "video": "https://youtu.be/wa5blK-b_Lk",
     "videoClear": "https://youtu.be/wa5blK-b_Lk?t=74",
-    "predicted": 69
+    "predicted": 71
   },
   {
     "type": "Flash",
@@ -5600,13 +5600,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 123,
     "duration": "2:13",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 74,
+    "etEnd": 116,
     "measured": null,
     "category": "others",
-    "video": "https://youtu.be/0141Jc3Pw20",
-    "videoClear": "https://youtu.be/0141Jc3Pw20?t=66",
-    "predicted": 67
+    "video": "https://youtu.be/7a1fv--WDY4",
+    "videoClear": "https://youtu.be/7a1fv--WDY4?t=66",
+    "predicted": 69
   },
   {
     "type": "Brilliant",
@@ -5618,18 +5618,18 @@ const SONGS = [
     "title_ja": "Death Game Holic",
     "title_ja_reading": "ですげーむほりっく",
     "title_ko": "Death Game Holic",
-    "title_ko_reading": "데스 게임 홀릭",
+    "title_ko_reading": "데스 게임 홀릭 데겜홀",
     "title_en": "Death Game Holic",
     "title_en_reading": null,
     "totalNotes": 235,
     "duration": "2:32",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 79,
+    "etEnd": 130,
     "measured": null,
     "category": "others",
     "video": "https://youtu.be/FljS1CxWt6U",
     "videoClear": "https://youtu.be/FljS1CxWt6U?t=76",
-    "predicted": 127
+    "predicted": 126
   },
   {
     "type": "Glitter",
@@ -5669,12 +5669,12 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 208,
     "duration": "2:40",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 142,
+    "etEnd": 161,
     "measured": null,
     "category": "others",
-    "video": "https://youtu.be/emO7s_RZSBY",
-    "videoClear": "https://youtu.be/emO7s_RZSBY?t=80",
+    "video": "https://youtu.be/ZgY0xRYj6sE",
+    "videoClear": "https://youtu.be/ZgY0xRYj6sE?t=80",
     "predicted": 113
   },
   {
@@ -5715,8 +5715,8 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 160,
     "duration": "2:20",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 0,
+    "etEnd": 0,
     "measured": null,
     "category": "others",
     "video": "https://youtu.be/2089xo_zO_k",
@@ -5807,8 +5807,8 @@ const SONGS = [
     "title_en_reading": "Ensemble Taisou",
     "totalNotes": 176,
     "duration": "2:51",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 87,
+    "etEnd": 109,
     "measured": null,
     "category": "others",
     "video": "https://youtu.be/YNf88q6C8pI",
@@ -5830,13 +5830,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 151,
     "duration": "2:30",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 45,
+    "etEnd": 65,
     "measured": null,
     "category": "others",
     "video": "https://youtu.be/TCOMsiaMGI0",
     "videoClear": "https://youtu.be/TCOMsiaMGI0?t=75",
-    "predicted": 82
+    "predicted": 81
   },
   {
     "type": "All",
@@ -5876,13 +5876,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 141,
     "duration": "2:05",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 102,
+    "etEnd": 136,
     "measured": null,
     "category": "others",
     "video": "https://youtu.be/R-YkxsWyXlo",
     "videoClear": "https://youtu.be/R-YkxsWyXlo?t=62",
-    "predicted": 77
+    "predicted": 79
   },
   {
     "type": "Glitter",
@@ -5899,13 +5899,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 98,
     "duration": "2:09",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 73,
+    "etEnd": 92,
     "measured": null,
     "category": "others",
     "video": "https://youtu.be/VLKIKOYhqlU",
     "videoClear": "https://youtu.be/VLKIKOYhqlU?t=64",
-    "predicted": 54
+    "predicted": 56
   },
   {
     "type": "All",
@@ -5916,7 +5916,7 @@ const SONGS = [
     "unitGroup": "주년·기념",
     "title_ja": "年越しあんさんぶる！！2020→2021",
     "title_ja_reading": "としこしあんさんぶる",
-    "title_ko": "새해맞이 앙상블!! 2020→2021",
+    "title_ko": "새해맞이 앙상블!! 2020→2021 토시코시",
     "title_ko_reading": null,
     "title_en": "年越しあんさんぶる！！2020→2021",
     "title_en_reading": "Toshikoshi Ensemble",
@@ -5926,8 +5926,8 @@ const SONGS = [
     "etEnd": 117,
     "measured": 109,
     "category": "others",
-    "video": "https://youtu.be/RqGC-mI6A8k?si=CT-UaETRgT9WQEZU",
-    "videoClear": "https://youtu.be/RqGC-mI6A8k?t=97",
+    "video": "https://youtu.be/yEdufj2zXbM",
+    "videoClear": "https://youtu.be/yEdufj2zXbM?t=97",
     "predicted": 113
   },
   {
@@ -5995,8 +5995,8 @@ const SONGS = [
     "etEnd": 145,
     "measured": 111,
     "category": "others",
-    "video": "https://youtu.be/2MkdWOiUKpQ?si=QlnzDnryT0IQN5Uq",
-    "videoClear": "https://youtu.be/2MkdWOiUKpQ?t=79",
+    "video": "https://youtu.be/nhGPOGdozZU",
+    "videoClear": "https://youtu.be/nhGPOGdozZU?t=79",
     "predicted": 116
   },
   {
@@ -6014,13 +6014,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 169,
     "duration": "2:39",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 115,
+    "etEnd": 158,
     "measured": null,
     "category": "others",
     "video": "https://youtu.be/OSctDdTFMT0",
     "videoClear": "https://youtu.be/OSctDdTFMT0?t=79",
-    "predicted": 92
+    "predicted": 94
   },
   {
     "type": "Glitter",
@@ -6032,13 +6032,13 @@ const SONGS = [
     "title_ja": "ムーンライトディスコ",
     "title_ja_reading": "むーんらいとでぃすこ",
     "title_ko": "문라이트 디스코",
-    "title_ko_reading": null,
+    "title_ko_reading": "문라디",
     "title_en": "Moonlight Disco",
     "title_en_reading": null,
     "totalNotes": 146,
     "duration": "2:15",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 62,
+    "etEnd": 87,
     "measured": null,
     "category": "others",
     "video": "https://youtu.be/tACTSLs0XnQ",
@@ -6077,7 +6077,7 @@ const SONGS = [
     "unitGroup": "주년·기념",
     "title_ja": "年越しあんさんぶる！！2021→2022",
     "title_ja_reading": "としこしあんさんぶる",
-    "title_ko": "새해맞이 앙상블!! 2021→2022",
+    "title_ko": "새해맞이 앙상블!! 2021→2022 토시코시",
     "title_ko_reading": null,
     "title_en": "年越しあんさんぶる！！2021→2022",
     "title_en_reading": null,
@@ -6087,8 +6087,8 @@ const SONGS = [
     "etEnd": 152,
     "measured": 103,
     "category": "others",
-    "video": "https://youtu.be/uFvTZ6udsRs?si=v1IplzAPa8F8PCYE",
-    "videoClear": "https://youtu.be/uFvTZ6udsRs?t=83",
+    "video": "https://youtu.be/NqCwSfoOuH0",
+    "videoClear": "https://youtu.be/NqCwSfoOuH0?t=83",
     "predicted": 114
   },
   {
@@ -6129,8 +6129,8 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 160,
     "duration": "2:11",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 0,
+    "etEnd": 0,
     "measured": null,
     "category": "others",
     "video": "https://youtu.be/NpPSuXsfWfE",
@@ -6147,18 +6147,18 @@ const SONGS = [
     "title_ja": "パラダイム・リバーシ！",
     "title_ja_reading": "ぱらだいむ・りばーし！",
     "title_ko": "패러다임 ・ 리버시!",
-    "title_ko_reading": null,
+    "title_ko_reading": "부활절",
     "title_en": "パラダイム・リバーシ！",
     "title_en_reading": null,
     "totalNotes": 161,
     "duration": "2:29",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 53,
+    "etEnd": 67,
     "measured": null,
     "category": "others",
     "video": "https://youtu.be/bW6IwchJb9I",
     "videoClear": "https://youtu.be/bW6IwchJb9I?t=74",
-    "predicted": 87
+    "predicted": 86
   },
   {
     "type": "All",
@@ -6221,8 +6221,8 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 142,
     "duration": "2:42",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 54,
+    "etEnd": 94,
     "measured": null,
     "category": "others",
     "video": "https://youtu.be/1TAyAnXWJa0",
@@ -6244,13 +6244,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 218,
     "duration": "2:24",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 82,
+    "etEnd": 108,
     "measured": null,
     "category": "others",
     "video": "https://youtu.be/VEQ_cgqH6xQ",
     "videoClear": "https://youtu.be/VEQ_cgqH6xQ?t=72",
-    "predicted": 118
+    "predicted": 117
   },
   {
     "type": "All",
@@ -6261,7 +6261,7 @@ const SONGS = [
     "unitGroup": "주년·기념",
     "title_ja": "年越しあんさんぶる！！2022→2023",
     "title_ja_reading": "としこしあんさんぶる",
-    "title_ko": "새해맞이 앙상블!! 2022→2023",
+    "title_ko": "새해맞이 앙상블!! 2022→2023 토시코시",
     "title_ko_reading": null,
     "title_en": "年越しあんさんぶる！！2022→2023",
     "title_en_reading": null,
@@ -6271,8 +6271,8 @@ const SONGS = [
     "etEnd": 206,
     "measured": 129,
     "category": "others",
-    "video": "https://youtu.be/kNPHVS4gDNs?si=uU9tJozm-mDltkhl",
-    "videoClear": "https://youtu.be/kNPHVS4gDNs?t=89",
+    "video": "https://youtu.be/hk1LDTVzJ40",
+    "videoClear": "https://youtu.be/hk1LDTVzJ40?t=89",
     "predicted": 137
   },
   {
@@ -6308,13 +6308,13 @@ const SONGS = [
     "title_ja": "Eccentric Party Night!! Mix",
     "title_ja_reading": "えきせんとりっくぱーてぃーないとみっくす",
     "title_ko": "Eccentric Party Night!! Mix",
-    "title_ko_reading": "익센트릭 파티 나이트 믹스",
+    "title_ko_reading": "익센트릭 파티 나이트 믹스 익센파",
     "title_en": "Eccentric Party Night!! Mix",
     "title_en_reading": null,
     "totalNotes": 175,
     "duration": "2:47",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 0,
+    "etEnd": 0,
     "measured": null,
     "category": "others",
     "video": "https://youtu.be/gsCigyNjMcw",
@@ -6363,8 +6363,8 @@ const SONGS = [
     "etEnd": 150,
     "measured": 108,
     "category": "others",
-    "video": "https://youtu.be/5qLQm9m3tgc?si=YF9UwrPItDDJBVqQ",
-    "videoClear": "https://youtu.be/5qLQm9m3tgc?t=83",
+    "video": "https://youtu.be/jbSjRraIBII",
+    "videoClear": "https://youtu.be/jbSjRraIBII?t=83",
     "predicted": 106
   },
   {
@@ -6377,7 +6377,7 @@ const SONGS = [
     "title_ja": "One with One",
     "title_ja_reading": "わんうぃずわん",
     "title_ko": "One with One",
-    "title_ko_reading": "원 위드 원 8주년",
+    "title_ko_reading": "원 위드 원 원윗원 owo 8주년",
     "title_en": "One with One",
     "title_en_reading": null,
     "totalNotes": 208,
@@ -6386,8 +6386,8 @@ const SONGS = [
     "etEnd": 0,
     "measured": 105,
     "category": "others",
-    "video": "https://youtu.be/fywI-2pTEG4?si=CG19aekVbHlyu-oh",
-    "videoClear": "https://youtu.be/fywI-2pTEG4?t=70",
+    "video": "https://youtu.be/5t_B_fhJWK0",
+    "videoClear": "https://youtu.be/5t_B_fhJWK0?t=70",
     "predicted": 113
   },
   {
@@ -6423,7 +6423,7 @@ const SONGS = [
     "title_ja": "LIMIT BREAK DREAMERS",
     "title_ja_reading": "りみっとぶれいくどりーまーず",
     "title_ko": "LIMIT BREAK DREAMERS",
-    "title_ko_reading": "리밋 브레이크 드리머즈 9주년",
+    "title_ko_reading": "리밋 리미트 브레이크 드리머즈 드리머스 9주년",
     "title_en": "LIMIT BREAK DREAMERS",
     "title_en_reading": null,
     "totalNotes": 172,
@@ -6432,8 +6432,8 @@ const SONGS = [
     "etEnd": 69,
     "measured": 89,
     "category": "others",
-    "video": "https://youtu.be/YGrLwg4f8Ak?si=_pPbLBs7pjwV0Y6n",
-    "videoClear": "https://youtu.be/YGrLwg4f8Ak?t=92",
+    "video": "https://youtu.be/XgCFHldKurE",
+    "videoClear": "https://youtu.be/XgCFHldKurE?t=92",
     "predicted": 92
   },
   {
@@ -6520,13 +6520,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 174,
     "duration": "2:27",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 56,
+    "etEnd": 72,
     "measured": null,
     "category": "others",
     "video": "https://youtu.be/F9ZlVb54O2g",
     "videoClear": "https://youtu.be/F9ZlVb54O2g?t=73",
-    "predicted": 94
+    "predicted": 93
   },
   {
     "type": "Flash",
@@ -6566,13 +6566,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 158,
     "duration": "2:32",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 34,
+    "etEnd": 52,
     "measured": null,
     "category": "others",
     "video": "https://youtu.be/jhxpfIPwugY",
     "videoClear": "https://youtu.be/jhxpfIPwugY?t=76",
-    "predicted": 86
+    "predicted": 84
   },
   {
     "type": "All",
@@ -7010,6 +7010,29 @@ const SONGS = [
     "video": "https://youtu.be/xXfJwP6_-2Q",
     "videoClear": "https://youtu.be/xXfJwP6_-2Q?t=79",
     "predicted": 124
+  },
+  {
+    "type": "All",
+    "unit": "기타",
+    "units": [
+      "기타"
+    ],
+    "unitGroup": "기타",
+    "title_ja": "ONLY YOUR STARS! (10th Mix)",
+    "title_ja_reading": null,
+    "title_ko": "ONLY YOUR STARS! (10th Mix)",
+    "title_ko_reading": "온리 유어 스타즈 온유스 10주년",
+    "title_en": "ONLY YOUR STARS! (10th Mix)",
+    "title_en_reading": null,
+    "totalNotes": 130,
+    "duration": "2:31",
+    "etStart": 44,
+    "etEnd": 53,
+    "measured": null,
+    "category": "others",
+    "video": "https://youtu.be/2MVyld-DTR4",
+    "videoClear": "https://youtu.be/2MVyld-DTR4?t=75",
+    "predicted": 69
   }
 ];
 

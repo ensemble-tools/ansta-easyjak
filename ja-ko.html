@@ -212,6 +212,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .dur-chip { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; border: 1.5px solid var(--border); background: var(--input-bg); color: var(--text-sub); cursor: pointer; transition: all .15s; font-family: inherit; }
 .dur-chip.active { background: var(--navy); color: white; border-color: var(--navy); }
 .table-panel { background: var(--white); border-radius: 14px; border: 0.5px solid var(--border); box-shadow: var(--shadow); overflow: hidden; }
+@media (max-width: 768px) { .table-panel { overflow: visible; } }
 .table-search-bar { border-bottom: 1px solid var(--border-light); display: flex; flex-direction: column; }
 .table-search-top { display: flex; align-items: center; gap: 10px; padding: 10px 20px; }
 .search-mode-select { height: 36px; padding: 0 8px; background: var(--input-bg); border: 1.5px solid var(--border); border-radius: 8px; font-size: 13px; color: var(--text-main); font-family: inherit; outline: none; cursor: pointer; transition: border-color .2s; flex-shrink: 0; }
@@ -672,7 +673,7 @@ const I18N = {
     searchModeSong: '곡 검색', searchModeUnit: '유닛 검색',
     tableSearchPlaceholder: '곡 검색...',
     tableHint: '*곡 길이는 풀콤보 기준',
-    sidebarUnitHint: '유닛 검색은 검색바의\n콤보박스에서 선택하세요.',
+    sidebarUnitHint: '유닛 검색은 검색바의 콤보박스에서 선택하세요.',
     colType: '곡 속성', colUnit: '유닛', colTitle: '제목',
     colNotes: '노트 수', colDur: '곡 길이', colClear: '시작 콤보', colVideo: '링크',
     errNotes: '총 노트수를 입력해주세요', errNotesMin: '80이상 정수를 입력하세요', errNotesMax: '300이하 정수를 입력하세요',

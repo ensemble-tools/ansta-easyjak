@@ -838,8 +838,8 @@ const UNIT_GROUPS = {
   'Adam·Eve': ['Adam','Eve'], 'MaM·DF': ['MaM','DF'],
   '주년·새해·만우절': ['주년','만우절','새해'],
   '셔플': ['셔플','셔플_10주년'],
-  '콜라보·J&A': ['콜라보','드림유닛','J&A'],
-  '추억·기타': ['추억','기타'],
+  '콜라보·J&A': ['콜라보','J&A'],
+  '추억·기타': ['추억','드림유닛','기타'],
 };
 const UNIT_TO_GROUP = {};
 Object.entries(UNIT_GROUPS).forEach(([g, ms]) => ms.forEach(u => { UNIT_TO_GROUP[u] = g; }));
@@ -1271,8 +1271,8 @@ function buildUnitFilterPanel() {
     [
       { label:'주년·새해·만우절',  units:'주년,만우절,새해' },
       { label:'셔플',            units:'셔플,셔플_10주년' },
-      { label:'콜라보·J&A',      units:'콜라보,드림유닛,J&A' },
-      { label:'추억·기타',       units:'추억,기타' },
+      { label:'콜라보·J&A',      units:'콜라보,J&A' },
+      { label:'추억·기타',       units:'추억,드림유닛,기타' },
     ],
   ];
   const inner = document.createElement('div');

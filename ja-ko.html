@@ -181,7 +181,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .song-card-title-sub { font-size: 12px; color: var(--text-muted); margin-bottom: 0; }
 .song-card-stats { display: flex; border-top: 0.5px solid var(--border-light); margin-top: 12px; padding-top: 10px; }
 .song-card-stat { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 2px 0; }
-.song-card-stat:not(:last-child) { border-right: 0.5px solid var(--border-light); }
+.song-card-stat:not(:last-child) { border-right: 1px solid var(--border); }
 .song-card-stat-label { font-size: 11px; color: var(--text-muted); font-weight: 500; }
 .song-card-stat-val { font-size: 15px; color: var(--text-main); font-family: 'Inter', monospace; font-weight: 500; }
 .legend-item { display: flex; align-items: center; gap: 5px; font-size: 12px; color: var(--text-sub); font-weight: 500; }
@@ -281,6 +281,10 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .no-video { color: var(--text-muted); font-size: 12px; }
 .title-hover-tooltip { position: fixed; z-index: 300; background: var(--white); border: 1px solid var(--border); border-radius: 10px; box-shadow: var(--shadow-md); overflow: hidden; pointer-events: none; display: none; }
 .title-hover-tooltip img { display: block; width: 280px; height: 280px; object-fit: cover; object-position: center center; }
+.thumb-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 400; align-items: center; justify-content: center; }
+.thumb-modal.open { display: flex; }
+.thumb-modal-box { border-radius: 10px; overflow: hidden; width: 85vw; max-width: 320px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+.thumb-modal-box img { display: block; width: 100%; }
 .table-empty { padding: 48px; text-align: center; color: var(--text-muted); font-size: 14px; }
 .table-count { padding: 10px 20px; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border-light); }
 
@@ -655,6 +659,11 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 <div id="titleHoverTooltip" class="title-hover-tooltip">
   <img id="titleHoverImg" src="" alt="">
 </div>
+<div id="thumbModal" class="thumb-modal" onclick="this.style.display='none'">
+  <div class="thumb-modal-box">
+    <img id="thumbModalImg" src="" alt="">
+  </div>
+</div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="songs.js"></script>
 <script>
@@ -910,6 +919,19 @@ const PAGE_SIZE = 30;
     tooltip.style.top = Math.max(Math.min(y, window.innerHeight - 176), 8) + 'px';
   });
   tbody.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; });
+
+  // 모바일 카드 썸네일 모달
+  const thumbModal = document.getElementById('thumbModal');
+  const thumbModalImg = document.getElementById('thumbModalImg');
+  document.getElementById('cardContainer').addEventListener('click', e => {
+    const title = e.target.closest('.song-card-title');
+    if (!title || !title.dataset.video) return;
+    const vid = getYtId(title.dataset.video);
+    if (!vid) return;
+    thumbModalImg.src = `https://img.youtube.com/vi/${vid}/maxresdefault.jpg`;
+    thumbModalImg.onerror = () => { thumbModalImg.src = `https://img.youtube.com/vi/${vid}/hqdefault.jpg`; thumbModalImg.onerror = null; };
+    thumbModal.classList.add('open');
+  });
 })();
 
 // ── 초기화 ────────────────────────────────────────
@@ -1449,8 +1471,7 @@ function renderTable() {
           </div>
           ${videoBtn}
         </div>
-        <div class="song-card-title">${cardMainTitle}</div>
-        ${cardSubTitle ? `<div class="song-card-title-sub">${cardSubTitle}</div>` : ''}
+        <div class="song-card-title" data-video="${s.video||''}">${cardMainTitle}</div>
         <div class="song-card-stats">
           <div class="song-card-stat">
             <span class="song-card-stat-label">노트수</span>

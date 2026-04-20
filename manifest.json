@@ -1,0 +1,15 @@
+{
+  "name": "앙스타 이지모드 클리어 예측",
+  "short_name": "이지잭",
+  "start_url": "https://ensemble-tools.github.io/ansta-easyjak/ja-ko.html",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "512_rabbit.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

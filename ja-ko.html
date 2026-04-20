@@ -1418,7 +1418,7 @@ function renderTable() {
   const start = (currentPage-1)*PAGE_SIZE;
   const pageList = list.slice(start, start+PAGE_SIZE);
 
-  tbody.innerHTML = pageList.map(s => {
+  const rendered = pageList.map(s => {
     const c = TYPE_COLOR[s.type] || TYPE_COLOR['All'];
     const dot = s.measured !== null
       ? `<span class="clear-dot" style="background:#059669"></span>`
@@ -1483,7 +1483,7 @@ function renderTable() {
   if (isMobile) {
     tableWrap.style.display = 'none';
     cardContainer.style.display = '';
-    cardContainer.innerHTML = pageList.map((_, i) => rendered[i]).join('');
+    cardContainer.innerHTML = rendered.join('');
   } else {
     tableWrap.style.display = '';
     cardContainer.style.display = 'none';

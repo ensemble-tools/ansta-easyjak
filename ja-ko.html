@@ -311,8 +311,6 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
   .combo-num { font-size: 40px; }
   .combo-unit { font-size: 16px; }
   .result-song-title { font-size: 14px; }
-  .songs-table th:nth-child(5),
-  .songs-table td:nth-child(5) { display: none; }
 }
 </style>
 </head>
@@ -523,7 +521,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
           <div class="unit-filter-panel" id="unitFilterPanel" style="display:none"></div>
         </div>
 
-        <div style="overflow-x:hidden">
+        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
           <table class="songs-table">
             <thead>
               <tr>

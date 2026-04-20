@@ -1683,13 +1683,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 144,
     "duration": "2:34",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 60,
+    "etEnd": 103,
     "measured": null,
     "category": "cosmic",
     "video": "https://youtu.be/uZ1iXWk1n0I",
     "videoClear": "https://youtu.be/uZ1iXWk1n0I?t=77",
-    "predicted": 78
+    "predicted": 79
   },
   {
     "type": "Sparkle",
@@ -1706,13 +1706,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 183,
     "duration": "2:18",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 120,
+    "etEnd": 175,
     "measured": null,
     "category": "cosmic",
     "video": "https://youtu.be/3UMqeTDei2Y",
     "videoClear": "https://youtu.be/3UMqeTDei2Y?t=69",
-    "predicted": 99
+    "predicted": 101
   },
   {
     "type": "Sparkle",
@@ -1730,8 +1730,8 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 173,
     "duration": "2:41",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 98,
+    "etEnd": 115,
     "measured": null,
     "category": "cosmic",
     "video": "https://youtu.be/5usWkedOmnE",
@@ -1753,13 +1753,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 202,
     "duration": "2:27",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 130,
+    "etEnd": 166,
     "measured": null,
     "category": "cosmic",
     "video": "https://youtu.be/ZdegYGzQP8A",
     "videoClear": "https://youtu.be/ZdegYGzQP8A?t=73",
-    "predicted": 109
+    "predicted": 110
   },
   {
     "type": "Glitter",
@@ -1868,8 +1868,8 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 151,
     "duration": "2:46",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 24,
+    "etEnd": 79,
     "measured": null,
     "category": "cosmic",
     "video": "https://youtu.be/liV1kBLXASQ",
@@ -2098,13 +2098,13 @@ const SONGS = [
     "title_en_reading": "Miwaku Geki",
     "totalNotes": 129,
     "duration": "2:07",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 97,
+    "etEnd": 120,
     "measured": null,
     "category": "cosmic",
     "video": "https://youtu.be/ApmEd2mg1rg",
     "videoClear": "https://youtu.be/ApmEd2mg1rg?t=63",
-    "predicted": 70
+    "predicted": 72
   },
   {
     "type": "Glitter",
@@ -2121,13 +2121,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 121,
     "duration": "2:15",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 83,
+    "etEnd": 113,
     "measured": null,
     "category": "cosmic",
     "video": "https://youtu.be/DfrTEOGpWTk",
     "videoClear": "https://youtu.be/DfrTEOGpWTk?t=67",
-    "predicted": 66
+    "predicted": 68
   },
   {
     "type": "Flash",
@@ -2167,13 +2167,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 197,
     "duration": "2:23",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 165,
+    "etEnd": 190,
     "measured": null,
     "category": "cosmic",
     "video": "https://youtu.be/_lmEpYzObW4",
     "videoClear": "https://youtu.be/_lmEpYzObW4?t=71",
-    "predicted": 107
+    "predicted": 108
   },
   {
     "type": "Sparkle",
@@ -2190,13 +2190,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 128,
     "duration": "2:31",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 96,
+    "etEnd": 120,
     "measured": null,
     "category": "cosmic",
     "video": "https://youtu.be/WTlD5cIB2Ik",
     "videoClear": "https://youtu.be/WTlD5cIB2Ik?t=75",
-    "predicted": 70
+    "predicted": 72
   },
   {
     "type": "Brilliant",
@@ -2213,13 +2213,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 122,
     "duration": "2:26",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 38,
+    "etEnd": 50,
     "measured": null,
     "category": "cosmic",
     "video": "https://youtu.be/hWqDUrf7pXI",
     "videoClear": "https://youtu.be/hWqDUrf7pXI?t=73",
-    "predicted": 67
+    "predicted": 65
   },
   {
     "type": "Sparkle",
@@ -2236,13 +2236,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 151,
     "duration": "2:51",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 95,
+    "etEnd": 123,
     "measured": null,
     "category": "cosmic",
-    "video": "https://youtu.be/xfdnSIhf15Q",
-    "videoClear": "https://youtu.be/xfdnSIhf15Q?t=85",
-    "predicted": 82
+    "video": "https://youtu.be/eUajwplreLU",
+    "videoClear": "https://youtu.be/eUajwplreLU?t=85",
+    "predicted": 83
   },
   {
     "type": "Brilliant",
@@ -2283,8 +2283,8 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 155,
     "duration": "2:49",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 58,
+    "etEnd": 100,
     "measured": null,
     "category": "cosmic",
     "video": null,
@@ -2444,13 +2444,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 151,
     "duration": "2:37",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 101,
+    "etEnd": 119,
     "measured": null,
     "category": "cosmic",
     "video": "https://youtu.be/7fOnxRlPbRo",
     "videoClear": "https://youtu.be/7fOnxRlPbRo?t=78",
-    "predicted": 82
+    "predicted": 83
   },
   {
     "type": "Glitter",
@@ -2467,8 +2467,8 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 153,
     "duration": "2:16",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 46,
+    "etEnd": 87,
     "measured": null,
     "category": "cosmic",
     "video": "https://youtu.be/vOp5EhU_WaQ",
@@ -2513,13 +2513,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 129,
     "duration": "2:05",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 82,
+    "etEnd": 104,
     "measured": null,
     "category": "cosmic",
     "video": "https://youtu.be/D-W5tEwjH1U",
     "videoClear": "https://youtu.be/D-W5tEwjH1U?t=62",
-    "predicted": 70
+    "predicted": 71
   },
   {
     "type": "Glitter",
@@ -2537,13 +2537,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 122,
     "duration": "2:22",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 31,
+    "etEnd": 44,
     "measured": null,
     "category": "cosmic",
     "video": "https://youtu.be/3r8c7tkPRQQ",
     "videoClear": "https://youtu.be/3r8c7tkPRQQ?t=71",
-    "predicted": 67
+    "predicted": 65
   },
   {
     "type": "Flash",
@@ -2560,13 +2560,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 161,
     "duration": "2:33",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 54,
+    "etEnd": 73,
     "measured": null,
     "category": "cosmic",
     "video": "https://youtu.be/ZnjkkbneoKI",
     "videoClear": "https://youtu.be/ZnjkkbneoKI?t=76",
-    "predicted": 87
+    "predicted": 86
   },
   {
     "type": "Glitter",
@@ -2630,13 +2630,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 181,
     "duration": "2:40",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 69,
+    "etEnd": 137,
     "measured": null,
     "category": "cosmic",
     "video": null,
     "videoClear": null,
-    "predicted": 98
+    "predicted": 99
   },
   {
     "type": "Brilliant",
@@ -2653,8 +2653,8 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 172,
     "duration": "2:34",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 74,
+    "etEnd": 111,
     "measured": null,
     "category": "cosmic",
     "video": "https://youtu.be/152gjLosTKs",
@@ -2768,8 +2768,8 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 217,
     "duration": "2:24",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 0,
+    "etEnd": 0,
     "measured": null,
     "category": "cosmic",
     "video": "https://youtu.be/X0_a8FMh2AI",
@@ -2814,8 +2814,8 @@ const SONGS = [
     "title_en_reading": "Kangei 2wink Zatsugidan",
     "totalNotes": 128,
     "duration": "2:16",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 73,
+    "etEnd": 92,
     "measured": null,
     "category": "cosmic",
     "video": "https://youtu.be/w2ZdiwEa0lQ",
@@ -2837,13 +2837,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 184,
     "duration": "2:37",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 49,
+    "etEnd": 77,
     "measured": null,
     "category": "cosmic",
-    "video": "https://youtu.be/YAcymRDLa74",
-    "videoClear": "https://youtu.be/YAcymRDLa74?t=78",
-    "predicted": 100
+    "video": "https://youtu.be/ohozYa1RSig",
+    "videoClear": "https://youtu.be/ohozYa1RSig?t=78",
+    "predicted": 98
   },
   {
     "type": "Glitter",
@@ -2952,13 +2952,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 239,
     "duration": "2:27",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 176,
+    "etEnd": 216,
     "measured": null,
     "category": "cosmic",
     "video": "https://youtu.be/5TkaZQIhd-w",
     "videoClear": "https://youtu.be/5TkaZQIhd-w?t=73",
-    "predicted": 129
+    "predicted": 131
   },
   {
     "type": "Glitter",
@@ -3022,13 +3022,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 116,
     "duration": "2:44",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 27,
+    "etEnd": 55,
     "measured": null,
     "category": "cosmic",
     "video": null,
     "videoClear": null,
-    "predicted": 64
+    "predicted": 62
   },
   {
     "type": "Flash",
@@ -3068,13 +3068,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 156,
     "duration": "2:35",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 45,
+    "etEnd": 70,
     "measured": null,
     "category": "cosmic",
     "video": "https://youtu.be/Ti7XbA1jvzw",
     "videoClear": "https://youtu.be/Ti7XbA1jvzw?t=77",
-    "predicted": 85
+    "predicted": 83
   },
   {
     "type": "Sparkle",
@@ -3091,13 +3091,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 147,
     "duration": "2:36",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 59,
+    "etEnd": 84,
     "measured": null,
     "category": "cosmic",
     "video": "https://youtu.be/tFor8QIXJpk",
     "videoClear": "https://youtu.be/tFor8QIXJpk?t=78",
-    "predicted": 80
+    "predicted": 79
   },
   {
     "type": "Flash",
@@ -3183,8 +3183,8 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 152,
     "duration": "2:37",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 87,
+    "etEnd": 101,
     "measured": null,
     "category": "rhythm_link",
     "video": "https://youtu.be/eoQE_n5ITSU",
@@ -3206,13 +3206,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 164,
     "duration": "2:30",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 107,
+    "etEnd": 142,
     "measured": null,
     "category": "rhythm_link",
     "video": "https://youtu.be/OMv6CprdegM",
     "videoClear": "https://youtu.be/OMv6CprdegM?t=75",
-    "predicted": 89
+    "predicted": 90
   },
   {
     "type": "Brilliant",
@@ -3229,13 +3229,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 132,
     "duration": "2:29",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 52,
+    "etEnd": 68,
     "measured": null,
     "category": "rhythm_link",
     "video": "https://youtu.be/05eTtKBt4b0",
     "videoClear": "https://youtu.be/05eTtKBt4b0?t=74",
-    "predicted": 72
+    "predicted": 71
   },
   {
     "type": "Glitter",
@@ -3252,13 +3252,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 119,
     "duration": "2:22",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 60,
+    "etEnd": 86,
     "measured": null,
     "category": "rhythm_link",
     "video": "https://youtu.be/n4NhuGtil0o",
     "videoClear": "https://youtu.be/n4NhuGtil0o?t=71",
-    "predicted": 65
+    "predicted": 66
   },
   {
     "type": "Brilliant",
@@ -3270,18 +3270,18 @@ const SONGS = [
     "title_ja": "IMMORAL WORLD",
     "title_ja_reading": "いんもらるわーるど",
     "title_ko": "IMMORAL WORLD",
-    "title_ko_reading": "임모랄 월드",
+    "title_ko_reading": "임모랄 임모럴 월드",
     "title_en": "IMMORAL WORLD",
     "title_en_reading": null,
     "totalNotes": 126,
     "duration": "1:57",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 62,
+    "etEnd": 112,
     "measured": null,
     "category": "rhythm_link",
     "video": "https://youtu.be/5ibK0HTyCqE",
     "videoClear": "https://youtu.be/5ibK0HTyCqE?t=58",
-    "predicted": 69
+    "predicted": 71
   },
   {
     "type": "Sparkle",
@@ -3299,8 +3299,8 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 193,
     "duration": "2:35",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 122,
+    "etEnd": 138,
     "measured": null,
     "category": "rhythm_link",
     "video": "https://youtu.be/ypxVFdcOLd4",
@@ -3322,13 +3322,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 154,
     "duration": "2:39",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 28,
+    "etEnd": 52,
     "measured": null,
     "category": "rhythm_link",
     "video": "https://youtu.be/jWqlGb2INEM",
     "videoClear": "https://youtu.be/jWqlGb2INEM?t=79",
-    "predicted": 84
+    "predicted": 82
   },
   {
     "type": "Flash",
@@ -3391,13 +3391,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 106,
     "duration": "2:05",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 1,
+    "etEnd": 6,
     "measured": null,
     "category": "rhythm_link",
     "video": "https://youtu.be/f1QLJm01eJg",
     "videoClear": "https://youtu.be/f1QLJm01eJg?t=62",
-    "predicted": 58
+    "predicted": 54
   },
   {
     "type": "Sparkle",
@@ -3437,13 +3437,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 119,
     "duration": "2:15",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 62,
+    "etEnd": 88,
     "measured": null,
     "category": "rhythm_link",
     "video": "https://youtu.be/gntQ8pC0mnU",
     "videoClear": "https://youtu.be/gntQ8pC0mnU?t=67",
-    "predicted": 65
+    "predicted": 66
   },
   {
     "type": "Glitter",
@@ -3552,8 +3552,8 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 100,
     "duration": "2:28",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 47,
+    "etEnd": 70,
     "measured": null,
     "category": "rhythm_link",
     "video": "https://youtu.be/tLgCREZPHi4",
@@ -3575,13 +3575,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 140,
     "duration": "2:27",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 108,
+    "etEnd": 136,
     "measured": null,
     "category": "rhythm_link",
     "video": "https://youtu.be/6KBX-mjgP2o",
     "videoClear": "https://youtu.be/6KBX-mjgP2o?t=73",
-    "predicted": 76
+    "predicted": 78
   },
   {
     "type": "Sparkle",
@@ -3598,8 +3598,8 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 142,
     "duration": "2:23",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 80,
+    "etEnd": 98,
     "measured": null,
     "category": "rhythm_link",
     "video": "https://youtu.be/8mBjOa0wztQ",
@@ -3621,13 +3621,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 142,
     "duration": "2:29",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 47,
+    "etEnd": 95,
     "measured": null,
     "category": "rhythm_link",
     "video": "https://youtu.be/Ij2gsQ3uqzU",
     "videoClear": "https://youtu.be/Ij2gsQ3uqzU?t=74",
-    "predicted": 77
+    "predicted": 78
   },
   {
     "type": "Brilliant",
@@ -3645,8 +3645,8 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 128,
     "duration": "2:37",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 69,
+    "etEnd": 90,
     "measured": null,
     "category": "rhythm_link",
     "video": "https://youtu.be/vLbL0M7TXSI",
@@ -3668,13 +3668,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 161,
     "duration": "2:29",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 99,
+    "etEnd": 116,
     "measured": null,
     "category": "rhythm_link",
     "video": "https://youtu.be/fAbKFE_1Rro",
     "videoClear": "https://youtu.be/fAbKFE_1Rro?t=74",
-    "predicted": 87
+    "predicted": 88
   },
   {
     "type": "Sparkle",
@@ -3691,8 +3691,8 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 125,
     "duration": "2:16",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 53,
+    "etEnd": 74,
     "measured": null,
     "category": "rhythm_link",
     "video": "https://youtu.be/8fPSVElH1As",
@@ -3755,13 +3755,13 @@ const SONGS = [
     "title_ja": "Dream Collection",
     "title_ja_reading": "どりーむこれくしょん",
     "title_ko": "Dream Collection",
-    "title_ko_reading": "드림 컬렉션",
+    "title_ko_reading": "드림 컬렉션 콜렉션",
     "title_en": "Dream Collection",
     "title_en_reading": null,
     "totalNotes": 112,
     "duration": "2:11",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 46,
+    "etEnd": 62,
     "measured": null,
     "category": "rhythm_link",
     "video": "https://youtu.be/YY57B6sq98M",
@@ -3783,8 +3783,8 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 165,
     "duration": "2:43",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 69,
+    "etEnd": 114,
     "measured": null,
     "category": "rhythm_link",
     "video": "https://youtu.be/lgIK6RjZHks",
@@ -3921,13 +3921,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 200,
     "duration": "2:23",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 119,
+    "etEnd": 181,
     "measured": null,
     "category": "rhythm_link",
     "video": "https://youtu.be/4TBgCN7XyMY",
     "videoClear": "https://youtu.be/4TBgCN7XyMY?t=71",
-    "predicted": 108
+    "predicted": 110
   },
   {
     "type": "Flash",
@@ -3944,13 +3944,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 133,
     "duration": "2:30",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 43,
+    "etEnd": 68,
     "measured": null,
     "category": "rhythm_link",
     "video": "https://youtu.be/rwd6TBO4UL8",
     "videoClear": "https://youtu.be/rwd6TBO4UL8?t=75",
-    "predicted": 73
+    "predicted": 72
   },
   {
     "type": "Glitter",
@@ -3967,8 +3967,8 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 136,
     "duration": "2:32",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 58,
+    "etEnd": 82,
     "measured": null,
     "category": "rhythm_link",
     "video": "https://youtu.be/OZ7KKezqPpw",
@@ -3990,8 +3990,8 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 167,
     "duration": "2:23",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 80,
+    "etEnd": 120,
     "measured": null,
     "category": "rhythm_link",
     "video": "https://youtu.be/BQkv56Mmga8",
@@ -4013,13 +4013,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 190,
     "duration": "2:35",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 129,
+    "etEnd": 147,
     "measured": null,
     "category": "rhythm_link",
     "video": "https://youtu.be/he5FDcPSM0A",
     "videoClear": "https://youtu.be/he5FDcPSM0A?t=77",
-    "predicted": 103
+    "predicted": 104
   },
   {
     "type": "Brilliant",
@@ -4036,13 +4036,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 144,
     "duration": "2:21",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 50,
+    "etEnd": 64,
     "measured": null,
     "category": "rhythm_link",
     "video": "https://youtu.be/LIHTBcF0Rkw",
     "videoClear": "https://youtu.be/LIHTBcF0Rkw?t=70",
-    "predicted": 78
+    "predicted": 77
   },
   {
     "type": "Flash",
@@ -4082,8 +4082,8 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 114,
     "duration": "2:18",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 50,
+    "etEnd": 70,
     "measured": null,
     "category": "rhythm_link",
     "video": "https://youtu.be/6vOOvEC5UuY",
@@ -4151,13 +4151,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 155,
     "duration": "2:43",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 50,
+    "etEnd": 66,
     "measured": null,
     "category": "rhythm_link",
     "video": "https://youtu.be/7RDXl5wOMws",
     "videoClear": "https://youtu.be/7RDXl5wOMws?t=81",
-    "predicted": 84
+    "predicted": 83
   },
   {
     "type": "Glitter",
@@ -4174,13 +4174,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 141,
     "duration": "2:40",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 86,
+    "etEnd": 111,
     "measured": null,
     "category": "rhythm_link",
     "video": "https://youtu.be/x-y_XarZa0U",
     "videoClear": "https://youtu.be/x-y_XarZa0U?t=80",
-    "predicted": 77
+    "predicted": 78
   },
   {
     "type": "Sparkle",
@@ -4197,13 +4197,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 217,
     "duration": "2:46",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 67,
+    "etEnd": 112,
     "measured": null,
     "category": "rhythm_link",
     "video": "https://youtu.be/aFfUxWHRLsQ",
     "videoClear": "https://youtu.be/aFfUxWHRLsQ?t=83",
-    "predicted": 117
+    "predicted": 116
   },
   {
     "type": "Sparkle",
@@ -4675,7 +4675,7 @@ const SONGS = [
     "title_ja": "Heart Collector",
     "title_ja_reading": "はーとこれくたー",
     "title_ko": "Heart Collector",
-    "title_ko_reading": "하트 컬렉터",
+    "title_ko_reading": "하트 컬렉터 콜렉터",
     "title_en": "Heart Collector",
     "title_en_reading": null,
     "totalNotes": 164,
@@ -5094,13 +5094,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 121,
     "duration": "2:13",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 79,
+    "etEnd": 105,
     "measured": null,
     "category": "new_dimension",
     "video": "https://youtu.be/ZJuXwWlxHlY",
     "videoClear": "https://youtu.be/ZJuXwWlxHlY?t=66",
-    "predicted": 66
+    "predicted": 67
   },
   {
     "type": "Flash",
@@ -5140,8 +5140,8 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 141,
     "duration": "2:28",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 69,
+    "etEnd": 89,
     "measured": null,
     "category": "new_dimension",
     "video": "https://youtu.be/ZJmdrmp4mOw",
@@ -5232,13 +5232,13 @@ const SONGS = [
     "title_en_reading": null,
     "totalNotes": 132,
     "duration": "2:14",
-    "etStart": null,
-    "etEnd": null,
+    "etStart": 33,
+    "etEnd": 98,
     "measured": null,
     "category": "new_dimension",
     "video": "https://youtu.be/agY_LQeBWFI",
     "videoClear": "https://youtu.be/agY_LQeBWFI?t=67",
-    "predicted": 72
+    "predicted": 73
   },
   {
     "type": "Glitter",
@@ -5633,9 +5633,9 @@ const SONGS = [
   },
   {
     "type": "Glitter",
-    "unit": "추억",
+    "unit": "기타",
     "units": [
-      "추억"
+      "기타"
     ],
     "unitGroup": "기타",
     "title_ja": "Crush of Judgment",
@@ -5725,9 +5725,9 @@ const SONGS = [
   },
   {
     "type": "Sparkle",
-    "unit": "드림유닛",
+    "unit": "기타",
     "units": [
-      "드림유닛"
+      "기타"
     ],
     "unitGroup": "기타",
     "title_ja": "瞬きSign☆",
@@ -5748,9 +5748,9 @@ const SONGS = [
   },
   {
     "type": "Brilliant",
-    "unit": "드림유닛",
+    "unit": "기타",
     "units": [
-      "드림유닛"
+      "기타"
     ],
     "unitGroup": "기타",
     "title_ja": "セツナDrops",
@@ -5771,9 +5771,9 @@ const SONGS = [
   },
   {
     "type": "Brilliant",
-    "unit": "드림유닛",
+    "unit": "기타",
     "units": [
-      "드림유닛"
+      "기타"
     ],
     "unitGroup": "기타",
     "title_ja": "LOCK YOUR GAZE",

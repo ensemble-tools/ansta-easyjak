@@ -163,7 +163,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .bar-edge-marker { position: absolute; top: 0; display: flex; flex-direction: column; }
 .bar-edge-marker.left-edge { left: 0; align-items: flex-start; }
 .bar-edge-marker.right-edge { right: 0; align-items: flex-end; }
-.bar-edge-marker-label { background: #eaecef; color: #6b7280; font-size: 12px; font-weight: 600; padding: 3px 8px; border-radius: 4px 4px 0 0; white-space: nowrap; margin-bottom: 0; min-width: 36px; text-align: center; }
+.bar-edge-marker-label { background: #eaecef; color: #6b7280; font-size: 12px; font-weight: 600; padding: 3px 8px; border-radius: 0; white-space: nowrap; margin-bottom: 0; min-width: 36px; text-align: center; }
 .bar-edge-marker-line { width: 1px; height: 38px; background: #eaecef; }
 .bar-edge-label { position: absolute; top: 4px; font-size: 12px; color: var(--text-sub); font-weight: 500; white-space: nowrap; }
 .bar-edge-label.left { left: 0; }
@@ -1206,15 +1206,30 @@ function updateBar(notes, etS, etE, val) {
   document.getElementById('barMarkerLabel').textContent = `Clear: ${val}`;
   const lblS = document.getElementById('lblETStart');
   const lblE = document.getElementById('lblETEnd');
-  const cramped = etS && etE && (etEPos - etSPos) < 8;
   if (etS) {
     lblS.style.display = ''; lblS.style.left = etSPos + '%'; lblS.textContent = etS;
-    if (cramped) lblS.classList.add('above'); else lblS.classList.remove('above');
+    lblS.style.transform = 'translateX(-50%)';
   } else {
-    lblS.style.display = 'none'; lblS.classList.remove('above');
+    lblS.style.display = 'none';
   }
-  if (etE) { lblE.style.display = ''; lblE.style.left = etEPos + '%'; lblE.textContent = etE; }
-  else { lblE.style.display = 'none'; }
+  if (etE) {
+    lblE.style.display = ''; lblE.style.left = etEPos + '%'; lblE.textContent = etE;
+    lblE.style.transform = 'translateX(-50%)';
+  } else {
+    lblE.style.display = 'none';
+  }
+  if (etS && etE) {
+    requestAnimationFrame(() => {
+      const sRect = lblS.getBoundingClientRect();
+      const eRect = lblE.getBoundingClientRect();
+      const gap = eRect.left - sRect.right;
+      if (gap < 6) {
+        const push = (6 - gap) / 2;
+        lblS.style.transform = `translateX(calc(-50% - ${push}px))`;
+        lblE.style.transform = `translateX(calc(-50% + ${push}px))`;
+      }
+    });
+  }
   document.getElementById('lblTotal').textContent = `${notes}`;
   document.getElementById('markerTotal').style.display = '';
 }

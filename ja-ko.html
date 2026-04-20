@@ -146,28 +146,29 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .video-yt-badge { position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.65); color: white; font-size: 10px; padding: 3px 8px; border-radius: 4px; font-family: 'Inter', sans-serif; }
 
 /* ── Progress Bar ── */
-.bar-section { padding: 44px 0 36px; position: relative; width: 85%; margin-left: auto; margin-right: auto; display: block; }
-.bar-track { height: 22px; border-radius: 11px; display: flex; overflow: hidden; background: #e5e7eb; }
+.bar-section { padding: 62px 0 20px; position: relative; width: 85%; margin-left: auto; margin-right: auto; display: block; }
+.bar-track { height: 28px; border-radius: 0; display: flex; overflow: hidden; background: #e5e7eb; }
 .bar-left { height: 100%; background: #d1d5db; }
 .bar-et { height: 100%; background: var(--amber); }
 .bar-right { height: 100%; background: #d1d5db; }
 .bar-marker { position: absolute; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; top: 0; }
-.bar-marker-label { background: #dce6f5; color: #1e4a8a; font-size: 13px; font-weight: 600; padding: 4px 10px; border-radius: 4px; white-space: nowrap; margin-bottom: 3px; }
-.bar-marker-arrow { width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 7px solid #dce6f5; }
+.bar-marker-label { background: #dce6f5; color: #1e4a8a; font-size: 13px; font-weight: 600; padding: 4px 10px; border-radius: 4px; white-space: nowrap; margin-bottom: 0; }
+.bar-marker-line { width: 2px; height: 20px; background: #4a6fa5; }
+.bar-marker-arrow { width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 7px solid #4a6fa5; }
 .bar-labels { position: relative; height: 20px; margin-top: 6px; }
 .bar-lbl { position: absolute; font-size: 12px; color: var(--text-sub); transform: translateX(-50%); white-space: nowrap; font-weight: 500; }
+.bar-lbl.above { top: -60px; }
 .bar-lbl.left { transform: none; left: 0; }
 .bar-lbl.right { transform: none; right: 0; left: auto; }
 .bar-edge-marker { position: absolute; top: 0; display: flex; flex-direction: column; }
 .bar-edge-marker.left-edge { left: 0; align-items: flex-start; }
 .bar-edge-marker.right-edge { right: 0; align-items: flex-end; }
-.bar-edge-marker-label { background: #eaecef; color: #6b7280; font-size: 12px; font-weight: 600; padding: 3px 8px; border-radius: 4px; white-space: nowrap; margin-bottom: 3px; min-width: 36px; text-align: center; }
-.bar-edge-marker-arrow-left { width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid #eaecef; margin-left: 8px; }
-.bar-edge-marker-arrow-right { width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid #eaecef; margin-right: 8px; }
+.bar-edge-marker-label { background: #eaecef; color: #6b7280; font-size: 12px; font-weight: 600; padding: 3px 8px; border-radius: 4px 4px 0 0; white-space: nowrap; margin-bottom: 0; min-width: 36px; text-align: center; }
+.bar-edge-marker-line { width: 1px; height: 38px; background: #eaecef; }
 .bar-edge-label { position: absolute; top: 4px; font-size: 12px; color: var(--text-sub); font-weight: 500; white-space: nowrap; }
 .bar-edge-label.left { left: 0; }
 .bar-edge-label.right { right: 0; }
-.bar-legend { display: flex; gap: 16px; margin-top: 12px; padding-top: 12px; border-top: 0.5px solid var(--border-light); }
+.bar-legend { display: flex; gap: 16px; margin-top: 6px; padding-top: 8px; border-top: 0.5px solid var(--border-light); }
 .legend-item { display: flex; align-items: center; gap: 5px; font-size: 12px; color: var(--text-sub); font-weight: 500; }
 .legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
 
@@ -402,6 +403,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
       <div class="bar-section" id="barSection">
         <div class="bar-marker" id="barMarker">
           <div class="bar-marker-label" id="barMarkerLabel">Clear: —</div>
+          <div class="bar-marker-line"></div>
           <div class="bar-marker-arrow"></div>
         </div>
         <div class="bar-track">
@@ -411,11 +413,11 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
         </div>
         <div class="bar-edge-marker left-edge">
           <div class="bar-edge-marker-label">0</div>
-          <div class="bar-edge-marker-arrow-left"></div>
+          <div class="bar-edge-marker-line"></div>
         </div>
         <div class="bar-edge-marker right-edge" id="markerTotal" style="display:none">
           <div class="bar-edge-marker-label" id="lblTotal"></div>
-          <div class="bar-edge-marker-arrow-right"></div>
+          <div class="bar-edge-marker-line"></div>
         </div>
         <div class="bar-labels">
           <span class="bar-lbl" id="lblETStart" style="display:none"></span>
@@ -471,7 +473,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 
         <div class="sidebar-section sidebar-hint">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" style="flex-shrink:0;margin-top:2px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          <span data-i18n="sidebarUnitHint">유닛 검색은 상단 검색바의 콤보박스에서 선택</span>
+          <span data-i18n="sidebarUnitHint">유닛 검색은 검색바의 콤보박스에서 선택</span>
         </div>
 
         <div class="sidebar-section">
@@ -488,6 +490,10 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
             <button class="dur-chip" onclick="setDur('mid2',this)" data-i18n="durMid2">2:31 ~ 2:40</button>
             <button class="dur-chip" onclick="setDur('long',this)" data-i18n="durLong">2:41 ~</button>
           </div>
+        </div>
+
+        <div class="sidebar-section" style="margin-bottom:0">
+          <span style="font-size:11px;color:var(--text-muted)" data-i18n="tableHint">*곡 길이는 풀콤보 기준</span>
         </div>
 
       </div>
@@ -513,7 +519,6 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
                 </svg>
               </button>
             </div>
-            <div class="table-hint" data-i18n="tableHint">곡 길이는 풀콤보 기준</div>
           </div>
           <div class="unit-filter-panel" id="unitFilterPanel" style="display:none"></div>
         </div>
@@ -668,8 +673,8 @@ const I18N = {
     durAll: '전체', durShort: '~ 2:20', durMid1: '2:21 ~ 2:30', durMid2: '2:31 ~ 2:40', durLong: '2:41 ~',
     searchModeSong: '곡 검색', searchModeUnit: '유닛 검색',
     tableSearchPlaceholder: '곡 검색...',
-    tableHint: '곡 길이는 풀콤보 기준',
-    sidebarUnitHint: '유닛 검색은 상단 검색바의\n콤보박스에서 선택하세요.',
+    tableHint: '*곡 길이는 풀콤보 기준',
+    sidebarUnitHint: '유닛 검색은 검색바의\n콤보박스에서 선택하세요.',
     colType: '곡 속성', colUnit: '유닛', colTitle: '제목',
     colNotes: '노트 수', colDur: '곡 길이', colClear: '시작 콤보', colVideo: '링크',
     errNotes: '총 노트수를 입력해주세요', errNotesMin: '80이상 정수를 입력하세요', errNotesMax: '300이하 정수를 입력하세요',
@@ -1150,14 +1155,11 @@ function renderVideoThumb(wrap, videoId, originalUrl) {
 }
 
 function updateBar(notes, etS, etE, val) {
-  const clearPos = Math.min(Math.max((val/notes)*100, 1), 98);
+  const clearPos = (val/notes)*100;
   const etSPos = etS ? (etS/notes*100) : 0;
   const etEPos = etE ? (etE/notes*100) : 0;
-  // barLeft(회색)에 최소 너비를 줘서 노란색이 0 마커를 침범하지 않도록 함
-  const barLeftPct = etS ? Math.max(etSPos, 3) : 0;
-  // ET 구간(노란색)에 최소 시각적 폭을 보장해 아주 짧은 ET도 식별 가능하도록 함
-  const MIN_ET_WIDTH = 6;
-  const etEndVisual = etE ? Math.min(Math.max(etEPos, barLeftPct + MIN_ET_WIDTH), 100) : barLeftPct;
+  const barLeftPct = etSPos;
+  const etEndVisual = etE ? etEPos : barLeftPct;
   const barEl = document.getElementById('barLeft');
   barEl.style.width = barLeftPct+'%';
   barEl.style.minWidth = '0';
@@ -1167,9 +1169,14 @@ function updateBar(notes, etS, etE, val) {
   document.getElementById('barMarkerLabel').textContent = `Clear: ${val}`;
   const lblS = document.getElementById('lblETStart');
   const lblE = document.getElementById('lblETEnd');
-  if (etS) { lblS.style.display=''; lblS.style.left=Math.max(etSPos,3)+'%'; lblS.textContent=etS; }
-  else { lblS.style.display='none'; }
-  if (etE) { lblE.style.display=''; lblE.style.left=Math.min(etEndVisual,97)+'%'; lblE.textContent=etE; }
+  const cramped = etS && etE && etS >= 100 && etE >= 100 && (etE - etS) <= 12;
+  if (etS) {
+    lblS.style.display = ''; lblS.style.left = etSPos + '%'; lblS.textContent = etS;
+    if (cramped) lblS.classList.add('above'); else lblS.classList.remove('above');
+  } else {
+    lblS.style.display = 'none'; lblS.classList.remove('above');
+  }
+  if (etE && etE !== notes) { lblE.style.display=''; lblE.style.left=etEndVisual+'%'; lblE.textContent=etE; }
   else { lblE.style.display='none'; }
   document.getElementById('lblTotal').textContent = `${notes}`;
   document.getElementById('markerTotal').style.display = '';

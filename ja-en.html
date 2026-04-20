@@ -30,34 +30,54 @@
 
 body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--text-main); min-height: 100vh; }
 
+/* ── Nav ── */
 .nav { background: var(--navy); box-shadow: 0 2px 8px rgba(0,0,0,0.15); position: sticky; top: 0; z-index: 100; }
 .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 .nav-brand-row { display: flex; align-items: center; gap: 10px; padding: 14px 0 10px; }
 .nav-icon { width: 28px; height: 28px; color: white; flex-shrink: 0; }
 .nav-title { color: white; font-size: 20px; font-weight: 700; line-height: 1.2; }
-.nav-bottom-row { display: flex; align-items: center; justify-content: space-between; }
+.nav-bottom-row { display: flex; align-items: center; justify-content: space-between; padding: 4px 0 10px; }
 .nav-tabs { display: flex; gap: 2px; }
 .nav-tab {
-  padding: 10px 20px; color: rgba(255,255,255,0.65);
-  font-size: 13px; font-weight: 600; background: none; border: none;
-  border-bottom: 2px solid transparent; cursor: pointer; transition: all .2s;
-  font-family: inherit; border-radius: 6px 6px 0 0;
+  padding: 6px 16px;
+  color: rgba(255,255,255,0.65);
+  font-size: 13px; font-weight: 600;
+  background: none; border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer; transition: all .2s;
+  font-family: inherit;
+  border-radius: 6px 6px 0 0;
 }
 .nav-tab:hover { color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.08); }
-.nav-tab.active { color: var(--text-main); background: var(--bg); border-bottom: 2px solid var(--bg); }
+.nav-tab.active {
+  color: var(--text-main);
+  background: var(--bg);
+  border-bottom: 2px solid var(--bg);
+}
 .lang-toggle-btn {
-  padding: 5px 12px; border: 2px solid rgba(255,255,255,0.85); border-radius: 6px;
-  background: transparent; color: white; font-size: 12px;
-  cursor: pointer; font-family: inherit; transition: all .2s; margin-bottom: 6px;
+  padding: 5px 12px;
+  border: 2px solid rgba(255,255,255,0.85);
+  border-radius: 6px;
+  background: transparent;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all .2s;
+  margin-bottom: 6px;
 }
 .lang-toggle-btn:hover { background: rgba(255,255,255,0.2); }
 
+/* ── Layout ── */
 .page { max-width: 1200px; margin: 0 auto; padding: 24px 24px 60px; display: flex; flex-direction: column; gap: 16px; }
 .tab-pane { display: none; }
 .tab-pane.active { display: block; }
-.card { background: var(--white); border-radius: 14px; border: 0.5px solid var(--border); box-shadow: var(--shadow); padding: 24px; }
-.card-label { font-size: 13px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 14px; }
 
+/* ── Cards ── */
+.card { background: var(--white); border-radius: 14px; border: 0.5px solid var(--border); box-shadow: var(--shadow); padding: 24px; }
+.card-label { font-size: 13px; font-weight: 600; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 14px; }
+
+/* ── Search ── */
 .search-wrap { position: relative; margin-bottom: 16px; }
 .search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--navy); opacity: 0.45; pointer-events: none; width: 16px; height: 16px; }
 .search-input { width: 100%; height: 42px; padding: 0 36px; background: var(--input-bg); border: 1.5px solid var(--border); border-radius: 8px; font-size: 14px; color: var(--text-main); font-family: inherit; outline: none; transition: border-color .2s; }
@@ -67,6 +87,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 .search-clear:hover { background: var(--border-light); }
 .search-clear.visible { display: flex; }
 
+/* ── Dropdown ── */
 .dropdown { position: absolute; top: calc(100% + 6px); left: 0; right: 0; background: var(--white); border: 1px solid var(--border); border-radius: 10px; box-shadow: var(--shadow-md); max-height: 280px; overflow-y: auto; z-index: 50; display: none; }
 .dropdown.open { display: block; }
 .dropdown::-webkit-scrollbar { width: 4px; }
@@ -80,32 +101,39 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 .dropdown-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
 .dropdown-empty { padding: 16px 14px; font-size: 13px; color: var(--text-muted); text-align: center; }
 
+/* ── Input grid ── */
 .input-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
-.input-group label { display: block; font-size: 13px; color: var(--text-sub); margin-bottom: 5px; }
-.input-group label span { color: var(--navy); font-size: 10px; margin-left: 2px; }
+.input-group label { display: block; font-size: 13px; color: var(--text-main); margin-bottom: 5px; }
+.input-group label span:not([data-i18n]) { color: var(--navy); font-size: 10px; margin-left: 2px; }
 .num-input { width: 100%; height: 40px; padding: 0 12px; background: var(--input-bg); border: 1.5px solid var(--border); border-radius: 8px; font-size: 14px; font-weight: 500; color: var(--text-main); font-family: 'Inter', monospace; outline: none; transition: border-color .2s; }
 .num-input:focus { border-color: var(--navy); }
 .num-input::placeholder { font-weight: 400; color: var(--text-muted); font-size: 13px; }
 .num-input:disabled { background: var(--border-light); color: var(--text-muted); cursor: not-allowed; opacity: 1; }
+
 .predict-btn { width: 100%; height: 44px; background: var(--navy); color: white; border: none; border-radius: 9px; font-size: 14px; font-weight: 600; cursor: pointer; letter-spacing: 0.3px; transition: background .2s, transform .1s; font-family: inherit; }
 .predict-btn:hover { background: var(--navy-light); }
 .predict-btn:active { transform: scale(0.99); }
 .predict-error { margin-top: 10px; padding: 10px 14px; background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; font-size: 13px; color: #dc2626; display: none; }
 .num-input.error { border-color: #ef4444 !important; }
 
+/* ── Result Card ── */
 .result-card { display: none; }
 .result-card.visible { display: block; }
 .result-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 2px; }
 .result-song-title { font-size: 16px; font-weight: 700; color: var(--navy); }
 .result-song-meta { font-size: 12px; color: var(--text-main); margin-bottom: 16px; }
-.result-mode-badge { display: inline-block; padding: 6px 16px; border-radius: 10px; font-size: 14px; font-weight: 700; }
+
+.result-mode-badge { display: inline-block; padding: 6px 16px; border-radius: 10px; font-size: 14px; font-weight: 700; min-width: 80px; text-align: center; }
 .result-mode-badge.measured { background: #d1fae5; color: #065f46; }
 .result-mode-badge.predicted { background: var(--navy-pale); color: var(--navy); }
+
+/* Combo display */
 .combo-display { display: flex; align-items: baseline; justify-content: center; gap: 10px; padding: 20px 0 22px; }
 .combo-num { font-size: 52px; font-weight: 700; color: var(--navy); line-height: 1; font-family: 'Inter', sans-serif; }
 .combo-unit { font-size: 20px; font-weight: 600; color: var(--navy); opacity: 0.55; font-family: 'Inter', sans-serif; }
 .combo-prefix { font-size: 20px; font-weight: 600; color: var(--navy); opacity: 0.55; font-family: inherit; display: none; }
 
+/* Video */
 .video-section { margin-top: 20px; }
 .video-label { font-size: 13px; color: var(--text-sub); font-weight: 500; }
 .video-thumb-wrap { position: relative; border-radius: 10px; overflow: hidden; aspect-ratio: 16/9; background: #111; cursor: pointer; }
@@ -117,33 +145,65 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 .video-play-icon { width: 22px; height: 22px; color: var(--navy); fill: var(--navy); margin-left: 4px; }
 .video-yt-badge { position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.65); color: white; font-size: 10px; padding: 3px 8px; border-radius: 4px; font-family: 'Inter', sans-serif; }
 
-.bar-section { padding: 44px 0 36px; position: relative; width: 85%; margin-left: auto; margin-right: auto; display: block; }
-.bar-track { height: 22px; border-radius: 11px; display: flex; overflow: hidden; background: #e5e7eb; }
+/* ── Progress Bar ── */
+.bar-section { padding: 62px 0 20px; position: relative; width: 85%; margin-left: auto; margin-right: auto; display: block; }
+.bar-track { height: 28px; border-radius: 0; display: flex; overflow: hidden; background: #e5e7eb; }
 .bar-left { height: 100%; background: #d1d5db; }
 .bar-et { height: 100%; background: var(--amber); }
 .bar-right { height: 100%; background: #d1d5db; }
 .bar-marker { position: absolute; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; top: 0; }
-.bar-marker-label { background: #7a94bf; color: white; font-size: 13px; font-weight: 600; padding: 4px 10px; border-radius: 4px; white-space: nowrap; margin-bottom: 3px; }
-.bar-marker-arrow { width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 7px solid #7a94bf; }
+.bar-marker-label { background: #dce6f5; color: #1e4a8a; font-size: 13px; font-weight: 600; padding: 4px 10px; border-radius: 4px; white-space: nowrap; margin-bottom: 0; }
+.bar-marker-line { width: 2px; height: 20px; background: #4a6fa5; }
+.bar-marker-arrow { width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 7px solid #4a6fa5; }
 .bar-labels { position: relative; height: 20px; margin-top: 6px; }
 .bar-lbl { position: absolute; font-size: 12px; color: var(--text-sub); transform: translateX(-50%); white-space: nowrap; font-weight: 500; }
+.bar-lbl.above { top: -60px; }
 .bar-lbl.left { transform: none; left: 0; }
 .bar-lbl.right { transform: none; right: 0; left: auto; }
-.bar-legend { display: flex; gap: 16px; margin-top: 12px; padding-top: 12px; border-top: 0.5px solid var(--border-light); }
+.bar-edge-marker { position: absolute; top: 0; display: flex; flex-direction: column; }
+.bar-edge-marker.left-edge { left: 0; align-items: flex-start; }
+.bar-edge-marker.right-edge { right: 0; align-items: flex-end; }
+.bar-edge-marker-label { background: #eaecef; color: #6b7280; font-size: 12px; font-weight: 600; padding: 3px 8px; border-radius: 4px 4px 0 0; white-space: nowrap; margin-bottom: 0; min-width: 36px; text-align: center; }
+.bar-edge-marker-line { width: 1px; height: 38px; background: #eaecef; }
+.bar-edge-label { position: absolute; top: 4px; font-size: 12px; color: var(--text-sub); font-weight: 500; white-space: nowrap; }
+.bar-edge-label.left { left: 0; }
+.bar-edge-label.right { right: 0; }
+.bar-legend { display: flex; gap: 16px; margin-top: 6px; padding-top: 8px; border-top: 0.5px solid var(--border-light); }
+/* ── Song Card (mobile) ── */
+.card-container { padding: 12px; display: flex; flex-direction: column; gap: 10px; }
+.song-card { background: var(--white); border: 0.5px solid var(--border); border-radius: 12px; box-shadow: var(--shadow); padding: 14px 16px; }
+.song-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.song-card-top-left { display: flex; align-items: center; gap: 7px; }
+.song-card-unit { font-size: 13px; color: var(--text-main); font-weight: 500; }
+.song-card-video-btn { display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; background: var(--bg); border: 0.5px solid var(--border); border-radius: 8px; color: var(--navy); text-decoration: none; flex-shrink: 0; }
+.song-card-no-video { width: 34px; text-align: center; color: var(--text-muted); font-size: 14px; }
+.song-card-title { font-size: 15px; font-weight: 700; color: var(--text-main); margin-bottom: 3px; }
+.song-card-title-sub { font-size: 12px; color: var(--text-muted); margin-bottom: 0; }
+.song-card-stats { display: flex; border-top: 1px solid var(--border); margin-top: 12px; padding-top: 10px; }
+.song-card-stat { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 2px 0; }
+.song-card-stat:not(:last-child) { border-right: 1px solid var(--border); }
+.song-card-stat-label { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+.song-card-stat-val { font-size: 15px; color: var(--text-main); font-family: 'Inter', monospace; font-weight: 500; }
 .legend-item { display: flex; align-items: center; gap: 5px; font-size: 12px; color: var(--text-sub); font-weight: 500; }
 .legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
 
+/* ── Stats Bar ── */
 .stats-card { padding: 18px 24px; }
-.stats-grid { display: grid; grid-template-columns: repeat(5,1fr); }
+.stats-grid { display: grid; grid-template-columns: repeat(3,1fr); }
 .stat-item { text-align: center; padding: 4px 8px; }
 .stat-item + .stat-item { border-left: 0.5px solid var(--border-light); }
 .stat-val { font-size: 22px; font-weight: 700; color: var(--navy); font-family: 'Inter', sans-serif; }
 .stat-lbl { font-size: 10px; color: var(--text-muted); margin-top: 3px; }
 
+/* ═══════════════════════════════════
+   탭2: 악곡 검색
+═══════════════════════════════════ */
 .songs-layout { display: grid; grid-template-columns: 240px 1fr; gap: 16px; align-items: start; }
 .sidebar { background: var(--white); border-radius: 14px; border: 0.5px solid var(--border); box-shadow: var(--shadow); padding: 20px; position: sticky; top: 80px; }
 .sidebar-section { margin-bottom: 20px; }
 .sidebar-section:last-child { margin-bottom: 0; }
+.sidebar-hint { display: flex; align-items: flex-start; gap: 5px; font-size: 14px; font-weight: 700; color: var(--text-sub); line-height: 1.5; }
+.sidebar-hint span { white-space: pre-line; }
 .sidebar-title { font-size: 12px; font-weight: 700; color: var(--text-main); margin-bottom: 10px; }
 .type-chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .type-chip { padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; border: 1.5px solid transparent; cursor: pointer; transition: all .15s; font-family: inherit; }
@@ -167,23 +227,33 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 .dur-chip { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; border: 1.5px solid var(--border); background: var(--input-bg); color: var(--text-sub); cursor: pointer; transition: all .15s; font-family: inherit; }
 .dur-chip.active { background: var(--navy); color: white; border-color: var(--navy); }
 .table-panel { background: var(--white); border-radius: 14px; border: 0.5px solid var(--border); box-shadow: var(--shadow); overflow: hidden; }
-.table-search-bar { padding: 10px 20px; border-bottom: 1px solid var(--border-light); display: flex; align-items: center; gap: 16px; }
+.table-search-bar { border-bottom: 1px solid var(--border-light); display: flex; flex-direction: column; }
+.table-search-top { display: flex; align-items: center; gap: 10px; padding: 10px 20px; }
+.search-mode-select { height: 36px; padding: 0 8px; background: var(--input-bg); border: 1.5px solid var(--border); border-radius: 8px; font-size: 13px; color: var(--text-main); font-family: inherit; outline: none; cursor: pointer; transition: border-color .2s; flex-shrink: 0; }
+.search-mode-select:focus { border-color: var(--navy); }
+.unit-filter-panel { padding: 2px 20px 12px; }
+.unit-filter-inner { display: flex; flex-wrap: wrap; gap: 2px 8px; align-items: center; }
+.unit-filter-sep { width: 100%; height: 0; border-top: 1px solid var(--border-light); margin: 6px 0; }
+.unit-filter-item { display: flex; align-items: center; gap: 5px; padding: 3px 6px; border-radius: 5px; cursor: pointer; font-size: 12px; color: var(--text-sub); transition: background .15s; user-select: none; }
+.unit-filter-item:hover { background: var(--bg); }
+.unit-filter-item input[type=checkbox] { width: 13px; height: 13px; cursor: pointer; accent-color: var(--navy); flex-shrink: 0; }
+.unit-filter-reset-row { display: flex; justify-content: flex-end; margin-top: 6px; }
 .table-search-wrap { position: relative; flex: 1; }
 .table-search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; width: 14px; height: 14px; }
 .table-search-input { width: 100%; height: 36px; padding: 0 12px 0 32px; background: var(--input-bg); border: 1.5px solid var(--border); border-radius: 8px; font-size: 13px; color: var(--text-main); font-family: inherit; outline: none; transition: border-color .2s; }
 .table-search-input:focus { border-color: var(--navy); }
 .table-search-input::placeholder { color: var(--text-muted); }
-.table-hint { font-size: 11px; color: var(--text-sub); font-weight: 500; white-space: nowrap; }
+.table-hint { font-size: 11px; color: var(--text-sub); font-weight: 500; white-space: nowrap; margin-left: auto; }
 .songs-table { width: 100%; border-collapse: collapse; table-layout: fixed; min-width: 620px; }
 .songs-table thead tr { border-bottom: 2px solid var(--border); }
 .songs-table th { padding: 10px 12px; font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; text-align: left; background: var(--bg); white-space: nowrap; }
 .songs-table th:nth-child(1) { width: 112px; }
 .songs-table th:nth-child(2) { width: 165px; }
 .songs-table th:nth-child(3) { width: auto; }
-.songs-table th:nth-child(4) { width: 84px; }
-.songs-table th:nth-child(5) { width: 108px; }
-.songs-table th:nth-child(6) { width: 84px; }
-.songs-table th:nth-child(7) { width: 52px; }
+.songs-table th:nth-child(4) { width: 84px; text-align: center; }
+.songs-table th:nth-child(5) { width: 108px; text-align: center; }
+.songs-table th:nth-child(6) { width: 84px; text-align: center; }
+.songs-table th:nth-child(7) { width: 68px; }
 .songs-table th.sortable { cursor: pointer; user-select: none; }
 .songs-table th.sortable:hover { color: var(--navy); }
 .sort-icon { display: inline-block; margin-left: 4px; opacity: 0.5; font-size: 10px; }
@@ -193,7 +263,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 .col-unit { font-size: 12px; color: var(--text-sub); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .col-title { font-weight: 500; }
 .col-title-sub { font-size: 11px; color: var(--text-muted); margin-top: 2px; font-weight: 400; }
-.col-num { font-family: 'Inter', monospace; text-align: right; }
+.col-num { font-family: 'Inter', monospace; text-align: center; }
 .col-dur { font-family: 'Inter', monospace; color: var(--text-sub); text-align: center; }
 .col-video { text-align: center; }
 .paging-bar { display: flex; align-items: center; justify-content: center; gap: 4px; padding: 12px 20px; border-top: 0.5px solid var(--border-light); }
@@ -210,10 +280,17 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 .video-link:hover { opacity: 1; }
 .no-video { color: var(--text-muted); font-size: 12px; }
 .title-hover-tooltip { position: fixed; z-index: 300; background: var(--white); border: 1px solid var(--border); border-radius: 10px; box-shadow: var(--shadow-md); overflow: hidden; pointer-events: none; display: none; }
-.title-hover-tooltip img { display: block; width: 220px; height: 220px; object-fit: cover; object-position: center center; }
+.title-hover-tooltip img { display: block; width: 280px; height: 280px; object-fit: cover; object-position: center center; }
+.thumb-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 400; align-items: center; justify-content: center; }
+.thumb-modal.open { display: flex; }
+.thumb-modal-box { border-radius: 10px; overflow: hidden; width: 85vw; max-width: 320px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+.thumb-modal-box img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center; }
 .table-empty { padding: 48px; text-align: center; color: var(--text-muted); font-size: 14px; }
 .table-count { padding: 10px 20px; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border-light); }
 
+/* ═══════════════════════════════════
+   탭3: 안내
+═══════════════════════════════════ */
 .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .info-card { background: var(--white); border-radius: 14px; border: 0.5px solid var(--border); box-shadow: var(--shadow); padding: 24px; }
 .info-card.full { grid-column: 1/-1; }
@@ -237,6 +314,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 .badge-warn { background: #fef3c7; color: #92400e; }
 .badge-new { background: #d1fae5; color: #065f46; }
 
+/* ── Responsive ── */
 @media (max-width: 768px) {
   .songs-layout { grid-template-columns: 1fr; }
   .sidebar { position: static; }
@@ -252,13 +330,13 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
   .combo-num { font-size: 40px; }
   .combo-unit { font-size: 16px; }
   .result-song-title { font-size: 14px; }
-  .songs-table th:nth-child(5),
-  .songs-table td:nth-child(5) { display: none; }
+  .sidebar { display: none; }
 }
 </style>
 </head>
 <body>
 
+<!-- Nav -->
 <nav class="nav">
   <div class="nav-inner">
     <div class="nav-brand-row">
@@ -267,14 +345,14 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
         <polyline points="16 7 22 7 22 13"></polyline>
       </svg>
       <div>
-        <div class="nav-title" data-i18n="navTitle">Easy Low-Effort Clear Calculator</div>
+        <div class="nav-title" data-i18n="navTitle">앙스타 이지작 계산기</div>
       </div>
     </div>
     <div class="nav-bottom-row">
       <div class="nav-tabs">
-        <button class="nav-tab active" onclick="switchTab('predict', this)" data-i18n="tab1">Clear Prediction</button>
-        <button class="nav-tab" onclick="switchTab('songs', this)" data-i18n="tab2">Song Search</button>
-        <button class="nav-tab" onclick="switchTab('info', this)" data-i18n="tab3">Guide</button>
+        <button class="nav-tab active" onclick="switchTab('predict', this)" data-i18n="tab1">클리어 예측</button>
+        <button class="nav-tab" onclick="switchTab('songs', this)" data-i18n="tab2">악곡 검색</button>
+        <button class="nav-tab" onclick="switchTab('info', this)" data-i18n="tab3">안내</button>
       </div>
       <button class="lang-toggle-btn" id="langToggleBtn" onclick="toggleLang()">日本語</button>
     </div>
@@ -283,19 +361,19 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 
 <div class="page">
 
-  <!-- Tab 1: Clear Prediction -->
+  <!-- ══ 탭1: 클리어 예측 ══ -->
   <div id="tab-predict" class="tab-pane active">
+
     <div class="card">
-      <div class="card-label" data-i18n="cardLabel1">Clear Combo Prediction</div>
+      <div class="card-label" data-i18n="cardLabel1">클리어 콤보 시작점 예측</div>
 
       <div class="search-wrap" id="searchWrap">
         <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
         </svg>
-        <input class="search-input" id="searchInput" type="text"
-          placeholder="Search songs or units..."
+        <input class="search-input" id="searchInput" type="text" placeholder="곡 제목 또는 유닛 검색..." autocomplete="off"
           data-i18n-placeholder="searchPlaceholder"
-          autocomplete="off" oninput="onSearchInput()" onfocus="onSearchFocus()">
+          oninput="onSearchInput()" onfocus="onSearchFocus()">
         <button class="search-clear" id="searchClear" onclick="clearSearch()">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
@@ -306,24 +384,25 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 
       <div class="input-grid">
         <div class="input-group">
-          <label><span data-i18n="labelNotes">Total Notes</span> <span>*</span></label>
+          <label><span data-i18n="labelNotes">총 노트수</span> <span>*</span></label>
           <input class="num-input" id="inputNotes" type="number" placeholder="e.g. 161" min="80" max="300"
             oninput="onNotesManualEdit()">
         </div>
         <div class="input-group">
-          <label data-i18n="labelETStart">ET Start Combo</label>
-          <input class="num-input" id="inputETStart" type="number" placeholder="Optional">
+          <label data-i18n="labelETStart">ET 시작 콤보</label>
+          <input class="num-input" id="inputETStart" type="number" placeholder="Optional" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
         </div>
         <div class="input-group">
-          <label data-i18n="labelETEnd">ET End Combo</label>
-          <input class="num-input" id="inputETEnd" type="number" placeholder="Optional">
+          <label data-i18n="labelETEnd">ET 종료 콤보</label>
+          <input class="num-input" id="inputETEnd" type="number" placeholder="Optional" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
         </div>
       </div>
 
-      <button class="predict-btn" onclick="runPredict()" data-i18n="predictBtn">Predict</button>
+      <button class="predict-btn" onclick="runPredict()" data-i18n="predictBtn">예측하기</button>
       <div class="predict-error" id="predictError"></div>
     </div>
 
+    <!-- 결과 카드 -->
     <div class="card result-card" id="resultCard">
       <div class="result-header">
         <div>
@@ -342,6 +421,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
       <div class="bar-section" id="barSection">
         <div class="bar-marker" id="barMarker">
           <div class="bar-marker-label" id="barMarkerLabel">Clear: —</div>
+          <div class="bar-marker-line"></div>
           <div class="bar-marker-arrow"></div>
         </div>
         <div class="bar-track">
@@ -349,104 +429,119 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
           <div class="bar-et" id="barEt"></div>
           <div class="bar-right" id="barRight"></div>
         </div>
+        <div class="bar-edge-marker left-edge">
+          <div class="bar-edge-marker-label">0</div>
+          <div class="bar-edge-marker-line"></div>
+        </div>
+        <div class="bar-edge-marker right-edge" id="markerTotal" style="display:none">
+          <div class="bar-edge-marker-label" id="lblTotal"></div>
+          <div class="bar-edge-marker-line"></div>
+        </div>
         <div class="bar-labels">
-          <span class="bar-lbl left">0 combo</span>
           <span class="bar-lbl" id="lblETStart" style="display:none"></span>
           <span class="bar-lbl" id="lblETEnd" style="display:none"></span>
-          <span class="bar-lbl right" id="lblTotal"></span>
         </div>
         <div class="bar-legend">
           <div class="legend-item">
             <div class="legend-dot" style="background:#7a94bf"></div>
-            <span data-i18n="legendClear">Clear start point</span>
+            <span data-i18n="legendClear">클리어 시작점</span>
           </div>
           <div class="legend-item">
             <div class="legend-dot" style="background:var(--amber);border:1px solid #d97706"></div>
-            <span data-i18n="legendET">Ensemble Time range</span>
+            <span data-i18n="legendET">앙상블 타임 구간</span>
           </div>
         </div>
       </div>
 
       <div class="video-section" id="videoSection" style="display:none">
-        <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px">
-          <span class="video-label" data-i18n="videoLabel">Reference Video</span>
-          <span style="font-size:11px;color:var(--text-muted)" data-i18n="videoCoverNote">Cover songs do not have a reference video.</span>
+        <div style="display:flex;align-items:baseline;gap:32px;margin-bottom:8px">
+          <span class="video-label" data-i18n="videoLabel">참고 영상</span>
+          <span style="font-size:11px;color:var(--text-muted)" data-i18n="videoCoverNote">커버송은 영상을 제공하지 않습니다.</span>
         </div>
         <div class="video-thumb-wrap" id="videoThumbWrap"></div>
       </div>
     </div>
 
+    <!-- 통계 -->
     <div class="card stats-card">
       <div class="stats-grid">
         <div class="stat-item">
           <div class="stat-val" id="statTotal">—</div>
-          <div class="stat-lbl" data-i18n="statTotalLabel">Total Songs</div>
+          <div class="stat-lbl" data-i18n="statTotalLabel">전체 수록곡</div>
         </div>
         <div class="stat-item">
           <div class="stat-val" id="statMeasured">—</div>
-          <div class="stat-lbl" data-i18n="statMeasuredLabel">Measured</div>
+          <div class="stat-lbl" data-i18n="statMeasuredLabel">확인 완료</div>
         </div>
         <div class="stat-item">
-          <div class="stat-val">0.97</div>
-          <div class="stat-lbl" data-i18n="statR2Label">Accuracy R²</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-val">±2.8</div>
-          <div class="stat-lbl" data-i18n="statMAELabel">Avg Error</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-val" style="font-size:13px;padding-top:6px">3-var OLS</div>
-          <div class="stat-lbl" data-i18n="statModelLabel">Model</div>
+          <div class="stat-val" id="statUnmeasured">—</div>
+          <div class="stat-lbl" data-i18n="statUnmeasuredLabel">미확인</div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Tab 2: Song Search -->
+  </div><!-- /tab-predict -->
+
+  <!-- ══ 탭2: 악곡 검색 ══ -->
   <div id="tab-songs" class="tab-pane">
     <div class="songs-layout">
+
+      <!-- 사이드바 -->
       <div class="sidebar">
+
+        <div class="sidebar-section sidebar-hint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" style="flex-shrink:0;margin-top:2px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span data-i18n="sidebarUnitHint">유닛 검색은 검색바의 콤보박스에서 선택</span>
+        </div>
+
         <div class="sidebar-section">
           <div class="sidebar-title" data-i18n="sidebarTypeTitle">Song Type</div>
           <div class="type-chips" id="typeChips"></div>
         </div>
-        <div class="sidebar-section">
-          <div class="sidebar-title" style="display:flex;align-items:center;justify-content:space-between">
-            <span data-i18n="sidebarUnitTitle">Units</span>
-            <button class="unit-reset-btn" onclick="resetUnits()" id="unitResetBtn" style="display:none" data-i18n="unitReset">Clear all</button>
-          </div>
-          <div class="unit-tree" id="unitTree"></div>
-        </div>
-        <div class="sidebar-section">
+
+<div class="sidebar-section">
           <div class="sidebar-title" data-i18n="sidebarDurTitle">Duration</div>
           <div class="dur-chips" id="durChips">
-            <button class="dur-chip active" onclick="setDur('all',this)" data-i18n="durAll">All</button>
-            <button class="dur-chip" onclick="setDur('short',this)" data-i18n="durShort">~ 2:10</button>
-            <button class="dur-chip" onclick="setDur('mid',this)" data-i18n="durMid">2:10 ~ 2:40</button>
-            <button class="dur-chip" onclick="setDur('long',this)" data-i18n="durLong">2:40 ~ 3:10</button>
+            <button class="dur-chip active" onclick="setDur('all',this)" data-i18n="durAll">전체</button>
+            <button class="dur-chip" onclick="setDur('short',this)" data-i18n="durShort">~ 2:20</button>
+            <button class="dur-chip" onclick="setDur('mid1',this)" data-i18n="durMid1">2:21 ~ 2:30</button>
+            <button class="dur-chip" onclick="setDur('mid2',this)" data-i18n="durMid2">2:31 ~ 2:40</button>
+            <button class="dur-chip" onclick="setDur('long',this)" data-i18n="durLong">2:41 ~</button>
           </div>
         </div>
+
+        <div class="sidebar-section" style="margin-bottom:0">
+          <span style="font-size:11px;color:var(--text-muted)" data-i18n="tableHint">*곡 길이는 풀콤보 기준</span>
+        </div>
+
       </div>
 
+      <!-- 테이블 패널 -->
       <div class="table-panel">
         <div class="table-search-bar">
-          <div class="table-search-wrap">
-            <svg class="table-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-            </svg>
-            <input class="table-search-input" id="tableSearch" type="text"
-              placeholder="Search songs..."
-              data-i18n-placeholder="tableSearchPlaceholder"
-              oninput="currentPage=1;onTableSearchInput()">
-            <button class="search-clear" id="tableSearchClear" onclick="clearTableSearch()">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          <div class="table-search-top">
+            <select class="search-mode-select" id="searchModeSelect" onchange="onSearchModeChange()">
+              <option value="song" data-i18n="searchModeSong">곡 검색</option>
+              <option value="unit" data-i18n="searchModeUnit">유닛 검색</option>
+            </select>
+            <div class="table-search-wrap" id="tableSearchWrap">
+              <svg class="table-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
               </svg>
-            </button>
+              <input class="table-search-input" id="tableSearch" type="text" placeholder="곡 검색..."
+                data-i18n-placeholder="tableSearchPlaceholder"
+                oninput="currentPage=1;onTableSearchInput()">
+              <button class="search-clear" id="tableSearchClear" onclick="clearTableSearch()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+              </button>
+            </div>
           </div>
-          <div class="table-hint" data-i18n="tableHint">Duration is based on full combo</div>
+          <div class="unit-filter-panel" id="unitFilterPanel" style="display:none"></div>
         </div>
-        <div style="overflow-x:hidden">
+
+        <div id="tableWrap" style="overflow-x:hidden">
           <table class="songs-table">
             <thead>
               <tr>
@@ -462,22 +557,25 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
             <tbody id="songsTableBody"></tbody>
           </table>
         </div>
+        <div id="cardContainer" class="card-container" style="display:none"></div>
         <div class="table-count" id="tableCount"></div>
         <div class="paging-bar" id="pagingBar"></div>
       </div>
-    </div>
-  </div>
 
-  <!-- Tab 3: Guide -->
+    </div>
+  </div><!-- /tab-songs -->
+
+  <!-- ══ 탭3: 안내 ══ -->
   <div id="tab-info" class="tab-pane">
     <div class="info-grid">
+
       <div class="info-card full">
         <div class="info-card-title">
           <svg class="info-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
             <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
           </svg>
-          <span data-i18n="noticeTitle">Notices</span>
+          <span data-i18n="noticeTitle">공지사항</span>
         </div>
         <ul class="notice-list" id="noticeList"></ul>
       </div>
@@ -488,11 +586,11 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
             <polyline points="22,6 12,13 2,6"/>
           </svg>
-          <span data-i18n="contactTitle">Contact & Bug Reports</span>
+          <span data-i18n="contactTitle">오류 신고 및 문의</span>
         </div>
         <div class="info-text">
-          <p data-i18n="contactText1">For prediction errors, missing data, or other inquiries, please reach out via email below.</p>
-          <p data-i18n="contactText2">Providing measured data helps improve model accuracy.</p>
+          <p data-i18n="contactText1">예측값 오류, 데이터 누락, 기타 문의사항이 있으시면 아래 이메일로 연락해 주세요.</p>
+          <p data-i18n="contactText2">실측 데이터를 제공해 주시면 모델 정확도 향상에 도움이 됩니다.</p>
         </div>
         <div class="contact-box">
           <div class="contact-icon">
@@ -502,8 +600,8 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
             </svg>
           </div>
           <div>
-            <div class="contact-email">your@gmail.com</div>
-            <div class="contact-text" data-i18n="contactSub">Subject: [Voltage Predictor] Inquiry</div>
+            <div class="contact-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bfc6d0cacdffd8d2ded6d391dcd0d2">[email&#160;protected]</a></div>
+            <div class="contact-text" data-i18n="contactSub">[Voltage Predictor] 문의내용</div>
           </div>
         </div>
       </div>
@@ -514,11 +612,11 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
             <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/>
             <line x1="6" y1="20" x2="6" y2="14"/>
           </svg>
-          <span data-i18n="devPredTitle">How Prediction Works</span>
+          <span data-i18n="devPredTitle">예측 방법</span>
         </div>
         <div class="info-text">
-          <p data-i18n="devPredText1">Predicts the VOLTAGE Easy clear note count using a <strong>linear regression model</strong>.</p>
-          <p data-i18n="devPredText2">Trained on <strong>169 measured songs</strong>.</p>
+          <p data-i18n="devPredText1">앙상블스타즈!! Music의 VOLTAGE 이지작 클리어 노트수를 <strong>선형 회귀 모델</strong>로 예측합니다.</p>
+          <p data-i18n="devPredText2">실측 데이터 <strong>169곡</strong>을 학습에 사용했습니다.</p>
           <div class="info-formula">
             [3-variable OLS]<br>
             start = -3.53<br>
@@ -528,7 +626,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
             [Simple model — no ET]<br>
             start = 0.528 × total_notes + 2.53
           </div>
-          <p data-i18n="devPredText3">A <strong>safety margin of +10 combos</strong> is added to get the final clear combo.</p>
+          <p data-i18n="devPredText3">예측 시작점에 <strong>안전 마진 +10콤보</strong>를 더해 최종 클리어 콤보를 산출합니다.</p>
         </div>
       </div>
 
@@ -538,10 +636,10 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
             <polyline points="22 4 12 14.01 9 11.01"/>
           </svg>
-          <span data-i18n="devPerfTitle">Model Performance</span>
+          <span data-i18n="devPerfTitle">모델 성능 지표</span>
         </div>
         <div class="info-text">
-          <p data-i18n="devPerfText">Performance metrics on training data.</p>
+          <p data-i18n="devPerfText">학습 데이터 기준 성능 지표입니다.</p>
           <div class="info-formula">
             R²  = 0.9663 (3-var OLS)<br>
             MAE = 2.79 combos (3-var OLS)<br>
@@ -549,30 +647,38 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
             |error| ≤ 3 combos : 73% (of 169 songs)<br>
             |error| ≤ 5 combos : 90% (of 169 songs)
           </div>
-          <p data-i18n="devPerfText2">Most songs predicted within <strong>±5 combos</strong>.</p>
+          <p data-i18n="devPerfText2">대부분의 곡에서 <strong>±5콤보 이내</strong>로 예측합니다.</p>
         </div>
       </div>
-    </div>
-  </div>
 
-</div>
+    </div>
+  </div><!-- /tab-info -->
+
+</div><!-- /page -->
 
 <div id="titleHoverTooltip" class="title-hover-tooltip">
   <img id="titleHoverImg" src="" alt="">
 </div>
+<div id="thumbModal" class="thumb-modal" onclick="this.classList.remove('open')">
+  <div class="thumb-modal-box">
+    <img id="thumbModalImg" src="" alt="">
+  </div>
+</div>
 
-<script src="songs.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="songs.js"></script>
 <script>
+// ── 배포 설정 ──────────────────────────────────────
 const SHOW_DEV_INFO = true;
 const SHOW_TITLE_HOVER = true;
 
-// ── Language ───────────────────────────────────────
+// ── 언어 ───────────────────────────────────────────
 const SUPPORTED_LANGS = ['en', 'ja'];
 let currentLang = (() => {
   const p = new URLSearchParams(location.search).get('lang');
   return SUPPORTED_LANGS.includes(p) ? p : 'en';
 })();
 
+// ── i18n 사전 ──────────────────────────────────────
 const I18N = {
   en: {
     navTitle: 'Easy Low-Effort Clear Calculator',
@@ -582,18 +688,22 @@ const I18N = {
     searchPlaceholder: 'Search songs or units...',
     labelNotes: 'Total Notes', labelETStart: 'ET Start Combo', labelETEnd: 'ET End Combo',
     predictBtn: 'Predict',
-    statTotalLabel: 'Total Songs', statMeasuredLabel: 'Measured',
-    statR2Label: 'Accuracy R²', statMAELabel: 'Avg Error', statModelLabel: 'Model',
+    statTotalLabel: 'Total Songs', statMeasuredLabel: 'Measured', statUnmeasuredLabel: 'Unmeasured',
     badgeMeasured: 'Measured', badgePredicted: 'Predicted',
-    videoLabel: 'Reference Video', videoPlay: '▶ Click to Play',
+    videoLabel: 'Reference Video', videoCoverNote: 'Cover songs do not have a reference video.', videoPlay: '▶ Click to Play',
     legendClear: 'Clear start point', legendET: 'Ensemble Time range',
     sidebarTypeTitle: 'Song Type', sidebarUnitTitle: 'Units', sidebarDurTitle: 'Duration',
+    sidebarUnitHint: 'Use the combobox in the search bar to filter by unit.',
     typeAll: 'All', unitReset: 'Clear all',
-    durAll: 'All', durShort: '~ 2:10', durMid: '2:11 ~ 2:40', durLong: '2:41 ~',
+    durAll: 'All', durShort: '~ 2:20', durMid1: '2:21 ~ 2:30', durMid2: '2:31 ~ 2:40', durLong: '2:41 ~',
+    searchModeSong: 'Song Search', searchModeUnit: 'Unit Search',
     tableSearchPlaceholder: 'Search songs...',
     tableHint: 'Duration is based on full combo',
     colType: 'Type', colUnit: 'Unit', colTitle: 'Title',
     colNotes: 'Notes', colDur: 'Duration', colClear: 'Clear', colVideo: 'Video',
+    errNotes: 'Please enter the total notes.', errNotesMin: 'Minimum 80 notes required.', errNotesMax: 'Maximum 300 notes allowed.',
+    errETMin: 'Please enter a non-negative integer.', errETBoth: 'Please enter both ET start and end, or leave both empty.', errETOrder: 'ET start combo must be less than ET end combo.', errETDiff: 'ET end - start combo must be at least 4.', errETMax: 'ET end combo cannot exceed total notes.',
+    comboPrefix: '',
     directInput: 'Manual Input', noResult: 'No results found', tableEmpty: 'No results found',
     noticeTitle: 'Notices',
     contactTitle: 'Contact & Bug Reports',
@@ -604,8 +714,7 @@ const I18N = {
     devPredText1: 'Predicts the VOLTAGE Easy clear note count using a linear regression model.',
     devPredText2: 'Trained on 169 measured songs.',
     devPredText3: 'A safety margin of +10 combos is added to get the final clear combo.',
-    devPerfText: 'Performance metrics on training data.',
-    devPerfText2: 'Most songs predicted within ±5 combos.',
+    devPerfText: 'Performance metrics on training data.', devPerfText2: 'Most songs predicted within ±5 combos.',
     langToggle: '日本語',
     notices: [
       { badge: 'NEW', cls: 'badge-new', text: 'Song Search tab added. Supports type, unit, and duration filters with sorting.' },
@@ -623,18 +732,22 @@ const I18N = {
     searchPlaceholder: '楽曲名またはユニット検索...',
     labelNotes: '総ノーツ数', labelETStart: 'ET開始コンボ', labelETEnd: 'ET終了コンボ',
     predictBtn: '予測する',
-    statTotalLabel: '収録楽曲', statMeasuredLabel: '実測済み',
-    statR2Label: '精度 R²', statMAELabel: '平均誤差', statModelLabel: '使用モデル',
+    statTotalLabel: '収録楽曲', statMeasuredLabel: '確認済み', statUnmeasuredLabel: '未確認',
     badgeMeasured: '実測値', badgePredicted: '予測値',
-    videoLabel: '参考動画', videoPlay: '▶ クリックして再生',
+    videoLabel: '参考動画', videoCoverNote: 'カバー曲は動画を提供していません。', videoPlay: '▶ クリックして再生',
     legendClear: 'クリア開始点', legendET: 'アンサンブルタイム区間',
-    sidebarTypeTitle: 'Song Type', sidebarUnitTitle: 'Units', sidebarDurTitle: 'Duration',
+    sidebarTypeTitle: '曲の属性', sidebarUnitTitle: 'Units', sidebarDurTitle: '曲の長さ',
+    sidebarUnitHint: 'ユニット検索は上部検索バーのコンボボックスから選択してください。',
     typeAll: '全て', unitReset: '全解除',
-    durAll: '全て', durShort: '~ 2:10', durMid: '2:11 ~ 2:40', durLong: '2:41 ~',
+    durAll: '全て', durShort: '~ 2:20', durMid1: '2:21 ~ 2:30', durMid2: '2:31 ~ 2:40', durLong: '2:41 ~',
+    searchModeSong: '楽曲検索', searchModeUnit: 'ユニット検索',
     tableSearchPlaceholder: '楽曲を検索...',
     tableHint: '曲の長さはフルコンボ基準',
-    colType: 'Type', colUnit: 'Unit', colTitle: 'Title',
-    colNotes: 'Notes', colDur: 'Duration', colClear: 'Clear', colVideo: 'Video',
+    colType: '属性', colUnit: 'ユニット', colTitle: 'タイトル',
+    colNotes: 'ノーツ数', colDur: '曲の長さ', colClear: '開始Cb', colVideo: 'リンク',
+    errNotes: 'ノーツ数を入力してください', errNotesMin: '80以上の整数を入力してください', errNotesMax: '300以下の整数を入力してください',
+    errETMin: '0以上の整数を入力してください', errETBoth: 'ET開始・終了は両方入力するか、両方空欄にしてください', errETOrder: 'ET終了コンボは開始コンボより大きくしてください', errETDiff: 'ET終了 - 開始コンボの差は最低4以上必要です', errETMax: 'ET終了コンボは総ノーツ数以下にしてください',
+    comboPrefix: '計',
     directInput: '直接入力', noResult: '検索結果がありません', tableEmpty: '検索結果がありません',
     noticeTitle: 'お知らせ',
     contactTitle: 'エラー報告・お問い合わせ',
@@ -645,8 +758,7 @@ const I18N = {
     devPredText1: 'あんさんぶるスターズ!! Music の VOLTAGE Easy クリアノーツ数を線形回帰モデルで予測します。',
     devPredText2: '実測データ 169曲 を学習に使用しました。',
     devPredText3: '予測開始点に安全マージン +10コンボ を加算して最終クリアコンボを算出します。',
-    devPerfText: '学習データ基準の性能指標です.',
-    devPerfText2: 'ほとんどの曲で ±5コンボ以内 で予測します。',
+    devPerfText: '学習データ基準の性能指標です。', devPerfText2: 'ほとんどの曲で ±5コンボ以内 で予測します。',
     langToggle: 'English',
     notices: [
       { badge: 'NEW', cls: 'badge-new', text: '楽曲検索タブが追加されました。タイプ・ユニット・長さフィルターとソート機能をサポートしています。' },
@@ -662,14 +774,16 @@ function t(key) {
   return (I18N[currentLang] && I18N[currentLang][key] !== undefined) ? I18N[currentLang][key] : key;
 }
 
+// 가타가나→히라가나 변환 + 소문자 변환 + 공백·특수문자 제거
+const toHiragana = s => s.replace(/[\u30A1-\u30F6]/g, c => String.fromCharCode(c.charCodeAt(0) - 0x60));
 function normalize(str) {
-  return (str || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  return toHiragana((str || '').toLowerCase()).replace(/[\s!"#$%&'()*+,\-./:;<=>?@[\\\]^_`{|}~☆★♪]/g, '');
 }
 
-// en.html: always show title_ja as primary; title_ko as subtitle if available
 function getDisplayTitle(s) {
   return s.title_ja;
 }
+
 function getSubTitle(s) {
   if (currentLang === 'ja') return s.title_ja_reading || null;
   return s.title_ko || null;
@@ -677,13 +791,15 @@ function getSubTitle(s) {
 
 function applyI18n() {
   document.querySelectorAll('[data-i18n]').forEach(el => {
-    el.textContent = t(el.dataset.i18n);
+    const key = el.dataset.i18n;
+    el.textContent = t(key);
   });
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     el.placeholder = t(el.dataset.i18nPlaceholder);
   });
   document.getElementById('langToggleBtn').textContent = t('langToggle');
   document.title = t('navTitle');
+  // 공지사항 렌더링
   const notices = t('notices');
   if (Array.isArray(notices)) {
     document.getElementById('noticeList').innerHTML = notices.map(n =>
@@ -699,6 +815,7 @@ function toggleLang() {
   location.replace(url.toString());
 }
 
+// ── 모델 파라미터 ──────────────────────────────────
 const COEFS = MODEL_PARAMS.coefs;
 const INTERCEPT = MODEL_PARAMS.intercept;
 const SIMPLE_COEF = MODEL_PARAMS.simpleCoef;
@@ -724,19 +841,12 @@ const TYPE_COLOR = {
 };
 
 const CATEGORY_LABEL = {
-  "starmaker": "STAR MAKER", "cosmic": "Cosmic",
-  "rhythm_link": "Rhythm Link", "new_dimension": "New Dimension", "others": "Others"
+  "starmaker": "STAR MAKER",
+  "cosmic": "Cosmic",
+  "rhythm_link": "Rhythm Link",
+  "new_dimension": "New Dimension",
+  "others": "Others"
 };
-
-const UNIT_GROUPS = {
-  'Adam·Eve': ['Adam','Eve'], 'MaM·DF': ['MaM','DF'],
-  '주년·기념·만우절': ['주년','만우절','새해'],
-  '셔플': ['셔플','셔플_10주년'],
-  '콜라보·드림유닛': ['콜라보','드림유닛'],
-  '추억·J&A·기타': ['추억','J&A','기타'],
-};
-const UNIT_TO_GROUP = {};
-Object.entries(UNIT_GROUPS).forEach(([g, ms]) => ms.forEach(u => { UNIT_TO_GROUP[u] = g; }));
 
 const UNIT_CATEGORY = {
   'fine': 'starmaker', 'Trickstar': 'starmaker', '유성대': 'starmaker', 'ALKALOID': 'starmaker',
@@ -745,15 +855,44 @@ const UNIT_CATEGORY = {
   'Knights': 'new_dimension', 'Switch': 'new_dimension', 'MaM': 'new_dimension', 'DF': 'new_dimension', 'S-Pri': 'new_dimension',
   '주년': 'others', '만우절': 'others', '새해': 'others',
   '셔플': 'others', '셔플_10주년': 'others',
-  '콜라보': 'others', '드림유닛': 'others',
+  '콜라보': 'others',
   '추억': 'others', 'J&A': 'others', '기타': 'others',
 };
 
-let currentSong = null, currentVideoUrl = null, measuredValue = null, predictedValue = null;
-let activeType = null, activeUnits = null, activeDur = 'all';
-let sortKey = null, sortDir = 1, currentPage = 1;
+const UNIT_GROUPS = {
+  'Adam·Eve': ['Adam','Eve'], 'MaM·DF': ['MaM','DF'],
+  '주년·새해·만우절': ['주년','만우절','새해'],
+  '셔플': ['셔플','셔플_10주년'],
+  '콜라보·J&A': ['콜라보','J&A'],
+  '추억·기타': ['추억','기타'],
+};
+const UNIT_TO_GROUP = {};
+Object.entries(UNIT_GROUPS).forEach(([g, ms]) => ms.forEach(u => { UNIT_TO_GROUP[u] = g; }));
+
+const UNIT_NAME_JA = {
+  '유성대': '流星隊',
+  '홍월': '紅月',
+};
+const UNIT_NAME_EN = {
+  '유성대': 'RYUSEITAI',
+  '홍월': 'AKATSUKI',
+};
+
+// ── 상태 ──────────────────────────────────────────
+let currentSong = null;
+let currentVideoUrl = null;
+let measuredValue = null;
+let predictedValue = null;
+let activeType = null;
+let activeUnits = null;
+let activeDur = 'all';
+let sortKey = null;
+let sortDir = 1;
+let currentPage = 1;
+let searchMode = 'song';
 const PAGE_SIZE = 30;
 
+// ── 제목 호버 썸네일 ──────────────────────────────
 (function setupTitleHover() {
   if (!SHOW_TITLE_HOVER) return;
   const tooltip = document.getElementById('titleHoverTooltip');
@@ -769,27 +908,48 @@ const PAGE_SIZE = 30;
     if (!td || !td.dataset.video) { tooltip.style.display = 'none'; return; }
     const vid = getYtId(td.dataset.video);
     if (!vid) { tooltip.style.display = 'none'; return; }
-    tooltipImg.src = `https://img.youtube.com/vi/${vid}/mqdefault.jpg`;
+    tooltipImg.src = `https://img.youtube.com/vi/${vid}/maxresdefault.jpg`;
+    tooltipImg.onerror = () => { tooltipImg.src = `https://img.youtube.com/vi/${vid}/hqdefault.jpg`; tooltipImg.onerror = null; };
     tooltip.style.display = 'block';
   });
   tbody.addEventListener('mousemove', e => {
     if (tooltip.style.display === 'none') return;
-    tooltip.style.left = Math.min(e.clientX + 18, window.innerWidth - 238) + 'px';
-    tooltip.style.top = Math.max(Math.min(e.clientY - 80, window.innerHeight - 238), 8) + 'px';
+    const x = e.clientX + 18;
+    const y = e.clientY - 80;
+    tooltip.style.left = Math.min(x, window.innerWidth - 298) + 'px';
+    tooltip.style.top = Math.max(Math.min(y, window.innerHeight - 176), 8) + 'px';
   });
   tbody.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; });
+
+  // 모바일 카드 썸네일 모달
+  const thumbModal = document.getElementById('thumbModal');
+  const thumbModalImg = document.getElementById('thumbModalImg');
+  document.getElementById('cardContainer').addEventListener('click', e => {
+    const title = e.target.closest('.song-card-title');
+    if (!title || !title.dataset.video) return;
+    const vid = getYtId(title.dataset.video);
+    if (!vid) return;
+    thumbModalImg.src = `https://img.youtube.com/vi/${vid}/maxresdefault.jpg`;
+    thumbModalImg.onerror = () => { thumbModalImg.src = `https://img.youtube.com/vi/${vid}/hqdefault.jpg`; thumbModalImg.onerror = null; };
+    thumbModal.classList.add('open');
+  });
 })();
 
+// ── 초기화 ────────────────────────────────────────
 (function init() {
   applyI18n();
-  document.getElementById('statTotal').textContent = SONGS.length;
-  document.getElementById('statMeasured').textContent = SONGS.filter(s=>s.measured!==null).length;
-  if (!SHOW_DEV_INFO) document.querySelectorAll('.dev-only').forEach(el => el.style.display = 'none');
+  document.getElementById('statTotal').textContent = SONGS.length - 1; // 멜로디 Dear World 처리
+  document.getElementById('statMeasured').textContent = SONGS.filter(s=>s.measured!==null).length - 1; // 멜로디 Dear World 처리
+  document.getElementById('statUnmeasured').textContent = SONGS.filter(s=>s.measured===null).length;
+  if (!SHOW_DEV_INFO) {
+    document.querySelectorAll('.dev-only').forEach(el => el.style.display = 'none');
+  }
   buildTypeChips();
-  buildUnitTree();
+  buildUnitFilterPanel();
   renderTable();
 })();
 
+// ── 탭 전환 ──────────────────────────────────────
 function switchTab(name, el) {
   document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
@@ -798,8 +958,11 @@ function switchTab(name, el) {
 }
 
 function onNotesManualEdit() {
+  const el = document.getElementById('inputNotes');
+  el.value = el.value.replace(/[^0-9]/g, '');
   if (!currentSong) return;
-  if (parseInt(document.getElementById('inputNotes').value) !== currentSong.totalNotes) {
+  const entered = parseInt(el.value);
+  if (entered !== currentSong.totalNotes) {
     currentSong = null; currentVideoUrl = null; measuredValue = null;
     document.getElementById('searchInput').value = '';
     document.getElementById('searchClear').classList.remove('visible');
@@ -809,6 +972,7 @@ function onNotesManualEdit() {
   }
 }
 
+// ── 탭1: 검색 드롭다운 ────────────────────────────
 function onSearchInput() {
   const q = document.getElementById('searchInput').value;
   document.getElementById('searchClear').classList.toggle('visible', q.length>0);
@@ -841,10 +1005,11 @@ function renderDropdown(q) {
       ? `<span class="dropdown-dot" style="background:#059669"></span>`
       : `<span class="dropdown-dot" style="background:#d1d5db"></span>`;
     const idx = SONGS.indexOf(s);
-    const sub = getSubTitle(s);
+    const mainTitle = getDisplayTitle(s);
+    const subTitle = getSubTitle(s) || '';
     return `<button class="dropdown-item" onclick="selectSong(${idx})">
-      <div class="dropdown-item-title">${s.title_ja}</div>
-      ${sub ? `<div class="dropdown-item-sub">${sub}</div>` : ''}
+      <div class="dropdown-item-title">${mainTitle}</div>
+      ${subTitle ? `<div class="dropdown-item-sub">${subTitle}</div>` : ''}
       <div class="dropdown-item-meta">
         <span>${dot}${s.unit}</span><span>·</span>
         <span><span style="background:${c.bg};color:${c.color};padding:1px 5px;border-radius:4px;font-size:10px">${s.type}</span></span>
@@ -866,7 +1031,7 @@ function setETDisabled(disabled) {
 function selectSong(idx) {
   const s = SONGS[idx];
   currentSong = s;
-  document.getElementById('searchInput').value = s.title_ja;
+  document.getElementById('searchInput').value = getDisplayTitle(s);
   document.getElementById('searchClear').classList.add('visible');
   document.getElementById('dropdown').classList.remove('open');
   document.getElementById('inputNotes').value = s.totalNotes;
@@ -891,12 +1056,13 @@ document.addEventListener('click', e => {
     document.getElementById('dropdown').classList.remove('open');
 });
 
+// ── 탭1: 유효성 검사 헬퍼 ──────────────────────────
 function showPredictError(msg, errorIds = []) {
   const el = document.getElementById('predictError');
   el.textContent = msg; el.style.display = 'block';
-  ['inputNotes','inputETStart','inputETEnd'].forEach(id =>
-    document.getElementById(id).classList.toggle('error', errorIds.includes(id))
-  );
+  ['inputNotes','inputETStart','inputETEnd'].forEach(id => {
+    document.getElementById(id).classList.toggle('error', errorIds.includes(id));
+  });
 }
 function clearPredictError() {
   document.getElementById('predictError').style.display = 'none';
@@ -905,6 +1071,7 @@ function clearPredictError() {
   );
 }
 
+// ── 탭1: 예측 ─────────────────────────────────────
 function runPredict() {
   const notesRaw = document.getElementById('inputNotes').value.trim();
   const etSRaw = document.getElementById('inputETStart').value.trim();
@@ -916,12 +1083,15 @@ function runPredict() {
   if (isNaN(notes) || notes < 1) { showPredictError(t('errNotes'), ['inputNotes']); return; }
   if (notes < 80) { showPredictError(t('errNotesMin'), ['inputNotes']); return; }
   if (notes > 300) { showPredictError(t('errNotesMax'), ['inputNotes']); return; }
+  if (etSRaw !== '' && (etSRaw.includes('.') || parseInt(etSRaw) < 0)) { showPredictError(t('errETMin'), ['inputETStart']); return; }
+  if (etERaw !== '' && (etERaw.includes('.') || parseInt(etERaw) < 0)) { showPredictError(t('errETMin'), ['inputETEnd']); return; }
   if ((etS !== null) !== (etE !== null)) {
     showPredictError(t('errETBoth'), etS === null ? ['inputETStart'] : ['inputETEnd']); return;
   }
   if (etS !== null && etE !== null) {
-    if (etS < 1 || etE < 1) { showPredictError(t('errETMin'), ['inputETStart','inputETEnd']); return; }
+    if (etS < 0 || etE < 0) { showPredictError(t('errETMin'), ['inputETStart','inputETEnd']); return; }
     if (etS >= etE) { showPredictError(t('errETOrder'), ['inputETStart','inputETEnd']); return; }
+    if (etE - etS < 4) { showPredictError(t('errETDiff'), ['inputETStart','inputETEnd']); return; }
     if (etE > notes) { showPredictError(t('errETMax'), ['inputETEnd']); return; }
   }
   clearPredictError();
@@ -932,8 +1102,11 @@ function runPredict() {
   } else {
     startPt = SIMPLE_COEF*notes + SIMPLE_INT;
   }
-  predictedValue = Math.ceil(Math.round(startPt*10)/10);
-  measuredValue = (currentSong && currentSong.measured !== null) ? currentSong.measured : null;
+  startPt = Math.round(startPt*10)/10;
+  predictedValue = Math.ceil(startPt);
+
+  measuredValue = null;
+  if (currentSong && currentSong.measured !== null) measuredValue = currentSong.measured;
   currentVideoUrl = currentSong ? (currentSong.videoClear || currentSong.video) : null;
   showResult(notes, etS, etE);
 }
@@ -941,11 +1114,13 @@ function runPredict() {
 function showResult(notes, etS, etE) {
   if (currentSong) {
     document.getElementById('resultTitle').textContent = currentSong.title_ja;
-    document.getElementById('resultMeta').textContent =
-      `${currentSong.type} · ${currentSong.unit} · ${t('labelNotes')}: ${notes}`;
+    const tc = TYPE_COLOR[currentSong.type] || TYPE_COLOR['All'];
+    document.getElementById('resultMeta').innerHTML =
+      `<span class="type-badge" style="background:${tc.bg};color:${tc.color};font-size:11px;padding:2px 7px;border-radius:4px;font-weight:600;margin-right:6px">${currentSong.type}</span>`
+      + `<span style="font-size:12px;color:var(--text-main)">${currentSong.unit}</span>`;
   } else {
     document.getElementById('resultTitle').textContent = t('directInput');
-    document.getElementById('resultMeta').textContent = `${notes} notes${etS ? ` · ET ${etS}~${etE}` : ''}`;
+    document.getElementById('resultMeta').textContent = etS ? `· ET ${etS}~${etE}` : '';
   }
 
   const displayVal = measuredValue !== null ? measuredValue : predictedValue;
@@ -954,21 +1129,33 @@ function showResult(notes, etS, etE) {
   document.getElementById('comboUnitLabel').textContent = 'combo';
   const pfx = document.getElementById('comboPrefixLabel');
   pfx.textContent = t('comboPrefix'); pfx.style.display = '';
-  badge.textContent = measuredValue !== null ? t('badgeMeasured') : t('badgePredicted');
-  badge.className = 'result-mode-badge ' + (measuredValue !== null ? 'measured' : 'predicted');
-  badge.style.display = 'inline-block';
+  if (measuredValue !== null) {
+    badge.textContent = t('badgeMeasured');
+    badge.className = 'result-mode-badge measured';
+    badge.style.display = 'inline-block';
+  } else {
+    badge.textContent = t('badgePredicted');
+    badge.className = 'result-mode-badge predicted';
+    badge.style.display = 'inline-block';
+  }
 
   updateBar(notes, etS, etE, displayVal);
 
+  // 탭1 참고영상: measured 유무 관계없이 video 있으면 표시
   const vs = document.getElementById('videoSection');
   const wrap = document.getElementById('videoThumbWrap');
-  vs.querySelector('[data-i18n="videoLabel"]').textContent = t('videoLabel');
-  vs.querySelector('[data-i18n="videoCoverNote"]').textContent = t('videoCoverNote');
+  document.getElementById('videoSection').querySelector('[data-i18n="videoLabel"]').textContent = t('videoLabel');
+  document.getElementById('videoSection').querySelector('[data-i18n="videoCoverNote"]').textContent = t('videoCoverNote');
   if (currentVideoUrl) {
     const videoId = extractYoutubeId(currentVideoUrl);
-    if (videoId) { renderVideoThumb(wrap, videoId, currentVideoUrl); vs.style.display = 'block'; }
-    else vs.style.display = 'none';
-  } else { vs.style.display = 'none'; wrap.innerHTML = ''; }
+    if (videoId) {
+      renderVideoThumb(wrap, videoId, currentVideoUrl);
+      vs.style.display = 'block';
+    } else { vs.style.display = 'none'; }
+  } else {
+    vs.style.display = 'none';
+    wrap.innerHTML = '';
+  }
 
   document.getElementById('resultCard').classList.add('visible');
   document.getElementById('resultCard').scrollIntoView({behavior:'smooth',block:'nearest'});
@@ -981,10 +1168,9 @@ function extractYoutubeId(url) {
 }
 
 function renderVideoThumb(wrap, videoId, originalUrl) {
-  const tMatch = originalUrl && originalUrl.match(/[?&]t=(\d+)/);
-  const startParam = tMatch ? `&start=${tMatch[1]}` : '';
+  const thumbUrl = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
   wrap.innerHTML = `
-    <img src="https://img.youtube.com/vi/${videoId}/mqdefault.jpg" alt="YouTube thumbnail">
+    <img src="${thumbUrl}" alt="YouTube thumbnail">
     <div class="video-play-overlay">
       <div class="video-play-circle">
         <svg class="video-play-icon" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
@@ -992,54 +1178,55 @@ function renderVideoThumb(wrap, videoId, originalUrl) {
     </div>
     <div class="video-yt-badge">${t('videoPlay')}</div>
   `;
+  const tMatch = originalUrl && originalUrl.match(/[?&]t=(\d+)/);
+  const startParam = tMatch ? `&start=${tMatch[1]}` : '';
   wrap.onclick = () => {
     wrap.innerHTML = `<iframe
       src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1${startParam}"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen style="width:100%;height:100%;border:none;display:block"></iframe>`;
-    wrap.onclick = null; wrap.style.cursor = 'default';
+      allowfullscreen
+      style="width:100%;height:100%;border:none;display:block"
+    ></iframe>`;
+    wrap.onclick = null;
+    wrap.style.cursor = 'default';
   };
 }
 
 function updateBar(notes, etS, etE, val) {
-  const clearPos = Math.min(Math.max((val/notes)*100, 1), 98);
+  const clearPos = (val/notes)*100;
   const etSPos = etS ? (etS/notes*100) : 0;
   const etEPos = etE ? (etE/notes*100) : 0;
-  document.getElementById('barLeft').style.width = etSPos+'%';
-  document.getElementById('barEt').style.width = Math.max(etEPos-etSPos,0)+'%';
-  document.getElementById('barRight').style.width = (100-etEPos)+'%';
+  const barLeftPct = etSPos;
+  const etEndVisual = etE ? etEPos : barLeftPct;
+  const barEl = document.getElementById('barLeft');
+  barEl.style.width = barLeftPct+'%';
+  barEl.style.minWidth = '0';
+  document.getElementById('barEt').style.width = Math.max(etEndVisual-barLeftPct,0)+'%';
+  document.getElementById('barRight').style.width = (100-etEndVisual)+'%';
   document.getElementById('barMarker').style.left = clearPos+'%';
   document.getElementById('barMarkerLabel').textContent = `Clear: ${val}`;
   const lblS = document.getElementById('lblETStart');
   const lblE = document.getElementById('lblETEnd');
-  if (etS) { lblS.style.display=''; lblS.style.left=etSPos+'%'; lblS.textContent=`ET ${etS}`; }
-  else lblS.style.display='none';
-  if (etE) { lblE.style.display=''; lblE.style.left=etEPos+'%'; lblE.textContent=`${etE}`; }
-  else lblE.style.display='none';
+  const cramped = etS && etE && etS >= 100 && etE >= 100 && (etE - etS) <= 12;
+  if (etS) {
+    lblS.style.display = ''; lblS.style.left = etSPos + '%'; lblS.textContent = etS;
+    if (cramped) lblS.classList.add('above'); else lblS.classList.remove('above');
+  } else {
+    lblS.style.display = 'none'; lblS.classList.remove('above');
+  }
+  if (etE && etE !== notes) { lblE.style.display=''; lblE.style.left=etEndVisual+'%'; lblE.textContent=etE; }
+  else { lblE.style.display='none'; }
   document.getElementById('lblTotal').textContent = `${notes}`;
+  document.getElementById('markerTotal').style.display = '';
 }
-
-// i18n error messages added to I18N after the fact to avoid duplication
-I18N.en.errNotes = 'Please enter the total notes.';
-I18N.en.errNotesMin = 'Total notes too small. (80 or more)';
-I18N.en.errNotesMax = 'Total notes too large. This model is for Easy only. (300 or less)';
-I18N.en.errETBoth = 'Please enter both ET start and end, or leave both empty.';
-I18N.en.errETMin = 'ET combo must be 1 or more.';
-I18N.en.errETOrder = 'ET start combo must be less than ET end combo.';
-I18N.en.errETMax = 'ET end combo exceeds total notes.';
-I18N.ja.errNotes = '総ノーツ数を入力してください。';
-I18N.ja.errNotesMin = '総ノーツ数が小さすぎます。（80以上）';
-I18N.ja.errNotesMax = '総ノーツ数が大きすぎます。このモデルはEasy専用です。（300以下）';
-I18N.ja.errETBoth = 'ET開始・終了は両方入力するか、両方空欄にしてください。';
-I18N.ja.errETMin = 'ETコンボは1以上である必要があります。';
-I18N.ja.errETOrder = 'ET開始コンボは終了コンボより小さくしてください。';
-I18N.ja.errETMax = 'ET終了コンボが総ノーツ数を超えています。';
-I18N.en.comboPrefix = ''; I18N.en.videoCoverNote = 'Cover songs do not have a reference video.';
-I18N.ja.comboPrefix = '計'; I18N.ja.videoCoverNote = 'カバー曲は動画を提供していません。';
 
 document.addEventListener('keydown', e => {
   if (e.key==='Enter' && document.activeElement.classList.contains('num-input')) runPredict();
 });
+
+// ════════════════════════════════════════
+// 탭2: 악곡 검색
+// ════════════════════════════════════════
 
 function buildTypeChips() {
   const wrap = document.getElementById('typeChips');
@@ -1052,17 +1239,20 @@ function buildTypeChips() {
     { label: 'Flash', value: 'Flash' },
   ];
   const chipColors = {
-    null: { bg:'#f1f5f9', color:'#1e3a6e' },
-    'Flash': TYPE_COLOR['Flash'], 'Brilliant': TYPE_COLOR['Brilliant'],
-    'Glitter': TYPE_COLOR['Glitter'], 'Sparkle': TYPE_COLOR['Sparkle'],
-    'All': { bg:'#f0fdf4', color:'#166534' },
+    null:        { bg:'#f1f5f9', color:'#1e3a6e' },
+    'Flash':     TYPE_COLOR['Flash'],
+    'Brilliant': TYPE_COLOR['Brilliant'],
+    'Glitter':   TYPE_COLOR['Glitter'],
+    'Sparkle':   TYPE_COLOR['Sparkle'],
+    'All':       { bg:'#f0fdf4', color:'#166534' },
   };
   wrap.innerHTML = filterItems.map(item => {
     const key = item.value === null ? 'null' : item.value;
     const c = chipColors[item.value];
     const isActive = activeType === item.value;
+    const border = isActive ? c.color : 'transparent';
     return `<button class="type-chip${isActive?' active':''}" data-val="${key}"
-      style="background:${c.bg};color:${c.color};border-color:${isActive?c.color:'transparent'}"
+      style="background:${c.bg};color:${c.color};border-color:${border}"
       onclick="selectType(${item.value===null?'null':`'${item.value}'`},this)">${item.label}</button>`;
   }).join('');
 }
@@ -1070,10 +1260,12 @@ function buildTypeChips() {
 function selectType(t_val, el) {
   activeType = (activeType === t_val) ? null : t_val;
   const chipColors = {
-    null: { bg:'#f1f5f9', color:'#1e3a6e' },
-    'Flash': TYPE_COLOR['Flash'], 'Brilliant': TYPE_COLOR['Brilliant'],
-    'Glitter': TYPE_COLOR['Glitter'], 'Sparkle': TYPE_COLOR['Sparkle'],
-    'All': { bg:'#f0fdf4', color:'#166534' },
+    null:        { bg:'#f1f5f9', color:'#1e3a6e' },
+    'Flash':     TYPE_COLOR['Flash'],
+    'Brilliant': TYPE_COLOR['Brilliant'],
+    'Glitter':   TYPE_COLOR['Glitter'],
+    'Sparkle':   TYPE_COLOR['Sparkle'],
+    'All':       { bg:'#f0fdf4', color:'#166534' },
   };
   document.querySelectorAll('.type-chip').forEach(btn => {
     const bval = btn.dataset.val === 'null' ? null : btn.dataset.val;
@@ -1082,76 +1274,82 @@ function selectType(t_val, el) {
     const c = chipColors[bval];
     btn.style.borderColor = isActive ? c.color : 'transparent';
   });
-  currentPage = 1; renderTable();
+  currentPage = 1;
+  renderTable();
 }
 
-function buildUnitTree() {
-  const catOrder = ['starmaker','cosmic','rhythm_link','new_dimension','others'];
-  const catUnits = {};
-  catOrder.forEach(c => { catUnits[c] = []; });
-  SONGS.forEach(s => {
-    s.units.forEach(u => {
-      const cat = UNIT_CATEGORY[u] || 'others';
-      if (!catUnits[cat]) catUnits[cat] = [];
-      const display = UNIT_TO_GROUP[u] || u;
-      if (!catUnits[cat].includes(display)) catUnits[cat].push(display);
+function buildUnitFilterPanel() {
+  const esc = s => s.replace(/&/g,'&amp;').replace(/"/g,'&quot;');
+  const groups = [
+    [
+      { label:'fine',          unit:'fine' },
+      { label:'Trickstar',     unit:'Trickstar' },
+      { label:'유성대',         unit:'유성대' },
+      { label:'ALKALOID',      unit:'ALKALOID' },
+    ],
+    [
+      { label:'Eden',          unit:'Eden' },
+      { label:'Valkyrie',      unit:'Valkyrie' },
+      { label:'Crazy:B',       unit:'Crazy:B' },
+      { label:'2wink',         unit:'2wink' },
+      { label:'Adam·Eve',      units:'Adam,Eve' },
+    ],
+    [
+      { label:'UNDEAD',        unit:'UNDEAD' },
+      { label:'Ra*bits',       unit:'Ra*bits' },
+      { label:'홍월',           unit:'홍월' },
+      { label:'MELLOW DEAR US',unit:'MELLOW DEAR US' },
+    ],
+    [
+      { label:'Knights',       unit:'Knights' },
+      { label:'Switch',        unit:'Switch' },
+      { label:'MaM·DF',        units:'MaM,DF' },
+      { label:'S-Pri',         unit:'S-Pri' },
+    ],
+    [
+      { label:'주년·새해·만우절',  units:'주년,만우절,새해' },
+      { label:'셔플',            units:'셔플,셔플_10주년' },
+      { label:'콜라보·J&A',      units:'콜라보,J&A' },
+      { label:'추억·기타',       units:'추억,기타' },
+    ],
+  ];
+  const inner = document.createElement('div');
+  inner.className = 'unit-filter-inner';
+  groups.forEach((group, gi) => {
+    if (gi > 0) {
+      const sep = document.createElement('div');
+      sep.className = 'unit-filter-sep';
+      inner.appendChild(sep);
+    }
+    group.forEach(item => {
+      const lbl = document.createElement('label');
+      lbl.className = 'unit-filter-item';
+      const dataAttr = item.units
+        ? `data-units="${esc(item.units)}"`
+        : `data-unit="${esc(item.unit)}"`;
+      lbl.innerHTML = `<input type="checkbox" class="unit-cb" ${dataAttr} onchange="onUnitChange()"><span>${esc(item.label)}</span>`;
+      inner.appendChild(lbl);
     });
   });
-  const cosmicOrder = ['Eden','Valkyrie','Crazy:B','2wink','Adam·Eve'];
-  catUnits['cosmic'].sort((a,b) => {
-    const ia = cosmicOrder.indexOf(a); const ib = cosmicOrder.indexOf(b);
-    return (ia===-1?99:ia) - (ib===-1?99:ib);
-  });
-  const othersOrder = ['주년·기념·만우절','셔플','콜라보·드림유닛','추억·J&A·기타'];
-  catUnits['others'].sort((a,b) => {
-    const ia = othersOrder.indexOf(a); const ib = othersOrder.indexOf(b);
-    return (ia===-1?99:ia) - (ib===-1?99:ib);
-  });
-  document.getElementById('unitTree').innerHTML = catOrder.filter(c=>catUnits[c].length>0).map(c => {
-    return `<div class="unit-group">
-      <div class="unit-group-header" onclick="toggleGroup('${c}')">
-        <div class="unit-group-header-left">
-          <svg class="unit-group-chevron" id="chev-${c}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-          <span class="unit-group-name">${CATEGORY_LABEL[c]||c}</span>
-        </div>
-      </div>
-      <div class="unit-children" id="gc-${c}">
-        ${c === 'others' ? (() => {
-          const esc = s => s.replace(/&/g,'&amp;');
-          const subgroupOrder = ['주년·기념·만우절','셔플','콜라보·드림유닛','추억·J&A·기타'];
-          return subgroupOrder.filter(sg => catUnits[c].includes(sg)).map(sg => {
-            const members = UNIT_GROUPS[sg];
-            const dispLabel = sg.replace(/&/g,'&amp;');
-            const dataAttr = members
-              ? `data-units="${esc(members.join(','))}"`
-              : `data-unit="${esc(sg)}"`;
-            return `<label class="unit-child">
-              <input type="checkbox" class="unit-cb" ${dataAttr} onchange="onUnitChange()">
-              <span class="unit-child-label">${dispLabel}</span>
-            </label>`;
-          }).join('');
-        })() : catUnits[c].map(u => {
-          const esc = s => s.replace(/&/g,'&amp;');
-          const members = UNIT_GROUPS[u];
-          if (members) {
-            return `<label class="unit-child">
-              <input type="checkbox" class="unit-cb" data-units="${esc(members.join(','))}" onchange="onUnitChange()">
-              <span class="unit-child-label">${esc(u)}</span>
-            </label>`;
-          }
-          return `<label class="unit-child">
-            <input type="checkbox" class="unit-cb" data-unit="${esc(u)}" onchange="onUnitChange()">
-            <span class="unit-child-label">${esc(u)}</span>
-          </label>`;
-        }).join('')}
-      </div>
-    </div>`;
-  }).join('');
+  const resetRow = document.createElement('div');
+  resetRow.className = 'unit-filter-reset-row';
+  resetRow.innerHTML = `<button class="unit-reset-btn" onclick="resetUnits()" id="unitResetBtn" style="display:none">전체 해제</button>`;
+  const wrap = document.getElementById('unitFilterPanel');
+  wrap.innerHTML = '';
+  wrap.appendChild(inner);
+  wrap.appendChild(resetRow);
 }
 
-function toggleGroup(cat) {
-  document.getElementById('gc-'+cat).classList.toggle('open');
-  document.getElementById('chev-'+cat).classList.toggle('open');
+function onSearchModeChange() {
+  searchMode = document.getElementById('searchModeSelect').value;
+  const isUnit = searchMode === 'unit';
+  document.getElementById('tableSearchWrap').style.display = isUnit ? 'none' : '';
+  document.getElementById('unitFilterPanel').style.display = isUnit ? '' : 'none';
+  if (isUnit) {
+    clearTableSearch();
+  } else {
+    resetUnits();
+  }
 }
 
 function onUnitChange() {
@@ -1162,48 +1360,55 @@ function onUnitChange() {
   });
   activeUnits = checked.size > 0 ? checked : null;
   document.getElementById('unitResetBtn').style.display = checked.size > 0 ? '' : 'none';
-  currentPage = 1; renderTable();
+  currentPage = 1;
+  renderTable();
 }
 
 function resetUnits() {
   document.querySelectorAll('.unit-cb').forEach(cb => { cb.checked = false; });
   activeUnits = null;
   document.getElementById('unitResetBtn').style.display = 'none';
-  currentPage = 1; renderTable();
+  currentPage = 1;
+  renderTable();
 }
 
 function onTableSearchInput() {
-  document.getElementById('tableSearchClear').classList.toggle('visible',
-    document.getElementById('tableSearch').value.length > 0);
+  const hasVal = document.getElementById('tableSearch').value.length > 0;
+  document.getElementById('tableSearchClear').classList.toggle('visible', hasVal);
   renderTable();
 }
 function clearTableSearch() {
   document.getElementById('tableSearch').value = '';
   document.getElementById('tableSearchClear').classList.remove('visible');
-  currentPage = 1; renderTable();
+  currentPage = 1;
+  renderTable();
 }
 
 function setDur(val, el) {
   activeDur = val;
   document.querySelectorAll('.dur-chip').forEach(c=>c.classList.remove('active'));
   el.classList.add('active');
-  currentPage = 1; renderTable();
+  currentPage = 1;
+  renderTable();
 }
 
 function sortBy(key) {
-  if (sortKey===key) sortDir*=-1; else { sortKey=key; sortDir=1; }
+  if (sortKey===key) sortDir*=-1;
+  else { sortKey=key; sortDir=1; }
   document.querySelectorAll('[id^="sort-"]').forEach(el=>el.textContent='↕');
   document.getElementById('sort-'+key).textContent = sortDir===1 ? '↑' : '↓';
-  currentPage = 1; renderTable();
+  currentPage = 1;
+  renderTable();
 }
 
 function renderTable() {
-  const q = normalize((document.getElementById('tableSearch')||{value:''}).value);
+  const q = searchMode === 'song' ? normalize((document.getElementById('tableSearch')||{value:''}).value) : '';
   let list = SONGS.filter(s => {
     if (activeType !== null && s.type !== activeType) return false;
     if (activeUnits && !s.units.some(u => activeUnits.has(u))) return false;
-    if (activeDur==='short' && s.durationSec>130) return false;
-    if (activeDur==='mid' && (s.durationSec<131||s.durationSec>160)) return false;
+    if (activeDur==='short' && s.durationSec>140) return false;
+    if (activeDur==='mid1' && (s.durationSec<141||s.durationSec>150)) return false;
+    if (activeDur==='mid2' && (s.durationSec<151||s.durationSec>160)) return false;
     if (activeDur==='long' && s.durationSec<161) return false;
     if (q) {
       const match =
@@ -1231,7 +1436,8 @@ function renderTable() {
   if (list.length===0) {
     tbody.innerHTML=`<tr><td colspan="7"><div class="table-empty">${t('tableEmpty')}</div></td></tr>`;
     document.getElementById('tableCount').textContent='';
-    document.getElementById('pagingBar').innerHTML=''; return;
+    document.getElementById('pagingBar').innerHTML='';
+    return;
   }
 
   const totalPages = Math.ceil(list.length / PAGE_SIZE);
@@ -1239,49 +1445,92 @@ function renderTable() {
   const start = (currentPage-1)*PAGE_SIZE;
   const pageList = list.slice(start, start+PAGE_SIZE);
 
-  tbody.innerHTML = pageList.map(s => {
+  const rendered = pageList.map(s => {
     const c = TYPE_COLOR[s.type] || TYPE_COLOR['All'];
     const dot = s.measured !== null
       ? `<span class="clear-dot" style="background:#059669"></span>`
       : `<span class="clear-dot" style="background:#d1d5db"></span>`;
     const clearVal = s.measured !== null ? s.measured : s.predicted;
+    const videoIcon = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
     const videoCell = (s.measured !== null && s.video)
-      ? `<a class="video-link" href="${s.video}" target="_blank" title="Open video">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-            <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
-          </svg>
-        </a>`
+      ? `<a class="video-link" href="${s.video}" target="_blank" title="Open video">${videoIcon}</a>`
       : `<span class="no-video">—</span>`;
-    const sub = getSubTitle(s);
+    const mainTitle = getDisplayTitle(s);
+
+    if (window.innerWidth <= 600) {
+      const cardMainTitle = s.title_ja;
+      const cardSubTitle = s.title_ko && s.title_ko !== s.title_ja ? s.title_ko : null;
+      const videoBtn = (s.measured !== null && s.video)
+        ? `<a class="song-card-video-btn" href="${s.video}" target="_blank">${videoIcon}</a>`
+        : `<span class="song-card-no-video">—</span>`;
+      return `<div class="song-card">
+        <div class="song-card-top">
+          <div class="song-card-top-left">
+            <span class="type-badge" style="background:${c.bg};color:${c.color}">${s.type}</span>
+            <span class="song-card-unit">${s.unit}</span>
+          </div>
+          ${videoBtn}
+        </div>
+        <div class="song-card-title" data-video="${s.video||''}">${cardMainTitle}</div>
+        <div class="song-card-stats">
+          <div class="song-card-stat">
+            <span class="song-card-stat-label">Notes</span>
+            <span class="song-card-stat-val">${s.totalNotes}</span>
+          </div>
+          <div class="song-card-stat">
+            <span class="song-card-stat-label">Clear</span>
+            <span class="song-card-stat-val">${dot}${clearVal}</span>
+          </div>
+          <div class="song-card-stat">
+            <span class="song-card-stat-label">Duration</span>
+            <span class="song-card-stat-val">${s.duration||'—'}</span>
+          </div>
+        </div>
+      </div>`;
+    }
+
     return `<tr>
       <td><span class="type-badge" style="background:${c.bg};color:${c.color}">${s.type}</span></td>
       <td class="col-unit">${s.unit}</td>
       <td class="col-title" data-video="${s.video||''}">
-        <div>${s.title_ja}</div>
-        ${sub ? `<div class="col-title-sub">${sub}</div>` : ''}
+        <div>${mainTitle}</div>
       </td>
       <td class="col-num">${s.totalNotes}</td>
       <td class="col-dur">${s.duration||'—'}</td>
       <td class="col-num">${dot}${clearVal}</td>
       <td class="col-video">${videoCell}</td>
     </tr>`;
-  }).join('');
+  });
+
+  const isMobile = window.innerWidth <= 600;
+  const tableWrap = document.getElementById('tableWrap');
+  const cardContainer = document.getElementById('cardContainer');
+  if (isMobile) {
+    tableWrap.style.display = 'none';
+    cardContainer.style.display = '';
+    cardContainer.innerHTML = rendered.join('');
+  } else {
+    tableWrap.style.display = '';
+    cardContainer.style.display = 'none';
+    tbody.innerHTML = rendered.join('');
+  }
 
   renderPaging(totalPages, list.length);
   document.getElementById('tableCount').textContent =
     `${start+1}–${Math.min(start+PAGE_SIZE, list.length)} / ${list.length}`;
 }
 
-function renderPaging(totalPages) {
+function renderPaging(totalPages, totalCount) {
   const bar = document.getElementById('pagingBar');
   if (totalPages <= 1) { bar.innerHTML=''; return; }
+  const maxShow = 7;
   let pages = [];
-  if (totalPages <= 7) {
+  if (totalPages <= maxShow) {
     for (let i=1;i<=totalPages;i++) pages.push(i);
   } else {
     pages = [1];
-    let s = Math.max(2, currentPage-2), e = Math.min(totalPages-1, currentPage+2);
+    let s = Math.max(2, currentPage-2);
+    let e = Math.min(totalPages-1, currentPage+2);
     if (currentPage <= 3) e = Math.min(5, totalPages-1);
     if (currentPage >= totalPages-2) s = Math.max(2, totalPages-4);
     if (s > 2) pages.push('…');
@@ -1300,16 +1549,28 @@ function renderPaging(totalPages) {
 }
 
 function goPage(p) {
-  const total = Math.ceil(SONGS.filter(s => {
+  const totalPages = Math.ceil(SONGS.filter(s => {
     if (activeType!==null && s.type!==activeType) return false;
     if (activeUnits && !s.units.some(u => activeUnits.has(u))) return false;
+    const q = searchMode === 'song' ? normalize((document.getElementById('tableSearch')||{value:''}).value) : '';
+    if (activeDur==='short' && s.durationSec>140) return false;
+    if (activeDur==='mid1' && (s.durationSec<141||s.durationSec>150)) return false;
+    if (activeDur==='mid2' && (s.durationSec<151||s.durationSec>160)) return false;
+    if (activeDur==='long' && s.durationSec<161) return false;
+    if (q) {
+      const match =
+        normalize(s.title_ja).includes(q) ||
+        (s.title_ja_reading && normalize(s.title_ja_reading).includes(q)) ||
+        (s.title_ko && normalize(s.title_ko).includes(q)) ||
+        (s.title_ko_reading && normalize(s.title_ko_reading).includes(q)) ||
+        s.units.some(u => normalize(u).includes(q));
+      if (!match) return false;
+    }
     return true;
   }).length / PAGE_SIZE);
-  if (p<1||p>total) return;
-  currentPage=p; renderTable();
-  document.querySelector('.table-panel').scrollIntoView({behavior:'smooth',block:'start'});
+  currentPage = Math.max(1, Math.min(p, totalPages));
+  renderTable();
 }
 </script>
-
 </body>
 </html>

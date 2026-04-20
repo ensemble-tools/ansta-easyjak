@@ -337,6 +337,11 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
   .sidebar { display: none; }
 }
 </style>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js');
+  }
+</script>
 </head>
 <body>
 
@@ -620,13 +625,19 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
           홈 화면에 아이콘 추가하기
         </div>
         <div class="info-text">
-          <p style="margin-bottom:12px;">아이콘을 저장한 뒤 브라우저 메뉴에서 <strong>홈 화면에 추가</strong>하면 바로가기를 만들 수 있어요.</p>
-          <a href="512_rabbit.png" download class="download-btn">아이콘 다운로드</a>
-          <ol class="install-steps">
-            <li>위 버튼으로 아이콘 저장</li>
-            <li>크롬 메뉴(⋮) → <strong>홈 화면에 추가</strong></li>
-            <li>이름 확인 후 추가</li>
-          </ol>
+          <div style="margin-bottom:18px;">
+            <p style="margin-bottom:10px;"><strong>Android (크롬)</strong></p>
+            <button id="btnInstallAndroid" onclick="triggerInstall()" class="download-btn" style="display:none;">홈 화면에 추가</button>
+            <p style="font-size:12px; color:var(--text-muted); margin-top:8px;">버튼이 보이지 않으면 크롬 메뉴(⋮) → <strong>홈 화면에 추가</strong>를 선택해 주세요.</p>
+          </div>
+          <div>
+            <p style="margin-bottom:8px;"><strong>iPhone (Safari)</strong></p>
+            <ol class="install-steps">
+              <li>Safari 하단 <strong>공유 버튼(□↑)</strong> 탭</li>
+              <li><strong>홈 화면에 추가</strong> 선택</li>
+              <li>이름 확인 후 추가</li>
+            </ol>
+          </div>
         </div>
       </div>
 
@@ -646,6 +657,25 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="songs.js"></script>
 <script>
+// ── PWA 설치 프롬프트 ──────────────────────────────
+let deferredInstallPrompt = null;
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredInstallPrompt = e;
+  const btn = document.getElementById('btnInstallAndroid');
+  if (btn) btn.style.display = 'inline-block';
+});
+window.addEventListener('appinstalled', () => {
+  const btn = document.getElementById('btnInstallAndroid');
+  if (btn) btn.style.display = 'none';
+});
+function triggerInstall() {
+  if (deferredInstallPrompt) {
+    deferredInstallPrompt.prompt();
+    deferredInstallPrompt.userChoice.then(() => { deferredInstallPrompt = null; });
+  }
+}
+
 // ── 배포 설정 ──────────────────────────────────────
 const SHOW_DEV_INFO = true;
 const SHOW_TITLE_HOVER = true;

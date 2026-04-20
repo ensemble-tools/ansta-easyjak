@@ -212,7 +212,6 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .dur-chip { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; border: 1.5px solid var(--border); background: var(--input-bg); color: var(--text-sub); cursor: pointer; transition: all .15s; font-family: inherit; }
 .dur-chip.active { background: var(--navy); color: white; border-color: var(--navy); }
 .table-panel { background: var(--white); border-radius: 14px; border: 0.5px solid var(--border); box-shadow: var(--shadow); overflow: hidden; }
-@media (max-width: 768px) { .table-panel { overflow: visible; } }
 .table-search-bar { border-bottom: 1px solid var(--border-light); display: flex; flex-direction: column; }
 .table-search-top { display: flex; align-items: center; gap: 10px; padding: 10px 20px; }
 .search-mode-select { height: 36px; padding: 0 8px; background: var(--input-bg); border: 1.5px solid var(--border); border-radius: 8px; font-size: 13px; color: var(--text-main); font-family: inherit; outline: none; cursor: pointer; transition: border-color .2s; flex-shrink: 0; }
@@ -230,7 +229,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .table-search-input:focus { border-color: var(--navy); }
 .table-search-input::placeholder { color: var(--text-muted); }
 .table-hint { font-size: 11px; color: var(--text-sub); font-weight: 500; white-space: nowrap; margin-left: auto; }
-.songs-table { width: 100%; border-collapse: collapse; table-layout: fixed; min-width: 760px; }
+.songs-table { width: 100%; border-collapse: collapse; table-layout: fixed; min-width: 620px; }
 .songs-table thead tr { border-bottom: 2px solid var(--border); }
 .songs-table th { padding: 10px 12px; font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; text-align: left; background: var(--bg); white-space: nowrap; }
 .songs-table th:nth-child(1) { width: 112px; }
@@ -310,6 +309,8 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
   .input-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: repeat(3,1fr); gap: 8px; }
   .combo-num { font-size: 40px; }
+  .songs-table th:nth-child(5),
+  .songs-table td:nth-child(5) { display: none; }
   .combo-unit { font-size: 16px; }
   .result-song-title { font-size: 14px; }
 }
@@ -522,7 +523,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
           <div class="unit-filter-panel" id="unitFilterPanel" style="display:none"></div>
         </div>
 
-        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+        <div style="overflow-x:hidden">
           <table class="songs-table">
             <thead>
               <tr>

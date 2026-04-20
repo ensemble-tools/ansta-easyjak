@@ -1224,8 +1224,8 @@ function updateBar(notes, etS, etE, val) {
       const sRect = lblS.getBoundingClientRect();
       const eRect = lblE.getBoundingClientRect();
       if (eRect.left - sRect.right < 6) {
-        if (etEPos < 50) lblE.classList.add('above');
-        else lblS.classList.add('above');
+        if (etEPos > 75) lblS.classList.add('above');
+        else lblE.classList.add('above');
       }
     });
   }

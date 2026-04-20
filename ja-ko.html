@@ -1208,27 +1208,13 @@ function updateBar(notes, etS, etE, val) {
   const lblE = document.getElementById('lblETEnd');
   if (etS) {
     lblS.style.display = ''; lblS.style.left = etSPos + '%'; lblS.textContent = etS;
-    lblS.style.transform = 'translateX(-50%)';
   } else {
     lblS.style.display = 'none';
   }
   if (etE) {
     lblE.style.display = ''; lblE.style.left = etEPos + '%'; lblE.textContent = etE;
-    lblE.style.transform = 'translateX(-50%)';
   } else {
     lblE.style.display = 'none';
-  }
-  if (etS && etE) {
-    requestAnimationFrame(() => {
-      const sRect = lblS.getBoundingClientRect();
-      const eRect = lblE.getBoundingClientRect();
-      const gap = eRect.left - sRect.right;
-      if (gap < 6) {
-        const push = (6 - gap) / 2;
-        lblS.style.transform = `translateX(calc(-50% - ${push}px))`;
-        lblE.style.transform = `translateX(calc(-50% + ${push}px))`;
-      }
-    });
   }
   document.getElementById('lblTotal').textContent = `${notes}`;
   document.getElementById('markerTotal').style.display = '';

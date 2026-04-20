@@ -146,7 +146,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 .video-yt-badge { position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.65); color: white; font-size: 10px; padding: 3px 8px; border-radius: 4px; font-family: 'Inter', sans-serif; }
 
 /* ── Progress Bar ── */
-.bar-section { padding: 62px 0 20px; position: relative; width: 85%; margin-left: auto; margin-right: auto; display: block; }
+.bar-section { padding: 62px 0 12px; margin-top: 12px; position: relative; width: 85%; margin-left: auto; margin-right: auto; display: block; }
 .bar-track { height: 28px; border-radius: 0; display: flex; overflow: hidden; background: #e5e7eb; }
 .bar-left { height: 100%; background: #d1d5db; }
 .bar-et { height: 100%; background: var(--amber); }
@@ -157,7 +157,6 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 .bar-marker-arrow { width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 7px solid #4a6fa5; }
 .bar-labels { position: relative; height: 20px; margin-top: 6px; }
 .bar-lbl { position: absolute; font-size: 12px; color: var(--text-sub); transform: translateX(-50%); white-space: nowrap; font-weight: 500; }
-.bar-lbl.above { top: -60px; }
 .bar-lbl.left { transform: none; left: 0; }
 .bar-lbl.right { transform: none; right: 0; left: auto; }
 .bar-edge-marker { position: absolute; top: 0; display: flex; flex-direction: column; }
@@ -168,7 +167,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 .bar-edge-label { position: absolute; top: 4px; font-size: 12px; color: var(--text-sub); font-weight: 500; white-space: nowrap; }
 .bar-edge-label.left { left: 0; }
 .bar-edge-label.right { right: 0; }
-.bar-legend { display: flex; gap: 16px; margin-top: 6px; padding-top: 8px; border-top: 0.5px solid var(--border-light); }
+.bar-legend { display: flex; gap: 16px; margin-top: 4px; padding-top: 6px; border-top: 0.5px solid var(--border-light); }
 /* ── Song Card (mobile) ── */
 .card-container { padding: 12px; display: flex; flex-direction: column; gap: 10px; }
 .song-card { background: var(--white); border: 0.5px solid var(--border); border-radius: 12px; box-shadow: var(--shadow); padding: 14px 16px; }
@@ -438,8 +437,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
           <div class="bar-edge-marker-line"></div>
         </div>
         <div class="bar-labels">
-          <span class="bar-lbl" id="lblETStart" style="display:none"></span>
-          <span class="bar-lbl" id="lblETEnd" style="display:none"></span>
+          <span class="bar-lbl" id="lblET" style="display:none"></span>
         </div>
         <div class="bar-legend">
           <div class="legend-item">
@@ -702,7 +700,7 @@ const I18N = {
     colType: 'Type', colUnit: 'Unit', colTitle: 'Title',
     colNotes: 'Notes', colDur: 'Duration', colClear: 'Clear', colVideo: 'Video',
     errNotes: 'Please enter the total notes.', errNotesMin: 'Minimum 80 notes required.', errNotesMax: 'Maximum 300 notes allowed.',
-    errETMin: 'Please enter a non-negative integer.', errETBoth: 'Please enter both ET start and end, or leave both empty.', errETOrder: 'ET start combo must be less than ET end combo.', errETDiff: 'ET end - start combo must be at least 4.', errETMax: 'ET end combo cannot exceed total notes.',
+    errETMin: 'Please enter a positive integer (1 or more).', errETBoth: 'Please enter both ET start and end, or leave both empty.', errETOrder: 'ET start combo must be less than ET end combo.', errETDiff: 'ET end - start combo must be at least 4.', errETMax: 'ET end combo must be less than total notes.',
     comboPrefix: '',
     directInput: 'Manual Input', noResult: 'No results found', tableEmpty: 'No results found',
     noticeTitle: 'Notices',
@@ -746,7 +744,7 @@ const I18N = {
     colType: '属性', colUnit: 'ユニット', colTitle: 'タイトル',
     colNotes: 'ノーツ数', colDur: '曲の長さ', colClear: '開始Cb', colVideo: 'リンク',
     errNotes: 'ノーツ数を入力してください', errNotesMin: '80以上の整数を入力してください', errNotesMax: '300以下の整数を入力してください',
-    errETMin: '0以上の整数を入力してください', errETBoth: 'ET開始・終了は両方入力するか、両方空欄にしてください', errETOrder: 'ET終了コンボは開始コンボより大きくしてください', errETDiff: 'ET終了 - 開始コンボの差は最低4以上必要です', errETMax: 'ET終了コンボは総ノーツ数以下にしてください',
+    errETMin: '1以上の整数を入力してください', errETBoth: 'ET開始・終了は両方入力するか、両方空欄にしてください', errETOrder: 'ET終了コンボは開始コンボより大きくしてください', errETDiff: 'ET終了 - 開始コンボの差は最低4以上必要です', errETMax: 'ET終了コンボは総ノーツ数より小さくしてください',
     comboPrefix: '計',
     directInput: '直接入力', noResult: '検索結果がありません', tableEmpty: '検索結果がありません',
     noticeTitle: 'お知らせ',
@@ -1083,16 +1081,16 @@ function runPredict() {
   if (isNaN(notes) || notes < 1) { showPredictError(t('errNotes'), ['inputNotes']); return; }
   if (notes < 80) { showPredictError(t('errNotesMin'), ['inputNotes']); return; }
   if (notes > 300) { showPredictError(t('errNotesMax'), ['inputNotes']); return; }
-  if (etSRaw !== '' && (etSRaw.includes('.') || parseInt(etSRaw) < 0)) { showPredictError(t('errETMin'), ['inputETStart']); return; }
-  if (etERaw !== '' && (etERaw.includes('.') || parseInt(etERaw) < 0)) { showPredictError(t('errETMin'), ['inputETEnd']); return; }
+  if (etSRaw !== '' && (etSRaw.includes('.') || parseInt(etSRaw) < 1)) { showPredictError(t('errETMin'), ['inputETStart']); return; }
+  if (etERaw !== '' && (etERaw.includes('.') || parseInt(etERaw) < 1)) { showPredictError(t('errETMin'), ['inputETEnd']); return; }
   if ((etS !== null) !== (etE !== null)) {
     showPredictError(t('errETBoth'), etS === null ? ['inputETStart'] : ['inputETEnd']); return;
   }
   if (etS !== null && etE !== null) {
-    if (etS < 0 || etE < 0) { showPredictError(t('errETMin'), ['inputETStart','inputETEnd']); return; }
+    if (etS < 1 || etE < 1) { showPredictError(t('errETMin'), ['inputETStart','inputETEnd']); return; }
     if (etS >= etE) { showPredictError(t('errETOrder'), ['inputETStart','inputETEnd']); return; }
     if (etE - etS < 4) { showPredictError(t('errETDiff'), ['inputETStart','inputETEnd']); return; }
-    if (etE > notes) { showPredictError(t('errETMax'), ['inputETEnd']); return; }
+    if (etE >= notes) { showPredictError(t('errETMax'), ['inputETEnd']); return; }
   }
   clearPredictError();
 
@@ -1205,17 +1203,15 @@ function updateBar(notes, etS, etE, val) {
   document.getElementById('barRight').style.width = (100-etEndVisual)+'%';
   document.getElementById('barMarker').style.left = clearPos+'%';
   document.getElementById('barMarkerLabel').textContent = `Clear: ${val}`;
-  const lblS = document.getElementById('lblETStart');
-  const lblE = document.getElementById('lblETEnd');
-  const cramped = etS && etE && etS >= 100 && etE >= 100 && (etE - etS) <= 12;
-  if (etS) {
-    lblS.style.display = ''; lblS.style.left = etSPos + '%'; lblS.textContent = etS;
-    if (cramped) lblS.classList.add('above'); else lblS.classList.remove('above');
+  const lblET = document.getElementById('lblET');
+  if (etS && etE) {
+    const etMidPos = (etSPos + etEPos) / 2;
+    lblET.style.display = '';
+    lblET.style.left = etMidPos + '%';
+    lblET.textContent = `ET ${etS}~${etE}`;
   } else {
-    lblS.style.display = 'none'; lblS.classList.remove('above');
+    lblET.style.display = 'none';
   }
-  if (etE && etE !== notes) { lblE.style.display=''; lblE.style.left=etEndVisual+'%'; lblE.textContent=etE; }
-  else { lblE.style.display='none'; }
   document.getElementById('lblTotal').textContent = `${notes}`;
   document.getElementById('markerTotal').style.display = '';
 }

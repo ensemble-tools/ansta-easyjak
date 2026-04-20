@@ -146,7 +146,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .video-yt-badge { position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.65); color: white; font-size: 10px; padding: 3px 8px; border-radius: 4px; font-family: 'Inter', sans-serif; }
 
 /* ── Progress Bar ── */
-.bar-section { padding: 62px 0 20px; position: relative; width: 85%; margin-left: auto; margin-right: auto; display: block; }
+.bar-section { padding: 62px 0 12px; margin-top: 12px; position: relative; width: 85%; margin-left: auto; margin-right: auto; display: block; }
 .bar-track { height: 28px; border-radius: 0; display: flex; overflow: hidden; background: #e5e7eb; }
 .bar-left { height: 100%; background: #d1d5db; }
 .bar-et { height: 100%; background: var(--amber); }
@@ -157,7 +157,6 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .bar-marker-arrow { width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 7px solid #4a6fa5; }
 .bar-labels { position: relative; height: 20px; margin-top: 6px; }
 .bar-lbl { position: absolute; font-size: 12px; color: var(--text-sub); transform: translateX(-50%); white-space: nowrap; font-weight: 500; }
-.bar-lbl.above { top: -60px; }
 .bar-lbl.left { transform: none; left: 0; }
 .bar-lbl.right { transform: none; right: 0; left: auto; }
 .bar-edge-marker { position: absolute; top: 0; display: flex; flex-direction: column; }
@@ -168,7 +167,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .bar-edge-label { position: absolute; top: 4px; font-size: 12px; color: var(--text-sub); font-weight: 500; white-space: nowrap; }
 .bar-edge-label.left { left: 0; }
 .bar-edge-label.right { right: 0; }
-.bar-legend { display: flex; gap: 16px; margin-top: 6px; padding-top: 8px; border-top: 0.5px solid var(--border-light); }
+.bar-legend { display: flex; gap: 16px; margin-top: 4px; padding-top: 6px; border-top: 0.5px solid var(--border-light); }
 /* ── Song Card (mobile) ── */
 .card-container { padding: 12px; display: flex; flex-direction: column; gap: 10px; }
 .song-card { background: var(--white); border: 0.5px solid var(--border); border-radius: 12px; box-shadow: var(--shadow); padding: 14px 16px; }
@@ -398,7 +397,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
         </div>
       </div>
 
-      <button class="predict-btn" onclick="runPredict()" data-i18n="predictBtn">예측하기</button>
+      <button class="predict-btn" onclick="runPredict()" data-i18n="predictBtn">계산하기</button>
       <div class="predict-error" id="predictError"></div>
     </div>
 
@@ -438,8 +437,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
           <div class="bar-edge-marker-line"></div>
         </div>
         <div class="bar-labels">
-          <span class="bar-lbl" id="lblETStart" style="display:none"></span>
-          <span class="bar-lbl" id="lblETEnd" style="display:none"></span>
+          <span class="bar-lbl" id="lblET" style="display:none"></span>
         </div>
         <div class="bar-legend">
           <div class="legend-item">
@@ -687,7 +685,7 @@ const I18N = {
     cardLabel1: '클리어 콤보 시작점 예측',
     searchPlaceholder: '곡 제목 또는 유닛 검색...',
     labelNotes: '총 노트수', labelETStart: 'ET 시작 콤보', labelETEnd: 'ET 종료 콤보',
-    predictBtn: '예측하기',
+    predictBtn: '계산하기',
     statTotalLabel: '전체 수록곡', statMeasuredLabel: '확인 완료', statUnmeasuredLabel: '미확인',
     badgeMeasured: '확인 완료', badgePredicted: '예측',
     videoLabel: '참고 영상', videoCoverNote: '커버송은 영상을 제공하지 않습니다.', videoPlay: '▶ 클릭하여 재생',
@@ -702,7 +700,7 @@ const I18N = {
     colType: '곡 속성', colUnit: '유닛', colTitle: '제목',
     colNotes: '노트 수', colDur: '곡 길이', colClear: '시작 콤보', colVideo: '링크',
     errNotes: '총 노트수를 입력해주세요', errNotesMin: '80이상 정수를 입력하세요', errNotesMax: '300이하 정수를 입력하세요',
-    errETMin: '0이상 정수를 입력하세요', errETBoth: 'ET 시작/종료 콤보를 모두 입력해주세요', errETOrder: 'ET 종료 콤보는 시작 콤보보다 커야 합니다', errETDiff: 'ET 시작 콤보와 종료 콤보 간격은 4이상이어야 합니다.', errETMax: 'ET 종료 콤보는 총 노트수 이하여야 합니다',
+    errETMin: '1이상 정수를 입력하세요', errETBoth: 'ET 시작/종료 콤보를 모두 입력해주세요', errETOrder: 'ET 종료 콤보는 시작 콤보보다 커야 합니다', errETDiff: 'ET 시작 콤보와 종료 콤보 간격은 4이상이어야 합니다.', errETMax: 'ET 종료 콤보는 총 노트수보다 작아야 합니다',
     comboPrefix: '총',
     directInput: '직접 입력', noResult: '검색 결과가 없어요', tableEmpty: '검색 결과가 없어요',
     noticeTitle: '공지사항',
@@ -1082,16 +1080,16 @@ function runPredict() {
   if (isNaN(notes) || notes < 1) { showPredictError(t('errNotes'), ['inputNotes']); return; }
   if (notes < 80) { showPredictError(t('errNotesMin'), ['inputNotes']); return; }
   if (notes > 300) { showPredictError(t('errNotesMax'), ['inputNotes']); return; }
-  if (etSRaw !== '' && (etSRaw.includes('.') || parseInt(etSRaw) < 0)) { showPredictError(t('errETMin'), ['inputETStart']); return; }
-  if (etERaw !== '' && (etERaw.includes('.') || parseInt(etERaw) < 0)) { showPredictError(t('errETMin'), ['inputETEnd']); return; }
+  if (etSRaw !== '' && (etSRaw.includes('.') || parseInt(etSRaw) < 1)) { showPredictError(t('errETMin'), ['inputETStart']); return; }
+  if (etERaw !== '' && (etERaw.includes('.') || parseInt(etERaw) < 1)) { showPredictError(t('errETMin'), ['inputETEnd']); return; }
   if ((etS !== null) !== (etE !== null)) {
     showPredictError(t('errETBoth'), etS === null ? ['inputETStart'] : ['inputETEnd']); return;
   }
   if (etS !== null && etE !== null) {
-    if (etS < 0 || etE < 0) { showPredictError(t('errETMin'), ['inputETStart','inputETEnd']); return; }
+    if (etS < 1 || etE < 1) { showPredictError(t('errETMin'), ['inputETStart','inputETEnd']); return; }
     if (etS >= etE) { showPredictError(t('errETOrder'), ['inputETStart','inputETEnd']); return; }
     if (etE - etS < 4) { showPredictError(t('errETDiff'), ['inputETStart','inputETEnd']); return; }
-    if (etE > notes) { showPredictError(t('errETMax'), ['inputETEnd']); return; }
+    if (etE >= notes) { showPredictError(t('errETMax'), ['inputETEnd']); return; }
   }
   clearPredictError();
 
@@ -1204,17 +1202,15 @@ function updateBar(notes, etS, etE, val) {
   document.getElementById('barRight').style.width = (100-etEndVisual)+'%';
   document.getElementById('barMarker').style.left = clearPos+'%';
   document.getElementById('barMarkerLabel').textContent = `Clear: ${val}`;
-  const lblS = document.getElementById('lblETStart');
-  const lblE = document.getElementById('lblETEnd');
-  const cramped = etS && etE && etS >= 100 && etE >= 100 && (etE - etS) <= 12;
-  if (etS) {
-    lblS.style.display = ''; lblS.style.left = etSPos + '%'; lblS.textContent = etS;
-    if (cramped) lblS.classList.add('above'); else lblS.classList.remove('above');
+  const lblET = document.getElementById('lblET');
+  if (etS && etE) {
+    const etMidPos = (etSPos + etEPos) / 2;
+    lblET.style.display = '';
+    lblET.style.left = etMidPos + '%';
+    lblET.textContent = `ET ${etS}~${etE}`;
   } else {
-    lblS.style.display = 'none'; lblS.classList.remove('above');
+    lblET.style.display = 'none';
   }
-  if (etE && etE !== notes) { lblE.style.display=''; lblE.style.left=etEndVisual+'%'; lblE.textContent=etE; }
-  else { lblE.style.display='none'; }
   document.getElementById('lblTotal').textContent = `${notes}`;
   document.getElementById('markerTotal').style.display = '';
 }

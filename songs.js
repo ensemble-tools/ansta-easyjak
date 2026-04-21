@@ -1,5 +1,5 @@
 // songs.js — Voltage Predictor 곡 데이터 & 모델 파라미터
-// 총 305곡 | R²=0.9699 | MAE=2.63콤보
+// 총 305곡 | R²=0.9699 | MAE=2.62콤보
 // ※ enstars_regression_v3.py 로 자동 생성 — 직접 수정 비권장
 
 const SONGS = [
@@ -206,10 +206,10 @@ const SONGS = [
     "duration": "2:07",
     "etStart": 44,
     "etEnd": 81,
-    "measured": 82,
+    "measured": 81,
     "category": "starmaker",
     "video": "https://youtu.be/7YB0zKanNFE",
-    "videoClear": "https://youtu.be/7YB0zKanNFE?t=74",
+    "videoClear": "https://youtu.be/7YB0zKanNFE?t=61",
     "predicted": 79
   },
   {
@@ -3028,7 +3028,7 @@ const SONGS = [
     "category": "cosmic",
     "video": null,
     "videoClear": null,
-    "predicted": 63
+    "predicted": 62
   },
   {
     "type": "Flash",
@@ -3812,7 +3812,7 @@ const SONGS = [
     "category": "rhythm_link",
     "video": "https://youtu.be/C4CCRKRYMT0?si=9y4q4Y30JaTguMW6",
     "videoClear": "https://youtu.be/C4CCRKRYMT0?t=74",
-    "predicted": 104
+    "predicted": 103
   },
   {
     "type": "Sparkle",
@@ -4019,7 +4019,7 @@ const SONGS = [
     "category": "rhythm_link",
     "video": "https://youtu.be/he5FDcPSM0A",
     "videoClear": "https://youtu.be/he5FDcPSM0A?t=77",
-    "predicted": 103
+    "predicted": 104
   },
   {
     "type": "Brilliant",
@@ -5100,7 +5100,7 @@ const SONGS = [
     "category": "new_dimension",
     "video": "https://youtu.be/ZJuXwWlxHlY",
     "videoClear": "https://youtu.be/ZJuXwWlxHlY?t=66",
-    "predicted": 68
+    "predicted": 67
   },
   {
     "type": "Flash",
@@ -7037,18 +7037,18 @@ const SONGS = [
 ];
 
 const MODEL_PARAMS = {
-  "intercept": -2.505277127854285,
+  "intercept": -2.5189785598630294,
   "coefs": [
-    0.5325603845053931,
-    -1.5312198804879467,
-    7.57055329615802
+    0.5326032933393527,
+    -1.406289909131503,
+    7.478444033521534
   ],
-  "simpleCoef": 0.5267233157901358,
-  "simpleInt": 2.7187484738825844,
+  "simpleCoef": 0.5268064592007099,
+  "simpleInt": 2.6991619229517028,
   "safetyMargin": 10,
   "meanEtStart": 0.49471097685361626,
   "meanEtEnd": 0.6627020270795668,
   "trainSize": 171,
-  "r2": 0.9698567053061677,
-  "mae": 2.6261493425824667
+  "r2": 0.9699284986252911,
+  "mae": 2.6199409945280165
 };

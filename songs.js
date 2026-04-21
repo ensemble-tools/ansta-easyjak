@@ -209,7 +209,7 @@ const SONGS = [
     "measured": 82,
     "category": "starmaker",
     "video": "https://youtu.be/7YB0zKanNFE",
-    "videoClear": null,
+    "videoClear": "https://youtu.be/7YB0zKanNFE?t=74",
     "predicted": 79
   },
   {

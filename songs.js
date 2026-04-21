@@ -206,10 +206,10 @@ const SONGS = [
     "duration": "2:07",
     "etStart": 44,
     "etEnd": 81,
-    "measured": null,
+    "measured": 82,
     "category": "starmaker",
     "video": "https://youtu.be/7YB0zKanNFE",
-    "videoClear": "https://youtu.be/7YB0zKanNFE?t=63",
+    "videoClear": null,
     "predicted": 79
   },
   {
@@ -533,7 +533,7 @@ const SONGS = [
     "category": "starmaker",
     "video": "https://youtu.be/hn84sb3HaGs",
     "videoClear": "https://youtu.be/hn84sb3HaGs?t=75",
-    "predicted": 66
+    "predicted": 67
   },
   {
     "type": "Sparkle",
@@ -602,7 +602,7 @@ const SONGS = [
     "category": "starmaker",
     "video": "https://youtu.be/QcuFx2rlx1I",
     "videoClear": "https://youtu.be/QcuFx2rlx1I?t=62",
-    "predicted": 67
+    "predicted": 68
   },
   {
     "type": "Brilliant",
@@ -2335,7 +2335,7 @@ const SONGS = [
     "category": "cosmic",
     "video": "https://youtu.be/YtC9FUS6HFM?si=ZRQptDv4Mlm2Znl7",
     "videoClear": "https://youtu.be/YtC9FUS6HFM?t=91",
-    "predicted": 83
+    "predicted": 84
   },
   {
     "type": "Glitter",
@@ -2958,7 +2958,7 @@ const SONGS = [
     "category": "cosmic",
     "video": "https://youtu.be/5TkaZQIhd-w",
     "videoClear": "https://youtu.be/5TkaZQIhd-w?t=73",
-    "predicted": 131
+    "predicted": 130
   },
   {
     "type": "Glitter",
@@ -3028,7 +3028,7 @@ const SONGS = [
     "category": "cosmic",
     "video": null,
     "videoClear": null,
-    "predicted": 62
+    "predicted": 63
   },
   {
     "type": "Flash",
@@ -3074,7 +3074,7 @@ const SONGS = [
     "category": "cosmic",
     "video": "https://youtu.be/Ti7XbA1jvzw",
     "videoClear": "https://youtu.be/Ti7XbA1jvzw?t=77",
-    "predicted": 83
+    "predicted": 84
   },
   {
     "type": "Sparkle",
@@ -3812,7 +3812,7 @@ const SONGS = [
     "category": "rhythm_link",
     "video": "https://youtu.be/C4CCRKRYMT0?si=9y4q4Y30JaTguMW6",
     "videoClear": "https://youtu.be/C4CCRKRYMT0?t=74",
-    "predicted": 103
+    "predicted": 104
   },
   {
     "type": "Sparkle",
@@ -4019,7 +4019,7 @@ const SONGS = [
     "category": "rhythm_link",
     "video": "https://youtu.be/he5FDcPSM0A",
     "videoClear": "https://youtu.be/he5FDcPSM0A?t=77",
-    "predicted": 104
+    "predicted": 103
   },
   {
     "type": "Brilliant",
@@ -4226,7 +4226,7 @@ const SONGS = [
     "category": "rhythm_link",
     "video": "https://youtu.be/iI7IE1ZbDUg?si=N3jxe0eHlE8JPqwL",
     "videoClear": "https://youtu.be/iI7IE1ZbDUg?t=89",
-    "predicted": 106
+    "predicted": 107
   },
   {
     "type": "Glitter",
@@ -4594,7 +4594,7 @@ const SONGS = [
     "category": "new_dimension",
     "video": "https://youtu.be/WlTBntd2QLw",
     "videoClear": "https://youtu.be/WlTBntd2QLw?t=69",
-    "predicted": 80
+    "predicted": 81
   },
   {
     "type": "Glitter",
@@ -5100,7 +5100,7 @@ const SONGS = [
     "category": "new_dimension",
     "video": "https://youtu.be/ZJuXwWlxHlY",
     "videoClear": "https://youtu.be/ZJuXwWlxHlY?t=66",
-    "predicted": 67
+    "predicted": 68
   },
   {
     "type": "Flash",
@@ -5123,7 +5123,7 @@ const SONGS = [
     "category": "new_dimension",
     "video": "https://youtu.be/XJA4yTIcSi8?si=ZvPsX922n-R_dMu7",
     "videoClear": "https://youtu.be/XJA4yTIcSi8?t=69",
-    "predicted": 110
+    "predicted": 109
   },
   {
     "type": "Brilliant",
@@ -5859,7 +5859,7 @@ const SONGS = [
     "category": "others",
     "video": "https://youtu.be/WbBI2QjyTrk?si=HXwT_0D2eFAChgc_",
     "videoClear": "https://youtu.be/WbBI2QjyTrk?t=59",
-    "predicted": 57
+    "predicted": 58
   },
   {
     "type": "Brilliant",
@@ -6227,7 +6227,7 @@ const SONGS = [
     "category": "others",
     "video": "https://youtu.be/1TAyAnXWJa0",
     "videoClear": "https://youtu.be/1TAyAnXWJa0?t=81",
-    "predicted": 77
+    "predicted": 78
   },
   {
     "type": "Flash",
@@ -7037,18 +7037,18 @@ const SONGS = [
 ];
 
 const MODEL_PARAMS = {
-  "intercept": -2.540001825529785,
+  "intercept": -2.505277127854285,
   "coefs": [
-    0.5326669654814655,
-    -1.2213779313388922,
-    7.342116515819019
+    0.5325603845053931,
+    -1.5312198804879467,
+    7.57055329615802
   ],
-  "simpleCoef": 0.5268785171957882,
-  "simpleInt": 2.6821868243740568,
+  "simpleCoef": 0.5267233157901358,
+  "simpleInt": 2.7187484738825844,
   "safetyMargin": 10,
-  "meanEtStart": 0.4959476303280623,
-  "meanEtEnd": 0.6634088727689104,
-  "trainSize": 170,
-  "r2": 0.9699280882150254,
-  "mae": 2.625810710697812
+  "meanEtStart": 0.49471097685361626,
+  "meanEtEnd": 0.6627020270795668,
+  "trainSize": 171,
+  "r2": 0.9698567053061677,
+  "mae": 2.6261493425824667
 };

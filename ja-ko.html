@@ -373,6 +373,12 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
   <!-- ══ 탭1: 클리어 예측 ══ -->
   <div id="tab-predict" class="tab-pane active">
 
+    <div class="info-card full" style="margin-bottom:16px; padding:10px 14px;">
+      <ul class="notice-list">
+        <li style="padding:0; border:none; align-items:center;"><span class="notice-badge badge-info" style="margin-top:0;">INFO</span><span data-i18n="tab1Notice">커버송과 기간 한정 곡은 영상을 제공하지 않습니다.</span></li>
+      </ul>
+    </div>
+
     <div class="card">
       <div class="card-label" data-i18n="cardLabel1">클리어 콤보 시작점 예측</div>
 
@@ -465,7 +471,6 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
       <div class="video-section" id="videoSection" style="display:none">
         <div style="display:flex;align-items:baseline;gap:32px;margin-bottom:8px">
           <span class="video-label" data-i18n="videoLabel">참고 영상</span>
-          <span style="font-size:11px;color:var(--text-muted)" data-i18n="videoCoverNote">커버송은 영상을 제공하지 않습니다.</span>
         </div>
         <div class="video-thumb-wrap" id="videoThumbWrap"></div>
       </div>
@@ -716,6 +721,7 @@ const I18N = {
     errETMin: '1이상 정수를 입력하세요', errETBoth: 'ET 시작/종료 콤보를 모두 입력해주세요', errETOrder: 'ET 종료 콤보는 시작 콤보보다 커야 합니다', errETDiff: 'ET 시작 콤보와 종료 콤보 간격은 4이상이어야 합니다.', errETMax: 'ET 종료 콤보는 총 노트수보다 작아야 합니다',
     comboPrefix: '',
     directInput: '직접 입력', noResult: '검색 결과가 없어요', tableEmpty: '검색 결과가 없어요',
+    tab1Notice: '커버송과 기간 한정 곡은 영상을 제공하지 않습니다.',
     noticeTitle: '공지사항',
     contactTitle: '오류 신고 및 문의',
     contactText1: '예측값 오류, 데이터 누락, 기타 문의사항이 있으시면 아래 이메일로 연락해 주세요.',
@@ -754,7 +760,7 @@ const I18N = {
     etPlaceholder: '任意',
     predictBtn: '予測する',
     statTotalLabel: '収録楽曲', statMeasuredLabel: '確認済み', statUnmeasuredLabel: '未確認',
-    badgeMeasured: '実測値', badgePredicted: '予測値', comboUnit: 'コンボから開始',
+    badgeMeasured: '確認済み', badgePredicted: '予測値', comboUnit: 'コンボから開始',
     videoLabel: '参考動画', videoCoverNote: 'カバー曲は動画を提供していません。', videoPlay: '▶ クリックして再生',
     legendClear: 'クリア開始点', legendET: 'アンサンブルタイム区間',
     sidebarTypeTitle: '曲の属性', sidebarUnitTitle: 'Units', sidebarDurTitle: '曲の長さ',
@@ -768,6 +774,7 @@ const I18N = {
     colNotes: 'ノーツ数', colDur: '曲の長さ', colClear: '開始Cb', colVideo: 'リンク',
     errNotes: 'ノーツ数を入力してください', errETDiff: 'ET終了 - 開始コンボの差は最低4以上必要です', comboPrefix: '',
     directInput: '直接入力', noResult: '検索結果がありません', tableEmpty: '検索結果がありません',
+    tab1Notice: 'カバー曲・期間限定曲は動画を提供していません。',
     noticeTitle: 'お知らせ',
     contactTitle: 'エラー報告・お問い合わせ',
     contactText1: '予測値の誤り、データの欠落、その他のお問い合わせは下記メールにご連絡ください。',
@@ -1207,7 +1214,6 @@ function showResult(notes, etS, etE) {
   const vs = document.getElementById('videoSection');
   const wrap = document.getElementById('videoThumbWrap');
   document.getElementById('videoSection').querySelector('[data-i18n="videoLabel"]').textContent = t('videoLabel');
-  document.getElementById('videoSection').querySelector('[data-i18n="videoCoverNote"]').textContent = t('videoCoverNote');
   if (currentVideoUrl) {
     const videoId = extractYoutubeId(currentVideoUrl);
     if (videoId) {

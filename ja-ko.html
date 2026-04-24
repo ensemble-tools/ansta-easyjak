@@ -1557,15 +1557,15 @@ function renderTable() {
         <div class="song-card-title" data-video="${s.video||''}">${cardMainTitle}</div>
         <div class="song-card-stats">
           <div class="song-card-stat">
-            <span class="song-card-stat-label">노트수</span>
+            <span class="song-card-stat-label">${t('colNotes')}</span>
             <span class="song-card-stat-val">${s.totalNotes}</span>
           </div>
           <div class="song-card-stat">
-            <span class="song-card-stat-label">시작 콤보</span>
+            <span class="song-card-stat-label">${t('colClear')}</span>
             <span class="song-card-stat-val">${dot}${clearVal}</span>
           </div>
           <div class="song-card-stat">
-            <span class="song-card-stat-label">재생시간</span>
+            <span class="song-card-stat-label">${t('colDur')}</span>
             <span class="song-card-stat-val">${s.duration||'—'}</span>
           </div>
         </div>

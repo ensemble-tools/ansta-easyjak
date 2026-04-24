@@ -129,8 +129,8 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .result-mode-badge.predicted { background: var(--navy-pale); color: var(--navy); }
 
 /* Combo display */
-.combo-display { display: flex; align-items: baseline; justify-content: center; gap: 10px; padding: 20px 0 22px; }
-.combo-num { font-size: 52px; font-weight: 700; color: var(--navy); line-height: 1; font-family: 'Inter', sans-serif; }
+.combo-display { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 20px 0 22px; }
+.combo-num { font-size: 52px; font-weight: 700; color: var(--navy); line-height: 1.1; font-family: 'Inter', sans-serif; }
 .combo-unit { font-size: 20px; font-weight: 600; color: var(--navy); opacity: 0.55; font-family: 'Inter', sans-serif; }
 .combo-prefix { font-size: 20px; font-weight: 600; color: var(--navy); opacity: 0.55; font-family: inherit; display: none; }
 
@@ -700,7 +700,7 @@ const I18N = {
     etPlaceholder: '선택사항',
     predictBtn: '계산하기',
     statTotalLabel: '전체 수록곡', statMeasuredLabel: '확인 완료', statUnmeasuredLabel: '미확인',
-    badgeMeasured: '확인함', badgePredicted: '예측',
+    badgeMeasured: '확인함', badgePredicted: '예측', comboUnit: '콤보부터 시작',
     videoLabel: '참고 영상', videoCoverNote: '커버송은 영상을 제공하지 않습니다.', videoPlay: '▶ 클릭하여 재생',
     legendClear: '클리어 시작점', legendET: '앙상블 타임 구간',
     sidebarTypeTitle: '곡 속성', sidebarUnitTitle: 'Units', sidebarDurTitle: '곡 길이',
@@ -714,7 +714,7 @@ const I18N = {
     colNotes: '노트 수', colDur: '곡 길이', colClear: '시작 콤보', colVideo: '링크',
     errNotes: '총 노트수를 입력해주세요', errNotesMin: '80이상 정수를 입력하세요', errNotesMax: '300이하 정수를 입력하세요',
     errETMin: '1이상 정수를 입력하세요', errETBoth: 'ET 시작/종료 콤보를 모두 입력해주세요', errETOrder: 'ET 종료 콤보는 시작 콤보보다 커야 합니다', errETDiff: 'ET 시작 콤보와 종료 콤보 간격은 4이상이어야 합니다.', errETMax: 'ET 종료 콤보는 총 노트수보다 작아야 합니다',
-    comboPrefix: '총',
+    comboPrefix: '',
     directInput: '직접 입력', noResult: '검색 결과가 없어요', tableEmpty: '검색 결과가 없어요',
     noticeTitle: '공지사항',
     contactTitle: '오류 신고 및 문의',
@@ -754,7 +754,7 @@ const I18N = {
     etPlaceholder: '任意',
     predictBtn: '予測する',
     statTotalLabel: '収録楽曲', statMeasuredLabel: '確認済み', statUnmeasuredLabel: '未確認',
-    badgeMeasured: '実測値', badgePredicted: '予測値',
+    badgeMeasured: '実測値', badgePredicted: '予測値', comboUnit: 'コンボから開始',
     videoLabel: '参考動画', videoCoverNote: 'カバー曲は動画を提供していません。', videoPlay: '▶ クリックして再生',
     legendClear: 'クリア開始点', legendET: 'アンサンブルタイム区間',
     sidebarTypeTitle: '曲の属性', sidebarUnitTitle: 'Units', sidebarDurTitle: '曲の長さ',
@@ -766,7 +766,7 @@ const I18N = {
     sidebarUnitHint: 'ユニット検索は上部検索バーのコンボボックスから選択してください。',
     colType: '属性', colUnit: 'ユニット', colTitle: 'タイトル',
     colNotes: 'ノーツ数', colDur: '曲の長さ', colClear: '開始Cb', colVideo: 'リンク',
-    errNotes: 'ノーツ数を入力してください', errETDiff: 'ET終了 - 開始コンボの差は最低4以上必要です', comboPrefix: '計',
+    errNotes: 'ノーツ数を入力してください', errETDiff: 'ET終了 - 開始コンボの差は最低4以上必要です', comboPrefix: '',
     directInput: '直接入力', noResult: '検索結果がありません', tableEmpty: '検索結果がありません',
     noticeTitle: 'お知らせ',
     contactTitle: 'エラー報告・お問い合わせ',
@@ -1188,9 +1188,9 @@ function showResult(notes, etS, etE) {
   const displayVal = measuredValue !== null ? measuredValue : predictedValue;
   const badge = document.getElementById('resultBadge');
   document.getElementById('resultCombo').textContent = displayVal;
-  document.getElementById('comboUnitLabel').textContent = 'combo';
+  document.getElementById('comboUnitLabel').textContent = t('comboUnit');
   const pfx = document.getElementById('comboPrefixLabel');
-  pfx.textContent = t('comboPrefix'); pfx.style.display = '';
+  pfx.textContent = t('comboPrefix'); pfx.style.display = pfx.textContent ? 'inline' : 'none';
   if (measuredValue !== null) {
     badge.textContent = t('badgeMeasured');
     badge.className = 'result-mode-badge measured';

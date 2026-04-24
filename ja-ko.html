@@ -394,16 +394,16 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
       <div class="input-grid">
         <div class="input-group">
           <label><span data-i18n="labelNotes">총 노트수</span> <span>*</span></label>
-          <input class="num-input" id="inputNotes" type="number" placeholder="예: 161" min="80" max="300"
+          <input class="num-input" id="inputNotes" type="number" placeholder="예: 161" data-i18n-placeholder="notesPlaceholder" min="80" max="300"
             oninput="onNotesManualEdit()">
         </div>
         <div class="input-group">
           <label data-i18n="labelETStart">ET 시작 콤보</label>
-          <input class="num-input" id="inputETStart" type="number" placeholder="선택사항" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+          <input class="num-input" id="inputETStart" type="number" placeholder="선택사항" data-i18n-placeholder="etPlaceholder" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
         </div>
         <div class="input-group">
           <label data-i18n="labelETEnd">ET 종료 콤보</label>
-          <input class="num-input" id="inputETEnd" type="number" placeholder="선택사항" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+          <input class="num-input" id="inputETEnd" type="number" placeholder="선택사항" data-i18n-placeholder="etPlaceholder" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
         </div>
       </div>
 
@@ -622,20 +622,20 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
             <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
             <line x1="12" y1="18" x2="12" y2="18.01"/>
           </svg>
-          홈 화면에 아이콘 추가하기
+          <span data-i18n="homeTitle">홈 화면에 아이콘 추가하기</span>
         </div>
         <div class="info-text">
           <div style="margin-bottom:18px;">
-            <p style="margin-bottom:10px;"><strong>Android (크롬)</strong></p>
-            <button id="btnInstallAndroid" onclick="triggerInstall()" class="download-btn" style="display:none;">홈 화면에 추가</button>
-            <p style="font-size:12px; color:var(--text-muted); margin-top:8px;">버튼이 보이지 않으면 크롬 메뉴(⋮) → <strong>홈 화면에 추가</strong>를 선택해 주세요.</p>
+            <p style="margin-bottom:10px;"><strong data-i18n="homeAndroid">Android (크롬)</strong></p>
+            <button id="btnInstallAndroid" onclick="triggerInstall()" class="download-btn" style="display:none;" data-i18n="homeAndroidBtn">홈 화면에 추가</button>
+            <p style="font-size:12px; color:var(--text-muted); margin-top:8px;" data-i18n-html="homeAndroidHint">버튼이 보이지 않으면 크롬 메뉴(⋮) → <strong>홈 화면에 추가</strong>를 선택해 주세요.</p>
           </div>
           <div>
-            <p style="margin-bottom:8px;"><strong>iPhone (Safari)</strong></p>
+            <p style="margin-bottom:8px;"><strong data-i18n="homeIos">iPhone (Safari)</strong></p>
             <ol class="install-steps">
-              <li>Safari 하단 <strong>공유 버튼(□↑)</strong> 탭</li>
-              <li><strong>홈 화면에 추가</strong> 선택</li>
-              <li>이름 확인 후 추가</li>
+              <li data-i18n-html="homeIosStep1">Safari 하단 <strong>공유 버튼(□↑)</strong> 탭</li>
+              <li data-i18n-html="homeIosStep2"><strong>홈 화면에 추가</strong> 선택</li>
+              <li data-i18n="homeIosStep3">이름 확인 후 추가</li>
             </ol>
           </div>
         </div>
@@ -696,9 +696,11 @@ const I18N = {
     cardLabel1: '클리어 콤보 시작점 예측',
     searchPlaceholder: '곡 제목 또는 유닛 검색...',
     labelNotes: '총 노트수', labelETStart: 'ET 시작 콤보', labelETEnd: 'ET 종료 콤보',
+    notesPlaceholder: '예: 161',
+    etPlaceholder: '선택사항',
     predictBtn: '계산하기',
     statTotalLabel: '전체 수록곡', statMeasuredLabel: '확인 완료', statUnmeasuredLabel: '미확인',
-    badgeMeasured: '확인 완료', badgePredicted: '예측',
+    badgeMeasured: '확인함', badgePredicted: '예측',
     videoLabel: '참고 영상', videoCoverNote: '커버송은 영상을 제공하지 않습니다.', videoPlay: '▶ 클릭하여 재생',
     legendClear: '클리어 시작점', legendET: '앙상블 타임 구간',
     sidebarTypeTitle: '곡 속성', sidebarUnitTitle: 'Units', sidebarDurTitle: '곡 길이',
@@ -724,6 +726,14 @@ const I18N = {
     devPredText2: '실측 데이터 169곡을 학습에 사용했습니다.',
     devPredText3: '예측 시작점에 안전 마진 +10콤보를 더해 최종 클리어 콤보를 산출합니다.',
     devPerfText: '학습 데이터 기준 성능 지표입니다.', devPerfText2: '대부분의 곡에서 ±5콤보 이내로 예측합니다.',
+    homeTitle: '홈 화면에 아이콘 추가하기',
+    homeAndroid: 'Android (크롬)',
+    homeAndroidBtn: '홈 화면에 추가',
+    homeAndroidHint: '버튼이 보이지 않으면 크롬 메뉴(⋮) → <strong>홈 화면에 추가</strong>를 선택해 주세요.',
+    homeIos: 'iPhone (Safari)',
+    homeIosStep1: 'Safari 하단 <strong>공유 버튼(□↑)</strong> 탭',
+    homeIosStep2: '<strong>홈 화면에 추가</strong> 선택',
+    homeIosStep3: '이름 확인 후 추가',
     langToggle: '日本語',
     notices: [
       { badge: 'NEW', cls: 'badge-new', text: '악곡 검색 탭이 추가되었습니다. 타입·유닛·길이 필터와 정렬 기능을 지원합니다.' },
@@ -740,6 +750,8 @@ const I18N = {
     cardLabel1: 'クリアコンボ予測',
     searchPlaceholder: '楽曲名またはユニット検索...',
     labelNotes: '総ノーツ数', labelETStart: 'ET開始コンボ', labelETEnd: 'ET終了コンボ',
+    notesPlaceholder: '例: 161',
+    etPlaceholder: '任意',
     predictBtn: '予測する',
     statTotalLabel: '収録楽曲', statMeasuredLabel: '確認済み', statUnmeasuredLabel: '未確認',
     badgeMeasured: '実測値', badgePredicted: '予測値',
@@ -766,6 +778,14 @@ const I18N = {
     devPredText2: '実測データ 169曲 を学習に使用しました。',
     devPredText3: '予測開始点に安全マージン +10コンボ を加算して最終クリアコンボを算出します。',
     devPerfText: '学習データ基準の性能指標です。', devPerfText2: 'ほとんどの曲で ±5コンボ以内 で予測します。',
+    homeTitle: 'ホーム画面にアイコンを追加',
+    homeAndroid: 'Android (Chrome)',
+    homeAndroidBtn: 'ホーム画面に追加',
+    homeAndroidHint: 'ボタンが表示されない場合は、Chromeメニュー(⋮) → <strong>ホーム画面に追加</strong> を選択してください。',
+    homeIos: 'iPhone (Safari)',
+    homeIosStep1: 'Safari下部の<strong>共有ボタン(□↑)</strong>をタップ',
+    homeIosStep2: '<strong>ホーム画面に追加</strong>を選択',
+    homeIosStep3: '名前を確認して追加',
     langToggle: '한국어',
     notices: [
       { badge: 'NEW', cls: 'badge-new', text: '楽曲検索タブが追加されました。タイプ・ユニット・長さフィルターとソート機能をサポートしています。' },
@@ -804,6 +824,9 @@ function applyI18n() {
   });
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     el.placeholder = t(el.dataset.i18nPlaceholder);
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    el.innerHTML = t(el.dataset.i18nHtml);
   });
   document.getElementById('langToggleBtn').textContent = t('langToggle');
   document.title = t('navTitle');
@@ -880,11 +903,42 @@ Object.entries(UNIT_GROUPS).forEach(([g, ms]) => ms.forEach(u => { UNIT_TO_GROUP
 const UNIT_NAME_JA = {
   '유성대': '流星隊',
   '홍월': '紅月',
+  '주년': '周年',
+  '새해': '新年',
+  '만우절': 'エイプリルフール',
+  '셔플': 'シャッフル',
+  '셔플_10주년': 'シャッフル(10周年)',
+  '콜라보': 'コラボ',
+  '추억': '追憶',
+  '기타': 'その他',
+  '드림유닛': 'ドリームユニット',
 };
 const UNIT_NAME_EN = {
   '유성대': 'RYUSEITAI',
   '홍월': 'AKATSUKI',
+  '주년': 'Anniversary',
+  '새해': 'New Year',
+  '만우절': 'April Fools',
+  '셔플': 'Shuffle',
+  '셔플_10주년': 'Shuffle (10th Anniv.)',
+  '콜라보': 'Collab',
+  '추억': 'Reminiscence',
+  '기타': 'Others',
+  '드림유닛': 'Dream Unit',
 };
+const UNIT_GROUP_NAME_JA = {
+  '주년·새해·만우절': '周年・新年・エイプリルフール',
+  '셔플': 'シャッフル',
+  '콜라보·J&A': 'コラボ・J&A',
+  '추억·기타': '追憶・その他',
+  '유성대': '流星隊',
+  '홍월': '紅月',
+};
+function getUnitName(ko) {
+  if (currentLang !== 'ja') return ko;
+  if (UNIT_GROUP_NAME_JA[ko]) return UNIT_GROUP_NAME_JA[ko];
+  return ko.split(' / ').map(u => UNIT_NAME_JA[u.trim()] ?? u.trim()).join(' / ');
+}
 
 // ── 상태 ──────────────────────────────────────────
 let currentSong = null;
@@ -1349,7 +1403,7 @@ function buildUnitFilterPanel() {
       const dataAttr = item.units
         ? `data-units="${esc(item.units)}"`
         : `data-unit="${esc(item.unit)}"`;
-      lbl.innerHTML = `<input type="checkbox" class="unit-cb" ${dataAttr} onchange="onUnitChange()"><span>${esc(item.label)}</span>`;
+      lbl.innerHTML = `<input type="checkbox" class="unit-cb" ${dataAttr} onchange="onUnitChange()"><span>${esc(getUnitName(item.label))}</span>`;
       inner.appendChild(lbl);
     });
   });
@@ -1490,7 +1544,7 @@ function renderTable() {
         <div class="song-card-top">
           <div class="song-card-top-left">
             <span class="type-badge" style="background:${c.bg};color:${c.color}">${s.type}</span>
-            <span class="song-card-unit">${s.unit}</span>
+            <span class="song-card-unit">${getUnitName(s.unit)}</span>
           </div>
           ${videoBtn}
         </div>
@@ -1514,7 +1568,7 @@ function renderTable() {
 
     return `<tr>
       <td><span class="type-badge" style="background:${c.bg};color:${c.color}">${s.type}</span></td>
-      <td class="col-unit">${s.unit}</td>
+      <td class="col-unit">${getUnitName(s.unit)}</td>
       <td class="col-title" data-video="${s.video||''}">
         <div>${mainTitle}</div>
       </td>

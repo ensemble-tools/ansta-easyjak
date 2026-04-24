@@ -872,11 +872,32 @@ Object.entries(UNIT_GROUPS).forEach(([g, ms]) => ms.forEach(u => { UNIT_TO_GROUP
 const UNIT_NAME_JA = {
   '유성대': '流星隊',
   '홍월': '紅月',
+  '주년': '周年',
+  '새해': '新年',
+  '만우절': 'エイプリルフール',
+  '셔플': 'シャッフル',
+  '셔플_10주년': 'シャッフル(10周年)',
+  '콜라보': 'コラボ',
+  '추억': '思い出',
+  '기타': 'その他',
+  '드림유닛': 'ドリームユニット',
 };
 const UNIT_NAME_EN = {
   '유성대': 'RYUSEITAI',
   '홍월': 'AKATSUKI',
+  '주년': 'Anniversary',
+  '새해': 'New Year',
+  '만우절': 'April Fools',
+  '셔플': 'Shuffle',
+  '셔플_10주년': 'Shuffle (10th Anniv.)',
+  '콜라보': 'Collab',
+  '추억': 'Reminiscence',
+  '기타': 'Others',
+  '드림유닛': 'Dream Unit',
 };
+function getUnitName(ko) {
+  return UNIT_NAME_EN[ko] ?? ko;
+}
 
 // ── 상태 ──────────────────────────────────────────
 let currentSong = null;
@@ -1297,7 +1318,7 @@ function buildUnitFilterPanel() {
     [
       { label:'UNDEAD',        unit:'UNDEAD' },
       { label:'Ra*bits',       unit:'Ra*bits' },
-      { label:'홍월',           unit:'홍월' },
+      { label:'AKATSUKI',       unit:'홍월' },
       { label:'MELLOW DEAR US',unit:'MELLOW DEAR US' },
     ],
     [
@@ -1307,10 +1328,10 @@ function buildUnitFilterPanel() {
       { label:'S-Pri',         unit:'S-Pri' },
     ],
     [
-      { label:'주년·새해·만우절',  units:'주년,만우절,새해' },
-      { label:'셔플',            units:'셔플,셔플_10주년' },
-      { label:'콜라보·J&A',      units:'콜라보,J&A' },
-      { label:'추억·기타',       units:'추억,기타' },
+      { label:'Anniv.·New Year·April Fools', units:'주년,만우절,새해' },
+      { label:'Shuffle',         units:'셔플,셔플_10주년' },
+      { label:'Collab·J&A',      units:'콜라보,J&A' },
+      { label:'Reminiscence·Others', units:'추억,기타' },
     ],
   ];
   const inner = document.createElement('div');
@@ -1467,7 +1488,7 @@ function renderTable() {
         <div class="song-card-top">
           <div class="song-card-top-left">
             <span class="type-badge" style="background:${c.bg};color:${c.color}">${s.type}</span>
-            <span class="song-card-unit">${s.unit}</span>
+            <span class="song-card-unit">${getUnitName(s.unit)}</span>
           </div>
           ${videoBtn}
         </div>
@@ -1491,7 +1512,7 @@ function renderTable() {
 
     return `<tr>
       <td><span class="type-badge" style="background:${c.bg};color:${c.color}">${s.type}</span></td>
-      <td class="col-unit">${s.unit}</td>
+      <td class="col-unit">${getUnitName(s.unit)}</td>
       <td class="col-title" data-video="${s.video||''}">
         <div>${mainTitle}</div>
       </td>

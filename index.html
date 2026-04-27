@@ -1,17 +1,1662 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ko">
 <head>
 <meta charset="UTF-8">
+<link rel="manifest" href="manifest.json">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Easy Low-Effort Clear Calculator</title>
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Voltage Predictor</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy: #1e3a6e;
+  --navy-light: #2a4d8f;
+  --navy-pale: #e8eef8;
+  --bg: #f0f3f9;
+  --white: #ffffff;
+  --border: #e0e4ed;
+  --border-light: #f0f2f7;
+  --text-main: #1e3a6e;
+  --text-sub: #6b7280;
+  --text-muted: #a0aab8;
+  --amber: #fbbf24;
+  --amber-light: #fef3c7;
+  --green: #059669;
+  --input-bg: #f4f6fb;
+  --shadow: 0 2px 8px rgba(30,58,110,0.08);
+  --shadow-md: 0 4px 16px rgba(30,58,110,0.1);
+}
+
+body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; background: var(--bg); color: var(--text-main); min-height: 100vh; }
+
+/* ── Nav ── */
+.nav { background: var(--navy); box-shadow: 0 2px 8px rgba(0,0,0,0.15); position: sticky; top: 0; z-index: 100; }
+.nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.nav-brand-row { display: flex; align-items: center; gap: 10px; padding: 14px 0 10px; }
+.nav-icon { width: 28px; height: 28px; color: white; flex-shrink: 0; }
+.nav-title { color: white; font-size: 20px; font-weight: 700; line-height: 1.2; }
+.nav-bottom-row { display: flex; align-items: center; justify-content: space-between; padding: 4px 0 10px; }
+.nav-tabs { display: flex; gap: 2px; }
+.nav-tab {
+  padding: 6px 16px;
+  color: rgba(255,255,255,0.65);
+  font-size: 13px; font-weight: 600;
+  background: none; border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer; transition: all .2s;
+  font-family: inherit;
+  border-radius: 6px 6px 0 0;
+}
+.nav-tab:hover { color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.08); }
+.nav-tab.active {
+  color: var(--text-main);
+  background: var(--bg);
+  border-bottom: 2px solid var(--bg);
+}
+.lang-toggle-btn {
+  padding: 5px 12px;
+  border: 2px solid rgba(255,255,255,0.85);
+  border-radius: 6px;
+  background: transparent;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all .2s;
+  margin-bottom: 6px;
+}
+.lang-toggle-btn:hover { background: rgba(255,255,255,0.2); }
+
+/* ── Layout ── */
+.page { max-width: 1200px; margin: 0 auto; padding: 24px 24px 60px; display: flex; flex-direction: column; gap: 16px; }
+.tab-pane { display: none; }
+.tab-pane.active { display: block; }
+
+/* ── Cards ── */
+.card { background: var(--white); border-radius: 14px; border: 0.5px solid var(--border); box-shadow: var(--shadow); padding: 24px; }
+.card-label { font-size: 13px; font-weight: 600; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 14px; }
+
+/* ── Search ── */
+.search-wrap { position: relative; margin-bottom: 16px; }
+.search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--navy); opacity: 0.45; pointer-events: none; width: 16px; height: 16px; }
+.search-input { width: 100%; height: 42px; padding: 0 36px; background: var(--input-bg); border: 1.5px solid var(--border); border-radius: 8px; font-size: 14px; color: var(--text-main); font-family: inherit; outline: none; transition: border-color .2s; }
+.search-input:focus { border-color: var(--navy); }
+.search-input::placeholder { color: var(--text-muted); }
+.search-clear { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: var(--text-muted); padding: 4px; display: none; align-items: center; justify-content: center; border-radius: 50%; transition: background .15s; }
+.search-clear:hover { background: var(--border-light); }
+.search-clear.visible { display: flex; }
+
+/* ── Dropdown ── */
+.dropdown { position: absolute; top: calc(100% + 6px); left: 0; right: 0; background: var(--white); border: 1px solid var(--border); border-radius: 10px; box-shadow: var(--shadow-md); max-height: 280px; overflow-y: auto; z-index: 50; display: none; }
+.dropdown.open { display: block; }
+.dropdown::-webkit-scrollbar { width: 4px; }
+.dropdown::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+.dropdown-item { width: 100%; text-align: left; padding: 10px 14px; background: none; border: none; border-bottom: 0.5px solid var(--border-light); cursor: pointer; transition: background .15s; font-family: inherit; }
+.dropdown-item:last-child { border-bottom: none; }
+.dropdown-item:hover { background: var(--bg); }
+.dropdown-item-title { font-size: 13px; font-weight: 500; color: var(--text-main); }
+.dropdown-item-sub { font-size: 11px; color: var(--text-muted); margin-top: 1px; }
+.dropdown-item-meta { font-size: 11px; color: var(--text-sub); margin-top: 2px; display: flex; gap: 6px; align-items: center; }
+.dropdown-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+.dropdown-empty { padding: 16px 14px; font-size: 13px; color: var(--text-muted); text-align: center; }
+
+/* ── Input grid ── */
+.input-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.input-group label { display: block; font-size: 13px; color: var(--text-main); margin-bottom: 5px; }
+.input-group label span:not([data-i18n]) { color: var(--navy); font-size: 10px; margin-left: 2px; }
+.num-input { width: 100%; height: 40px; padding: 0 12px; background: var(--input-bg); border: 1.5px solid var(--border); border-radius: 8px; font-size: 14px; font-weight: 500; color: var(--text-main); font-family: 'Inter', monospace; outline: none; transition: border-color .2s; }
+.num-input:focus { border-color: var(--navy); }
+.num-input::placeholder { font-weight: 400; color: var(--text-muted); font-size: 13px; }
+.num-input:disabled { background: var(--border-light); color: var(--text-muted); cursor: not-allowed; opacity: 1; }
+
+.predict-btn { width: 100%; height: 44px; background: var(--navy); color: white; border: none; border-radius: 9px; font-size: 14px; font-weight: 600; cursor: pointer; letter-spacing: 0.3px; transition: background .2s, transform .1s; font-family: inherit; }
+.predict-btn:hover { background: var(--navy-light); }
+.predict-btn:active { transform: scale(0.99); }
+.predict-error { margin-top: 10px; padding: 10px 14px; background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; font-size: 13px; color: #dc2626; display: none; }
+.num-input.error { border-color: #ef4444 !important; }
+
+/* ── Result Card ── */
+.result-card { display: none; }
+.result-card.visible { display: block; }
+.result-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 2px; }
+.result-song-title { font-size: 16px; font-weight: 700; color: var(--navy); }
+.result-song-meta { font-size: 12px; color: var(--text-main); margin-bottom: 16px; }
+
+.result-mode-badge { display: inline-block; padding: 6px 16px; border-radius: 10px; font-size: 14px; font-weight: 700; min-width: 80px; text-align: center; }
+.result-mode-badge.measured { background: #d1fae5; color: #065f46; }
+.result-mode-badge.predicted { background: var(--navy-pale); color: var(--navy); }
+
+/* Combo display */
+.combo-display { display: flex; align-items: baseline; justify-content: center; gap: 10px; padding: 20px 0 22px; }
+.combo-num { font-size: 52px; font-weight: 700; color: var(--navy); line-height: 1.1; font-family: 'Inter', sans-serif; }
+.combo-unit { font-size: 20px; font-weight: 600; color: var(--navy); opacity: 0.55; font-family: 'Inter', sans-serif; }
+.combo-prefix { font-size: 20px; font-weight: 600; color: var(--navy); opacity: 0.55; font-family: inherit; display: none; }
+
+/* Video */
+.video-section { margin-top: 20px; }
+.video-label { font-size: 13px; color: var(--text-sub); font-weight: 500; }
+.video-thumb-wrap { position: relative; border-radius: 10px; overflow: hidden; aspect-ratio: 16/9; background: #111; cursor: pointer; }
+.video-thumb-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity .2s; }
+.video-thumb-wrap:hover img { opacity: 0.82; }
+.video-play-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.video-play-circle { width: 60px; height: 60px; background: rgba(255,255,255,0.92); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform .2s, box-shadow .2s; box-shadow: 0 2px 12px rgba(0,0,0,0.3); }
+.video-thumb-wrap:hover .video-play-circle { transform: scale(1.1); box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+.video-play-icon { width: 22px; height: 22px; color: var(--navy); fill: var(--navy); margin-left: 4px; }
+.video-yt-badge { position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.65); color: white; font-size: 10px; padding: 3px 8px; border-radius: 4px; font-family: 'Inter', sans-serif; }
+
+/* ── Progress Bar ── */
+.bar-section { padding: 62px 0 12px; margin-top: 12px; position: relative; width: 85%; margin-left: auto; margin-right: auto; display: block; }
+.bar-track { height: 28px; border-radius: 0; display: flex; overflow: hidden; background: #e5e7eb; }
+.bar-left { height: 100%; background: #d1d5db; }
+.bar-et { height: 100%; background: var(--amber); }
+.bar-right { height: 100%; background: #d1d5db; }
+.bar-marker { position: absolute; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; top: 0; }
+.bar-marker-label { background: #dce6f5; color: #1e4a8a; font-size: 13px; font-weight: 600; padding: 4px 10px; border-radius: 4px; white-space: nowrap; margin-bottom: 0; }
+.bar-marker-line { width: 2px; height: 20px; background: #4a6fa5; }
+.bar-marker-arrow { width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 7px solid #4a6fa5; }
+.bar-labels { position: relative; height: 20px; margin-top: 6px; }
+.bar-lbl { position: absolute; font-size: 12px; color: var(--text-sub); transform: translateX(-50%); white-space: nowrap; font-weight: 500; }
+.bar-lbl.above { top: -58px; }
+.bar-lbl.left { transform: none; left: 0; }
+.bar-lbl.right { transform: none; right: 0; left: auto; }
+.bar-edge-marker { position: absolute; top: 0; display: flex; flex-direction: column; }
+.bar-edge-marker.left-edge { left: 0; align-items: flex-start; }
+.bar-edge-marker.right-edge { right: 0; align-items: flex-end; }
+.bar-edge-marker-label { background: #eaecef; color: #6b7280; font-size: 12px; font-weight: 600; padding: 3px 8px; border-radius: 0; white-space: nowrap; margin-bottom: 0; min-width: 36px; text-align: center; }
+.bar-edge-marker-line { width: 1px; height: 38px; background: #eaecef; }
+.bar-edge-label { position: absolute; top: 4px; font-size: 12px; color: var(--text-sub); font-weight: 500; white-space: nowrap; }
+.bar-edge-label.left { left: 0; }
+.bar-edge-label.right { right: 0; }
+.bar-legend { display: flex; gap: 16px; margin-top: 14px; padding-top: 8px; border-top: 0.5px solid var(--border-light); }
+/* ── Song Card (mobile) ── */
+.card-container { padding: 12px; display: flex; flex-direction: column; gap: 10px; }
+.song-card { background: var(--white); border: 0.5px solid var(--border); border-radius: 12px; box-shadow: var(--shadow); padding: 14px 16px; }
+.song-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.song-card-top-left { display: flex; align-items: center; gap: 7px; }
+.song-card-unit { font-size: 13px; color: var(--text-main); font-weight: 500; }
+.song-card-video-btn { display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; background: var(--bg); border: 0.5px solid var(--border); border-radius: 8px; color: var(--navy); text-decoration: none; flex-shrink: 0; }
+.song-card-no-video { width: 34px; text-align: center; color: var(--text-muted); font-size: 14px; }
+.song-card-title { font-size: 15px; font-weight: 700; color: var(--text-main); margin-bottom: 3px; }
+.song-card-title-sub { font-size: 12px; color: var(--text-muted); margin-bottom: 0; }
+.song-card-stats { display: flex; border-top: 1px solid var(--border); margin-top: 12px; padding-top: 10px; }
+.song-card-stat { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 2px 0; }
+.song-card-stat:not(:last-child) { border-right: 1px solid var(--border); }
+.song-card-stat-label { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+.song-card-stat-val { font-size: 15px; color: var(--text-main); font-family: 'Inter', monospace; font-weight: 500; }
+.legend-item { display: flex; align-items: center; gap: 5px; font-size: 12px; color: var(--text-sub); font-weight: 500; }
+.legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+
+/* ── Stats Bar ── */
+.stats-card { padding: 18px 24px; }
+.stats-grid { display: grid; grid-template-columns: repeat(3,1fr); }
+.stat-item { text-align: center; padding: 4px 8px; }
+.stat-item + .stat-item { border-left: 0.5px solid var(--border-light); }
+.stat-val { font-size: 22px; font-weight: 700; color: var(--navy); font-family: 'Inter', sans-serif; }
+.stat-lbl { font-size: 10px; color: var(--text-muted); margin-top: 3px; }
+
+/* ═══════════════════════════════════
+   탭2: 악곡 검색
+═══════════════════════════════════ */
+.songs-layout { display: grid; grid-template-columns: 240px 1fr; gap: 16px; align-items: start; }
+.sidebar { background: var(--white); border-radius: 14px; border: 0.5px solid var(--border); box-shadow: var(--shadow); padding: 20px; position: sticky; top: 80px; }
+.sidebar-section { margin-bottom: 20px; }
+.sidebar-section:last-child { margin-bottom: 0; }
+.sidebar-hint { display: flex; align-items: flex-start; gap: 5px; font-size: 14px; font-weight: 700; color: var(--text-sub); line-height: 1.5; }
+.sidebar-hint span { white-space: pre-line; }
+.sidebar-title { font-size: 12px; font-weight: 700; color: var(--text-main); margin-bottom: 10px; }
+.type-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.type-chip { padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; border: 1.5px solid transparent; cursor: pointer; transition: all .15s; font-family: inherit; }
+.type-chip.active { border-color: currentColor !important; }
+.unit-tree { display: flex; flex-direction: column; gap: 2px; }
+.unit-group-header { display: flex; align-items: center; justify-content: space-between; padding: 6px 4px; cursor: pointer; border-radius: 6px; transition: background .15s; user-select: none; }
+.unit-group-header:hover { background: var(--bg); }
+.unit-group-header-left { display: flex; align-items: center; gap: 6px; }
+.unit-group-chevron { width: 12px; height: 12px; color: var(--text-muted); transition: transform .2s; flex-shrink: 0; }
+.unit-group-chevron.open { transform: rotate(90deg); }
+.unit-group-name { font-size: 12px; font-weight: 700; color: var(--text-main); }
+.unit-children { padding-left: 18px; display: none; flex-direction: column; gap: 1px; margin-top: 1px; }
+.unit-children.open { display: flex; }
+.unit-child { display: flex; align-items: center; gap: 6px; padding: 5px 4px; border-radius: 5px; transition: background .15s; cursor: pointer; }
+.unit-child:hover { background: var(--bg); }
+.unit-child input[type=checkbox] { width: 13px; height: 13px; cursor: pointer; accent-color: var(--navy); }
+.unit-child-label { font-size: 12px; color: var(--text-sub); cursor: pointer; }
+.unit-subgroup-label { font-size: 11px; font-weight: 600; color: var(--text-muted); padding: 6px 4px 2px 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+.unit-subgroup-label:not(:first-child) { margin-top: 4px; border-top: 1px solid var(--border); padding-top: 8px; }
+.dur-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.dur-chip { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; border: 1.5px solid var(--border); background: var(--input-bg); color: var(--text-sub); cursor: pointer; transition: all .15s; font-family: inherit; }
+.dur-chip.active { background: var(--navy); color: white; border-color: var(--navy); }
+.table-panel { background: var(--white); border-radius: 14px; border: 0.5px solid var(--border); box-shadow: var(--shadow); overflow: hidden; }
+.table-search-bar { border-bottom: 1px solid var(--border-light); display: flex; flex-direction: column; }
+.table-search-top { display: flex; align-items: center; gap: 10px; padding: 10px 20px; }
+.search-mode-select { height: 36px; padding: 0 8px; background: var(--input-bg); border: 1.5px solid var(--border); border-radius: 8px; font-size: 13px; color: var(--text-main); font-family: inherit; outline: none; cursor: pointer; transition: border-color .2s; flex-shrink: 0; }
+.search-mode-select:focus { border-color: var(--navy); }
+.unit-filter-panel { padding: 2px 20px 12px; }
+.unit-filter-inner { display: flex; flex-wrap: wrap; gap: 2px 8px; align-items: center; }
+.unit-filter-sep { width: 100%; height: 0; border-top: 1px solid var(--border-light); margin: 6px 0; }
+.unit-filter-item { display: flex; align-items: center; gap: 5px; padding: 3px 6px; border-radius: 5px; cursor: pointer; font-size: 12px; color: var(--text-sub); transition: background .15s; user-select: none; }
+.unit-filter-item:hover { background: var(--bg); }
+.unit-filter-item input[type=checkbox] { width: 13px; height: 13px; cursor: pointer; accent-color: var(--navy); flex-shrink: 0; }
+.unit-filter-reset-row { display: flex; justify-content: flex-end; margin-top: 6px; }
+.table-search-wrap { position: relative; flex: 1; }
+.table-search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; width: 14px; height: 14px; }
+.table-search-input { width: 100%; height: 36px; padding: 0 12px 0 32px; background: var(--input-bg); border: 1.5px solid var(--border); border-radius: 8px; font-size: 13px; color: var(--text-main); font-family: inherit; outline: none; transition: border-color .2s; }
+.table-search-input:focus { border-color: var(--navy); }
+.table-search-input::placeholder { color: var(--text-muted); }
+.table-hint { font-size: 11px; color: var(--text-sub); font-weight: 500; white-space: nowrap; margin-left: auto; }
+.songs-table { width: 100%; border-collapse: collapse; table-layout: fixed; min-width: 620px; }
+.songs-table thead tr { border-bottom: 2px solid var(--border); }
+.songs-table th { padding: 10px 12px; font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; text-align: left; background: var(--bg); white-space: nowrap; }
+.songs-table th:nth-child(1) { width: 112px; }
+.songs-table th:nth-child(2) { width: 165px; }
+.songs-table th:nth-child(3) { width: auto; }
+.songs-table th:nth-child(4) { width: 84px; text-align: center; }
+.songs-table th:nth-child(5) { width: 108px; text-align: center; }
+.songs-table th:nth-child(6) { width: 84px; text-align: center; }
+.songs-table th:nth-child(7) { width: 68px; }
+.songs-table th.sortable { cursor: pointer; user-select: none; }
+.songs-table th.sortable:hover { color: var(--navy); }
+.sort-icon { display: inline-block; margin-left: 4px; opacity: 0.5; font-size: 10px; }
+.songs-table td { padding: 10px 12px; font-size: 13px; border-bottom: 0.5px solid var(--border-light); vertical-align: middle; overflow: hidden; text-overflow: ellipsis; }
+.songs-table tr:last-child td { border-bottom: none; }
+.songs-table tbody tr:hover td { background: var(--bg); }
+.col-unit { font-size: 12px; color: var(--text-sub); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.col-title { font-weight: 500; }
+.col-title-sub { font-size: 11px; color: var(--text-muted); margin-top: 2px; font-weight: 400; }
+.col-num { font-family: 'Inter', monospace; text-align: center; }
+.col-dur { font-family: 'Inter', monospace; color: var(--text-sub); text-align: center; }
+.col-video { text-align: center; }
+.paging-bar { display: flex; align-items: center; justify-content: center; gap: 4px; padding: 12px 20px; border-top: 0.5px solid var(--border-light); }
+.pg-btn { min-width: 32px; height: 32px; padding: 0 6px; border-radius: 7px; border: 1px solid var(--border); background: var(--white); color: var(--text-sub); font-size: 13px; font-weight: 500; cursor: pointer; transition: all .15s; font-family: inherit; }
+.pg-btn:hover:not(:disabled) { background: var(--navy-pale); color: var(--navy); border-color: var(--navy); }
+.pg-btn.active { background: var(--navy); color: white; border-color: var(--navy); }
+.pg-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+.pg-ellipsis { font-size: 13px; color: var(--text-muted); padding: 0 4px; line-height: 32px; }
+.unit-reset-btn { font-size: 11px; color: var(--navy); background: none; border: 1px solid var(--border); border-radius: 5px; padding: 2px 8px; cursor: pointer; font-family: inherit; transition: background .15s; }
+.unit-reset-btn:hover { background: var(--navy-pale); }
+.type-badge { display: inline-block; padding: 2px 8px; border-radius: 5px; font-size: 11px; font-weight: 500; }
+.clear-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 5px; vertical-align: middle; }
+.video-link { display: inline-flex; align-items: center; color: var(--navy); text-decoration: none; opacity: 0.7; transition: opacity .15s; }
+.video-link:hover { opacity: 1; }
+.no-video { color: var(--text-muted); font-size: 12px; }
+.title-hover-tooltip { position: fixed; z-index: 300; background: var(--white); border: 1px solid var(--border); border-radius: 10px; box-shadow: var(--shadow-md); overflow: hidden; pointer-events: none; display: none; }
+.title-hover-tooltip img { display: block; width: 280px; height: 280px; object-fit: cover; object-position: center center; }
+.thumb-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 400; align-items: center; justify-content: center; }
+.thumb-modal.open { display: flex; }
+.thumb-modal-box { border-radius: 10px; overflow: hidden; width: 85vw; max-width: 320px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+.thumb-modal-box img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; object-position: center; }
+.table-empty { padding: 48px; text-align: center; color: var(--text-muted); font-size: 14px; }
+.table-count { padding: 10px 20px; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border-light); }
+
+/* ═══════════════════════════════════
+   탭3: 안내
+═══════════════════════════════════ */
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.info-card { background: var(--white); border-radius: 14px; border: 0.5px solid var(--border); box-shadow: var(--shadow); padding: 24px; }
+.info-card.full { grid-column: 1/-1; }
+.info-card-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.info-card-icon { width: 20px; height: 20px; color: var(--navy); opacity: 0.7; flex-shrink: 0; }
+.info-text { font-size: 13px; color: var(--text-sub); line-height: 1.75; }
+.info-text strong { color: var(--text-main); font-weight: 600; }
+.info-text p { margin-bottom: 8px; }
+.info-text p:last-child { margin-bottom: 0; }
+.info-formula { background: var(--navy-pale); border-radius: 8px; padding: 12px 16px; margin: 10px 0; font-size: 12px; font-family: 'Inter', monospace; color: var(--navy); line-height: 1.7; }
+.contact-box { display: flex; align-items: center; gap: 12px; background: var(--navy-pale); border-radius: 10px; padding: 14px 18px; margin-top: 12px; }
+.contact-icon { width: 32px; height: 32px; background: var(--navy); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.contact-icon svg { width: 16px; height: 16px; color: white; }
+.contact-text { font-size: 13px; color: var(--text-sub); line-height: 1.5; }
+.contact-email { font-weight: 600; color: var(--navy); font-size: 13px; }
+.download-btn { display: inline-block; padding: 8px 20px; background: var(--navy); color: #fff; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 600; margin-bottom: 14px; }
+.download-btn:hover { opacity: 0.85; }
+.install-steps { padding-left: 18px; font-size: 13px; line-height: 1.9; color: var(--text-sub); }
+.notice-list { list-style: none; }
+.notice-list li { padding: 10px 0; border-bottom: 0.5px solid var(--border-light); font-size: 13px; color: var(--text-sub); display: flex; gap: 10px; align-items: flex-start; line-height: 1.6; }
+.notice-list li:last-child { border-bottom: none; }
+.notice-badge { flex-shrink: 0; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; margin-top: 2px; }
+.badge-info { background: var(--navy-pale); color: var(--navy); }
+.badge-warn { background: #fef3c7; color: #92400e; }
+.badge-new { background: #d1fae5; color: #065f46; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .songs-layout { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+  .info-grid { grid-template-columns: 1fr; }
+  .info-card.full { grid-column: 1; }
+  .stat-val { font-size: 18px; }
+}
+@media (max-width: 600px) {
+  .nav-inner { padding: 0 16px; }
+  .page { padding: 16px 16px 48px; }
+  .input-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: repeat(3,1fr); gap: 8px; }
+  .combo-num { font-size: 40px; }
+  .combo-unit { font-size: 16px; }
+  .result-song-title { font-size: 14px; }
+  .sidebar { display: none; }
+}
+</style>
 <script>
-(function(){
-  var lang = navigator.language || '';
-  if (lang.startsWith('ko'))      location.replace('ja-ko.html?lang=ko');
-  else if (lang.startsWith('ja')) location.replace('ja-ko.html?lang=ja');
-  else                            location.replace('ja-en.html');
-})();
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js');
+  }
 </script>
 </head>
-<body></body>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand-row">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+        <polyline points="16 7 22 7 22 13"></polyline>
+      </svg>
+      <div>
+        <div class="nav-title" data-i18n="navTitle">앙스타 이지작 계산기</div>
+      </div>
+    </div>
+    <div class="nav-bottom-row">
+      <div class="nav-tabs">
+        <button class="nav-tab active" onclick="switchTab('predict', this)" data-i18n="tab1">클리어 예측</button>
+        <button class="nav-tab" onclick="switchTab('songs', this)" data-i18n="tab2">악곡 검색</button>
+        <button class="nav-tab" onclick="switchTab('info', this)" data-i18n="tab3">안내</button>
+      </div>
+      <div style="display:flex;gap:6px;align-items:center;">
+        <button class="lang-toggle-btn" id="langToggleBtn" onclick="toggleLang()">日本語</button>
+        <a class="lang-toggle-btn" href="en.html" style="text-decoration:none;">ENG</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- ══ 탭1: 클리어 예측 ══ -->
+  <div id="tab-predict" class="tab-pane active">
+
+    <div class="info-card full" style="margin-bottom:16px; padding:10px 14px;">
+      <ul class="notice-list">
+        <li style="padding:0; border:none; align-items:center;"><span class="notice-badge badge-info" style="margin-top:0;">INFO</span><span data-i18n="tab1Notice">커버송과 기간 한정 곡은 영상을 제공하지 않습니다.</span></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-label" data-i18n="cardLabel1">클리어 콤보 시작점 예측</div>
+
+      <div class="search-wrap" id="searchWrap">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input class="search-input" id="searchInput" type="text" placeholder="곡 제목 또는 유닛 검색..." autocomplete="off"
+          data-i18n-placeholder="searchPlaceholder"
+          oninput="onSearchInput()" onfocus="onSearchFocus()">
+        <button class="search-clear" id="searchClear" onclick="clearSearch()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+        <div class="dropdown" id="dropdown"></div>
+      </div>
+
+      <div class="input-grid">
+        <div class="input-group">
+          <label><span data-i18n="labelNotes">총 노트수</span> <span>*</span></label>
+          <input class="num-input" id="inputNotes" type="number" placeholder="예: 161" data-i18n-placeholder="notesPlaceholder" min="80" max="300"
+            oninput="onNotesManualEdit()">
+        </div>
+        <div class="input-group">
+          <label data-i18n="labelETStart">ET 시작 콤보</label>
+          <input class="num-input" id="inputETStart" type="number" placeholder="선택사항" data-i18n-placeholder="etPlaceholder" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+        </div>
+        <div class="input-group">
+          <label data-i18n="labelETEnd">ET 종료 콤보</label>
+          <input class="num-input" id="inputETEnd" type="number" placeholder="선택사항" data-i18n-placeholder="etPlaceholder" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+        </div>
+      </div>
+
+      <button class="predict-btn" onclick="runPredict()" data-i18n="predictBtn">계산하기</button>
+      <div class="predict-error" id="predictError"></div>
+    </div>
+
+    <!-- 결과 카드 -->
+    <div class="card result-card" id="resultCard">
+      <div class="result-header">
+        <div>
+          <div class="result-song-title" id="resultTitle">—</div>
+        </div>
+        <div id="resultBadge" class="result-mode-badge measured" style="display:none"></div>
+      </div>
+      <div class="result-song-meta" id="resultMeta"></div>
+
+      <div class="combo-display">
+        <span class="combo-prefix" id="comboPrefixLabel"></span>
+        <span class="combo-num" id="resultCombo">—</span>
+        <span class="combo-unit" id="comboUnitLabel">combo</span>
+      </div>
+
+      <div class="bar-section" id="barSection">
+        <div class="bar-marker" id="barMarker">
+          <div class="bar-marker-label" id="barMarkerLabel">Clear: —</div>
+          <div class="bar-marker-line"></div>
+          <div class="bar-marker-arrow"></div>
+        </div>
+        <div class="bar-track">
+          <div class="bar-left" id="barLeft"></div>
+          <div class="bar-et" id="barEt"></div>
+          <div class="bar-right" id="barRight"></div>
+        </div>
+        <div class="bar-edge-marker left-edge">
+          <div class="bar-edge-marker-label">0</div>
+          <div class="bar-edge-marker-line"></div>
+        </div>
+        <div class="bar-edge-marker right-edge" id="markerTotal" style="display:none">
+          <div class="bar-edge-marker-label" id="lblTotal"></div>
+          <div class="bar-edge-marker-line"></div>
+        </div>
+        <div class="bar-labels">
+          <span class="bar-lbl" id="lblETStart" style="display:none"></span>
+          <span class="bar-lbl" id="lblETEnd" style="display:none"></span>
+        </div>
+        <div class="bar-legend">
+          <div class="legend-item">
+            <div class="legend-dot" style="background:#7a94bf"></div>
+            <span data-i18n="legendClear">클리어 시작점</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background:var(--amber);border:1px solid #d97706"></div>
+            <span data-i18n="legendET">앙상블 타임 구간</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-section" id="videoSection" style="display:none">
+        <div style="display:flex;align-items:baseline;gap:32px;margin-bottom:8px">
+          <span class="video-label" data-i18n="videoLabel">참고 영상</span>
+        </div>
+        <div class="video-thumb-wrap" id="videoThumbWrap"></div>
+      </div>
+    </div>
+
+    <!-- 통계 -->
+    <div class="card stats-card">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-val" id="statTotal">—</div>
+          <div class="stat-lbl" data-i18n="statTotalLabel">전체 수록곡</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val" id="statMeasured">—</div>
+          <div class="stat-lbl" data-i18n="statMeasuredLabel">확인 완료</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-val" id="statUnmeasured">—</div>
+          <div class="stat-lbl" data-i18n="statUnmeasuredLabel">미확인</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /tab-predict -->
+
+  <!-- ══ 탭2: 악곡 검색 ══ -->
+  <div id="tab-songs" class="tab-pane">
+    <div class="songs-layout">
+
+      <!-- 사이드바 -->
+      <div class="sidebar">
+
+        <div class="sidebar-section sidebar-hint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" style="flex-shrink:0;margin-top:2px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span data-i18n="sidebarUnitHint">유닛 검색은 검색바의 콤보박스에서 선택</span>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-title" data-i18n="sidebarTypeTitle">Song Type</div>
+          <div class="type-chips" id="typeChips"></div>
+        </div>
+
+<div class="sidebar-section">
+          <div class="sidebar-title" data-i18n="sidebarDurTitle">Duration</div>
+          <div class="dur-chips" id="durChips">
+            <button class="dur-chip active" onclick="setDur('all',this)" data-i18n="durAll">전체</button>
+            <button class="dur-chip" onclick="setDur('short',this)" data-i18n="durShort">~ 2:20</button>
+            <button class="dur-chip" onclick="setDur('mid1',this)" data-i18n="durMid1">2:21 ~ 2:30</button>
+            <button class="dur-chip" onclick="setDur('mid2',this)" data-i18n="durMid2">2:31 ~ 2:40</button>
+            <button class="dur-chip" onclick="setDur('long',this)" data-i18n="durLong">2:41 ~</button>
+          </div>
+        </div>
+
+        <div class="sidebar-section" style="margin-bottom:0">
+          <span style="font-size:11px;color:var(--text-muted)" data-i18n="tableHint">*곡 길이는 풀콤보 기준</span>
+        </div>
+
+      </div>
+
+      <!-- 테이블 패널 -->
+      <div class="table-panel">
+        <div class="table-search-bar">
+          <div class="table-search-top">
+            <select class="search-mode-select" id="searchModeSelect" onchange="onSearchModeChange()">
+              <option value="song" data-i18n="searchModeSong">곡 검색</option>
+              <option value="unit" data-i18n="searchModeUnit">유닛 검색</option>
+            </select>
+            <div class="table-search-wrap" id="tableSearchWrap">
+              <svg class="table-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              <input class="table-search-input" id="tableSearch" type="text" placeholder="곡 검색..."
+                data-i18n-placeholder="tableSearchPlaceholder"
+                oninput="currentPage=1;onTableSearchInput()">
+              <button class="search-clear" id="tableSearchClear" onclick="clearTableSearch()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="unit-filter-panel" id="unitFilterPanel" style="display:none"></div>
+        </div>
+
+        <div id="tableWrap" style="overflow-x:hidden">
+          <table class="songs-table">
+            <thead>
+              <tr>
+                <th class="sortable" onclick="sortBy('type')"><span data-i18n="colType">Type</span> <span class="sort-icon" id="sort-type">↕</span></th>
+                <th class="sortable" onclick="sortBy('unit')"><span data-i18n="colUnit">Unit</span> <span class="sort-icon" id="sort-unit">↕</span></th>
+                <th data-i18n="colTitle">Title</th>
+                <th class="sortable" onclick="sortBy('totalNotes')"><span data-i18n="colNotes">Notes</span> <span class="sort-icon" id="sort-totalNotes">↕</span></th>
+                <th class="sortable" onclick="sortBy('durationSec')"><span data-i18n="colDur">Duration</span> <span class="sort-icon" id="sort-durationSec">↕</span></th>
+                <th class="sortable" onclick="sortBy('predicted')"><span data-i18n="colClear">Clear</span> <span class="sort-icon" id="sort-predicted">↕</span></th>
+                <th data-i18n="colVideo">Video</th>
+              </tr>
+            </thead>
+            <tbody id="songsTableBody"></tbody>
+          </table>
+        </div>
+        <div id="cardContainer" class="card-container" style="display:none"></div>
+        <div class="table-count" id="tableCount"></div>
+        <div class="paging-bar" id="pagingBar"></div>
+      </div>
+
+    </div>
+  </div><!-- /tab-songs -->
+
+  <!-- ══ 탭3: 안내 ══ -->
+  <div id="tab-info" class="tab-pane">
+    <div class="info-grid">
+
+      <div class="info-card full">
+        <div class="info-card-title">
+          <svg class="info-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+          <span data-i18n="noticeTitle">공지사항</span>
+        </div>
+        <ul class="notice-list" id="noticeList"></ul>
+      </div>
+
+      <div class="info-card full">
+        <div class="info-card-title">
+          <svg class="info-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <span data-i18n="contactTitle">오류 신고 및 문의</span>
+        </div>
+        <div class="info-text">
+          <p data-i18n="contactText1">예측값 오류, 데이터 누락, 기타 문의사항이 있으시면 아래 이메일로 연락해 주세요.</p>
+          <p data-i18n="contactText2">실측 데이터를 제공해 주시면 모델 정확도 향상에 도움이 됩니다.</p>
+        </div>
+        <div class="contact-box">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bfc6d0cacdffd8d2ded6d391dcd0d2">[email&#160;protected]</a></div>
+            <div class="contact-text" data-i18n="contactSub">[Voltage Predictor] 문의내용</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-card full">
+        <div class="info-card-title">
+          <svg class="info-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" style="display:none"/>
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+            <line x1="12" y1="18" x2="12" y2="18.01"/>
+          </svg>
+          <span data-i18n="homeTitle">홈 화면에 아이콘 추가하기</span>
+        </div>
+        <div class="info-text">
+          <div style="margin-bottom:18px;">
+            <p style="margin-bottom:10px;"><strong data-i18n="homeAndroid">Android (크롬)</strong></p>
+            <button id="btnInstallAndroid" onclick="triggerInstall()" class="download-btn" style="display:none;" data-i18n="homeAndroidBtn">설치하기</button>
+            <p style="font-size:12px; color:var(--text-muted); margin-top:8px;" data-i18n-html="homeAndroidHint">버튼이 없으면 크롬 메뉴(⋮) → <strong>Chrome에서 바로가기 만들기</strong>를 선택해 주세요.</p>
+          </div>
+          <div>
+            <p style="margin-bottom:8px;"><strong data-i18n="homeIos">iPhone (Safari)</strong></p>
+            <ol class="install-steps">
+              <li data-i18n-html="homeIosStep1">Safari 하단 <strong>공유 버튼(□↑)</strong> 탭</li>
+              <li data-i18n-html="homeIosStep2"><strong>홈 화면에 추가</strong> 선택</li>
+              <li data-i18n="homeIosStep3">이름 확인 후 추가</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /tab-info -->
+
+</div><!-- /page -->
+
+<div id="titleHoverTooltip" class="title-hover-tooltip">
+  <img id="titleHoverImg" src="" alt="">
+</div>
+<div id="thumbModal" class="thumb-modal" onclick="this.classList.remove('open')">
+  <div class="thumb-modal-box">
+    <img id="thumbModalImg" src="" alt="">
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="songs.js"></script>
+<script>
+// ── PWA 설치 프롬프트 ──────────────────────────────
+let deferredInstallPrompt = null;
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredInstallPrompt = e;
+  const btn = document.getElementById('btnInstallAndroid');
+  if (btn) btn.style.display = 'inline-block';
+});
+window.addEventListener('appinstalled', () => {
+  const btn = document.getElementById('btnInstallAndroid');
+  if (btn) btn.style.display = 'none';
+});
+function triggerInstall() {
+  if (deferredInstallPrompt) {
+    deferredInstallPrompt.prompt();
+    deferredInstallPrompt.userChoice.then(() => { deferredInstallPrompt = null; });
+  }
+}
+
+// ── 배포 설정 ──────────────────────────────────────
+const SHOW_DEV_INFO = true;
+const SHOW_TITLE_HOVER = true;
+
+// ── 언어 ───────────────────────────────────────────
+const SUPPORTED_LANGS = ['ko', 'ja'];
+let currentLang = (() => {
+  const p = new URLSearchParams(location.search).get('lang');
+  return SUPPORTED_LANGS.includes(p) ? p : 'ko';
+})();
+
+// ── i18n 사전 ──────────────────────────────────────
+const I18N = {
+  ko: {
+    navTitle: '앙스타 이지작 계산기',
+    navSub: '앙상블스타즈!! Music · Easy',
+    tab1: '클리어 예측', tab2: '악곡 검색', tab3: '안내',
+    cardLabel1: '클리어 콤보 시작점 예측',
+    searchPlaceholder: '곡 제목 또는 유닛 검색...',
+    labelNotes: '총 노트수', labelETStart: 'ET 시작 콤보', labelETEnd: 'ET 종료 콤보',
+    notesPlaceholder: '예: 161',
+    etPlaceholder: '선택사항',
+    predictBtn: '계산하기',
+    statTotalLabel: '전체 수록곡', statMeasuredLabel: '확인 완료', statUnmeasuredLabel: '미확인',
+    badgeMeasured: '확인함', badgePredicted: '예측', comboUnit: '콤보부터 시작',
+    videoLabel: '참고 영상', videoCoverNote: '커버송은 영상을 제공하지 않습니다.', videoPlay: '▶ 클릭하여 재생',
+    legendClear: '클리어 시작점', legendET: '앙상블 타임 구간',
+    sidebarTypeTitle: '곡 속성', sidebarUnitTitle: 'Units', sidebarDurTitle: '곡 길이',
+    typeAll: '전체', unitReset: '전체 해제',
+    durAll: '전체', durShort: '~ 2:20', durMid1: '2:21 ~ 2:30', durMid2: '2:31 ~ 2:40', durLong: '2:41 ~',
+    searchModeSong: '곡 검색', searchModeUnit: '유닛 검색',
+    tableSearchPlaceholder: '곡 검색...',
+    tableHint: '*곡 길이는 풀콤보 기준',
+    sidebarUnitHint: '유닛 검색은 검색바의 콤보박스에서 선택하세요.',
+    colType: '곡 속성', colUnit: '유닛', colTitle: '제목',
+    colNotes: '노트 수', colDur: '곡 길이', colClear: '시작 콤보', colVideo: '링크',
+    errNotes: '총 노트수를 입력해주세요', errNotesMin: '80이상 정수를 입력하세요', errNotesMax: '300이하 정수를 입력하세요',
+    errETMin: '1이상 정수를 입력하세요', errETBoth: 'ET 시작/종료 콤보를 모두 입력해주세요', errETOrder: 'ET 종료 콤보는 시작 콤보보다 커야 합니다', errETDiff: 'ET 시작 콤보와 종료 콤보 간격은 4이상이어야 합니다.', errETMax: 'ET 종료 콤보는 총 노트수보다 작아야 합니다',
+    comboPrefix: '',
+    directInput: '직접 입력', noResult: '검색 결과가 없어요', tableEmpty: '검색 결과가 없어요',
+    tab1Notice: '커버송과 기간 한정 곡은 영상을 제공하지 않습니다.',
+    noticeTitle: '공지사항',
+    contactTitle: '오류 신고 및 문의',
+    contactText1: '예측값 오류, 데이터 누락, 기타 문의사항이 있으시면 아래 이메일로 연락해 주세요.',
+    contactText2: '실측 데이터를 제공해 주시면 모델 정확도 향상에 도움이 됩니다.',
+    contactSub: '제목: [앙스타 이지작 계산기] 문의내용',
+    devPredTitle: '예측 방법', devPerfTitle: '모델 성능 지표',
+    devPredText1: '앙상블스타즈!! Music의 VOLTAGE 이지작 클리어 노트수를 선형 회귀 모델로 예측합니다.',
+    devPredText2: '실측 데이터 169곡을 학습에 사용했습니다.',
+    devPredText3: '예측 시작점에 안전 마진 +10콤보를 더해 최종 클리어 콤보를 산출합니다.',
+    devPerfText: '학습 데이터 기준 성능 지표입니다.', devPerfText2: '대부분의 곡에서 ±5콤보 이내로 예측합니다.',
+    homeTitle: '홈 화면에 아이콘 추가하기',
+    homeAndroid: 'Android (크롬)',
+    homeAndroidBtn: '설치하기',
+    homeAndroidHint: '버튼이 없으면 크롬 메뉴(⋮) → <strong>Chrome에서 바로가기 만들기</strong>를 선택해 주세요.',
+    homeIos: 'iPhone (Safari)',
+    homeIosStep1: 'Safari 하단 <strong>공유 버튼(□↑)</strong> 탭',
+    homeIosStep2: '<strong>홈 화면에 추가</strong> 선택',
+    homeIosStep3: '이름 확인 후 추가',
+    langToggle: '日本語',
+    notices: [
+      { badge: 'NEW', cls: 'badge-new', text: '악곡 검색 탭이 추가되었습니다. 타입·유닛·길이 필터와 정렬 기능을 지원합니다.' },
+      { badge: 'INFO', cls: 'badge-info', text: '실측 데이터가 있는 곡은 클리어 예측 탭에서 실측/예측 전환 버튼으로 비교할 수 있습니다.' },
+      { badge: '주의', cls: 'badge-warn', text: '이 도구는 이지작 클리어 기준입니다. 오토·하드작 등 다른 조건에는 맞지 않을 수 있습니다.' },
+      { badge: 'INFO', cls: 'badge-info', text: '앙상블 타임(ET) 정보가 없는 신곡은 단순 회귀 모델(노트수만)을 사용하여 오차가 더 클 수 있습니다.' },
+      { badge: '주의', cls: 'badge-warn', text: '예측값은 통계 모델 기반이므로 실제 클리어 콤보와 다를 수 있습니다. 참고용으로만 사용해 주세요.' },
+    ],
+  },
+  ja: {
+    navTitle: 'あんスタ イージー省エネクリア計算機',
+    navSub: 'あんさんぶるスターズ!! Music · Easy',
+    tab1: 'クリア予測', tab2: '楽曲検索', tab3: 'ガイド',
+    cardLabel1: 'クリアコンボ予測',
+    searchPlaceholder: '楽曲名またはユニット検索...',
+    labelNotes: '総ノーツ数', labelETStart: 'ET開始コンボ', labelETEnd: 'ET終了コンボ',
+    notesPlaceholder: '例: 161',
+    etPlaceholder: '任意',
+    predictBtn: '予測する',
+    statTotalLabel: '収録楽曲', statMeasuredLabel: '確認済み', statUnmeasuredLabel: '未確認',
+    badgeMeasured: '確認済み', badgePredicted: '予測値', comboUnit: 'コンボから開始',
+    videoLabel: '参考動画', videoCoverNote: 'カバー曲は動画を提供していません。', videoPlay: '▶ クリックして再生',
+    legendClear: 'クリア開始点', legendET: 'アンサンブルタイム区間',
+    sidebarTypeTitle: '曲の属性', sidebarUnitTitle: 'Units', sidebarDurTitle: '曲の長さ',
+    typeAll: '全て', unitReset: '全解除',
+    durAll: '全て', durShort: '~ 2:20', durMid1: '2:21 ~ 2:30', durMid2: '2:31 ~ 2:40', durLong: '2:41 ~',
+    searchModeSong: '楽曲検索', searchModeUnit: 'ユニット検索',
+    tableSearchPlaceholder: '楽曲を検索...',
+    tableHint: '曲の長さはフルコンボ基準',
+    sidebarUnitHint: 'ユニット検索は上部検索バーのコンボボックスから選択してください。',
+    colType: '属性', colUnit: 'ユニット', colTitle: 'タイトル',
+    colNotes: 'ノーツ数', colDur: '曲の長さ', colClear: '開始Cb', colVideo: 'リンク',
+    errNotes: 'ノーツ数を入力してください', errETDiff: 'ET終了 - 開始コンボの差は最低4以上必要です', comboPrefix: '',
+    directInput: '直接入力', noResult: '検索結果がありません', tableEmpty: '検索結果がありません',
+    tab1Notice: 'カバー曲・期間限定曲は動画を提供していません。',
+    noticeTitle: 'お知らせ',
+    contactTitle: 'エラー報告・お問い合わせ',
+    contactText1: '予測値の誤り、データの欠落、その他のお問い合わせは下記メールにご連絡ください。',
+    contactText2: '実測データをご提供いただくと、モデルの精度向上に役立ちます。',
+    contactSub: '件名：[あんスタ イージー省エネクリア計算機] お問い合わせ',
+    devPredTitle: '予測方法', devPerfTitle: 'モデル性能指標',
+    devPredText1: 'あんさんぶるスターズ!! Music の VOLTAGE Easy クリアノーツ数を線形回帰モデルで予測します。',
+    devPredText2: '実測データ 169曲 を学習に使用しました。',
+    devPredText3: '予測開始点に安全マージン +10コンボ を加算して最終クリアコンボを算出します。',
+    devPerfText: '学習データ基準の性能指標です。', devPerfText2: 'ほとんどの曲で ±5コンボ以内 で予測します。',
+    homeTitle: 'ホーム画面にアイコンを追加',
+    homeAndroid: 'Android (Chrome)',
+    homeAndroidBtn: 'インストール',
+    homeAndroidHint: 'ボタンがない場合はChromeメニュー(⋮) → <strong>ショートカットを作成</strong> を選択してください。',
+    homeIos: 'iPhone (Safari)',
+    homeIosStep1: 'Safari下部の<strong>共有ボタン(□↑)</strong>をタップ',
+    homeIosStep2: '<strong>ホーム画面に追加</strong>を選択',
+    homeIosStep3: '名前を確認して追加',
+    langToggle: '한국어',
+    notices: [
+      { badge: 'NEW', cls: 'badge-new', text: '楽曲検索タブが追加されました。タイプ・ユニット・長さフィルターとソート機能をサポートしています。' },
+      { badge: 'INFO', cls: 'badge-info', text: '実測データがある楽曲は、クリア予測タブで実測/予測を切り替えて比較できます。' },
+      { badge: '注意', cls: 'badge-warn', text: 'このツールはEasyクリア基準です。オート・ハード等には適用できません。' },
+      { badge: 'INFO', cls: 'badge-info', text: 'ET情報がない新曲は単純回帰モデル（ノーツ数のみ）を使用するため、誤差が大きくなる可能性があります。' },
+      { badge: '注意', cls: 'badge-warn', text: '予測値は統計モデルに基づくため、実際のクリアコンボと異なる場合があります。参考としてご利用ください。' },
+    ],
+  }
+};
+
+function t(key) {
+  return (I18N[currentLang] && I18N[currentLang][key] !== undefined) ? I18N[currentLang][key] : key;
+}
+
+// 가타가나→히라가나 변환 + 소문자 변환 + 공백·특수문자 제거
+const toHiragana = s => s.replace(/[\u30A1-\u30F6]/g, c => String.fromCharCode(c.charCodeAt(0) - 0x60));
+function normalize(str) {
+  return toHiragana((str || '').toLowerCase()).replace(/[\s!"#$%&'()*+,\-./:;<=>?@[\\\]^_`{|}~☆★♪]/g, '');
+}
+
+// 현재 언어 기준 표시 제목
+function getDisplayTitle(s) {
+  return currentLang === 'ko' ? (s.title_ko || s.title_ja) : s.title_ja;
+}
+
+function getSubTitle(s) {
+  if (currentLang === 'ko') return s.title_ko ? s.title_ja : (s.title_ja_reading || null);
+  return s.title_ja_reading || null;
+}
+
+function applyI18n() {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    el.textContent = t(key);
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    el.placeholder = t(el.dataset.i18nPlaceholder);
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    el.innerHTML = t(el.dataset.i18nHtml);
+  });
+  document.getElementById('langToggleBtn').textContent = t('langToggle');
+  document.title = t('navTitle');
+  // 공지사항 렌더링
+  const notices = t('notices');
+  if (Array.isArray(notices)) {
+    document.getElementById('noticeList').innerHTML = notices.map(n =>
+      `<li><span class="notice-badge ${n.cls}">${n.badge}</span><span>${n.text}</span></li>`
+    ).join('');
+  }
+}
+
+function toggleLang() {
+  const newLang = currentLang === 'ko' ? 'ja' : 'ko';
+  const url = new URL(location.href);
+  url.searchParams.set('lang', newLang);
+  location.replace(url.toString());
+}
+
+// ── 모델 파라미터 ──────────────────────────────────
+const COEFS = MODEL_PARAMS.coefs;
+const INTERCEPT = MODEL_PARAMS.intercept;
+const SIMPLE_COEF = MODEL_PARAMS.simpleCoef;
+const SIMPLE_INT = MODEL_PARAMS.simpleInt;
+const SAFETY = MODEL_PARAMS.safetyMargin;
+const MEAN_ET_START = MODEL_PARAMS.meanEtStart;
+const MEAN_ET_END = MODEL_PARAMS.meanEtEnd;
+
+SONGS.forEach(s => {
+  s.durationSec = 0;
+  if (s.duration) {
+    const p = s.duration.split(':');
+    if (p.length === 2) s.durationSec = parseInt(p[0])*60 + parseInt(p[1]);
+  }
+});
+
+const TYPE_COLOR = {
+  "Flash":     { bg:"#fef9c3", color:"#854d0e" },
+  "Brilliant": { bg:"#dbeafe", color:"#1e40af" },
+  "Glitter":   { bg:"#dcfce7", color:"#166534" },
+  "Sparkle":   { bg:"#fee2e2", color:"#991b1b" },
+  "All":       { bg:"#f1f5f9", color:"#475569" },
+};
+
+const CATEGORY_LABEL = {
+  "starmaker": "STAR MAKER",
+  "cosmic": "Cosmic",
+  "rhythm_link": "Rhythm Link",
+  "new_dimension": "New Dimension",
+  "others": "Others"
+};
+
+const UNIT_CATEGORY = {
+  'fine': 'starmaker', 'Trickstar': 'starmaker', '유성대': 'starmaker', 'ALKALOID': 'starmaker',
+  'Eden': 'cosmic', 'Adam': 'cosmic', 'Eve': 'cosmic', 'Valkyrie': 'cosmic', 'Crazy:B': 'cosmic', '2wink': 'cosmic',
+  'UNDEAD': 'rhythm_link', '홍월': 'rhythm_link', 'Ra*bits': 'rhythm_link', 'MELLOW DEAR US': 'rhythm_link',
+  'Knights': 'new_dimension', 'Switch': 'new_dimension', 'MaM': 'new_dimension', 'DF': 'new_dimension', 'S-Pri': 'new_dimension',
+  '주년': 'others', '만우절': 'others', '새해': 'others',
+  '셔플': 'others', '셔플_10주년': 'others',
+  '콜라보': 'others',
+  '추억': 'others', 'J&A': 'others', '기타': 'others',
+};
+
+const UNIT_GROUPS = {
+  'Adam·Eve': ['Adam','Eve'], 'MaM·DF': ['MaM','DF'],
+  '주년·새해·만우절': ['주년','만우절','새해'],
+  '셔플': ['셔플','셔플_10주년'],
+  '콜라보·J&A': ['콜라보','J&A'],
+  '추억·기타': ['추억','기타'],
+};
+const UNIT_TO_GROUP = {};
+Object.entries(UNIT_GROUPS).forEach(([g, ms]) => ms.forEach(u => { UNIT_TO_GROUP[u] = g; }));
+
+const UNIT_NAME_JA = {
+  '유성대': '流星隊',
+  '홍월': '紅月',
+  '주년': '周年',
+  '새해': '新年',
+  '만우절': 'エイプリルフール',
+  '셔플': 'シャッフル',
+  '셔플_10주년': 'シャッフル(10周年)',
+  '콜라보': 'コラボ',
+  '추억': '追憶',
+  '기타': 'その他',
+  '드림유닛': 'ドリームユニット',
+};
+const UNIT_NAME_EN = {
+  '유성대': 'RYUSEITAI',
+  '홍월': 'AKATSUKI',
+  '주년': 'Anniversary',
+  '새해': 'New Year',
+  '만우절': 'April Fools',
+  '셔플': 'Shuffle',
+  '셔플_10주년': 'Shuffle (10th Anniv.)',
+  '콜라보': 'Collab',
+  '추억': 'Reminiscence',
+  '기타': 'Others',
+  '드림유닛': 'Dream Unit',
+};
+const UNIT_GROUP_NAME_JA = {
+  '주년·새해·만우절': '周年・新年・エイプリルフール',
+  '셔플': 'シャッフル',
+  '콜라보·J&A': 'コラボ・J&A',
+  '추억·기타': '追憶・その他',
+  '유성대': '流星隊',
+  '홍월': '紅月',
+};
+function getUnitName(ko) {
+  if (currentLang !== 'ja') return ko;
+  if (UNIT_GROUP_NAME_JA[ko]) return UNIT_GROUP_NAME_JA[ko];
+  return ko.split(' / ').map(u => UNIT_NAME_JA[u.trim()] ?? u.trim()).join(' / ');
+}
+
+// ── 상태 ──────────────────────────────────────────
+let currentSong = null;
+let currentVideoUrl = null;
+let measuredValue = null;
+let predictedValue = null;
+let activeType = null;
+let activeUnits = null;
+let activeDur = 'all';
+let sortKey = null;
+let sortDir = 1;
+let currentPage = 1;
+let searchMode = 'song';
+const PAGE_SIZE = 30;
+
+// ── 제목 호버 썸네일 ──────────────────────────────
+(function setupTitleHover() {
+  if (!SHOW_TITLE_HOVER) return;
+  const tooltip = document.getElementById('titleHoverTooltip');
+  const tooltipImg = document.getElementById('titleHoverImg');
+  const tbody = document.getElementById('songsTableBody');
+  function getYtId(url) {
+    if (!url) return null;
+    const m = url.match(/(?:v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+    return m ? m[1] : null;
+  }
+  tbody.addEventListener('mouseover', e => {
+    const td = e.target.closest('td.col-title');
+    if (!td || !td.dataset.video) { tooltip.style.display = 'none'; return; }
+    const vid = getYtId(td.dataset.video);
+    if (!vid) { tooltip.style.display = 'none'; return; }
+    tooltipImg.src = `https://img.youtube.com/vi/${vid}/maxresdefault.jpg`;
+    tooltipImg.onerror = () => { tooltipImg.src = `https://img.youtube.com/vi/${vid}/hqdefault.jpg`; tooltipImg.onerror = null; };
+    tooltip.style.display = 'block';
+  });
+  tbody.addEventListener('mousemove', e => {
+    if (tooltip.style.display === 'none') return;
+    const x = e.clientX + 18;
+    const y = e.clientY - 80;
+    tooltip.style.left = Math.min(x, window.innerWidth - 298) + 'px';
+    tooltip.style.top = Math.max(Math.min(y, window.innerHeight - 176), 8) + 'px';
+  });
+  tbody.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; });
+
+  // 모바일 카드 썸네일 모달
+  const thumbModal = document.getElementById('thumbModal');
+  const thumbModalImg = document.getElementById('thumbModalImg');
+  document.getElementById('cardContainer').addEventListener('click', e => {
+    const title = e.target.closest('.song-card-title');
+    if (!title || !title.dataset.video) return;
+    const vid = getYtId(title.dataset.video);
+    if (!vid) return;
+    thumbModalImg.src = `https://img.youtube.com/vi/${vid}/maxresdefault.jpg`;
+    thumbModalImg.onerror = () => { thumbModalImg.src = `https://img.youtube.com/vi/${vid}/hqdefault.jpg`; thumbModalImg.onerror = null; };
+    thumbModal.classList.add('open');
+  });
+})();
+
+// ── 초기화 ────────────────────────────────────────
+(function init() {
+  applyI18n();
+  document.getElementById('statTotal').textContent = SONGS.length - 1; // 멜로디 Dear World 처리
+  document.getElementById('statMeasured').textContent = SONGS.filter(s=>s.measured!==null).length - 1; // 멜로디 Dear World 처리
+  document.getElementById('statUnmeasured').textContent = SONGS.filter(s=>s.measured===null).length;
+  if (!SHOW_DEV_INFO) {
+    document.querySelectorAll('.dev-only').forEach(el => el.style.display = 'none');
+  }
+  buildTypeChips();
+  buildUnitFilterPanel();
+  renderTable();
+})();
+
+// ── 탭 전환 ──────────────────────────────────────
+function switchTab(name, el) {
+  document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  el.classList.add('active');
+}
+
+function onNotesManualEdit() {
+  const el = document.getElementById('inputNotes');
+  el.value = el.value.replace(/[^0-9]/g, '');
+  if (!currentSong) return;
+  const entered = parseInt(el.value);
+  if (entered !== currentSong.totalNotes) {
+    currentSong = null; currentVideoUrl = null; measuredValue = null;
+    document.getElementById('searchInput').value = '';
+    document.getElementById('searchClear').classList.remove('visible');
+    document.getElementById('inputETStart').value = '';
+    document.getElementById('inputETEnd').value = '';
+    setETDisabled(false);
+  }
+}
+
+// ── 탭1: 검색 드롭다운 ────────────────────────────
+function onSearchInput() {
+  const q = document.getElementById('searchInput').value;
+  document.getElementById('searchClear').classList.toggle('visible', q.length>0);
+  renderDropdown(q);
+}
+function onSearchFocus() {
+  const q = document.getElementById('searchInput').value;
+  if (q.length>0) renderDropdown(q);
+}
+
+function renderDropdown(q) {
+  const dd = document.getElementById('dropdown');
+  if (!q) { dd.classList.remove('open'); return; }
+  const nq = normalize(q);
+  const results = SONGS.filter(s =>
+    normalize(s.title_ja).includes(nq) ||
+    (s.title_ja_reading && normalize(s.title_ja_reading).includes(nq)) ||
+    (s.title_ko && normalize(s.title_ko).includes(nq)) ||
+    (s.title_ko_reading && normalize(s.title_ko_reading).includes(nq)) ||
+    s.units.some(u => normalize(u).includes(nq))
+  ).slice(0, 12);
+
+  if (results.length === 0) {
+    dd.innerHTML = `<div class="dropdown-empty">${t('noResult')}</div>`;
+    dd.classList.add('open'); return;
+  }
+  dd.innerHTML = results.map(s => {
+    const c = TYPE_COLOR[s.type] || TYPE_COLOR['All'];
+    const dot = s.measured !== null
+      ? `<span class="dropdown-dot" style="background:#059669"></span>`
+      : `<span class="dropdown-dot" style="background:#d1d5db"></span>`;
+    const idx = SONGS.indexOf(s);
+    const mainTitle = getDisplayTitle(s);
+    const subTitle = s.title_ko && s.title_ko !== s.title_ja && currentLang === 'ko' ? s.title_ja : '';
+    return `<button class="dropdown-item" onclick="selectSong(${idx})">
+      <div class="dropdown-item-title">${mainTitle}</div>
+      ${subTitle ? `<div class="dropdown-item-sub">${subTitle}</div>` : ''}
+      <div class="dropdown-item-meta">
+        <span>${dot}${s.unit}</span><span>·</span>
+        <span><span style="background:${c.bg};color:${c.color};padding:1px 5px;border-radius:4px;font-size:10px">${s.type}</span></span>
+        <span>·</span><span>${s.totalNotes}</span>
+      </div>
+    </button>`;
+  }).join('');
+  dd.classList.add('open');
+}
+
+function setETDisabled(disabled) {
+  ['inputETStart','inputETEnd'].forEach(id => {
+    const el = document.getElementById(id);
+    el.disabled = disabled;
+    if (disabled) el.classList.remove('error');
+  });
+}
+
+function selectSong(idx) {
+  const s = SONGS[idx];
+  currentSong = s;
+  document.getElementById('searchInput').value = getDisplayTitle(s);
+  document.getElementById('searchClear').classList.add('visible');
+  document.getElementById('dropdown').classList.remove('open');
+  document.getElementById('inputNotes').value = s.totalNotes;
+  document.getElementById('inputETStart').value = s.etStart || '';
+  document.getElementById('inputETEnd').value = s.etEnd || '';
+  setETDisabled(true);
+}
+
+function clearSearch() {
+  currentSong = null;
+  document.getElementById('searchInput').value = '';
+  document.getElementById('searchClear').classList.remove('visible');
+  document.getElementById('dropdown').classList.remove('open');
+  document.getElementById('inputNotes').value = '';
+  document.getElementById('inputETStart').value = '';
+  document.getElementById('inputETEnd').value = '';
+  setETDisabled(false);
+}
+
+document.addEventListener('click', e => {
+  if (!document.getElementById('searchWrap').contains(e.target))
+    document.getElementById('dropdown').classList.remove('open');
+});
+
+// ── 탭1: 유효성 검사 헬퍼 ──────────────────────────
+function showPredictError(msg, errorIds = []) {
+  const el = document.getElementById('predictError');
+  el.textContent = msg; el.style.display = 'block';
+  ['inputNotes','inputETStart','inputETEnd'].forEach(id => {
+    document.getElementById(id).classList.toggle('error', errorIds.includes(id));
+  });
+}
+function clearPredictError() {
+  document.getElementById('predictError').style.display = 'none';
+  ['inputNotes','inputETStart','inputETEnd'].forEach(id =>
+    document.getElementById(id).classList.remove('error')
+  );
+}
+
+// ── 탭1: 예측 ─────────────────────────────────────
+function runPredict() {
+  const notesRaw = document.getElementById('inputNotes').value.trim();
+  const etSRaw = document.getElementById('inputETStart').value.trim();
+  const etERaw = document.getElementById('inputETEnd').value.trim();
+  const notes = notesRaw !== '' ? parseInt(notesRaw) : NaN;
+  const etS = etSRaw !== '' ? parseInt(etSRaw) : null;
+  const etE = etERaw !== '' ? parseInt(etERaw) : null;
+
+  if (isNaN(notes) || notes < 1) { showPredictError(t('errNotes'), ['inputNotes']); return; }
+  if (notes < 80) { showPredictError(t('errNotesMin'), ['inputNotes']); return; }
+  if (notes > 300) { showPredictError(t('errNotesMax'), ['inputNotes']); return; }
+  if (etSRaw !== '' && (etSRaw.includes('.') || parseInt(etSRaw) < 1)) { showPredictError(t('errETMin'), ['inputETStart']); return; }
+  if (etERaw !== '' && (etERaw.includes('.') || parseInt(etERaw) < 1)) { showPredictError(t('errETMin'), ['inputETEnd']); return; }
+  if ((etS !== null) !== (etE !== null)) {
+    showPredictError(t('errETBoth'), etS === null ? ['inputETStart'] : ['inputETEnd']); return;
+  }
+  if (etS !== null && etE !== null) {
+    if (etS < 1 || etE < 1) { showPredictError(t('errETMin'), ['inputETStart','inputETEnd']); return; }
+    if (etS >= etE) { showPredictError(t('errETOrder'), ['inputETStart','inputETEnd']); return; }
+    if (etE - etS < 4) { showPredictError(t('errETDiff'), ['inputETStart','inputETEnd']); return; }
+    if (etE >= notes) { showPredictError(t('errETMax'), ['inputETEnd']); return; }
+  }
+  clearPredictError();
+
+  let startPt;
+  if (etS && etE) {
+    startPt = INTERCEPT + COEFS[0]*notes + COEFS[1]*(etS/notes) + COEFS[2]*(etE/notes);
+  } else {
+    startPt = SIMPLE_COEF*notes + SIMPLE_INT;
+  }
+  startPt = Math.round(startPt*10)/10;
+  predictedValue = Math.ceil(startPt);
+
+  measuredValue = null;
+  if (currentSong && currentSong.measured !== null) measuredValue = currentSong.measured;
+  currentVideoUrl = currentSong ? (currentSong.videoClear || currentSong.video) : null;
+  showResult(notes, etS, etE);
+}
+
+function showResult(notes, etS, etE) {
+  if (currentSong) {
+    document.getElementById('resultTitle').textContent = currentSong.title_ja;
+    const tc = TYPE_COLOR[currentSong.type] || TYPE_COLOR['All'];
+    document.getElementById('resultMeta').innerHTML =
+      `<span class="type-badge" style="background:${tc.bg};color:${tc.color};font-size:11px;padding:2px 7px;border-radius:4px;font-weight:600;margin-right:6px">${currentSong.type}</span>`
+      + `<span style="font-size:12px;color:var(--text-main)">${currentSong.unit}</span>`;
+  } else {
+    document.getElementById('resultTitle').textContent = t('directInput');
+    document.getElementById('resultMeta').textContent = etS ? `앙상블 타임 구간 ${etS}-${etE}` : '';
+  }
+
+  const displayVal = measuredValue !== null ? measuredValue : predictedValue;
+  const badge = document.getElementById('resultBadge');
+  document.getElementById('resultCombo').textContent = displayVal;
+  document.getElementById('comboUnitLabel').textContent = t('comboUnit');
+  const pfx = document.getElementById('comboPrefixLabel');
+  pfx.textContent = t('comboPrefix'); pfx.style.display = pfx.textContent ? 'inline' : 'none';
+  if (measuredValue !== null) {
+    badge.textContent = t('badgeMeasured');
+    badge.className = 'result-mode-badge measured';
+    badge.style.display = 'inline-block';
+  } else {
+    badge.textContent = t('badgePredicted');
+    badge.className = 'result-mode-badge predicted';
+    badge.style.display = 'inline-block';
+  }
+
+  updateBar(notes, etS, etE, displayVal);
+
+  // 탭1 참고영상: measured 유무 관계없이 video 있으면 표시
+  const vs = document.getElementById('videoSection');
+  const wrap = document.getElementById('videoThumbWrap');
+  document.getElementById('videoSection').querySelector('[data-i18n="videoLabel"]').textContent = t('videoLabel');
+  if (currentVideoUrl) {
+    const videoId = extractYoutubeId(currentVideoUrl);
+    if (videoId) {
+      renderVideoThumb(wrap, videoId, currentVideoUrl);
+      vs.style.display = 'block';
+    } else { vs.style.display = 'none'; }
+  } else {
+    vs.style.display = 'none';
+    wrap.innerHTML = '';
+  }
+
+  document.getElementById('resultCard').classList.add('visible');
+  document.getElementById('resultCard').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function extractYoutubeId(url) {
+  if (!url) return null;
+  const m = url.match(/(?:youtu\.be\/|[?&]v=|\/embed\/)([A-Za-z0-9_-]{11})/);
+  return m ? m[1] : null;
+}
+
+function renderVideoThumb(wrap, videoId, originalUrl) {
+  const thumbUrl = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+  wrap.innerHTML = `
+    <img src="${thumbUrl}" alt="YouTube thumbnail">
+    <div class="video-play-overlay">
+      <div class="video-play-circle">
+        <svg class="video-play-icon" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      </div>
+    </div>
+    <div class="video-yt-badge">${t('videoPlay')}</div>
+  `;
+  const tMatch = originalUrl && originalUrl.match(/[?&]t=(\d+)/);
+  const startParam = tMatch ? `&start=${tMatch[1]}` : '';
+  wrap.onclick = () => {
+    wrap.innerHTML = `<iframe
+      src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1${startParam}"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      style="width:100%;height:100%;border:none;display:block"
+    ></iframe>`;
+    wrap.onclick = null;
+    wrap.style.cursor = 'default';
+  };
+}
+
+function updateBar(notes, etS, etE, val) {
+  const clearPos = (val/notes)*100;
+  const etSPos = etS ? (etS/notes*100) : 0;
+  const etEPos = etE ? (etE/notes*100) : 0;
+  const barLeftPct = etSPos;
+  const etEndVisual = etE ? etEPos : barLeftPct;
+  const barEl = document.getElementById('barLeft');
+  barEl.style.width = barLeftPct+'%';
+  barEl.style.minWidth = '0';
+  document.getElementById('barEt').style.width = Math.max(etEndVisual-barLeftPct,0)+'%';
+  document.getElementById('barRight').style.width = (100-etEndVisual)+'%';
+  document.getElementById('barMarker').style.left = clearPos+'%';
+  document.getElementById('barMarkerLabel').textContent = `Clear: ${val}`;
+  const lblS = document.getElementById('lblETStart');
+  const lblE = document.getElementById('lblETEnd');
+  if (etS) {
+    lblS.style.display = ''; lblS.style.left = etSPos + '%'; lblS.textContent = etS;
+    lblS.classList.remove('above');
+  } else {
+    lblS.style.display = 'none'; lblS.classList.remove('above');
+  }
+  if (etE) {
+    lblE.style.display = ''; lblE.style.left = etEPos + '%'; lblE.textContent = etE;
+    lblE.classList.remove('above');
+  } else {
+    lblE.style.display = 'none'; lblE.classList.remove('above');
+  }
+  if (etS && etE) {
+    requestAnimationFrame(() => {
+      if (window.innerWidth >= 768) return;
+      const sRect = lblS.getBoundingClientRect();
+      const eRect = lblE.getBoundingClientRect();
+      if (eRect.left - sRect.right < 6) {
+        if (etEPos > 75) lblS.classList.add('above');
+        else lblE.classList.add('above');
+      }
+    });
+  }
+  document.getElementById('lblTotal').textContent = `${notes}`;
+  document.getElementById('markerTotal').style.display = '';
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key==='Enter' && document.activeElement.classList.contains('num-input')) runPredict();
+});
+
+// ════════════════════════════════════════
+// 탭2: 악곡 검색
+// ════════════════════════════════════════
+
+function buildTypeChips() {
+  const wrap = document.getElementById('typeChips');
+  const filterItems = [
+    { label: t('typeAll'), value: null },
+    { label: 'All', value: 'All' },
+    { label: 'Sparkle', value: 'Sparkle' },
+    { label: 'Brilliant', value: 'Brilliant' },
+    { label: 'Glitter', value: 'Glitter' },
+    { label: 'Flash', value: 'Flash' },
+  ];
+  const chipColors = {
+    null:        { bg:'#f1f5f9', color:'#1e3a6e' },
+    'Flash':     TYPE_COLOR['Flash'],
+    'Brilliant': TYPE_COLOR['Brilliant'],
+    'Glitter':   TYPE_COLOR['Glitter'],
+    'Sparkle':   TYPE_COLOR['Sparkle'],
+    'All':       { bg:'#f0fdf4', color:'#166534' },
+  };
+  wrap.innerHTML = filterItems.map(item => {
+    const key = item.value === null ? 'null' : item.value;
+    const c = chipColors[item.value];
+    const isActive = activeType === item.value;
+    const border = isActive ? c.color : 'transparent';
+    return `<button class="type-chip${isActive?' active':''}" data-val="${key}"
+      style="background:${c.bg};color:${c.color};border-color:${border}"
+      onclick="selectType(${item.value===null?'null':`'${item.value}'`},this)">${item.label}</button>`;
+  }).join('');
+}
+
+function selectType(t_val, el) {
+  activeType = (activeType === t_val) ? null : t_val;
+  const chipColors = {
+    null:        { bg:'#f1f5f9', color:'#1e3a6e' },
+    'Flash':     TYPE_COLOR['Flash'],
+    'Brilliant': TYPE_COLOR['Brilliant'],
+    'Glitter':   TYPE_COLOR['Glitter'],
+    'Sparkle':   TYPE_COLOR['Sparkle'],
+    'All':       { bg:'#f0fdf4', color:'#166534' },
+  };
+  document.querySelectorAll('.type-chip').forEach(btn => {
+    const bval = btn.dataset.val === 'null' ? null : btn.dataset.val;
+    const isActive = activeType === bval;
+    btn.classList.toggle('active', isActive);
+    const c = chipColors[bval];
+    btn.style.borderColor = isActive ? c.color : 'transparent';
+  });
+  currentPage = 1;
+  renderTable();
+}
+
+function buildUnitFilterPanel() {
+  const esc = s => s.replace(/&/g,'&amp;').replace(/"/g,'&quot;');
+  const groups = [
+    [
+      { label:'fine',          unit:'fine' },
+      { label:'Trickstar',     unit:'Trickstar' },
+      { label:'유성대',         unit:'유성대' },
+      { label:'ALKALOID',      unit:'ALKALOID' },
+    ],
+    [
+      { label:'Eden',          unit:'Eden' },
+      { label:'Valkyrie',      unit:'Valkyrie' },
+      { label:'Crazy:B',       unit:'Crazy:B' },
+      { label:'2wink',         unit:'2wink' },
+      { label:'Adam·Eve',      units:'Adam,Eve' },
+    ],
+    [
+      { label:'UNDEAD',        unit:'UNDEAD' },
+      { label:'Ra*bits',       unit:'Ra*bits' },
+      { label:'홍월',           unit:'홍월' },
+      { label:'MELLOW DEAR US',unit:'MELLOW DEAR US' },
+    ],
+    [
+      { label:'Knights',       unit:'Knights' },
+      { label:'Switch',        unit:'Switch' },
+      { label:'MaM·DF',        units:'MaM,DF' },
+      { label:'S-Pri',         unit:'S-Pri' },
+    ],
+    [
+      { label:'주년·새해·만우절',  units:'주년,만우절,새해' },
+      { label:'셔플',            units:'셔플,셔플_10주년' },
+      { label:'콜라보·J&A',      units:'콜라보,J&A' },
+      { label:'추억·기타',       units:'추억,기타' },
+    ],
+  ];
+  const inner = document.createElement('div');
+  inner.className = 'unit-filter-inner';
+  groups.forEach((group, gi) => {
+    if (gi > 0) {
+      const sep = document.createElement('div');
+      sep.className = 'unit-filter-sep';
+      inner.appendChild(sep);
+    }
+    group.forEach(item => {
+      const lbl = document.createElement('label');
+      lbl.className = 'unit-filter-item';
+      const dataAttr = item.units
+        ? `data-units="${esc(item.units)}"`
+        : `data-unit="${esc(item.unit)}"`;
+      lbl.innerHTML = `<input type="checkbox" class="unit-cb" ${dataAttr} onchange="onUnitChange()"><span>${esc(getUnitName(item.label))}</span>`;
+      inner.appendChild(lbl);
+    });
+  });
+  const resetRow = document.createElement('div');
+  resetRow.className = 'unit-filter-reset-row';
+  resetRow.innerHTML = `<button class="unit-reset-btn" onclick="resetUnits()" id="unitResetBtn" style="display:none">전체 해제</button>`;
+  const wrap = document.getElementById('unitFilterPanel');
+  wrap.innerHTML = '';
+  wrap.appendChild(inner);
+  wrap.appendChild(resetRow);
+}
+
+function onSearchModeChange() {
+  searchMode = document.getElementById('searchModeSelect').value;
+  const isUnit = searchMode === 'unit';
+  document.getElementById('tableSearchWrap').style.display = isUnit ? 'none' : '';
+  document.getElementById('unitFilterPanel').style.display = isUnit ? '' : 'none';
+  if (isUnit) {
+    clearTableSearch();
+  } else {
+    resetUnits();
+  }
+}
+
+function onUnitChange() {
+  const checked = new Set();
+  document.querySelectorAll('.unit-cb:checked').forEach(cb => {
+    if (cb.dataset.units) cb.dataset.units.split(',').forEach(u => checked.add(u));
+    else checked.add(cb.dataset.unit);
+  });
+  activeUnits = checked.size > 0 ? checked : null;
+  document.getElementById('unitResetBtn').style.display = checked.size > 0 ? '' : 'none';
+  currentPage = 1;
+  renderTable();
+}
+
+function resetUnits() {
+  document.querySelectorAll('.unit-cb').forEach(cb => { cb.checked = false; });
+  activeUnits = null;
+  document.getElementById('unitResetBtn').style.display = 'none';
+  currentPage = 1;
+  renderTable();
+}
+
+function onTableSearchInput() {
+  const hasVal = document.getElementById('tableSearch').value.length > 0;
+  document.getElementById('tableSearchClear').classList.toggle('visible', hasVal);
+  renderTable();
+}
+function clearTableSearch() {
+  document.getElementById('tableSearch').value = '';
+  document.getElementById('tableSearchClear').classList.remove('visible');
+  currentPage = 1;
+  renderTable();
+}
+
+function setDur(val, el) {
+  activeDur = val;
+  document.querySelectorAll('.dur-chip').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  currentPage = 1;
+  renderTable();
+}
+
+function sortBy(key) {
+  if (sortKey===key) sortDir*=-1;
+  else { sortKey=key; sortDir=1; }
+  document.querySelectorAll('[id^="sort-"]').forEach(el=>el.textContent='↕');
+  document.getElementById('sort-'+key).textContent = sortDir===1 ? '↑' : '↓';
+  currentPage = 1;
+  renderTable();
+}
+
+function renderTable() {
+  const q = searchMode === 'song' ? normalize((document.getElementById('tableSearch')||{value:''}).value) : '';
+  let list = SONGS.filter(s => {
+    if (activeType !== null && s.type !== activeType) return false;
+    if (activeUnits && !s.units.some(u => activeUnits.has(u))) return false;
+    if (activeDur==='short' && s.durationSec>140) return false;
+    if (activeDur==='mid1' && (s.durationSec<141||s.durationSec>150)) return false;
+    if (activeDur==='mid2' && (s.durationSec<151||s.durationSec>160)) return false;
+    if (activeDur==='long' && s.durationSec<161) return false;
+    if (q) {
+      const match =
+        normalize(s.title_ja).includes(q) ||
+        (s.title_ja_reading && normalize(s.title_ja_reading).includes(q)) ||
+        (s.title_ko && normalize(s.title_ko).includes(q)) ||
+        (s.title_ko_reading && normalize(s.title_ko_reading).includes(q)) ||
+        s.units.some(u => normalize(u).includes(q));
+      if (!match) return false;
+    }
+    return true;
+  });
+
+  if (sortKey) {
+    list.sort((a,b) => {
+      const av=a[sortKey], bv=b[sortKey];
+      if (av===null||av===undefined) return 1;
+      if (bv===null||bv===undefined) return -1;
+      if (typeof av==='string') return av.localeCompare(bv)*sortDir;
+      return (av-bv)*sortDir;
+    });
+  }
+
+  const tbody = document.getElementById('songsTableBody');
+  if (list.length===0) {
+    tbody.innerHTML=`<tr><td colspan="7"><div class="table-empty">${t('tableEmpty')}</div></td></tr>`;
+    document.getElementById('tableCount').textContent='';
+    document.getElementById('pagingBar').innerHTML='';
+    return;
+  }
+
+  const totalPages = Math.ceil(list.length / PAGE_SIZE);
+  if (currentPage > totalPages) currentPage = totalPages;
+  const start = (currentPage-1)*PAGE_SIZE;
+  const pageList = list.slice(start, start+PAGE_SIZE);
+
+  const rendered = pageList.map(s => {
+    const c = TYPE_COLOR[s.type] || TYPE_COLOR['All'];
+    const dot = s.measured !== null
+      ? `<span class="clear-dot" style="background:#059669"></span>`
+      : `<span class="clear-dot" style="background:#d1d5db"></span>`;
+    const clearVal = s.measured !== null ? s.measured : s.predicted;
+    const videoIcon = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
+    const videoCell = (s.measured !== null && s.video)
+      ? `<a class="video-link" href="${s.video}" target="_blank" title="영상 열기">${videoIcon}</a>`
+      : `<span class="no-video">—</span>`;
+    const mainTitle = getDisplayTitle(s);
+
+    if (window.innerWidth <= 600) {
+      const hasTitleKo = s.title_ko && s.title_ko !== s.title_ja;
+      const cardMainTitle = (currentLang === 'ko' && hasTitleKo) ? s.title_ko : s.title_ja;
+      const cardSubTitle = (currentLang === 'ko' && hasTitleKo) ? s.title_ja : null;
+      const videoBtn = (s.measured !== null && s.video)
+        ? `<a class="song-card-video-btn" href="${s.video}" target="_blank">${videoIcon}</a>`
+        : `<span class="song-card-no-video">—</span>`;
+      return `<div class="song-card">
+        <div class="song-card-top">
+          <div class="song-card-top-left">
+            <span class="type-badge" style="background:${c.bg};color:${c.color}">${s.type}</span>
+            <span class="song-card-unit">${getUnitName(s.unit)}</span>
+          </div>
+          ${videoBtn}
+        </div>
+        <div class="song-card-title" data-video="${s.video||''}">${cardMainTitle}</div>
+        <div class="song-card-stats">
+          <div class="song-card-stat">
+            <span class="song-card-stat-label">${t('colNotes')}</span>
+            <span class="song-card-stat-val">${s.totalNotes}</span>
+          </div>
+          <div class="song-card-stat">
+            <span class="song-card-stat-label">${t('colClear')}</span>
+            <span class="song-card-stat-val">${dot}${clearVal}</span>
+          </div>
+          <div class="song-card-stat">
+            <span class="song-card-stat-label">${t('colDur')}</span>
+            <span class="song-card-stat-val">${s.duration||'—'}</span>
+          </div>
+        </div>
+      </div>`;
+    }
+
+    return `<tr>
+      <td><span class="type-badge" style="background:${c.bg};color:${c.color}">${s.type}</span></td>
+      <td class="col-unit">${getUnitName(s.unit)}</td>
+      <td class="col-title" data-video="${s.video||''}">
+        <div>${mainTitle}</div>
+      </td>
+      <td class="col-num">${s.totalNotes}</td>
+      <td class="col-dur">${s.duration||'—'}</td>
+      <td class="col-num">${dot}${clearVal}</td>
+      <td class="col-video">${videoCell}</td>
+    </tr>`;
+  });
+
+  const isMobile = window.innerWidth <= 600;
+  const tableWrap = document.getElementById('tableWrap');
+  const cardContainer = document.getElementById('cardContainer');
+  if (isMobile) {
+    tableWrap.style.display = 'none';
+    cardContainer.style.display = '';
+    cardContainer.innerHTML = rendered.join('');
+  } else {
+    tableWrap.style.display = '';
+    cardContainer.style.display = 'none';
+    tbody.innerHTML = rendered.join('');
+  }
+
+  renderPaging(totalPages, list.length);
+  document.getElementById('tableCount').textContent =
+    `${start+1}–${Math.min(start+PAGE_SIZE, list.length)} / ${list.length}`;
+}
+
+function renderPaging(totalPages, totalCount) {
+  const bar = document.getElementById('pagingBar');
+  if (totalPages <= 1) { bar.innerHTML=''; return; }
+  const maxShow = 7;
+  let pages = [];
+  if (totalPages <= maxShow) {
+    for (let i=1;i<=totalPages;i++) pages.push(i);
+  } else {
+    pages = [1];
+    let s = Math.max(2, currentPage-2);
+    let e = Math.min(totalPages-1, currentPage+2);
+    if (currentPage <= 3) e = Math.min(5, totalPages-1);
+    if (currentPage >= totalPages-2) s = Math.max(2, totalPages-4);
+    if (s > 2) pages.push('…');
+    for (let i=s;i<=e;i++) pages.push(i);
+    if (e < totalPages-1) pages.push('…');
+    pages.push(totalPages);
+  }
+  bar.innerHTML = `
+    <button class="pg-btn" onclick="goPage(${currentPage-1})" ${currentPage===1?'disabled':''}>‹</button>
+    ${pages.map(p => p==='…'
+      ? `<span class="pg-ellipsis">…</span>`
+      : `<button class="pg-btn${p===currentPage?' active':''}" onclick="goPage(${p})">${p}</button>`
+    ).join('')}
+    <button class="pg-btn" onclick="goPage(${currentPage+1})" ${currentPage===totalPages?'disabled':''}>›</button>
+  `;
+}
+
+function goPage(p) {
+  const totalPages = Math.ceil(SONGS.filter(s => {
+    if (activeType!==null && s.type!==activeType) return false;
+    if (activeUnits && !s.units.some(u => activeUnits.has(u))) return false;
+    const q = searchMode === 'song' ? normalize((document.getElementById('tableSearch')||{value:''}).value) : '';
+    if (activeDur==='short' && s.durationSec>140) return false;
+    if (activeDur==='mid1' && (s.durationSec<141||s.durationSec>150)) return false;
+    if (activeDur==='mid2' && (s.durationSec<151||s.durationSec>160)) return false;
+    if (activeDur==='long' && s.durationSec<161) return false;
+    if (q) {
+      const match =
+        normalize(s.title_ja).includes(q) ||
+        (s.title_ja_reading && normalize(s.title_ja_reading).includes(q)) ||
+        (s.title_ko && normalize(s.title_ko).includes(q)) ||
+        (s.title_ko_reading && normalize(s.title_ko_reading).includes(q)) ||
+        s.units.some(u => normalize(u).includes(q));
+      if (!match) return false;
+    }
+    return true;
+  }).length / PAGE_SIZE);
+  currentPage = Math.max(1, Math.min(p, totalPages));
+  renderTable();
+}
+</script>
+</body>
 </html>

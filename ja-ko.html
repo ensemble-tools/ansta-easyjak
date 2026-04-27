@@ -632,8 +632,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
         <div class="info-text">
           <div style="margin-bottom:18px;">
             <p style="margin-bottom:10px;"><strong data-i18n="homeAndroid">Android (크롬)</strong></p>
-            <button id="btnInstallAndroid" onclick="triggerInstall()" class="download-btn" style="display:none;" data-i18n="homeAndroidBtn">홈 화면에 추가</button>
-            <p style="font-size:12px; color:var(--text-muted); margin-top:8px;" data-i18n-html="homeAndroidHint">버튼이 보이지 않으면 크롬 메뉴(⋮) → <strong>홈 화면에 추가</strong>를 선택해 주세요.</p>
+            <p style="font-size:13px;" data-i18n-html="homeAndroidHint">크롬 메뉴(⋮) → <strong>Chrome에서 바로가기 만들기</strong>를 선택해 주세요.</p>
           </div>
           <div>
             <p style="margin-bottom:8px;"><strong data-i18n="homeIos">iPhone (Safari)</strong></p>
@@ -662,25 +661,6 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="songs.js"></script>
 <script>
-// ── PWA 설치 프롬프트 ──────────────────────────────
-let deferredInstallPrompt = null;
-window.addEventListener('beforeinstallprompt', e => {
-  e.preventDefault();
-  deferredInstallPrompt = e;
-  const btn = document.getElementById('btnInstallAndroid');
-  if (btn) btn.style.display = 'inline-block';
-});
-window.addEventListener('appinstalled', () => {
-  const btn = document.getElementById('btnInstallAndroid');
-  if (btn) btn.style.display = 'none';
-});
-function triggerInstall() {
-  if (deferredInstallPrompt) {
-    deferredInstallPrompt.prompt();
-    deferredInstallPrompt.userChoice.then(() => { deferredInstallPrompt = null; });
-  }
-}
-
 // ── 배포 설정 ──────────────────────────────────────
 const SHOW_DEV_INFO = true;
 const SHOW_TITLE_HOVER = true;
@@ -734,8 +714,7 @@ const I18N = {
     devPerfText: '학습 데이터 기준 성능 지표입니다.', devPerfText2: '대부분의 곡에서 ±5콤보 이내로 예측합니다.',
     homeTitle: '홈 화면에 아이콘 추가하기',
     homeAndroid: 'Android (크롬)',
-    homeAndroidBtn: '홈 화면에 추가',
-    homeAndroidHint: '버튼이 보이지 않으면 크롬 메뉴(⋮) → <strong>홈 화면에 추가</strong>를 선택해 주세요.',
+    homeAndroidHint: '크롬 메뉴(⋮) → <strong>Chrome에서 바로가기 만들기</strong>를 선택해 주세요.',
     homeIos: 'iPhone (Safari)',
     homeIosStep1: 'Safari 하단 <strong>공유 버튼(□↑)</strong> 탭',
     homeIosStep2: '<strong>홈 화면에 추가</strong> 선택',
@@ -787,8 +766,7 @@ const I18N = {
     devPerfText: '学習データ基準の性能指標です。', devPerfText2: 'ほとんどの曲で ±5コンボ以内 で予測します。',
     homeTitle: 'ホーム画面にアイコンを追加',
     homeAndroid: 'Android (Chrome)',
-    homeAndroidBtn: 'ホーム画面に追加',
-    homeAndroidHint: 'ボタンが表示されない場合は、Chromeメニュー(⋮) → <strong>ホーム画面に追加</strong> を選択してください。',
+    homeAndroidHint: 'Chromeメニュー(⋮) → <strong>ショートカットを作成</strong> を選択してください。',
     homeIos: 'iPhone (Safari)',
     homeIosStep1: 'Safari下部の<strong>共有ボタン(□↑)</strong>をタップ',
     homeIosStep2: '<strong>ホーム画面に追加</strong>を選択',

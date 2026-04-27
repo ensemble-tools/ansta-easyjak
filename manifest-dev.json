@@ -1,0 +1,22 @@
+{
+  "name": "앙스타 이지모드 클리어 예측 (DEV)",
+  "short_name": "easyjak-dev",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "test_rabbit_192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "test_rabbit.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

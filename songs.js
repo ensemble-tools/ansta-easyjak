@@ -1,5 +1,5 @@
 // songs.js — Voltage Predictor 곡 데이터 & 모델 파라미터
-// 총 305곡 | R²=0.9713 | MAE=2.58콤보
+// 총 306곡 | R²=0.9713 | MAE=2.58콤보
 // ※ enstars_regression_v3.py 로 자동 생성 — 직접 수정 비권장
 
 const SONGS = [
@@ -7033,6 +7033,29 @@ const SONGS = [
     "video": "https://youtu.be/2MVyld-DTR4",
     "videoClear": "https://youtu.be/2MVyld-DTR4?t=79",
     "predicted": 69
+  },
+  {
+    "type": "All",
+    "unit": "주년",
+    "units": [
+      "주년"
+    ],
+    "unitGroup": "주년·기념",
+    "title_ja": "Call Your Name",
+    "title_ja_reading": "こーるゆあねーむ",
+    "title_ko": "Call Your Name",
+    "title_ko_reading": "콜 유어 네임",
+    "title_en": "Call Your Name",
+    "title_en_reading": null,
+    "totalNotes": 203,
+    "duration": "2:47",
+    "etStart": 44,
+    "etEnd": 69,
+    "measured": null,
+    "category": "others",
+    "video": "https://youtu.be/plzDNSBN8qQ",
+    "videoClear": "https://youtu.be/plzDNSBN8qQ?t=83",
+    "predicted": 108
   }
 ];
 

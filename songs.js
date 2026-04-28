@@ -5834,8 +5834,8 @@ const SONGS = [
     "etEnd": 65,
     "measured": 81,
     "category": "others",
-    "video": "https://youtu.be/TCOMsiaMGI0",
-    "videoClear": "https://youtu.be/TCOMsiaMGI0?t=86",
+    "video": "https://youtu.be/HJl5V28SjCM",
+    "videoClear": "https://youtu.be/HJl5V28SjCM?t=86",
     "predicted": 81
   },
   {

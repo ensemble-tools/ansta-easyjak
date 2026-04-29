@@ -248,7 +248,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 .table-hint { font-size: 11px; color: var(--text-sub); font-weight: 500; white-space: nowrap; margin-left: auto; }
 .songs-table { width: 100%; border-collapse: collapse; table-layout: fixed; min-width: 620px; }
 .songs-table thead tr { border-bottom: 2px solid var(--border); }
-.songs-table th { padding: 10px 12px; font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; text-align: left; background: var(--bg); white-space: nowrap; }
+.songs-table th { padding: 12px 12px; font-size: 11px; font-weight: 600; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.5px; text-align: left; background: var(--bg); white-space: nowrap; }
 .songs-table th:nth-child(1) { width: 112px; }
 .songs-table th:nth-child(2) { width: 165px; }
 .songs-table th:nth-child(3) { width: auto; }
@@ -258,7 +258,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 .songs-table th:nth-child(7) { width: 68px; }
 .songs-table th.sortable { cursor: pointer; user-select: none; }
 .songs-table th.sortable:hover { color: var(--navy); }
-.sort-icon { display: inline-block; margin-left: 4px; opacity: 0.5; font-size: 10px; }
+.sort-icon { display: inline-block; margin-left: 2px; opacity: 0.75; font-size: 8px; }
 .songs-table td { padding: 10px 12px; font-size: 13px; border-bottom: 0.5px solid var(--border-light); vertical-align: middle; overflow: hidden; text-overflow: ellipsis; }
 .songs-table tr:last-child td { border-bottom: none; }
 .songs-table tbody tr:hover td { background: var(--bg); }
@@ -318,6 +318,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 .badge-info { background: var(--navy-pale); color: var(--navy); }
 .badge-warn { background: #fef3c7; color: #92400e; }
 .badge-new { background: #d1fae5; color: #065f46; }
+.badge-note { background: #ede9fe; color: #6d28d9; }
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
@@ -347,6 +348,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
   .sidebar-hint { display: none; }
   .sidebar-section { margin-bottom: 0; }
   .sidebar-title { margin-bottom: 6px; font-size: 11px; }
+  .lang-ja .nav-title { font-size: 17px; }
 }
 </style>
 <script>
@@ -540,7 +542,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
         </div>
 
         <div class="sidebar-section" style="margin-bottom:0">
-          <span style="font-size:11px;color:var(--text-muted)" data-i18n="tableHint">*곡 길이는 풀콤보 기준</span>
+          <span style="font-size:11px;color:var(--text-sub)" data-i18n="tableHint">*곡 길이는 풀콤보 기준</span>
         </div>
 
       </div>
@@ -756,8 +758,11 @@ const I18N = {
     homeIosStep3: 'Confirm name and tap Add',
     langToggle: '日本語',
     notices: [
-      { badge: 'NEW', cls: 'badge-new', text: 'Song Search tab added. Supports type, unit, and duration filters with sorting.' },
-      { badge: 'INFO', cls: 'badge-info', text: 'For songs with measured data, you can compare measured vs predicted values in the Clear Prediction tab.' },
+      { badge: 'INFO', cls: 'badge-info', text: '<b>Easy Jak</b>: A strategy where you clear a live on Easy difficulty by hitting only the minimum inputs needed to maintain voltage.' },
+      { badge: 'NOTE', cls: 'badge-note', text: 'This app calculates with a small buffer so you can still clear even if you miss one note — because I often play one-handed while browsing or walking around.' },
+      { badge: 'INFO', cls: 'badge-info', text: 'In the <b>Clear Prediction tab</b>, reference videos for songs marked <b>Measured</b> start 2 seconds before the clear point; songs marked <b>Predicted</b> start from the middle of the video.' },
+      { badge: 'INFO', cls: 'badge-info', text: 'In the <b>Song Search tab</b>, click any column header marked ↕ to sort.' },
+      { badge: 'INFO', cls: 'badge-info', text: 'If you know a better clear point, feel free to leave a comment on the YouTube video.' },
       { badge: 'NOTE', cls: 'badge-warn', text: 'This tool is for Easy clears only. Results may not apply to Auto, Hard, or other difficulties.' },
       { badge: 'INFO', cls: 'badge-info', text: 'New songs without Ensemble Time (ET) data use a simpler model, which may have higher error.' },
       { badge: 'NOTE', cls: 'badge-warn', text: 'Predictions are based on a statistical model and may differ from actual clear combos. Use as reference only.' },
@@ -809,8 +814,11 @@ const I18N = {
     homeIosStep3: '名前を確認して追加',
     langToggle: 'English',
     notices: [
-      { badge: 'NEW', cls: 'badge-new', text: '楽曲検索タブが追加されました。タイプ・ユニット・長さフィルターとソート機能をサポートしています。' },
-      { badge: 'INFO', cls: 'badge-info', text: '実測データがある楽曲は、クリア予測タブで実測/予測を切り替えて比較できます。' },
+      { badge: 'INFO', cls: 'badge-info', text: '<b>イージー作</b>: Easy難易度で最低限の入力でボルテージを維持しライブをクリアする方法。' },
+      { badge: 'NOTE', cls: 'badge-note', text: 'ここではノート1個を見逃してもクリアできるよう余裕を持って計算しています。私の場合、片手でリズムゲームを操作しながらネットサーフィンしたり、歩きながらプレイすることが多くノートを見逃しやすいためです。' },
+      { badge: 'INFO', cls: 'badge-info', text: '<b>クリア予測タブ</b>の参考動画は、<b>確認済み</b>表示がある楽曲はクリア地点の2秒前から、<b>予測値</b>表示がある楽曲は動画の中間から再生されます。' },
+      { badge: 'INFO', cls: 'badge-info', text: '<b>楽曲検索タブ</b>で↕マークがあるヘッダーをクリックするとソートできます。' },
+      { badge: 'INFO', cls: 'badge-info', text: 'より良いクリア地点をご存知でしたら、YouTubeのコメント欄に残してください。' },
       { badge: '注意', cls: 'badge-warn', text: 'このツールはEasyクリア基準です。オート・ハード等には適用できません。' },
       { badge: 'INFO', cls: 'badge-info', text: 'ET情報がない新曲は単純回帰モデル（ノーツ数のみ）を使用するため、誤差が大きくなる可能性があります。' },
       { badge: '注意', cls: 'badge-warn', text: '予測値は統計モデルに基づくため、実際のクリアコンボと異なる場合があります。参考としてご利用ください。' },
@@ -852,6 +860,7 @@ function applyI18n() {
   });
   document.getElementById('langToggleBtn').textContent = t('langToggle');
   document.title = t('navTitle');
+  document.body.classList.toggle('lang-ja', currentLang === 'ja');
   // 공지사항 렌더링
   const notices = t('notices');
   if (Array.isArray(notices)) {

@@ -248,7 +248,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .table-hint { font-size: 11px; color: var(--text-sub); font-weight: 500; white-space: nowrap; margin-left: auto; }
 .songs-table { width: 100%; border-collapse: collapse; table-layout: fixed; min-width: 620px; }
 .songs-table thead tr { border-bottom: 2px solid var(--border); }
-.songs-table th { padding: 10px 12px; font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; text-align: left; background: var(--bg); white-space: nowrap; }
+.songs-table th { padding: 12px 12px; font-size: 11px; font-weight: 600; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.5px; text-align: left; background: var(--bg); white-space: nowrap; }
 .songs-table th:nth-child(1) { width: 112px; }
 .songs-table th:nth-child(2) { width: 165px; }
 .songs-table th:nth-child(3) { width: auto; }
@@ -258,7 +258,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .songs-table th:nth-child(7) { width: 68px; }
 .songs-table th.sortable { cursor: pointer; user-select: none; }
 .songs-table th.sortable:hover { color: var(--navy); }
-.sort-icon { display: inline-block; margin-left: 4px; opacity: 0.5; font-size: 10px; }
+.sort-icon { display: inline-block; margin-left: 2px; opacity: 0.75; font-size: 8px; }
 .songs-table td { padding: 10px 12px; font-size: 13px; border-bottom: 0.5px solid var(--border-light); vertical-align: middle; overflow: hidden; text-overflow: ellipsis; }
 .songs-table tr:last-child td { border-bottom: none; }
 .songs-table tbody tr:hover td { background: var(--bg); }
@@ -318,6 +318,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .badge-info { background: var(--navy-pale); color: var(--navy); }
 .badge-warn { background: #fef3c7; color: #92400e; }
 .badge-new { background: #d1fae5; color: #065f46; }
+.badge-note { background: #ede9fe; color: #6d28d9; }
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
@@ -347,6 +348,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
   .sidebar-hint { display: none; }
   .sidebar-section { margin-bottom: 0; }
   .sidebar-title { margin-bottom: 6px; font-size: 11px; }
+  .lang-ja .nav-title { font-size: 17px; }
 }
 </style>
 <script>
@@ -540,7 +542,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
         </div>
 
         <div class="sidebar-section" style="margin-bottom:0">
-          <span style="font-size:11px;color:var(--text-muted)" data-i18n="tableHint">*곡 길이는 풀콤보 기준</span>
+          <span style="font-size:11px;color:var(--text-sub)" data-i18n="tableHint">*곡 길이는 풀콤보 기준</span>
         </div>
 
       </div>
@@ -756,10 +758,11 @@ const I18N = {
     homeIosStep3: '이름 확인 후 추가',
     langToggle: '日本語',
     notices: [
-      { badge: '정의', cls: 'badge-info', text: '<b>이지작</b>: 이지(Easy) 난이도에서 최소한의 입력만으로 볼티지를 유지해 라이브를 클리어하는 방법.<br>여기서는 노트 1개를 놓쳐도 클리어가 가능하도록 여유를 두고 계산합니다. 저 같은 경우 한손으론 리듬 게임 치고 다른 손으론 인터넷을 하거나 걸어다니면서 플레이하는 경우가 많아 노트 놓치는 일이 많기 때문입니다.' },
-      { badge: 'NEW', cls: 'badge-new', text: '악곡 검색 탭이 추가되었습니다. 타입·유닛·길이 필터와 정렬 기능을 지원합니다.' },
-      { badge: 'INFO', cls: 'badge-info', text: '실측 데이터가 있는 곡은 클리어 예측 탭에서 실측/예측 전환 버튼으로 비교할 수 있습니다.' },
+      { badge: 'INFO', cls: 'badge-info', text: '<b>이지작</b>: 이지(Easy) 난이도에서 최소한의 입력으로 볼티지를 유지해 라이브를 클리어하는 방법.' },
+      { badge: 'NOTE', cls: 'badge-note', text: '여기서는 노트 1개를 놓쳐도 클리어가 가능하도록 여유를 두고 계산합니다. 저같은 경우 한손으론 리듬 게임 치고 다른 손으론 인터넷을 하거나 걸어다니면서 플레이하는 경우가 많아 노트 놓치는 일이 많기 때문입니다.' },
       { badge: 'INFO', cls: 'badge-info', text: '<b>클리어 계산 탭</b>의 참고 영상은 <b>확인함</b> 표시가 있는 곡은 클리어 지점 2초 전부터, <b>예측</b> 표시가 있는 곡은 영상 중간부터 시작됩니다.' },
+      { badge: 'INFO', cls: 'badge-info', text: '<b>악곡 검색 탭</b>에서 ↕ 표시가 있는 헤더를 클릭하면 정렬할 수 있습니다.' },
+      { badge: 'INFO', cls: 'badge-info', text: '더 좋은 클리어 지점이 있다면 유튜브 댓글에 남겨주세요.' },
       { badge: '주의', cls: 'badge-warn', text: '이 도구는 이지작 클리어 기준입니다. 오토·하드작 등 다른 조건에는 맞지 않을 수 있습니다.' },
       { badge: 'INFO', cls: 'badge-info', text: '앙상블 타임(ET) 정보가 없는 신곡은 단순 회귀 모델(노트수만)을 사용하여 오차가 더 클 수 있습니다.' },
       { badge: '주의', cls: 'badge-warn', text: '예측값은 통계 모델 기반이므로 실제 클리어 콤보와 다를 수 있습니다. 참고용으로만 사용해 주세요.' },
@@ -811,10 +814,11 @@ const I18N = {
     homeIosStep3: '名前を確認して追加',
     langToggle: '한국어',
     notices: [
-      { badge: '定義', cls: 'badge-info', text: '<b>イージー作</b>: Easy難易度で最低限の入力のみでボルテージを維持しライブをクリアする方法。<br>ここではノート1個を見逃してもクリアできるよう余裕を持って計算しています。私の場合、片手でリズムゲームを操作しながらネットサーフィンしたり、歩きながらプレイすることが多くノートを見逃しやすいためです。' },
-      { badge: 'NEW', cls: 'badge-new', text: '楽曲検索タブが追加されました。タイプ・ユニット・長さフィルターとソート機能をサポートしています。' },
-      { badge: 'INFO', cls: 'badge-info', text: '実測データがある楽曲は、クリア予測タブで実測/予測を切り替えて比較できます。' },
+      { badge: 'INFO', cls: 'badge-info', text: '<b>イージー作</b>: Easy難易度で最低限の入力でボルテージを維持しライブをクリアする方法。' },
+      { badge: 'NOTE', cls: 'badge-note', text: 'ここではノート1個を見逃してもクリアできるよう余裕を持って計算しています。私の場合、片手でリズムゲームを操作しながらネットサーフィンしたり、歩きながらプレイすることが多くノートを見逃しやすいためです。' },
       { badge: 'INFO', cls: 'badge-info', text: '<b>クリア予測タブ</b>の参考動画は、<b>確認済み</b>表示がある楽曲はクリア地点の2秒前から、<b>予測値</b>表示がある楽曲は動画の中間から再生されます。' },
+      { badge: 'INFO', cls: 'badge-info', text: '<b>楽曲検索タブ</b>で↕マークがあるヘッダーをクリックするとソートできます。' },
+      { badge: 'INFO', cls: 'badge-info', text: 'より良いクリア地点をご存知でしたら、YouTubeのコメント欄に残してください。' },
       { badge: '注意', cls: 'badge-warn', text: 'このツールはEasyクリア基準です。オート・ハード等には適用できません。' },
       { badge: 'INFO', cls: 'badge-info', text: 'ET情報がない新曲は単純回帰モデル（ノーツ数のみ）を使用するため、誤差が大きくなる可能性があります。' },
       { badge: '注意', cls: 'badge-warn', text: '予測値は統計モデルに基づくため、実際のクリアコンボと異なる場合があります。参考としてご利用ください。' },
@@ -855,6 +859,7 @@ function applyI18n() {
   });
   document.getElementById('langToggleBtn').textContent = t('langToggle');
   document.title = t('navTitle');
+  document.body.classList.toggle('lang-ja', currentLang === 'ja');
   // 공지사항 렌더링
   const notices = t('notices');
   if (Array.isArray(notices)) {

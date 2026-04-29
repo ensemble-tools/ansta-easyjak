@@ -322,7 +322,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .badge-wish { background: #fce4ec; color: #c2185b; }
 
 /* ── Responsive ── */
-.dur-sort-mobile { display: none; }
+.dur-sort-mobile { display: flex; gap: 6px; margin-top: 6px; }
 @media (max-width: 768px) {
   .songs-layout { grid-template-columns: 1fr; }
   .sidebar { position: static; }
@@ -770,8 +770,7 @@ const I18N = {
       { badge: 'INFO', cls: 'badge-info', text: '<b>클리어 계산 탭</b>의 참고 영상은 <b>확인함</b> 표시가 있는 곡은 클리어 지점 2초 전부터, <b>예측</b> 표시가 있는 곡은 영상 중간부터 시작됩니다.' },
       { badge: 'INFO', cls: 'badge-info', text: '<b>클리어 계산 탭</b>에서는 [확인함/예측] 곡 모두 참고 영상을 볼 수 있고, <b>악곡 검색 탭</b>에서는 [확인함] 곡만 영상 링크가 제공됩니다.' },
       { badge: 'INFO', cls: 'badge-info', text: '전체 수록곡 수는 <b>클리어 계산 탭</b> 기준이 맞습니다. <b>악곡 검색 탭</b>은 Dear World가 두 버전으로 등록되어 1곡 더 많이 표시됩니다.' },
-      { badge: 'INFO', cls: 'badge-info', text: '<b>악곡 검색 탭</b>에서 ↕ 표시가 있는 헤더를 클릭하면 정렬할 수 있습니다.' },
-      { badge: 'INFO', cls: 'badge-info', text: '<b>악곡 검색 탭</b>에서 곡 제목에 마우스를 올리거나(PC) 터치하면(모바일) 앨범 이미지를 볼 수 있습니다.' },
+      { badge: 'INFO', cls: 'badge-info', text: '<b>악곡 검색 탭</b>에서 곡 제목에 마우스를 올리거나(PC) 제목을 터치하면(모바일) 앨범 이미지를 볼 수 있습니다.' },
       { badge: 'INFO', cls: 'badge-info', text: '더 좋은 클리어 지점이 있다면 유튜브 댓글에 남겨주세요.' },
       { badge: 'NOTE', cls: 'badge-note', text: '🩷 타 사이트에 홍보 환영 🩷' },
       { badge: 'Wish', cls: 'badge-wish', text: '오토 내놔' },
@@ -828,8 +827,7 @@ const I18N = {
       { badge: 'INFO', cls: 'badge-info', text: '<b>クリア予測タブ</b>の参考動画は、<b>確認済み</b>表示がある楽曲はクリア地点の2秒前から、<b>予測値</b>表示がある楽曲は動画の中間から再生されます。' },
       { badge: 'INFO', cls: 'badge-info', text: '<b>クリア予測タブ</b>では[確認済み/予測値]の楽曲すべてで参考動画を見ることができ、<b>楽曲検索タブ</b>では[確認済み]の楽曲のみ動画リンクが提供されます。' },
       { badge: 'INFO', cls: 'badge-info', text: '総楽曲数は<b>クリア予測タブ</b>の表示が正しい数です。<b>楽曲検索タブ</b>はDear Worldが2バージョンで登録されているため、1曲多く表示されます。' },
-      { badge: 'INFO', cls: 'badge-info', text: '<b>楽曲検索タブ</b>で↕マークがあるヘッダーをクリックするとソートできます。' },
-      { badge: 'INFO', cls: 'badge-info', text: '<b>楽曲検索タブ</b>で曲タイトルにマウスを乗せる(PC)またはタップする(モバイル)と、アルバム画像を表示できます。' },
+      { badge: 'INFO', cls: 'badge-info', text: '<b>楽曲検索タブ</b>で曲タイトルにマウスを乗せる(PC)またはタイトルをタップする(モバイル)と、アルバム画像を表示できます。' },
       { badge: 'INFO', cls: 'badge-info', text: 'より良いクリア地点をご存知でしたら、YouTubeのコメント欄に残してください。' },
       { badge: 'NOTE', cls: 'badge-note', text: '他サイトでの宣伝歓迎です。' },
       { badge: 'Wish', cls: 'badge-wish', text: 'オート機能ほしい' },
@@ -1510,11 +1508,17 @@ function setDur(val, el) {
 }
 
 function mobileSortDur(dir) {
-  sortKey = 'durationSec';
-  sortDir = dir;
-  document.querySelectorAll('[id^="sort-"]').forEach(el => el.textContent = '↕');
-  document.getElementById('mobileSortShort').classList.toggle('active', dir === 1);
-  document.getElementById('mobileSortLong').classList.toggle('active', dir === -1);
+  if (sortKey === 'durationSec' && sortDir === dir) {
+    sortKey = null;
+    document.getElementById('mobileSortShort').classList.remove('active');
+    document.getElementById('mobileSortLong').classList.remove('active');
+  } else {
+    sortKey = 'durationSec';
+    sortDir = dir;
+    document.querySelectorAll('[id^="sort-"]').forEach(el => el.textContent = '↕');
+    document.getElementById('mobileSortShort').classList.toggle('active', dir === 1);
+    document.getElementById('mobileSortLong').classList.toggle('active', dir === -1);
+  }
   currentPage = 1;
   renderTable();
 }

@@ -1541,6 +1541,8 @@ function sortBy(key) {
   else { sortKey=key; sortDir=1; }
   document.querySelectorAll('[id^="sort-"]').forEach(el=>el.textContent='↕');
   document.getElementById('sort-'+key).textContent = sortDir===1 ? '↑' : '↓';
+  document.getElementById('mobileSortShort').classList.remove('active');
+  document.getElementById('mobileSortLong').classList.remove('active');
   currentPage = 1;
   renderTable();
 }

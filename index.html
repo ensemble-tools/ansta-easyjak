@@ -349,7 +349,9 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
   .sidebar-section { margin-bottom: 0; }
   .sidebar-title { margin-bottom: 6px; font-size: 11px; }
   .lang-ja .nav-title { font-size: 17px; }
+  .dur-sort-mobile { display: flex; gap: 6px; margin-top: 6px; }
 }
+.dur-sort-mobile { display: none; }
 </style>
 <script>
   if ('serviceWorker' in navigator) {
@@ -539,6 +541,10 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
             <button class="dur-chip" onclick="setDur('mid2',this)" data-i18n="durMid2">2:31 ~ 2:40</button>
             <button class="dur-chip" onclick="setDur('long',this)" data-i18n="durLong">2:41 ~</button>
           </div>
+          <div class="dur-sort-mobile">
+            <button class="dur-chip" id="mobileSortShort" onclick="mobileSortDur(1)" data-i18n="durSortShort">짧은순</button>
+            <button class="dur-chip" id="mobileSortLong" onclick="mobileSortDur(-1)" data-i18n="durSortLong">긴순</button>
+          </div>
         </div>
 
         <div class="sidebar-section" style="margin-bottom:0">
@@ -726,7 +732,7 @@ const I18N = {
     legendClear: '클리어 시작점', legendET: '앙상블 타임 구간',
     sidebarTypeTitle: '곡 속성', sidebarUnitTitle: 'Units', sidebarDurTitle: '곡 길이',
     typeAll: '전체', unitReset: '전체 해제',
-    durAll: '전체', durShort: '~ 2:20', durMid1: '2:21 ~ 2:30', durMid2: '2:31 ~ 2:40', durLong: '2:41 ~',
+    durAll: '전체', durShort: '~ 2:20', durMid1: '2:21 ~ 2:30', durMid2: '2:31 ~ 2:40', durLong: '2:41 ~', durSortShort: '짧은순', durSortLong: '긴순',
     searchModeSong: '곡 검색', searchModeUnit: '유닛 검색',
     tableSearchPlaceholder: '곡 검색...',
     tableHint: '*곡 길이는 풀콤보 기준',
@@ -784,7 +790,7 @@ const I18N = {
     legendClear: 'クリア開始点', legendET: 'アンサンブルタイム区間',
     sidebarTypeTitle: '曲の属性', sidebarUnitTitle: 'Units', sidebarDurTitle: '曲の長さ',
     typeAll: '全て', unitReset: '全解除',
-    durAll: '全て', durShort: '~ 2:20', durMid1: '2:21 ~ 2:30', durMid2: '2:31 ~ 2:40', durLong: '2:41 ~',
+    durAll: '全て', durShort: '~ 2:20', durMid1: '2:21 ~ 2:30', durMid2: '2:31 ~ 2:40', durLong: '2:41 ~', durSortShort: '短い順', durSortLong: '長い順',
     searchModeSong: '楽曲検索', searchModeUnit: 'ユニット検索',
     tableSearchPlaceholder: '楽曲を検索...',
     tableHint: '曲の長さはフルコンボ基準',
@@ -1494,6 +1500,16 @@ function setDur(val, el) {
   activeDur = val;
   document.querySelectorAll('.dur-chip').forEach(c=>c.classList.remove('active'));
   el.classList.add('active');
+  currentPage = 1;
+  renderTable();
+}
+
+function mobileSortDur(dir) {
+  sortKey = 'durationSec';
+  sortDir = dir;
+  document.querySelectorAll('[id^="sort-"]').forEach(el => el.textContent = '↕');
+  document.getElementById('mobileSortShort').classList.toggle('active', dir === 1);
+  document.getElementById('mobileSortLong').classList.toggle('active', dir === -1);
   currentPage = 1;
   renderTable();
 }

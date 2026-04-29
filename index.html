@@ -131,7 +131,8 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 /* Combo display */
 .combo-display { display: flex; align-items: baseline; justify-content: center; gap: 10px; padding: 20px 0 22px; }
 .combo-num { font-size: 52px; font-weight: 700; color: var(--navy); line-height: 1.1; font-family: 'Inter', sans-serif; }
-.combo-unit { font-size: 20px; font-weight: 600; color: var(--navy); opacity: 0.55; font-family: 'Inter', sans-serif; }
+.combo-word { font-size: 20px; font-weight: 600; color: var(--navy); font-family: 'Inter', sans-serif; }
+.combo-unit { font-size: 20px; font-weight: 600; color: var(--navy); opacity: 0.55; font-family: 'Inter', sans-serif; margin-left: 3px; }
 .combo-prefix { font-size: 20px; font-weight: 600; color: var(--navy); opacity: 0.55; font-family: inherit; display: none; }
 
 /* Video */
@@ -194,7 +195,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .stat-item { text-align: center; padding: 4px 8px; }
 .stat-item + .stat-item { border-left: 0.5px solid var(--border-light); }
 .stat-val { font-size: 22px; font-weight: 700; color: var(--navy); font-family: 'Inter', sans-serif; }
-.stat-lbl { font-size: 10px; color: var(--text-muted); margin-top: 3px; }
+.stat-lbl { font-size: 12px; color: var(--text-sub); margin-top: 3px; }
 
 /* ═══════════════════════════════════
    탭2: 악곡 검색
@@ -332,6 +333,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
   .input-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: repeat(3,1fr); gap: 8px; }
   .combo-num { font-size: 40px; }
+  .combo-word { font-size: 16px; }
   .combo-unit { font-size: 16px; }
   .result-song-title { font-size: 14px; }
   .sidebar { display: none; }
@@ -359,7 +361,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
     </div>
     <div class="nav-bottom-row">
       <div class="nav-tabs">
-        <button class="nav-tab active" onclick="switchTab('predict', this)" data-i18n="tab1">클리어 예측</button>
+        <button class="nav-tab active" onclick="switchTab('predict', this)" data-i18n="tab1">클리어 계산</button>
         <button class="nav-tab" onclick="switchTab('songs', this)" data-i18n="tab2">악곡 검색</button>
         <button class="nav-tab" onclick="switchTab('info', this)" data-i18n="tab3">안내</button>
       </div>
@@ -407,11 +409,11 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
             oninput="onNotesManualEdit()">
         </div>
         <div class="input-group">
-          <label data-i18n="labelETStart">ET 시작 콤보</label>
+          <label data-i18n="labelETStart">Ensemble Time 시작콤보</label>
           <input class="num-input" id="inputETStart" type="number" placeholder="선택사항" data-i18n-placeholder="etPlaceholder" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
         </div>
         <div class="input-group">
-          <label data-i18n="labelETEnd">ET 종료 콤보</label>
+          <label data-i18n="labelETEnd">Ensemble Time 종료콤보</label>
           <input class="num-input" id="inputETEnd" type="number" placeholder="선택사항" data-i18n-placeholder="etPlaceholder" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
         </div>
       </div>
@@ -433,7 +435,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
       <div class="combo-display">
         <span class="combo-prefix" id="comboPrefixLabel"></span>
         <span class="combo-num" id="resultCombo">—</span>
-        <span class="combo-unit" id="comboUnitLabel">combo</span>
+        <span><span class="combo-word" id="comboWordLabel"></span><span class="combo-unit" id="comboUnitLabel">combo</span></span>
       </div>
 
       <div class="bar-section" id="barSection">
@@ -700,15 +702,15 @@ const I18N = {
   ko: {
     navTitle: '앙스타 이지작 계산기',
     navSub: '앙상블스타즈!! Music · Easy',
-    tab1: '클리어 예측', tab2: '악곡 검색', tab3: '안내',
+    tab1: '클리어 계산', tab2: '악곡 검색', tab3: '안내',
     cardLabel1: '클리어 콤보 시작점 예측',
     searchPlaceholder: '곡 제목 또는 유닛 검색...',
-    labelNotes: '총 노트수', labelETStart: 'ET 시작 콤보', labelETEnd: 'ET 종료 콤보',
+    labelNotes: '총 노트수', labelETStart: 'Ensemble Time 시작콤보', labelETEnd: 'Ensemble Time 종료콤보',
     notesPlaceholder: '예: 161',
     etPlaceholder: '선택사항',
     predictBtn: '계산하기',
     statTotalLabel: '전체 수록곡', statMeasuredLabel: '확인 완료', statUnmeasuredLabel: '미확인',
-    badgeMeasured: '확인함', badgePredicted: '예측', comboUnit: '콤보부터 시작',
+    badgeMeasured: '확인함', badgePredicted: '예측', comboWord: '콤보', comboUnit: '부터 시작',
     videoLabel: '참고 영상', videoCoverNote: '커버송은 영상을 제공하지 않습니다.', videoPlay: '▶ 클릭하여 재생',
     legendClear: '클리어 시작점', legendET: '앙상블 타임 구간',
     sidebarTypeTitle: '곡 속성', sidebarUnitTitle: 'Units', sidebarDurTitle: '곡 길이',
@@ -763,7 +765,7 @@ const I18N = {
     etPlaceholder: '任意',
     predictBtn: '予測する',
     statTotalLabel: '収録楽曲', statMeasuredLabel: '確認済み', statUnmeasuredLabel: '未確認',
-    badgeMeasured: '確認済み', badgePredicted: '予測値', comboUnit: 'コンボから開始',
+    badgeMeasured: '確認済み', badgePredicted: '予測値', comboWord: 'コンボ', comboUnit: 'から開始',
     videoLabel: '参考動画', videoCoverNote: 'カバー曲は動画を提供していません。', videoPlay: '▶ クリックして再生',
     legendClear: 'クリア開始点', legendET: 'アンサンブルタイム区間',
     sidebarTypeTitle: '曲の属性', sidebarUnitTitle: 'Units', sidebarDurTitle: '曲の長さ',
@@ -1198,6 +1200,7 @@ function showResult(notes, etS, etE) {
   const displayVal = measuredValue !== null ? measuredValue : predictedValue;
   const badge = document.getElementById('resultBadge');
   document.getElementById('resultCombo').textContent = displayVal;
+  document.getElementById('comboWordLabel').textContent = t('comboWord');
   document.getElementById('comboUnitLabel').textContent = t('comboUnit');
   const pfx = document.getElementById('comboPrefixLabel');
   pfx.textContent = t('comboPrefix'); pfx.style.display = pfx.textContent ? 'inline' : 'none';

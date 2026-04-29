@@ -131,7 +131,8 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 /* Combo display */
 .combo-display { display: flex; align-items: baseline; justify-content: center; gap: 10px; padding: 20px 0 22px; }
 .combo-num { font-size: 52px; font-weight: 700; color: var(--navy); line-height: 1.1; font-family: 'Inter', sans-serif; }
-.combo-unit { font-size: 20px; font-weight: 600; color: var(--navy); opacity: 0.55; font-family: 'Inter', sans-serif; }
+.combo-word { font-size: 20px; font-weight: 600; color: var(--navy); font-family: 'Inter', sans-serif; }
+.combo-unit { font-size: 20px; font-weight: 600; color: var(--navy); opacity: 0.55; font-family: 'Inter', sans-serif; margin-left: 3px; }
 .combo-prefix { font-size: 20px; font-weight: 600; color: var(--navy); opacity: 0.55; font-family: inherit; display: none; }
 
 /* Video */
@@ -194,7 +195,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 .stat-item { text-align: center; padding: 4px 8px; }
 .stat-item + .stat-item { border-left: 0.5px solid var(--border-light); }
 .stat-val { font-size: 22px; font-weight: 700; color: var(--navy); font-family: 'Inter', sans-serif; }
-.stat-lbl { font-size: 10px; color: var(--text-muted); margin-top: 3px; }
+.stat-lbl { font-size: 12px; color: var(--text-sub); margin-top: 3px; }
 
 /* ═══════════════════════════════════
    탭2: 악곡 검색
@@ -332,6 +333,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
   .input-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: repeat(3,1fr); gap: 8px; }
   .combo-num { font-size: 40px; }
+  .combo-word { font-size: 16px; }
   .combo-unit { font-size: 16px; }
   .result-song-title { font-size: 14px; }
   .sidebar { display: none; }
@@ -433,7 +435,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
       <div class="combo-display">
         <span class="combo-prefix" id="comboPrefixLabel"></span>
         <span class="combo-num" id="resultCombo">—</span>
-        <span class="combo-unit" id="comboUnitLabel">combo</span>
+        <span><span class="combo-word" id="comboWordLabel"></span><span class="combo-unit" id="comboUnitLabel">combo</span></span>
       </div>
 
       <div class="bar-section" id="barSection">
@@ -700,19 +702,19 @@ const I18N = {
   en: {
     navTitle: 'Easy Low-Effort Clear Calculator',
     navSub: 'Ensemble Stars!! Music · Easy',
-    tab1: 'Clear Prediction', tab2: 'Song Search', tab3: 'Guide',
-    cardLabel1: 'Clear Combo Prediction',
+    tab1: 'Clear Calculator', tab2: 'Song Search', tab3: 'Guide',
+    cardLabel1: 'Clear Combo Calculator',
     searchPlaceholder: 'Search songs or units...',
-    labelNotes: 'Total Notes', labelETStart: 'ET Start Combo', labelETEnd: 'ET End Combo',
+    labelNotes: 'Total Notes', labelETStart: 'Ensemble Time Start', labelETEnd: 'Ensemble Time End',
     notesPlaceholder: 'e.g. 161',
     etPlaceholder: 'Optional',
-    predictBtn: 'Predict',
+    predictBtn: 'Calculate',
     statTotalLabel: 'Total Songs', statMeasuredLabel: 'Measured', statUnmeasuredLabel: 'Unmeasured',
-    badgeMeasured: 'Measured', badgePredicted: 'Predicted', comboUnit: 'combo onwards',
+    badgeMeasured: 'Measured', badgePredicted: 'Predicted', comboWord: 'combo', comboUnit: ' onwards',
     videoLabel: 'Reference Video', videoCoverNote: 'Cover songs do not have a reference video.', videoPlay: '▶ Click to Play',
     legendClear: 'Clear start point', legendET: 'Ensemble Time range',
     sidebarTypeTitle: 'Song Type', sidebarUnitTitle: 'Units', sidebarDurTitle: 'Duration',
-    typeAll: 'All', unitReset: 'Clear all',
+    typeAll: 'Every Type', unitReset: 'Clear all',
     durAll: 'All', durShort: '~ 2:20', durMid1: '2:21 ~ 2:30', durMid2: '2:31 ~ 2:40', durLong: '2:41 ~',
     searchModeSong: 'Song Search', searchModeUnit: 'Unit Search',
     tableSearchPlaceholder: 'Search songs...',
@@ -758,12 +760,12 @@ const I18N = {
     tab1: 'クリア予測', tab2: '楽曲検索', tab3: 'ガイド',
     cardLabel1: 'クリアコンボ予測',
     searchPlaceholder: '楽曲名またはユニット検索...',
-    labelNotes: '総ノーツ数', labelETStart: 'ET開始コンボ', labelETEnd: 'ET終了コンボ',
+    labelNotes: '総ノーツ数', labelETStart: 'Ensemble Time 開始', labelETEnd: 'Ensemble Time 終了',
     notesPlaceholder: '例: 161',
     etPlaceholder: '任意',
     predictBtn: '予測する',
     statTotalLabel: '収録楽曲', statMeasuredLabel: '確認済み', statUnmeasuredLabel: '未確認',
-    badgeMeasured: '確認済み', badgePredicted: '予測値', comboUnit: 'コンボから開始',
+    badgeMeasured: '確認済み', badgePredicted: '予測値', comboWord: 'コンボ', comboUnit: 'から開始',
     videoLabel: '参考動画', videoCoverNote: 'カバー曲は動画を提供していません。', videoPlay: '▶ クリックして再生',
     legendClear: 'クリア開始点', legendET: 'アンサンブルタイム区間',
     sidebarTypeTitle: '曲の属性', sidebarUnitTitle: 'Units', sidebarDurTitle: '曲の長さ',
@@ -819,7 +821,8 @@ function normalize(str) {
 
 // 현재 언어 기준 표시 제목
 function getDisplayTitle(s) {
-  return s.title_ja;
+  if (currentLang === 'ja') return s.title_ja;
+  return s.title_en || s.title_en_reading || s.title_ja;
 }
 
 function getSubTitle(s) {
@@ -1076,6 +1079,8 @@ function renderDropdown(q) {
     (s.title_ja_reading && normalize(s.title_ja_reading).includes(nq)) ||
     (s.title_ko && normalize(s.title_ko).includes(nq)) ||
     (s.title_ko_reading && normalize(s.title_ko_reading).includes(nq)) ||
+    (s.title_en && normalize(s.title_en).includes(nq)) ||
+    (s.title_en_reading && normalize(s.title_en_reading).includes(nq)) ||
     s.units.some(u => normalize(u).includes(nq))
   ).slice(0, 12);
 
@@ -1090,7 +1095,7 @@ function renderDropdown(q) {
       : `<span class="dropdown-dot" style="background:#d1d5db"></span>`;
     const idx = SONGS.indexOf(s);
     const mainTitle = getDisplayTitle(s);
-    const subTitle = s.title_ko && s.title_ko !== s.title_ja ? s.title_ko : '';
+    const subTitle = currentLang === 'ja' && s.title_en && s.title_en !== s.title_ja ? s.title_en : '';
     return `<button class="dropdown-item" onclick="selectSong(${idx})">
       <div class="dropdown-item-title">${mainTitle}</div>
       ${subTitle ? `<div class="dropdown-item-sub">${subTitle}</div>` : ''}
@@ -1197,7 +1202,7 @@ function runPredict() {
 
 function showResult(notes, etS, etE) {
   if (currentSong) {
-    document.getElementById('resultTitle').textContent = currentSong.title_ja;
+    document.getElementById('resultTitle').textContent = getDisplayTitle(currentSong);
     const tc = TYPE_COLOR[currentSong.type] || TYPE_COLOR['All'];
     document.getElementById('resultMeta').innerHTML =
       `<span class="type-badge" style="background:${tc.bg};color:${tc.color};font-size:11px;padding:2px 7px;border-radius:4px;font-weight:600;margin-right:6px">${currentSong.type}</span>`
@@ -1210,6 +1215,7 @@ function showResult(notes, etS, etE) {
   const displayVal = measuredValue !== null ? measuredValue : predictedValue;
   const badge = document.getElementById('resultBadge');
   document.getElementById('resultCombo').textContent = displayVal;
+  document.getElementById('comboWordLabel').textContent = t('comboWord');
   document.getElementById('comboUnitLabel').textContent = t('comboUnit');
   const pfx = document.getElementById('comboPrefixLabel');
   pfx.textContent = t('comboPrefix'); pfx.style.display = pfx.textContent ? 'inline' : 'none';
@@ -1513,6 +1519,8 @@ function renderTable() {
         (s.title_ja_reading && normalize(s.title_ja_reading).includes(q)) ||
         (s.title_ko && normalize(s.title_ko).includes(q)) ||
         (s.title_ko_reading && normalize(s.title_ko_reading).includes(q)) ||
+        (s.title_en && normalize(s.title_en).includes(q)) ||
+        (s.title_en_reading && normalize(s.title_en_reading).includes(q)) ||
         s.units.some(u => normalize(u).includes(q));
       if (!match) return false;
     }
@@ -1555,9 +1563,8 @@ function renderTable() {
     const mainTitle = getDisplayTitle(s);
 
     if (window.innerWidth <= 600) {
-      const hasTitleKo = s.title_ko && s.title_ko !== s.title_ja;
-      const cardMainTitle = s.title_ja;
-      const cardSubTitle = hasTitleKo ? s.title_ko : null;
+      const cardMainTitle = getDisplayTitle(s);
+      const cardSubTitle = currentLang === 'ja' ? (s.title_en || null) : null;
       const videoBtn = (s.measured !== null && s.video)
         ? `<a class="song-card-video-btn" href="${s.video}" target="_blank">${videoIcon}</a>`
         : `<span class="song-card-no-video">—</span>`;
@@ -1661,6 +1668,8 @@ function goPage(p) {
         (s.title_ja_reading && normalize(s.title_ja_reading).includes(q)) ||
         (s.title_ko && normalize(s.title_ko).includes(q)) ||
         (s.title_ko_reading && normalize(s.title_ko_reading).includes(q)) ||
+        (s.title_en && normalize(s.title_en).includes(q)) ||
+        (s.title_en_reading && normalize(s.title_en_reading).includes(q)) ||
         s.units.some(u => normalize(u).includes(q));
       if (!match) return false;
     }

@@ -337,7 +337,16 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
   .combo-word { font-size: 16px; }
   .combo-unit { font-size: 16px; }
   .result-song-title { font-size: 14px; }
-  .sidebar { display: none; }
+  .sidebar {
+    padding: 12px 14px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .sidebar-hint { display: none; }
+  .sidebar-section { margin-bottom: 0; }
+  .sidebar-title { margin-bottom: 6px; font-size: 11px; }
 }
 </style>
 <script>

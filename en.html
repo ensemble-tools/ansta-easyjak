@@ -319,6 +319,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 .badge-warn { background: #fef3c7; color: #92400e; }
 .badge-new { background: #d1fae5; color: #065f46; }
 .badge-note { background: #ede9fe; color: #6d28d9; }
+.badge-wish { background: #fce4ec; color: #c2185b; }
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
@@ -767,11 +768,13 @@ const I18N = {
       { badge: 'INFO', cls: 'badge-info', text: '<b>Easy Jak</b>: A strategy where you clear a live on Easy difficulty by hitting only the minimum inputs needed to maintain voltage.' },
       { badge: 'NOTE', cls: 'badge-note', text: 'This app calculates with a small buffer so you can still clear even if you miss one note — because I often play one-handed while browsing or walking around.' },
       { badge: 'INFO', cls: 'badge-info', text: 'In the <b>Clear Prediction tab</b>, reference videos for songs marked <b>Measured</b> start 2 seconds before the clear point; songs marked <b>Predicted</b> start from the middle of the video.' },
+      { badge: 'INFO', cls: 'badge-info', text: 'In the <b>Clear Prediction tab</b>, reference videos are available for both [Measured·Predicted] songs. In the <b>Song Search tab</b>, video links are only provided for [Measured] songs.' },
+      { badge: 'INFO', cls: 'badge-info', text: 'The total song count shown in the <b>Clear Prediction tab</b> is the correct number. The <b>Song Search tab</b> shows one more because Dear World has two versions listed separately.' },
       { badge: 'INFO', cls: 'badge-info', text: 'In the <b>Song Search tab</b>, click any column header marked ↕ to sort.' },
+      { badge: 'INFO', cls: 'badge-info', text: 'In the <b>Song Search tab</b>, hover over a song title (PC) or tap it (mobile) to preview the album image.' },
       { badge: 'INFO', cls: 'badge-info', text: 'If you know a better clear point, feel free to leave a comment on the YouTube video.' },
-      { badge: 'NOTE', cls: 'badge-warn', text: 'This tool is for Easy clears only. Results may not apply to Auto, Hard, or other difficulties.' },
-      { badge: 'INFO', cls: 'badge-info', text: 'New songs without Ensemble Time (ET) data use a simpler model, which may have higher error.' },
-      { badge: 'NOTE', cls: 'badge-warn', text: 'Predictions are based on a statistical model and may differ from actual clear combos. Use as reference only.' },
+      { badge: 'NOTE', cls: 'badge-note', text: 'Feel free to share or promote this on other sites.' },
+      { badge: 'Wish', cls: 'badge-wish', text: 'auto plz' },
     ],
   },
   ja: {
@@ -823,11 +826,13 @@ const I18N = {
       { badge: 'INFO', cls: 'badge-info', text: '<b>イージー作</b>: Easy難易度で最低限の入力でボルテージを維持しライブをクリアする方法。' },
       { badge: 'NOTE', cls: 'badge-note', text: 'ここではノート1個を見逃してもクリアできるよう余裕を持って計算しています。私の場合、片手でリズムゲームを操作しながらネットサーフィンしたり、歩きながらプレイすることが多くノートを見逃しやすいためです。' },
       { badge: 'INFO', cls: 'badge-info', text: '<b>クリア予測タブ</b>の参考動画は、<b>確認済み</b>表示がある楽曲はクリア地点の2秒前から、<b>予測値</b>表示がある楽曲は動画の中間から再生されます。' },
+      { badge: 'INFO', cls: 'badge-info', text: '<b>クリア予測タブ</b>では[確認済み・予測値]の楽曲すべてで参考動画を見ることができ、<b>楽曲検索タブ</b>では[確認済み]の楽曲のみ動画リンクが提供されます。' },
+      { badge: 'INFO', cls: 'badge-info', text: '総楽曲数は<b>クリア予測タブ</b>の表示が正しい数です。<b>楽曲検索タブ</b>はDear Worldが2バージョンで登録されているため、1曲多く表示されます。' },
       { badge: 'INFO', cls: 'badge-info', text: '<b>楽曲検索タブ</b>で↕マークがあるヘッダーをクリックするとソートできます。' },
+      { badge: 'INFO', cls: 'badge-info', text: '<b>楽曲検索タブ</b>で曲タイトルにマウスを乗せる(PC)またはタップする(モバイル)と、アルバム画像を表示できます。' },
       { badge: 'INFO', cls: 'badge-info', text: 'より良いクリア地点をご存知でしたら、YouTubeのコメント欄に残してください。' },
-      { badge: '注意', cls: 'badge-warn', text: 'このツールはEasyクリア基準です。オート・ハード等には適用できません。' },
-      { badge: 'INFO', cls: 'badge-info', text: 'ET情報がない新曲は単純回帰モデル（ノーツ数のみ）を使用するため、誤差が大きくなる可能性があります。' },
-      { badge: '注意', cls: 'badge-warn', text: '予測値は統計モデルに基づくため、実際のクリアコンボと異なる場合があります。参考としてご利用ください。' },
+      { badge: 'NOTE', cls: 'badge-note', text: '他サイトでの宣伝歓迎です。' },
+      { badge: 'Wish', cls: 'badge-wish', text: 'オート機能ほしい' },
     ],
   }
 };

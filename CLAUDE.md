@@ -12,12 +12,11 @@
 | 파일 | 규칙 |
 |---|---|
 | `index.html` | **수정 가능** — 기본 작업 대상 |
-| `en.html` | **명시적 지시가 있을 때만 수정** |
+| `en.html` | **`index.html` 수정 시 항상 함께 수정** |
 | `songs.js` | `enstars_regression_v3.py`로 자동 생성 — 직접 수정 비권장 |
 | `dev_notes.txt` |**명시적 지시가 있을 때만 수정** |
 
-> 코드 변경 요청이 오면 `index.html`만 수정한다.  
-> `en.html` 수정은 사용자가 "en.html도 수정해줘" 라고 명시할 때만 한다.
+> 코드 변경 요청이 오면 `index.html`과 `en.html`을 **항상 함께** 수정한다.
 >  title_en, title_en_reading은 데이터 파이프라인(py → songs.js,     
   csv)에만 반영하고, index.html에 영문 UI 작업은 명시적 지시가 있을 때만 작업한다.
 > `dev_notes.txt` 수정은 터미널에서 나눈 코드 수정 내역(수정 발생 날짜, 문제점, 원인, 해결)을 
@@ -36,7 +35,7 @@
 easyjak/
 ├── CLAUDE.md                  # 이 파일
 ├── index.html                 # 메인 프론트엔드 (한국어)
-├── en.html                    # 영문 버전 (명시적 지시 시에만 수정)
+├── en.html                    # 영문 버전 (index.html 수정 시 항상 함께 수정)
 ├── songs.js                   # 자동 생성 데이터 (직접 수정 비권장)
 ├── enstars_regression_v3.py   # 회귀 모델 + songs.js 생성 스크립트
 └── data/

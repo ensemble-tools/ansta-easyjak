@@ -1104,10 +1104,8 @@ function renderDropdown(q) {
       : `<span class="dropdown-dot" style="background:#d1d5db"></span>`;
     const idx = SONGS.indexOf(s);
     const mainTitle = getDisplayTitle(s);
-    const subTitle = currentLang === 'ja' && s.title_en && s.title_en !== s.title_ja ? s.title_en : '';
     return `<button class="dropdown-item" onclick="selectSong(${idx})">
       <div class="dropdown-item-title">${mainTitle}</div>
-      ${subTitle ? `<div class="dropdown-item-sub">${subTitle}</div>` : ''}
       <div class="dropdown-item-meta">
         <span>${dot}${getUnitName(s.unit)}</span><span>·</span>
         <span><span style="background:${c.bg};color:${c.color};padding:1px 5px;border-radius:4px;font-size:10px">${s.type}</span></span>

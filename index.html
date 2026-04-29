@@ -322,6 +322,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .badge-wish { background: #fce4ec; color: #c2185b; }
 
 /* ── Responsive ── */
+.dur-sort-mobile { display: none; }
 @media (max-width: 768px) {
   .songs-layout { grid-template-columns: 1fr; }
   .sidebar { position: static; }
@@ -352,7 +353,6 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
   .lang-ja .nav-title { font-size: 17px; }
   .dur-sort-mobile { display: flex; gap: 6px; margin-top: 6px; }
 }
-.dur-sort-mobile { display: none; }
 </style>
 <script>
   if ('serviceWorker' in navigator) {

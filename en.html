@@ -328,7 +328,8 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
   .stat-val { font-size: 18px; }
 }
 @media (max-width: 600px) {
-  .nav-inner { padding: 0 16px; }
+  .nav-inner { padding: 0 8px; }
+  .nav-tab { padding: 6px 10px; font-size: 12px; }
   .page { padding: 16px 16px 48px; }
   .input-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: repeat(3,1fr); gap: 8px; }
@@ -1100,7 +1101,7 @@ function renderDropdown(q) {
       <div class="dropdown-item-title">${mainTitle}</div>
       ${subTitle ? `<div class="dropdown-item-sub">${subTitle}</div>` : ''}
       <div class="dropdown-item-meta">
-        <span>${dot}${s.unit}</span><span>·</span>
+        <span>${dot}${getUnitName(s.unit)}</span><span>·</span>
         <span><span style="background:${c.bg};color:${c.color};padding:1px 5px;border-radius:4px;font-size:10px">${s.type}</span></span>
         <span>·</span><span>${s.totalNotes}</span>
       </div>

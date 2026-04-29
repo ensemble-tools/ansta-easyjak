@@ -76,7 +76,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 
 /* ── Cards ── */
 .card { background: var(--white); border-radius: 14px; border: 0.5px solid var(--border); box-shadow: var(--shadow); padding: 24px; }
-.card-label { font-size: 13px; font-weight: 600; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 14px; }
+.card-label { font-size: 15px; font-weight: 600; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 17px; }
 
 /* ── Search ── */
 .search-wrap { position: relative; margin-bottom: 16px; }
@@ -222,11 +222,11 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .unit-child { display: flex; align-items: center; gap: 6px; padding: 5px 4px; border-radius: 5px; transition: background .15s; cursor: pointer; }
 .unit-child:hover { background: var(--bg); }
 .unit-child input[type=checkbox] { width: 13px; height: 13px; cursor: pointer; accent-color: var(--navy); }
-.unit-child-label { font-size: 12px; color: var(--text-sub); cursor: pointer; }
+.unit-child-label { font-size: 12px; color: var(--text-main); cursor: pointer; }
 .unit-subgroup-label { font-size: 11px; font-weight: 600; color: var(--text-muted); padding: 6px 4px 2px 4px; text-transform: uppercase; letter-spacing: 0.04em; }
 .unit-subgroup-label:not(:first-child) { margin-top: 4px; border-top: 1px solid var(--border); padding-top: 8px; }
 .dur-chips { display: flex; flex-wrap: wrap; gap: 6px; }
-.dur-chip { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; border: 1.5px solid var(--border); background: var(--input-bg); color: var(--text-sub); cursor: pointer; transition: all .15s; font-family: inherit; }
+.dur-chip { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; border: 1.5px solid var(--border); background: var(--input-bg); color: var(--text-main); cursor: pointer; transition: all .15s; font-family: inherit; }
 .dur-chip.active { background: var(--navy); color: white; border-color: var(--navy); }
 .table-panel { background: var(--white); border-radius: 14px; border: 0.5px solid var(--border); box-shadow: var(--shadow); overflow: hidden; }
 .table-search-bar { border-bottom: 1px solid var(--border-light); display: flex; flex-direction: column; }
@@ -236,7 +236,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .unit-filter-panel { padding: 2px 20px 12px; }
 .unit-filter-inner { display: flex; flex-wrap: wrap; gap: 2px 8px; align-items: center; }
 .unit-filter-sep { width: 100%; height: 0; border-top: 1px solid var(--border-light); margin: 6px 0; }
-.unit-filter-item { display: flex; align-items: center; gap: 5px; padding: 3px 6px; border-radius: 5px; cursor: pointer; font-size: 12px; color: var(--text-sub); transition: background .15s; user-select: none; }
+.unit-filter-item { display: flex; align-items: center; gap: 5px; padding: 3px 6px; border-radius: 5px; cursor: pointer; font-size: 12px; color: var(--text-main); transition: background .15s; user-select: none; }
 .unit-filter-item:hover { background: var(--bg); }
 .unit-filter-item input[type=checkbox] { width: 13px; height: 13px; cursor: pointer; accent-color: var(--navy); flex-shrink: 0; }
 .unit-filter-reset-row { display: flex; justify-content: flex-end; margin-top: 6px; }
@@ -248,9 +248,9 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .table-hint { font-size: 11px; color: var(--text-sub); font-weight: 500; white-space: nowrap; margin-left: auto; }
 .songs-table { width: 100%; border-collapse: collapse; table-layout: fixed; min-width: 620px; }
 .songs-table thead tr { border-bottom: 2px solid var(--border); }
-.songs-table th { padding: 12px 12px; font-size: 11px; font-weight: 600; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.5px; text-align: left; background: var(--bg); white-space: nowrap; }
+.songs-table th { padding: 12px 12px; font-size: 12px; font-weight: 600; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.5px; text-align: left; background: var(--bg); white-space: nowrap; }
 .songs-table th:nth-child(1) { width: 112px; }
-.songs-table th:nth-child(2) { width: 165px; }
+.songs-table th:nth-child(2) { width: 157px; }
 .songs-table th:nth-child(3) { width: auto; }
 .songs-table th:nth-child(4) { width: 84px; text-align: center; }
 .songs-table th:nth-child(5) { width: 108px; text-align: center; }
@@ -262,11 +262,11 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .songs-table td { padding: 10px 12px; font-size: 13px; border-bottom: 0.5px solid var(--border-light); vertical-align: middle; overflow: hidden; text-overflow: ellipsis; }
 .songs-table tr:last-child td { border-bottom: none; }
 .songs-table tbody tr:hover td { background: var(--bg); }
-.col-unit { font-size: 12px; color: var(--text-sub); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.col-unit { font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .col-title { font-weight: 500; }
 .col-title-sub { font-size: 11px; color: var(--text-muted); margin-top: 2px; font-weight: 400; }
 .col-num { font-family: 'Inter', monospace; text-align: center; }
-.col-dur { font-family: 'Inter', monospace; color: var(--text-sub); text-align: center; }
+.col-dur { font-family: 'Inter', monospace; text-align: center; }
 .col-video { text-align: center; }
 .paging-bar { display: flex; align-items: center; justify-content: center; gap: 4px; padding: 12px 20px; border-top: 0.5px solid var(--border-light); }
 .pg-btn { min-width: 32px; height: 32px; padding: 0 6px; border-radius: 7px; border: 1px solid var(--border); background: var(--white); color: var(--text-sub); font-size: 13px; font-weight: 500; cursor: pointer; transition: all .15s; font-family: inherit; }
@@ -310,9 +310,9 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .contact-email { font-weight: 600; color: var(--navy); font-size: 13px; }
 .download-btn { display: inline-block; padding: 8px 20px; background: var(--navy); color: #fff; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 600; margin-bottom: 14px; }
 .download-btn:hover { opacity: 0.85; }
-.install-steps { padding-left: 18px; font-size: 13px; line-height: 1.9; color: var(--text-sub); }
+.install-steps { padding-left: 18px; font-size: 13px; line-height: 1.9; color: var(--text-main); }
 .notice-list { list-style: none; }
-.notice-list li { padding: 10px 0; border-bottom: 0.5px solid var(--border-light); font-size: 13px; color: var(--text-sub); display: flex; gap: 15px; align-items: flex-start; line-height: 1.6; }
+.notice-list li { padding: 10px 0; border-bottom: 0.5px solid var(--border-light); font-size: 14px; color: var(--text-main); display: flex; gap: 15px; align-items: flex-start; line-height: 1.6; }
 .notice-list li:last-child { border-bottom: none; }
 .notice-badge { flex-shrink: 0; width: 47px; font-size: 10px; font-weight: 700; padding: 2px 0; border-radius: 4px; margin-top: 1px; text-align: center; }
 .badge-info { background: var(--navy-pale); color: var(--navy); }
@@ -419,7 +419,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 
       <div class="input-grid">
         <div class="input-group">
-          <label><span data-i18n="labelNotes">총 노트수</span> <span>*</span></label>
+          <label><strong><span data-i18n="labelNotes">총 노트수</span> <span>*</span></strong></label>
           <input class="num-input" id="inputNotes" type="number" placeholder="예: 161" data-i18n-placeholder="notesPlaceholder" min="80" max="300"
             oninput="onNotesManualEdit()">
         </div>
@@ -923,7 +923,7 @@ const CATEGORY_LABEL = {
 const UNIT_CATEGORY = {
   'fine': 'starmaker', 'Trickstar': 'starmaker', '유성대': 'starmaker', 'ALKALOID': 'starmaker',
   'Eden': 'cosmic', 'Adam': 'cosmic', 'Eve': 'cosmic', 'Valkyrie': 'cosmic', 'Crazy:B': 'cosmic', '2wink': 'cosmic',
-  'UNDEAD': 'rhythm_link', '홍월': 'rhythm_link', 'Ra*bits': 'rhythm_link', 'MELLOW DEAR US': 'rhythm_link',
+  'UNDEAD': 'rhythm_link', '홍월': 'rhythm_link', 'Ra*bits': 'rhythm_link', 'MDU': 'rhythm_link',
   'Knights': 'new_dimension', 'Switch': 'new_dimension', 'MaM': 'new_dimension', 'DF': 'new_dimension', 'S-Pri': 'new_dimension',
   '주년': 'others', '만우절': 'others', '새해': 'others',
   '셔플': 'others', '셔플_10주년': 'others',
@@ -1415,7 +1415,7 @@ function buildUnitFilterPanel() {
       { label:'UNDEAD',        unit:'UNDEAD' },
       { label:'Ra*bits',       unit:'Ra*bits' },
       { label:'홍월',           unit:'홍월' },
-      { label:'MELLOW DEAR US',unit:'MELLOW DEAR US' },
+      { label:'MDU',unit:'MDU' },
     ],
     [
       { label:'Knights',       unit:'Knights' },

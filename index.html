@@ -184,7 +184,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .song-card-stats { display: flex; border-top: 1px solid var(--border); margin-top: 12px; padding-top: 10px; }
 .song-card-stat { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 2px 0; }
 .song-card-stat:not(:last-child) { border-right: 1px solid var(--border); }
-.song-card-stat-label { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+.song-card-stat-label { font-size: 11px; color: var(--text-main); font-weight: 500; }
 .song-card-stat-val { font-size: 15px; color: var(--text-main); font-family: 'Inter', monospace; font-weight: 500; }
 .legend-item { display: flex; align-items: center; gap: 5px; font-size: 12px; color: var(--text-sub); font-weight: 500; }
 .legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
@@ -296,7 +296,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .info-card { background: var(--white); border-radius: 14px; border: 0.5px solid var(--border); box-shadow: var(--shadow); padding: 24px; }
 .info-card.full { grid-column: 1/-1; }
-.info-card-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.info-card-title { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
 .info-card-icon { width: 20px; height: 20px; color: var(--navy); opacity: 0.7; flex-shrink: 0; }
 .info-text { font-size: 13px; color: var(--text-sub); line-height: 1.75; }
 .info-text strong { color: var(--text-main); font-weight: 600; }
@@ -312,7 +312,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .download-btn:hover { opacity: 0.85; }
 .install-steps { padding-left: 18px; font-size: 13px; line-height: 1.9; color: var(--text-main); }
 .notice-list { list-style: none; }
-.notice-list li { padding: 10px 0; border-bottom: 0.5px solid var(--border-light); font-size: 14px; color: var(--text-main); display: flex; gap: 15px; align-items: flex-start; line-height: 1.6; }
+.notice-list li { padding: 10px 0; border-bottom: 1px solid #e8eaf0; font-size: 14px; color: var(--text-main); display: flex; gap: 15px; align-items: flex-start; line-height: 1.6; }
 .notice-list li:last-child { border-bottom: none; }
 .notice-badge { flex-shrink: 0; width: 47px; font-size: 10px; font-weight: 700; padding: 2px 0; border-radius: 4px; margin-top: 1px; text-align: center; }
 .badge-info { background: var(--navy-pale); color: var(--navy); }
@@ -654,12 +654,12 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
         </div>
         <div class="info-text">
           <div style="margin-bottom:18px;">
-            <p style="margin-bottom:10px;"><strong data-i18n="homeAndroid">Android (크롬)</strong></p>
+            <p style="margin-bottom:10px; font-size:15px;">• <strong data-i18n="homeAndroid">Android (크롬)</strong></p>
             <button id="btnInstallAndroid" onclick="triggerInstall()" class="download-btn" style="display:none;" data-i18n="homeAndroidBtn">설치하기</button>
-            <p style="font-size:12px; color:var(--text-muted); margin-top:8px;" data-i18n-html="homeAndroidHint">버튼이 없으면 크롬 메뉴(⋮) → <strong>Chrome에서 바로가기 만들기</strong>를 선택해 주세요.</p>
+            <p style="font-size:12px; color:var(--text-main); margin-top:8px;" data-i18n-html="homeAndroidHint">버튼이 없으면 크롬 메뉴(⋮) → <strong>Chrome에서 바로가기 만들기</strong>를 선택해 주세요.</p>
           </div>
           <div>
-            <p style="margin-bottom:8px;"><strong data-i18n="homeIos">iPhone (Safari)</strong></p>
+            <p style="margin-bottom:8px; font-size:15px;">• <strong data-i18n="homeIos">iPhone (Safari)</strong></p>
             <ol class="install-steps">
               <li data-i18n-html="homeIosStep1">Safari 하단 <strong>공유 버튼(□↑)</strong> 탭</li>
               <li data-i18n-html="homeIosStep2"><strong>홈 화면에 추가</strong> 선택</li>
@@ -766,7 +766,7 @@ const I18N = {
     langToggle: '日本語',
     notices: [
       { badge: 'INFO', cls: 'badge-info', text: '<b>이지작</b>: 이지(Easy) 난이도에서 최소한의 입력으로 볼티지를 유지해 라이브를 클리어하는 방법.' },
-      { badge: 'NOTE', cls: 'badge-note', text: '여기서는 노트 1개를 놓쳐도 클리어가 가능하도록 여유를 두고 계산합니다. 저같은 경우 한손으론 리듬 게임 치고 다른 손으론 인터넷을 하거나 걸어다니면서 플레이하는 경우가 많아 노트 놓치는 일이 많기 때문입니다.' },
+      { badge: 'NOTE', cls: 'badge-note', text: '여기서는 노트 1개를 놓쳐도 클리어가 가능하도록 여유분을 두고 계산합니다.' },
       { badge: 'INFO', cls: 'badge-info', text: '<b>클리어 계산 탭</b>의 참고 영상은 <b>확인함</b> 표시가 있는 곡은 클리어 지점 2초 전부터, <b>예측</b> 표시가 있는 곡은 영상 중간부터 시작됩니다.' },
       { badge: 'INFO', cls: 'badge-info', text: '<b>클리어 계산 탭</b>에서는 [확인함/예측] 곡 모두 참고 영상을 볼 수 있고, <b>악곡 검색 탭</b>에서는 [확인함] 곡만 영상 링크가 제공됩니다.' },
       { badge: 'INFO', cls: 'badge-info', text: '전체 수록곡 수는 <b>클리어 계산 탭</b> 기준이 맞습니다. <b>악곡 검색 탭</b>은 Dear World가 두 버전으로 등록되어 1곡 더 많이 표시됩니다.' },
@@ -824,7 +824,7 @@ const I18N = {
     langToggle: '한국어',
     notices: [
       { badge: 'INFO', cls: 'badge-info', text: '<b>イージー作</b>: Easy難易度で最低限の入力でボルテージを維持しライブをクリアする方法。' },
-      { badge: 'NOTE', cls: 'badge-note', text: 'ここではノート1個を見逃してもクリアできるよう余裕を持って計算しています。私の場合、片手でリズムゲームを操作しながらネットサーフィンしたり、歩きながらプレイすることが多くノートを見逃しやすいためです。' },
+      { badge: 'NOTE', cls: 'badge-note', text: 'ここではノート1個を見逃してもクリアできるよう余裕分を設けて計算しています。' },
       { badge: 'INFO', cls: 'badge-info', text: '<b>クリア予測タブ</b>の参考動画は、<b>確認済み</b>表示がある楽曲はクリア地点の2秒前から、<b>予測値</b>表示がある楽曲は動画の中間から再生されます。' },
       { badge: 'INFO', cls: 'badge-info', text: '<b>クリア予測タブ</b>では[確認済み/予測値]の楽曲すべてで参考動画を見ることができ、<b>楽曲検索タブ</b>では[確認済み]の楽曲のみ動画リンクが提供されます。' },
       { badge: 'INFO', cls: 'badge-info', text: '総楽曲数は<b>クリア予測タブ</b>の表示が正しい数です。<b>楽曲検索タブ</b>はDear Worldが2バージョンで登録されているため、1曲多く表示されます。' },

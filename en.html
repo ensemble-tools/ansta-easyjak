@@ -77,6 +77,10 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 /* ── Cards ── */
 .card { background: var(--white); border-radius: 14px; border: 0.5px solid var(--border); box-shadow: var(--shadow); padding: 24px; }
 .card-label { font-size: 15px; font-weight: 600; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 17px; }
+.card-label-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 17px; }
+.card-label-row .card-label { margin-bottom: 0; }
+.reset-btn { background: none; border: none; cursor: pointer; padding: 2px; color: var(--text-sub); opacity: 0.85; transition: opacity .15s; line-height: 0; }
+.reset-btn:hover { opacity: 1; }
 
 /* ── Search ── */
 .search-wrap { position: relative; margin-bottom: 16px; }
@@ -400,7 +404,12 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
     </div>
 
     <div class="card">
-      <div class="card-label" data-i18n="cardLabel1">클리어 콤보 시작점 예측</div>
+      <div class="card-label-row">
+        <div class="card-label" data-i18n="cardLabel1">클리어 콤보 시작점 예측</div>
+        <button class="reset-btn" onclick="resetTab1()" title="Reset">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.95"/></svg>
+        </button>
+      </div>
 
       <div class="search-wrap" id="searchWrap">
         <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -575,6 +584,9 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
                 </svg>
               </button>
             </div>
+            <button class="reset-btn" onclick="resetTab2()" title="Reset" style="flex-shrink:0;padding:4px 6px">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.95"/></svg>
+            </button>
           </div>
           <div class="unit-filter-panel" id="unitFilterPanel" style="display:none"></div>
         </div>
@@ -1073,6 +1085,33 @@ function switchTab(name, el) {
   document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('tab-'+name).classList.add('active');
   el.classList.add('active');
+}
+
+function resetTab1() {
+  currentSong = null; currentVideoUrl = null; measuredValue = null; predictedValue = null;
+  document.getElementById('searchInput').value = '';
+  document.getElementById('searchClear').classList.remove('visible');
+  document.getElementById('dropdown').classList.remove('open');
+  document.getElementById('inputNotes').value = '';
+  document.getElementById('inputETStart').value = '';
+  document.getElementById('inputETEnd').value = '';
+  setETDisabled(false);
+  clearPredictError();
+  document.getElementById('resultCard').classList.remove('visible');
+  document.getElementById('videoSection').style.display = 'none';
+  document.getElementById('videoThumbWrap').innerHTML = '';
+}
+
+function resetTab2() {
+  activeType = null; activeUnits = null; activeDur = 'all'; sortKey = null; sortDir = 1; currentPage = 1;
+  document.getElementById('tableSearch').value = '';
+  document.getElementById('tableSearchClear').classList.remove('visible');
+  buildTypeChips();
+  resetUnits();
+  const durAllBtn = document.querySelector('#durChips .dur-chip');
+  if (durAllBtn) { document.querySelectorAll('.dur-chip').forEach(c=>c.classList.remove('active')); durAllBtn.classList.add('active'); }
+  document.querySelectorAll('.sort-icon').forEach(el => el.textContent = '↕');
+  renderTable();
 }
 
 function onNotesManualEdit() {

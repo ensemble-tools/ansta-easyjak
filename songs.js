@@ -1,5 +1,5 @@
 // songs.js — Voltage Predictor 곡 데이터 & 모델 파라미터
-// 총 306곡 | R²=0.9713 | MAE=2.56콤보
+// 총 307곡 | R²=0.9714 | MAE=2.55콤보
 // ※ enstars_regression_v3.py 로 자동 생성 — 직접 수정 비권장
 
 const SONGS = [
@@ -1851,7 +1851,7 @@ const SONGS = [
     "category": "cosmic",
     "video": "https://youtu.be/nhGPOGdozZU",
     "videoClear": "https://youtu.be/nhGPOGdozZU?t=79",
-    "predicted": 116
+    "predicted": 117
   },
   {
     "type": "Flash",
@@ -2608,10 +2608,10 @@ const SONGS = [
     "duration": "2:31",
     "etStart": 51,
     "etEnd": 80,
-    "measured": null,
+    "measured": 98,
     "category": "cosmic",
     "video": "https://youtu.be/ERPrve2gwcQ",
-    "videoClear": "https://youtu.be/ERPrve2gwcQ?t=75",
+    "videoClear": "https://youtu.be/ERPrve2gwcQ?t=76",
     "predicted": 98
   },
   {
@@ -2798,6 +2798,30 @@ const SONGS = [
     "video": "https://youtu.be/rbswb1AtcMI",
     "videoClear": "https://youtu.be/rbswb1AtcMI?t=75",
     "predicted": 106
+  },
+  {
+    "type": "Flash",
+    "unit": "Crazy:B / 홍월",
+    "units": [
+      "Crazy:B",
+      "홍월"
+    ],
+    "unitGroup": "Crazy:B",
+    "title_ja": "CIVIL WAR",
+    "title_ja_reading": "しびるうぉー",
+    "title_ko": "CIVIL WAR",
+    "title_ko_reading": "시빌 워",
+    "title_en": "CIVIL WAR",
+    "title_en_reading": null,
+    "totalNotes": 177,
+    "duration": "2:38",
+    "etStart": 131,
+    "etEnd": 172,
+    "measured": null,
+    "category": "cosmic",
+    "video": "https://youtu.be/uh5AJBjyjZo",
+    "videoClear": "https://youtu.be/uh5AJBjyjZo?t=79",
+    "predicted": 98
   },
   {
     "type": "Sparkle",
@@ -4272,7 +4296,7 @@ const SONGS = [
     "category": "rhythm_link",
     "video": "https://youtu.be/-gtAqdLXUnA?si=usSk2BkRptKbsvGo",
     "videoClear": "https://youtu.be/-gtAqdLXUnA?t=89",
-    "predicted": 108
+    "predicted": 109
   },
   {
     "type": "Sparkle",
@@ -6917,7 +6941,7 @@ const SONGS = [
     "category": "others",
     "video": "https://youtu.be/pWZPZgVbcMM?si=zpI52u1HqwFY4zgr",
     "videoClear": "https://youtu.be/pWZPZgVbcMM?t=72",
-    "predicted": 135
+    "predicted": 136
   },
   {
     "type": "Sparkle",
@@ -7060,18 +7084,18 @@ const SONGS = [
 ];
 
 const MODEL_PARAMS = {
-  "intercept": -2.9603461226720924,
+  "intercept": -2.9619337613935244,
   "coefs": [
-    0.5334800738981511,
-    -1.6155304918556235,
-    8.031732218472609
+    0.5335151110479249,
+    -1.6258561157219176,
+    8.036164007717627
   ],
-  "simpleCoef": 0.5279123184273745,
-  "simpleInt": 2.4314955271436105,
+  "simpleCoef": 0.5278328289963641,
+  "simpleInt": 2.4388816417331185,
   "safetyMargin": 10,
-  "meanEtStart": 0.4891349169691246,
-  "meanEtEnd": 0.6552762272539079,
-  "trainSize": 180,
-  "r2": 0.9713472655435669,
-  "mae": 2.5637551557373506
+  "meanEtStart": 0.48788967204380523,
+  "meanEtEnd": 0.6539855896366975,
+  "trainSize": 181,
+  "r2": 0.9713791399688314,
+  "mae": 2.5509977401476687
 };

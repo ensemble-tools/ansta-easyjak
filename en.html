@@ -124,7 +124,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 .result-song-title { font-size: 16px; font-weight: 700; color: var(--navy); }
 .result-song-meta { font-size: 12px; color: var(--text-main); margin-bottom: 16px; }
 
-.result-mode-badge { display: inline-block; padding: 6px 16px; border-radius: 10px; font-size: 14px; font-weight: 700; min-width: 80px; text-align: center; }
+.result-mode-badge { display: inline-block; padding: 6px 16px; border-radius: 10px; font-size: 14px; font-weight: 700; min-width: 80px; text-align: center; flex-shrink: 0; }
 .result-mode-badge.measured { background: #d1fae5; color: #065f46; }
 .result-mode-badge.predicted { background: var(--navy-pale); color: var(--navy); }
 
@@ -440,7 +440,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
     <!-- 결과 카드 -->
     <div class="card result-card" id="resultCard">
       <div class="result-header">
-        <div>
+        <div style="flex:1;min-width:0">
           <div class="result-song-title" id="resultTitle">—</div>
         </div>
         <div id="resultBadge" class="result-mode-badge measured" style="display:none"></div>
@@ -773,7 +773,7 @@ const I18N = {
       { badge: 'INFO', cls: 'badge-info', text: 'In the <b>Song Search tab</b>, hover over a song title (PC) or tap the title (mobile) to preview the album image.' },
       { badge: 'INFO', cls: 'badge-info', text: 'YouTube comments are highly encouraged. If you know a better clear point, please leave a comment.' },
       { badge: 'NOTE', cls: 'badge-note', text: 'Feel free to share or promote this on other sites.' },
-      { badge: 'Wish', cls: 'badge-wish', text: 'auto plz' },
+      { badge: 'WISH', cls: 'badge-wish', text: 'auto plz' },
     ],
   },
   ja: {
@@ -830,7 +830,7 @@ const I18N = {
       { badge: 'INFO', cls: 'badge-info', text: '<b>楽曲検索タブ</b>で曲タイトルにマウスを乗せる(PC)またはタイトルをタップする(モバイル)と、アルバム画像を表示できます。' },
       { badge: 'INFO', cls: 'badge-info', text: 'YouTubeのコメント欄の活用を強くお勧めします。より良いクリア地点をご存知でしたら、コメントで残してください。' },
       { badge: 'NOTE', cls: 'badge-note', text: '他サイトでの宣伝歓迎です。' },
-      { badge: 'Wish', cls: 'badge-wish', text: 'オート機能ほしい' },
+      { badge: 'WISH', cls: 'badge-wish', text: 'オート機能ほしい' },
     ],
   }
 };
@@ -1231,7 +1231,7 @@ function showResult(notes, etS, etE) {
     const tc = TYPE_COLOR[currentSong.type] || TYPE_COLOR['All'];
     document.getElementById('resultMeta').innerHTML =
       `<span class="type-badge" style="background:${tc.bg};color:${tc.color};font-size:11px;padding:2px 7px;border-radius:4px;font-weight:600;margin-right:6px">${currentSong.type}</span>`
-      + `<span style="font-size:12px;color:var(--text-main)">${currentSong.unit}</span>`;
+      + `<span style="font-size:12px;color:var(--text-main)">${getUnitName(currentSong.unit)}</span>`;
   } else {
     document.getElementById('resultTitle').textContent = t('directInput');
     document.getElementById('resultMeta').textContent = etS ? `Ensemble Time: ${etS}–${etE}` : '';

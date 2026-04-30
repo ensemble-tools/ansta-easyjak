@@ -124,7 +124,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .result-song-title { font-size: 16px; font-weight: 700; color: var(--navy); }
 .result-song-meta { font-size: 12px; color: var(--text-main); margin-bottom: 16px; }
 
-.result-mode-badge { display: inline-block; padding: 6px 16px; border-radius: 10px; font-size: 14px; font-weight: 700; min-width: 80px; text-align: center; }
+.result-mode-badge { display: inline-block; padding: 6px 16px; border-radius: 10px; font-size: 14px; font-weight: 700; min-width: 80px; text-align: center; flex-shrink: 0; }
 .result-mode-badge.measured { background: #d1fae5; color: #065f46; }
 .result-mode-badge.predicted { background: var(--navy-pale); color: var(--navy); }
 
@@ -440,7 +440,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
     <!-- 결과 카드 -->
     <div class="card result-card" id="resultCard">
       <div class="result-header">
-        <div>
+        <div style="flex:1;min-width:0">
           <div class="result-song-title" id="resultTitle">—</div>
         </div>
         <div id="resultBadge" class="result-mode-badge measured" style="display:none"></div>
@@ -773,7 +773,7 @@ const I18N = {
       { badge: 'INFO', cls: 'badge-info', text: '<b>악곡 검색 탭</b>에서 곡 제목에 마우스를 올리거나(PC) 제목을 터치하면(모바일) 앨범 이미지를 볼 수 있습니다.' },
       { badge: 'INFO', cls: 'badge-info', text: '유튜브 댓글 사용 적극 권장합니다. 더 좋은 클리어 지점이 있다면 댓글로 남겨주세요.' },
       { badge: 'NOTE', cls: 'badge-note', text: '🩷 타 사이트에 홍보 환영 🩷' },
-      { badge: 'Wish', cls: 'badge-wish', text: '오토 내놔' },
+      { badge: 'WISH', cls: 'badge-wish', text: '오토 내놔' },
     ],
   },
   ja: {
@@ -830,7 +830,7 @@ const I18N = {
       { badge: 'INFO', cls: 'badge-info', text: '<b>楽曲検索タブ</b>で曲タイトルにマウスを乗せる(PC)またはタイトルをタップする(モバイル)と、アルバム画像を表示できます。' },
       { badge: 'INFO', cls: 'badge-info', text: 'YouTubeのコメント欄の活用を強くお勧めします。より良いクリア地点をご存知でしたら、コメントで残してください。' },
       { badge: 'NOTE', cls: 'badge-note', text: '他サイトでの宣伝歓迎です。' },
-      { badge: 'Wish', cls: 'badge-wish', text: 'オート機能ほしい' },
+      { badge: 'WISH', cls: 'badge-wish', text: 'オート機能ほしい' },
     ],
   }
 };

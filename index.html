@@ -40,7 +40,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .nav-bottom-row { display: flex; align-items: center; justify-content: space-between; padding: 4px 0 10px; }
 .nav-tabs { display: flex; gap: 2px; }
 .nav-tab {
-  padding: 6px 14px;
+  padding: 6px 15px;
   color: rgba(255,255,255,0.65);
   font-size: 14px; font-weight: 600;
   background: none; border: none;
@@ -336,7 +336,8 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 }
 @media (max-width: 600px) {
   .nav-inner { padding: 0 8px; }
-  .nav-tab { padding: 6px 8px; font-size: 14px; }
+  .nav-tab { padding: 6px 11px; font-size: 14px; }
+  .nav-tab[data-i18n="tab3"] { padding: 6px 22px; }
   .page { padding: 16px 16px 48px; }
   .input-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: repeat(3,1fr); gap: 8px; }

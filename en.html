@@ -40,9 +40,9 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 .nav-bottom-row { display: flex; align-items: center; justify-content: space-between; padding: 4px 0 10px; }
 .nav-tabs { display: flex; gap: 2px; }
 .nav-tab {
-  padding: 6px 16px;
+  padding: 6px 14px;
   color: rgba(255,255,255,0.65);
-  font-size: 13px; font-weight: 600;
+  font-size: 14px; font-weight: 600;
   background: none; border: none;
   border-bottom: 2px solid transparent;
   cursor: pointer; transition: all .2s;
@@ -332,7 +332,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
 }
 @media (max-width: 600px) {
   .nav-inner { padding: 0 8px; }
-  .nav-tab { padding: 6px 10px; font-size: 12px; }
+  .nav-tab { padding: 6px 8px; font-size: 14px; }
   .page { padding: 16px 16px 48px; }
   .input-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: repeat(3,1fr); gap: 8px; }
@@ -350,7 +350,7 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
   .sidebar-hint { display: none; }
   .sidebar-section { margin-bottom: 0; }
   .sidebar-title { margin-bottom: 6px; font-size: 11px; }
-  .lang-ja .nav-title { font-size: 17px; }
+  .lang-ja .nav-title { font-size: 18px; }
   .dur-sort-mobile { display: flex; gap: 6px; margin-top: 6px; }
 }
 </style>
@@ -770,7 +770,7 @@ const I18N = {
       { badge: 'INFO', cls: 'badge-info', text: 'In the <b>Finder tab</b>, reference videos for songs marked <b>Measured</b> start 2 seconds before the clear point; songs marked <b>Predicted</b> start from the middle of the video.' },
       { badge: 'INFO', cls: 'badge-info', text: 'In the <b>Finder tab</b>, reference videos are available for both [Measured/Predicted] songs. In the <b>Song Search tab</b>, video links are only provided for [Measured] songs.' },
       { badge: 'INFO', cls: 'badge-info', text: 'The total song count shown in the <b>Finder tab</b> is the correct number. The <b>Song Search tab</b> shows one more because Dear World has two versions listed separately.' },
-      { badge: 'INFO', cls: 'badge-info', text: 'In the <b>Song Search tab</b>, hover over a song title (PC) or tap the title (mobile) to preview the album image.' },
+      { badge: 'INFO', cls: 'badge-info', text: 'In the <b>Song Search tab</b>, hover over a song title (PC) or tap the title (mobile) to preview the album image. (Excluding cover songs)' },
       { badge: 'INFO', cls: 'badge-info', text: 'YouTube comments are highly encouraged. If you know a better clear point, please leave a comment.' },
       { badge: 'NOTE', cls: 'badge-note', text: 'Feel free to share or promote this on other sites.' },
       { badge: 'WISH', cls: 'badge-wish', text: 'auto plz' },
@@ -827,7 +827,7 @@ const I18N = {
       { badge: 'INFO', cls: 'badge-info', text: '<b>クリア予測タブ</b>の参考動画は、<b>確認済み</b>表示がある楽曲はクリア地点の2秒前から、<b>予測値</b>表示がある楽曲は動画の中間から再生されます。' },
       { badge: 'INFO', cls: 'badge-info', text: '<b>クリア予測タブ</b>では[確認済み/予測値]の楽曲すべてで参考動画を見ることができ、<b>楽曲検索タブ</b>では[確認済み]の楽曲のみ動画リンクが提供されます。' },
       { badge: 'INFO', cls: 'badge-info', text: '総楽曲数は<b>クリア予測タブ</b>の表示が正しい数です。<b>楽曲検索タブ</b>はDear Worldが2バージョンで登録されているため、1曲多く表示されます。' },
-      { badge: 'INFO', cls: 'badge-info', text: '<b>楽曲検索タブ</b>で曲タイトルにマウスを乗せる(PC)またはタイトルをタップする(モバイル)と、アルバム画像を表示できます。' },
+      { badge: 'INFO', cls: 'badge-info', text: '<b>楽曲検索タブ</b>で曲タイトルにマウスを乗せる(PC)またはタイトルをタップする(モバイル)と、アルバム画像を表示できます。（カバー曲を除く）' },
       { badge: 'INFO', cls: 'badge-info', text: 'YouTubeのコメント欄の活用を強くお勧めします。より良いクリア地点をご存知でしたら、コメントで残してください。' },
       { badge: 'NOTE', cls: 'badge-note', text: '他サイトでの宣伝歓迎です。' },
       { badge: 'WISH', cls: 'badge-wish', text: 'オート機能ほしい' },
@@ -1004,7 +1004,7 @@ let sortKey = null;
 let sortDir = 1;
 let currentPage = 1;
 let searchMode = 'song';
-const PAGE_SIZE = 30;
+const PAGE_SIZE = 20;
 
 // ── 제목 호버 썸네일 ──────────────────────────────
 (function setupTitleHover() {
@@ -1065,6 +1065,10 @@ const PAGE_SIZE = 30;
 
 // ── 탭 전환 ──────────────────────────────────────
 function switchTab(name, el) {
+  if (name !== 'predict') {
+    const iframe = document.querySelector('#videoThumbWrap iframe');
+    if (iframe) iframe.src = '';
+  }
   document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('tab-'+name).classList.add('active');

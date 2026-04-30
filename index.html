@@ -40,9 +40,9 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 .nav-bottom-row { display: flex; align-items: center; justify-content: space-between; padding: 4px 0 10px; }
 .nav-tabs { display: flex; gap: 2px; }
 .nav-tab {
-  padding: 6px 16px;
+  padding: 6px 14px;
   color: rgba(255,255,255,0.65);
-  font-size: 13px; font-weight: 600;
+  font-size: 14px; font-weight: 600;
   background: none; border: none;
   border-bottom: 2px solid transparent;
   cursor: pointer; transition: all .2s;
@@ -332,7 +332,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
 }
 @media (max-width: 600px) {
   .nav-inner { padding: 0 8px; }
-  .nav-tab { padding: 6px 10px; font-size: 12px; }
+  .nav-tab { padding: 6px 8px; font-size: 14px; }
   .page { padding: 16px 16px 48px; }
   .input-grid { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: repeat(3,1fr); gap: 8px; }
@@ -350,7 +350,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
   .sidebar-hint { display: none; }
   .sidebar-section { margin-bottom: 0; }
   .sidebar-title { margin-bottom: 6px; font-size: 11px; }
-  .lang-ja .nav-title { font-size: 17px; }
+  .lang-ja .nav-title { font-size: 18px; }
   .dur-sort-mobile { display: flex; gap: 6px; margin-top: 6px; }
 }
 </style>
@@ -770,7 +770,7 @@ const I18N = {
       { badge: 'INFO', cls: 'badge-info', text: '<b>클리어 계산 탭</b>의 참고 영상은 <b>확인함</b> 표시가 있는 곡은 클리어 지점 2초 전부터, <b>예측</b> 표시가 있는 곡은 영상 중간부터 시작됩니다.' },
       { badge: 'INFO', cls: 'badge-info', text: '<b>클리어 계산 탭</b>에서는 [확인함/예측] 곡 모두 참고 영상을 볼 수 있고, <b>악곡 검색 탭</b>에서는 [확인함] 곡만 영상 링크가 제공됩니다.' },
       { badge: 'INFO', cls: 'badge-info', text: '전체 수록곡 수는 <b>클리어 계산 탭</b> 기준이 맞습니다. <b>악곡 검색 탭</b>은 Dear World가 두 버전으로 등록되어 1곡 더 많이 표시됩니다.' },
-      { badge: 'INFO', cls: 'badge-info', text: '<b>악곡 검색 탭</b>에서 곡 제목에 마우스를 올리거나(PC) 제목을 터치하면(모바일) 앨범 이미지를 볼 수 있습니다.' },
+      { badge: 'INFO', cls: 'badge-info', text: '<b>악곡 검색 탭</b>에서 곡 제목에 마우스를 올리거나(PC) 제목을 터치하면(모바일) 앨범 이미지를 볼 수 있습니다. (커버송 제외)' },
       { badge: 'INFO', cls: 'badge-info', text: '유튜브 댓글 사용 적극 권장합니다. 더 좋은 클리어 지점이 있다면 댓글로 남겨주세요.' },
       { badge: 'NOTE', cls: 'badge-note', text: '🩷 타 사이트에 홍보 환영 🩷' },
       { badge: 'WISH', cls: 'badge-wish', text: '오토 내놔' },
@@ -827,7 +827,7 @@ const I18N = {
       { badge: 'INFO', cls: 'badge-info', text: '<b>クリア予測タブ</b>の参考動画は、<b>確認済み</b>表示がある楽曲はクリア地点の2秒前から、<b>予測値</b>表示がある楽曲は動画の中間から再生されます。' },
       { badge: 'INFO', cls: 'badge-info', text: '<b>クリア予測タブ</b>では[確認済み/予測値]の楽曲すべてで参考動画を見ることができ、<b>楽曲検索タブ</b>では[確認済み]の楽曲のみ動画リンクが提供されます。' },
       { badge: 'INFO', cls: 'badge-info', text: '総楽曲数は<b>クリア予測タブ</b>の表示が正しい数です。<b>楽曲検索タブ</b>はDear Worldが2バージョンで登録されているため、1曲多く表示されます。' },
-      { badge: 'INFO', cls: 'badge-info', text: '<b>楽曲検索タブ</b>で曲タイトルにマウスを乗せる(PC)またはタイトルをタップする(モバイル)と、アルバム画像を表示できます。' },
+      { badge: 'INFO', cls: 'badge-info', text: '<b>楽曲検索タブ</b>で曲タイトルにマウスを乗せる(PC)またはタイトルをタップする(モバイル)と、アルバム画像を表示できます。（カバー曲を除く）' },
       { badge: 'INFO', cls: 'badge-info', text: 'YouTubeのコメント欄の活用を強くお勧めします。より良いクリア地点をご存知でしたら、コメントで残してください。' },
       { badge: 'NOTE', cls: 'badge-note', text: '他サイトでの宣伝歓迎です。' },
       { badge: 'WISH', cls: 'badge-wish', text: 'オート機能ほしい' },
@@ -991,7 +991,7 @@ let sortKey = null;
 let sortDir = 1;
 let currentPage = 1;
 let searchMode = 'song';
-const PAGE_SIZE = 30;
+const PAGE_SIZE = 20;
 
 // ── 제목 호버 썸네일 ──────────────────────────────
 (function setupTitleHover() {
@@ -1052,6 +1052,10 @@ const PAGE_SIZE = 30;
 
 // ── 탭 전환 ──────────────────────────────────────
 function switchTab(name, el) {
+  if (name !== 'predict') {
+    const iframe = document.querySelector('#videoThumbWrap iframe');
+    if (iframe) iframe.src = '';
+  }
   document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('tab-'+name).classList.add('active');

@@ -1170,6 +1170,8 @@ function resetTab2() {
   activeUnits = null; sortKey = null; sortDir = 1; naturalDir = 1; currentPage = 1;
   document.getElementById('tableSearch').value = '';
   document.getElementById('tableSearchClear').classList.remove('visible');
+  document.getElementById('mobileSortShort').classList.remove('active');
+  document.getElementById('mobileSortLong').classList.remove('active');
   const sel = document.getElementById('searchModeSelect');
   if (sel && sel.value !== 'song') { sel.value = 'song'; onSearchModeChange(); }
   resetUnits();

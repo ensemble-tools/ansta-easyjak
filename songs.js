@@ -1908,7 +1908,7 @@ const SONGS = [
     "unitGroup": "Eden",
     "title_ja": "円環のRefraction",
     "title_ja_reading": "えんかんのりふらくしょん",
-    "title_ko": "원한의 Refraction",
+    "title_ko": "원환의 Refraction",
     "title_ko_reading": null,
     "title_en": "Refraction of the Circle",
     "title_en_reading": "Enkan no Refraction",

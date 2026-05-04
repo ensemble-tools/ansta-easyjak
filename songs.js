@@ -1,5 +1,5 @@
 // songs.js — Voltage Predictor 곡 데이터 & 모델 파라미터
-// 총 307곡 | R²=0.9724 | MAE=2.50콤보
+// 총 307곡 | R²=0.9724 | MAE=2.48콤보
 // ※ enstars_regression_v3.py 로 자동 생성 — 직접 수정 비권장
 
 const SONGS = [
@@ -368,10 +368,10 @@ const SONGS = [
     "duration": "2:32",
     "etStart": 83,
     "etEnd": 119,
-    "measured": null,
+    "measured": 95,
     "category": "starmaker",
     "video": "https://youtu.be/PWVmhaaHXII",
-    "videoClear": "https://youtu.be/PWVmhaaHXII?t=76",
+    "videoClear": "https://youtu.be/PWVmhaaHXII?t=68",
     "predicted": 95
   },
   {
@@ -3742,8 +3742,8 @@ const SONGS = [
     "etEnd": 152,
     "measured": 93,
     "category": "rhythm_link",
-    "video": "https://youtu.be/4TBnL26Tv6c?si=ASXdvkO7M4yv_rWD",
-    "videoClear": "https://youtu.be/4TBnL26Tv6c?t=87",
+    "video": "https://youtu.be/PvS4GXEpXDE",
+    "videoClear": "https://youtu.be/PvS4GXEpXDE?t=87",
     "predicted": 90
   },
   {
@@ -3802,17 +3802,17 @@ const SONGS = [
     "title_ja": "Love it Love it",
     "title_ja_reading": "らびっとらびっと",
     "title_ko": "Love it Love it",
-    "title_ko_reading": "러브잇 러빗",
+    "title_ko_reading": "러브잇러브잇 러빗러빗 라비라비",
     "title_en": "Love it Love it",
     "title_en_reading": null,
     "totalNotes": 165,
     "duration": "2:43",
     "etStart": 69,
     "etEnd": 114,
-    "measured": null,
+    "measured": 89,
     "category": "rhythm_link",
-    "video": "https://youtu.be/lgIK6RjZHks",
-    "videoClear": "https://youtu.be/lgIK6RjZHks?t=81",
+    "video": "https://youtu.be/xJRLy1KN1xA",
+    "videoClear": "https://youtu.be/xJRLy1KN1xA?t=76",
     "predicted": 90
   },
   {
@@ -5515,7 +5515,7 @@ const SONGS = [
     "category": "new_dimension",
     "video": "https://youtu.be/e4JWzY_Iki4?si=wYLh8wMhGAsWHKOA",
     "videoClear": "https://youtu.be/e4JWzY_Iki4?t=70",
-    "predicted": 90
+    "predicted": 91
   },
   {
     "type": "All",
@@ -7084,18 +7084,18 @@ const SONGS = [
 ];
 
 const MODEL_PARAMS = {
-  "intercept": -3.0716144725015937,
+  "intercept": -3.0569193369551613,
   "coefs": [
-    0.5337808468968244,
-    -3.1707093105445225,
-    9.136599427414373
+    0.5337408858815238,
+    -3.049002967108621,
+    9.02865278782218
   ],
-  "simpleCoef": 0.5276686559317614,
-  "simpleInt": 2.3725707216878362,
+  "simpleCoef": 0.5276996913807742,
+  "simpleInt": 2.369482507647973,
   "safetyMargin": 10,
-  "meanEtStart": 0.48892934542202676,
-  "meanEtEnd": 0.6550525323662377,
-  "trainSize": 182,
-  "r2": 0.9724268901450988,
-  "mae": 2.500343674620455
+  "meanEtStart": 0.488448732756856,
+  "meanEtEnd": 0.6554287653438751,
+  "trainSize": 184,
+  "r2": 0.972420076344322,
+  "mae": 2.481016150821382
 };

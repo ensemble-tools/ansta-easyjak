@@ -353,7 +353,7 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
     flex-direction: column;
     gap: 10px;
   }
-  .sidebar-hint { font-size: 12px; }
+  .sidebar-hint { display: none; }
   .sidebar-section { margin-bottom: 0; }
   .sidebar-title { margin-bottom: 6px; font-size: 12px; }
   .lang-ja .nav-title { font-size: 18px; }
@@ -1035,7 +1035,7 @@ let sortDir = 1;
 let naturalDir = 1;
 let currentPage = 1;
 let searchMode = 'song';
-const PAGE_SIZE = 20;
+const PAGE_SIZE = 25;
 
 // ── 제목 호버 썸네일 ──────────────────────────────
 (function setupTitleHover() {

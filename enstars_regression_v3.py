@@ -52,7 +52,7 @@ from dotenv import load_dotenv
 _HERE = Path(__file__).parent
 load_dotenv(_HERE / ".env")
 CSV_PATH = str(_HERE / "es_regression.xlsx")
-SAFETY_MARGIN = 10
+
 FAIL_URL = "https://youtu.be/Cs8hEmAl8eI"
 
 UNIT_GROUP = {
@@ -313,9 +313,8 @@ def predict_one(result: dict, total_notes: int, et_start=None, et_end=None):
         used = "단순 회귀"
 
     start_pt = round(pred)
-    clear = start_pt + SAFETY_MARGIN
     ratio = start_pt / total_notes * 100
-    return start_pt, clear, ratio, used
+    return start_pt, ratio, used
 
 
 # ── songs.js 출력 ──────────────────────────────────────────
@@ -415,7 +414,7 @@ def export_songs_js(df_pred: pd.DataFrame, result: dict, out_path: str = "songs.
         "coefs":        list(model.coef_),
         "simpleCoef":   float(model_simple.coef_[0]),
         "simpleInt":    float(model_simple.intercept_),
-        "safetyMargin": SAFETY_MARGIN,
+
         "meanEtStart":  result["mean_start"],
         "meanEtEnd":    result["mean_end"],
         "trainSize":    len(result["measured"]),
@@ -454,7 +453,7 @@ def print_report(result: dict):
     print(f"  학습 곡수     : {len(r['measured'])}곡 (중복 제거 후)")
     print(f"  3변수 OLS     : R²={r['r2']:.4f}  MAE={r['mae']:.2f}콤보")
     print(f"  단순 회귀      : R²={r['r2_simple']:.4f}  MAE={r['mae_simple']:.2f}콤보")
-    print(f"  SAFETY MARGIN : +{SAFETY_MARGIN}콤보")
+
     print(f"  평균 ET 비율   : 시작={r['mean_start']:.3f}  종료={r['mean_end']:.3f}")
     print(f"{'='*55}")
 
@@ -612,9 +611,8 @@ def main():
                     e_in = input("앙상블 타임 종료 콤보 (없으면 엔터): ").strip()
                     s = int(s_in) if s_in else None
                     e = int(e_in) if e_in else None
-                    start_pt, clear, ratio, used = predict_one(result, n, s, e)
-                    print(f"  → 시작점: {start_pt}콤보 ({ratio:.1f}%)")
-                    print(f"  → 클리어: {clear}콤보  (모델: {used})\n")
+                    start_pt, ratio, used = predict_one(result, n, s, e)
+                    print(f"  → 시작점: {start_pt}콤보 ({ratio:.1f}%)  (모델: {used})\n")
 
         except KeyboardInterrupt:
             print("\n종료.")

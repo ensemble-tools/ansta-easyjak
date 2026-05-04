@@ -7092,7 +7092,6 @@ const MODEL_PARAMS = {
   ],
   "simpleCoef": 0.5276996913807742,
   "simpleInt": 2.369482507647973,
-  "safetyMargin": 10,
   "meanEtStart": 0.488448732756856,
   "meanEtEnd": 0.6554287653438751,
   "trainSize": 184,

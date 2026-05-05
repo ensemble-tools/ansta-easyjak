@@ -1,40 +1,35 @@
 """
 앙스타 VOLTAGE 이지작 클리어 노트수 예측 회귀 모델 v3
 ──────────────────────────────────────────────────
-v2 → v3 변경사항:
-  1. export_songs_js() 추가 — 예측 결과를 songs.js로 자동 출력
-     · voltage_predictor_v4.html 과 같은 폴더에 두면 바로 연동 가능
-     · --export 옵션 또는 대화형 메뉴에서 호출 가능
-  2. duration 파싱 보정 — Excel이 시간으로 읽는 "HH:MM:SS" 형식을 "M:SS"로 정규화
-  3. FAIL_URL 기본값 설정
-
-R² = 0.9663 / MAE = 2.79노트 / LOO-MAE = 2.86노트 (167곡)
+3변수 OLS: R²=0.9722 / MAE=2.50콤보 (184곡)
+출력: songs.js → index.html / en.html 연동
 
 [엑셀 헤더 대응표]
   total_notes          ← 총 노트수
   et_start             ← 앙상블 타임 시작 콤보
   et_end               ← 앙상블 타임 종료 콤보
-  clear_start_measured ← 최종 시작점(실측)
-  category             ← 속성 (시트명)
+  clear_start_measured ← 최종 시작점(실측, 학습용)
+  category             ← 소속사 (시트명)
   type                 ← 타입
   unit                 ← 유닛
-  title                ← 곡 제목
+  title_ja / title_ko  ← 곡 제목 (일어/한국어)
   duration             ← 곡 길이
   video_url            ← 영상 주소
+  video_url_clear      ← 클리어 시작점 영상 주소
 
 [사용법]
   # 기본 실행 (예측 + 대화형 메뉴)
-  python enstars_regression_v3.py
+  python3 enstars_regression_v3.py
 
   # 엑셀 파일 직접 지정
-  python enstars_regression_v3.py es_regression.xlsx
+  python3 enstars_regression_v3.py es_regression.xlsx
 
   # songs.js 바로 출력 (대화 없이)
-  python enstars_regression_v3.py --export
-  python enstars_regression_v3.py es_regression.xlsx --export
+  python3 enstars_regression_v3.py --export
+  python3 enstars_regression_v3.py es_regression.xlsx --export
 
   # 출력 경로 지정
-  python enstars_regression_v3.py --export --out ./dist/songs.js
+  python3 enstars_regression_v3.py --export --out ./dist/songs.js
 """
 
 import json
@@ -54,26 +49,6 @@ load_dotenv(_HERE / ".env")
 CSV_PATH = str(_HERE / "es_regression.xlsx")
 
 FAIL_URL = "https://youtu.be/Cs8hEmAl8eI"
-
-UNIT_GROUP = {
-    # Others
-    "셔플_10주년": "셔플",
-    "새해":        "주년·기념",
-    "만우절":      "주년·기념",
-    "주년":        "주년·기념",
-    "콜라보":      "콜라보",
-    "추억":        "기타",
-    "진앤아":      "기타",
-    "드림유닛":    "기타",
-    "기타":        "기타",
-    # Cosmic
-    "Adam":        "Adam·Eve",
-    "Eve":         "Adam·Eve",
-    # New Dimension
-    "마무":        "MaM·DF",
-    "덥페":        "MaM·DF",
-}
-
 
 # ── 유틸 ──────────────────────────────────────────────────
 def parse_duration(val) -> str | None:
@@ -323,7 +298,7 @@ def export_songs_js(df_pred: pd.DataFrame, result: dict, out_path: str = "songs.
     예측 결과 DataFrame을 songs.js 형식으로 출력.
 
     출력 파일 구조:
-      · SONGS 배열  — voltage_predictor HTML에서 직접 로드
+      · SONGS 배열  — easyjak HTML에서 직접 로드
       · MODEL_PARAMS 객체 — 프론트엔드 계산용 모델 파라미터
     """
     model = result["model"]
@@ -344,10 +319,6 @@ def export_songs_js(df_pred: pd.DataFrame, result: dict, out_path: str = "songs.
     for key, val in seen.items():
         row = val["row"]
         units = val["units"]
-
-        # unitGroup: 첫 번째 유닛 기준 (매핑 없으면 유닛명 그대로)
-        primary_unit = units[0]
-        unit_group = UNIT_GROUP.get(primary_unit, primary_unit)
 
         et_s = None if pd.isna(row["et_start"]) else int(row["et_start"])
         et_e = None if pd.isna(row["et_end"]) else int(row["et_end"])
@@ -385,7 +356,6 @@ def export_songs_js(df_pred: pd.DataFrame, result: dict, out_path: str = "songs.
             "type":             str(row["type"]),
             "unit":             " / ".join(units),
             "units":            units,
-            "unitGroup":        unit_group,
             "title_ja":         title_ja,
             "title_ja_reading": str(title_ja_reading) if pd.notna(title_ja_reading) else None,
             "title_ko":         str(title_ko) if pd.notna(title_ko) else None,
@@ -426,7 +396,7 @@ def export_songs_js(df_pred: pd.DataFrame, result: dict, out_path: str = "songs.
     params_json = json.dumps(params, ensure_ascii=False, indent=2)
 
     js_content = f"""\
-// songs.js — Voltage Predictor 곡 데이터 & 모델 파라미터
+// songs.js — easyjak 곡 데이터 & 모델 파라미터
 // 총 {len(songs)}곡 | R²={result['r2']:.4f} | MAE={result['mae']:.2f}콤보
 // ※ enstars_regression_v3.py 로 자동 생성 — 직접 수정 비권장
 

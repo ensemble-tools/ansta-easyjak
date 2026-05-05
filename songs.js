@@ -9,7 +9,6 @@ const SONGS = [
     "units": [
       "Trickstar"
     ],
-    "unitGroup": "Trickstar",
     "title_ja": "ONLY YOUR STARS!",
     "title_ja_reading": "おんりー ゆあ すたーず",
     "title_ko": "ONLY YOUR STARS!",
@@ -32,7 +31,6 @@ const SONGS = [
     "units": [
       "Trickstar"
     ],
-    "unitGroup": "Trickstar",
     "title_ja": "Rebellion Star",
     "title_ja_reading": "りべりおん すたー",
     "title_ko": "Rebellion Star",
@@ -55,7 +53,6 @@ const SONGS = [
     "units": [
       "Trickstar"
     ],
-    "unitGroup": "Trickstar",
     "title_ja": "Infinite Star",
     "title_ja_reading": "いんふぃにっと すたー",
     "title_ko": "Infinite Star",
@@ -79,7 +76,6 @@ const SONGS = [
       "Trickstar",
       "Eden"
     ],
-    "unitGroup": "Trickstar",
     "title_ja": "キセキ",
     "title_ja_reading": "きせき",
     "title_ko": "기적",
@@ -102,7 +98,6 @@ const SONGS = [
     "units": [
       "Trickstar"
     ],
-    "unitGroup": "Trickstar",
     "title_ja": "HEART→BEATER!!!!",
     "title_ja_reading": "はーとびーたー",
     "title_ko": "HEART→BEATER!!!!",
@@ -125,7 +120,6 @@ const SONGS = [
     "units": [
       "Trickstar"
     ],
-    "unitGroup": "Trickstar",
     "title_ja": "BREAKTHROUGH!",
     "title_ja_reading": "ぶれいくするー",
     "title_ko": "BREAKTHROUGH!",
@@ -148,7 +142,6 @@ const SONGS = [
     "units": [
       "Trickstar"
     ],
-    "unitGroup": "Trickstar",
     "title_ja": "1st SING-ALONG☆",
     "title_ja_reading": "しんぐあろんぐ",
     "title_ko": "1st SING-ALONG☆",
@@ -172,7 +165,6 @@ const SONGS = [
       "Trickstar",
       "fine"
     ],
-    "unitGroup": "Trickstar",
     "title_ja": "Crossing×Heart",
     "title_ja_reading": "くろっしんぐはーと",
     "title_ko": "Crossing×Heart",
@@ -195,7 +187,6 @@ const SONGS = [
     "units": [
       "Trickstar"
     ],
-    "unitGroup": "Trickstar",
     "title_ja": "CHERRY HAPPY STREAM ",
     "title_ja_reading": "ちぇりーはっぴーすとりーむ",
     "title_ko": "CHERRY HAPPY STREAM ",
@@ -218,7 +209,6 @@ const SONGS = [
     "units": [
       "Trickstar"
     ],
-    "unitGroup": "Trickstar",
     "title_ja": "Welcome to the Trickstar Night☆",
     "title_ja_reading": "うぇるかむ とぅ ざ とりっくすたーないと",
     "title_ko": "Welcome to the Trickstar Night☆",
@@ -241,7 +231,6 @@ const SONGS = [
     "units": [
       "Trickstar"
     ],
-    "unitGroup": "Trickstar",
     "title_ja": "幸せの歌",
     "title_ja_reading": "しあわせのうた",
     "title_ko": "행복의 노래",
@@ -264,7 +253,6 @@ const SONGS = [
     "units": [
       "Trickstar"
     ],
-    "unitGroup": "Trickstar",
     "title_ja": "Unstoppable Love!",
     "title_ja_reading": "あんすとっぱぶる らぶ！",
     "title_ko": "Unstoppable Love!",
@@ -288,7 +276,6 @@ const SONGS = [
       "Trickstar",
       "Eden"
     ],
-    "unitGroup": "Trickstar",
     "title_ja": "(RE)PLAY",
     "title_ja_reading": "りぷれい",
     "title_ko": "(RE)PLAY",
@@ -311,7 +298,6 @@ const SONGS = [
     "units": [
       "Trickstar"
     ],
-    "unitGroup": "Trickstar",
     "title_ja": "BIGBANG REFLECTION!!",
     "title_ja_reading": "びっぐばん りふれくしょん",
     "title_ko": "BIGBANG REFLECTION!!",
@@ -334,7 +320,6 @@ const SONGS = [
     "units": [
       "Trickstar"
     ],
-    "unitGroup": "Trickstar",
     "title_ja": "Finder Girl",
     "title_ja_reading": "ふぁいんだーがーる",
     "title_ko": "Finder Girl",
@@ -357,7 +342,6 @@ const SONGS = [
     "units": [
       "Trickstar"
     ],
-    "unitGroup": "Trickstar",
     "title_ja": "Daydream×Reality",
     "title_ja_reading": "でいどりーむ りありてぃ",
     "title_ko": "Daydream×Reality",
@@ -380,7 +364,6 @@ const SONGS = [
     "units": [
       "Trickstar"
     ],
-    "unitGroup": "Trickstar",
     "title_ja": "Romantic Xday!",
     "title_ja_reading": "ろまんてぃっく えっくすでい",
     "title_ko": "Romantic Xday!",
@@ -403,7 +386,6 @@ const SONGS = [
     "units": [
       "Trickstar"
     ],
-    "unitGroup": "Trickstar",
     "title_ja": "ワチャガナドゥ？",
     "title_ja_reading": "わちゃがなどぅ？",
     "title_ko": "와챠가나두?",
@@ -426,7 +408,6 @@ const SONGS = [
     "units": [
       "Trickstar"
     ],
-    "unitGroup": "Trickstar",
     "title_ja": "CELEBRATE!!",
     "title_ja_reading": "せれぶれいと",
     "title_ko": "CELEBRATE!!",
@@ -449,7 +430,6 @@ const SONGS = [
     "units": [
       "Trickstar"
     ],
-    "unitGroup": "Trickstar",
     "title_ja": "虹色のSeasons",
     "title_ja_reading": "にじいろのしーずんず",
     "title_ko": "무지개 빛의 Seasons",
@@ -472,7 +452,6 @@ const SONGS = [
     "units": [
       "fine"
     ],
-    "unitGroup": "fine",
     "title_ja": "終わらないシンフォニア",
     "title_ja_reading": "おわらないしんふぉにあ",
     "title_ko": "끝나지 않는 심포니아",
@@ -495,7 +474,6 @@ const SONGS = [
     "units": [
       "fine"
     ],
-    "unitGroup": "fine",
     "title_ja": "Holy Angel's Carol",
     "title_ja_reading": "ほーりー えんじぇるず きゃろる",
     "title_ko": "Holy Angel's Carol",
@@ -518,7 +496,6 @@ const SONGS = [
     "units": [
       "fine"
     ],
-    "unitGroup": "fine",
     "title_ja": "羽ばたきのフォルティシモ",
     "title_ja_reading": "はばたきのふぉるてぃしも",
     "title_ko": "날갯짓의 포르티시모",
@@ -541,7 +518,6 @@ const SONGS = [
     "units": [
       "fine"
     ],
-    "unitGroup": "fine",
     "title_ja": "Neo Sanctuary",
     "title_ja_reading": "ねお さんくちゅあり",
     "title_ko": "Neo Sanctuary",
@@ -564,7 +540,6 @@ const SONGS = [
     "units": [
       "fine"
     ],
-    "unitGroup": "fine",
     "title_ja": "始まりのファンタジア",
     "title_ja_reading": "はじまりのふぁんたじあ",
     "title_ko": "시작의 판타지아",
@@ -587,7 +562,6 @@ const SONGS = [
     "units": [
       "fine"
     ],
-    "unitGroup": "fine",
     "title_ja": "Miracle Dream Traveler",
     "title_ja_reading": "みらくる どりーむ とらべらー",
     "title_ko": "Miracle Dream Traveler",
@@ -610,7 +584,6 @@ const SONGS = [
     "units": [
       "fine"
     ],
-    "unitGroup": "fine",
     "title_ja": "Angelic Grace",
     "title_ja_reading": "えんじぇりっく ぐれいす",
     "title_ko": "Angelic Grace",
@@ -633,7 +606,6 @@ const SONGS = [
     "units": [
       "fine"
     ],
-    "unitGroup": "fine",
     "title_ja": "Never-ending Stage!!!!",
     "title_ja_reading": "ねヴぁーえんでぃんぐ すてーじ",
     "title_ko": "Never-ending Stage!!!!",
@@ -656,7 +628,6 @@ const SONGS = [
     "units": [
       "fine"
     ],
-    "unitGroup": "fine",
     "title_ja": "RAINBOW CIRCUS",
     "title_ja_reading": "れいんぼー さーかす",
     "title_ko": "RAINBOW CIRCUS",
@@ -680,7 +651,6 @@ const SONGS = [
       "fine",
       "Knights"
     ],
-    "unitGroup": "fine",
     "title_ja": "スターライトパレード",
     "title_ja_reading": "すたーらいとぱれーど",
     "title_ko": "스타라이트 퍼레이드",
@@ -703,7 +673,6 @@ const SONGS = [
     "units": [
       "fine"
     ],
-    "unitGroup": "fine",
     "title_ja": "The Tempest Night",
     "title_ja_reading": "ざ てんぺすと ないと",
     "title_ko": "The Tempest Night",
@@ -726,7 +695,6 @@ const SONGS = [
     "units": [
       "fine"
     ],
-    "unitGroup": "fine",
     "title_ja": "恋はプリマヴェーラ！",
     "title_ja_reading": "こいはぷりまゔぇーら",
     "title_ko": "사랑은 프리마베라!",
@@ -749,7 +717,6 @@ const SONGS = [
     "units": [
       "fine"
     ],
-    "unitGroup": "fine",
     "title_ja": "Feathers of Ark",
     "title_ja_reading": "ふぇざーず おぶ あーく",
     "title_ko": "Feathers of Ark",
@@ -772,7 +739,6 @@ const SONGS = [
     "units": [
       "fine"
     ],
-    "unitGroup": "fine",
     "title_ja": "Ghostic Treat House",
     "title_ja_reading": "ごすてぃっく とりーと はうす",
     "title_ko": "Ghostic Treat House",
@@ -795,7 +761,6 @@ const SONGS = [
     "units": [
       "fine"
     ],
-    "unitGroup": "fine",
     "title_ja": "Dreaming Ocean",
     "title_ja_reading": "どりーみんぐ おーしゃん",
     "title_ko": "Dreaming Ocean",
@@ -818,7 +783,6 @@ const SONGS = [
     "units": [
       "fine"
     ],
-    "unitGroup": "fine",
     "title_ja": "Fairy Tale Library",
     "title_ja_reading": "ふぇありー ている らいぶらりー",
     "title_ko": "Fairy Tale Library",
@@ -841,7 +805,6 @@ const SONGS = [
     "units": [
       "fine"
     ],
-    "unitGroup": "fine",
     "title_ja": "Musica Vita! -ムジカ・ヴィータ-",
     "title_ja_reading": "むじか・ヴぃーた",
     "title_ko": "Musica Vita! -무지카・비타-",
@@ -864,7 +827,6 @@ const SONGS = [
     "units": [
       "유성대"
     ],
-    "unitGroup": "유성대",
     "title_ja": "天下無敵☆メテオレンジャー！",
     "title_ja_reading": "てんかむてきめておれんじゃー",
     "title_ko": "천하무적☆메테오레인저!",
@@ -887,7 +849,6 @@ const SONGS = [
     "units": [
       "유성대"
     ],
-    "unitGroup": "유성대",
     "title_ja": "アンリミテッド☆パワー!!!!!",
     "title_ja_reading": "あんりみてっどぱわー",
     "title_ko": "언리미티드☆파워!!!!!",
@@ -910,7 +871,6 @@ const SONGS = [
     "units": [
       "유성대"
     ],
-    "unitGroup": "유성대",
     "title_ja": "SUPER NOVA REVOLU5TAR",
     "title_ja_reading": "すーぱー のヴぁ れヴぉるすたー",
     "title_ko": "SUPER NOVA REVOLU5TAR",
@@ -933,7 +893,6 @@ const SONGS = [
     "units": [
       "유성대"
     ],
-    "unitGroup": "유성대",
     "title_ja": "流星花火",
     "title_ja_reading": "りゅうせいはなび",
     "title_ko": "유성불꽃",
@@ -956,7 +915,6 @@ const SONGS = [
     "units": [
       "유성대"
     ],
-    "unitGroup": "유성대",
     "title_ja": "メテオ・スクランブル☆流星隊!",
     "title_ja_reading": "めておすくらんぶるりゅうせいたい",
     "title_ko": "메테오·스크럼블☆유성대!",
@@ -980,7 +938,6 @@ const SONGS = [
       "유성대",
       "Knights"
     ],
-    "unitGroup": "유성대",
     "title_ja": "青春Emergency",
     "title_ja_reading": "せいしゅんえまーじぇんしー",
     "title_ko": "청춘 Emergency",
@@ -1003,7 +960,6 @@ const SONGS = [
     "units": [
       "유성대"
     ],
-    "unitGroup": "유성대",
     "title_ja": "GROWING STARRY DAYS",
     "title_ja_reading": "ぐろういんぐ すたーりー でいず",
     "title_ko": "GROWING STARRY DAYS",
@@ -1026,7 +982,6 @@ const SONGS = [
     "units": [
       "유성대"
     ],
-    "unitGroup": "유성대",
     "title_ja": "NEW DAYBREAK",
     "title_ja_reading": "にゅー でいぶれいく",
     "title_ko": "NEW DAYBREAK",
@@ -1049,7 +1004,6 @@ const SONGS = [
     "units": [
       "유성대"
     ],
-    "unitGroup": "유성대",
     "title_ja": "Heart Heat Beat",
     "title_ja_reading": "はーと ひーと びーと",
     "title_ko": "Heart Heat Beat",
@@ -1072,7 +1026,6 @@ const SONGS = [
     "units": [
       "유성대"
     ],
-    "unitGroup": "유성대",
     "title_ja": "夢ノ咲流星隊歌",
     "title_ja_reading": "ゆめのさきりゅうせいたいか",
     "title_ko": "유메노사키 유성대가",
@@ -1096,7 +1049,6 @@ const SONGS = [
       "유성대",
       "Ra*bits"
     ],
-    "unitGroup": "유성대",
     "title_ja": "ハム太郎とっとこうた",
     "title_ja_reading": "はむたろうとっとこうた",
     "title_ko": "방가방가 햄토리",
@@ -1119,7 +1071,6 @@ const SONGS = [
     "units": [
       "유성대"
     ],
-    "unitGroup": "유성대",
     "title_ja": "彗星HALATION",
     "title_ja_reading": "すいせいはれーしょん",
     "title_ko": "혜성 HALATION",
@@ -1142,7 +1093,6 @@ const SONGS = [
     "units": [
       "유성대"
     ],
-    "unitGroup": "유성대",
     "title_ja": "熱血☆流星忍法帖",
     "title_ja_reading": "ねっけつりゅうせいにんぽうちょう",
     "title_ko": "열혈☆유성인법첩",
@@ -1165,7 +1115,6 @@ const SONGS = [
     "units": [
       "유성대"
     ],
-    "unitGroup": "유성대",
     "title_ja": "Colors Arise",
     "title_ja_reading": "からーず あらいず",
     "title_ko": "Colors Arise",
@@ -1188,7 +1137,6 @@ const SONGS = [
     "units": [
       "유성대"
     ],
-    "unitGroup": "유성대",
     "title_ja": "RELAX PARADISE",
     "title_ja_reading": "りらっくす ぱらだいす",
     "title_ko": "RELAX PARADISE",
@@ -1211,7 +1159,6 @@ const SONGS = [
     "units": [
       "유성대"
     ],
-    "unitGroup": "유성대",
     "title_ja": "僕らのステラ",
     "title_ja_reading": "ぼくらのすてら",
     "title_ko": "우리들의 스텔라",
@@ -1234,7 +1181,6 @@ const SONGS = [
     "units": [
       "유성대"
     ],
-    "unitGroup": "유성대",
     "title_ja": "WILDLAND SURVIVOR",
     "title_ja_reading": "わいるどらんど さばいばー",
     "title_ko": "WILDLAND SURVIVOR",
@@ -1257,7 +1203,6 @@ const SONGS = [
     "units": [
       "유성대"
     ],
-    "unitGroup": "유성대",
     "title_ja": "OVERFLOW LIGHT UP!!!!!",
     "title_ja_reading": "おーばーふろー らいと あっぷ",
     "title_ko": "OVERFLOW LIGHT UP!!!!!",
@@ -1280,7 +1225,6 @@ const SONGS = [
     "units": [
       "ALKALOID"
     ],
-    "unitGroup": "ALKALOID",
     "title_ja": "Kiss of Life",
     "title_ja_reading": "きす おぶ らいふ",
     "title_ko": "Kiss of Life",
@@ -1303,7 +1247,6 @@ const SONGS = [
     "units": [
       "ALKALOID"
     ],
-    "unitGroup": "ALKALOID",
     "title_ja": "翼モラトリアム",
     "title_ja_reading": "つばさもらとりあむ",
     "title_ko": "날개 모라토리엄",
@@ -1326,7 +1269,6 @@ const SONGS = [
     "units": [
       "ALKALOID"
     ],
-    "unitGroup": "ALKALOID",
     "title_ja": "Distorted Heart",
     "title_ja_reading": "でぃすとーてっど はーと",
     "title_ko": "Distorted Heart",
@@ -1349,7 +1291,6 @@ const SONGS = [
     "units": [
       "ALKALOID"
     ],
-    "unitGroup": "ALKALOID",
     "title_ja": "You’re Speculation",
     "title_ja_reading": "ゆー あー すぺきゅれーしょん",
     "title_ko": "You’re Speculation",
@@ -1373,7 +1314,6 @@ const SONGS = [
       "ALKALOID",
       "Valkyrie"
     ],
-    "unitGroup": "ALKALOID",
     "title_ja": "Artistic Partisan",
     "title_ja_reading": "あーてぃすてぃっく ぱーてぃざん",
     "title_ko": "Artistic Partisan",
@@ -1396,7 +1336,6 @@ const SONGS = [
     "units": [
       "ALKALOID"
     ],
-    "unitGroup": "ALKALOID",
     "title_ja": "Hysteric Humanoid",
     "title_ja_reading": "ひすてりっく ひゅーまのいど",
     "title_ko": "Hysteric Humanoid",
@@ -1419,7 +1358,6 @@ const SONGS = [
     "units": [
       "ALKALOID"
     ],
-    "unitGroup": "ALKALOID",
     "title_ja": "Black Out See Saw",
     "title_ja_reading": "ぶらっく あうと しーそー",
     "title_ko": "Black Out See Saw",
@@ -1442,7 +1380,6 @@ const SONGS = [
     "units": [
       "ALKALOID"
     ],
-    "unitGroup": "ALKALOID",
     "title_ja": "Across the universe",
     "title_ja_reading": "あくろす ざ ゆにヴぁーす",
     "title_ko": "Across the universe",
@@ -1466,7 +1403,6 @@ const SONGS = [
       "ALKALOID",
       "DF"
     ],
-    "unitGroup": "ALKALOID",
     "title_ja": "夜に駆ける",
     "title_ja_reading": "よるにかける",
     "title_ko": "밤을 달리다",
@@ -1489,7 +1425,6 @@ const SONGS = [
     "units": [
       "ALKALOID"
     ],
-    "unitGroup": "ALKALOID",
     "title_ja": "Living on the edge",
     "title_ja_reading": "りヴぃんぐ おん ざ えっじ",
     "title_ko": "Living on the edge",
@@ -1512,7 +1447,6 @@ const SONGS = [
     "units": [
       "ALKALOID"
     ],
-    "unitGroup": "ALKALOID",
     "title_ja": "Believe 4 leaves",
     "title_ja_reading": "びりーヴ ふぉー りーぶす",
     "title_ko": "Believe 4 leaves",
@@ -1535,7 +1469,6 @@ const SONGS = [
     "units": [
       "ALKALOID"
     ],
-    "unitGroup": "ALKALOID",
     "title_ja": "VERMILION",
     "title_ja_reading": "ヴぁーみりおん",
     "title_ko": "VERMILION",
@@ -1558,7 +1491,6 @@ const SONGS = [
     "units": [
       "ALKALOID"
     ],
-    "unitGroup": "ALKALOID",
     "title_ja": "UNDYING HOLY LOVE",
     "title_ja_reading": "あんだいいんぐ ほーりー らヴ",
     "title_ko": "UNDYING HOLY LOVE",
@@ -1582,7 +1514,6 @@ const SONGS = [
       "ALKALOID",
       "Crazy:B"
     ],
-    "unitGroup": "ALKALOID",
     "title_ja": "SAKE OF LOVE",
     "title_ja_reading": "せいく おぶ らヴ",
     "title_ko": "SAKE OF LOVE",
@@ -1605,7 +1536,6 @@ const SONGS = [
     "units": [
       "ALKALOID"
     ],
-    "unitGroup": "ALKALOID",
     "title_ja": "SunnyTrip Summer",
     "title_ja_reading": "さにーとりっぷ さまー",
     "title_ko": "SunnyTrip Summer",
@@ -1628,7 +1558,6 @@ const SONGS = [
     "units": [
       "ALKALOID"
     ],
-    "unitGroup": "ALKALOID",
     "title_ja": "フラジール",
     "title_ja_reading": "ふらじーる",
     "title_ko": "프래질",
@@ -1651,7 +1580,6 @@ const SONGS = [
     "units": [
       "ALKALOID"
     ],
-    "unitGroup": "ALKALOID",
     "title_ja": "コトノハカンタービレ",
     "title_ja_reading": "ことのはかんたーびれ",
     "title_ko": "코토노하 칸타빌레",
@@ -1674,7 +1602,6 @@ const SONGS = [
     "units": [
       "Eden"
     ],
-    "unitGroup": "Eden",
     "title_ja": "THE GENESIS",
     "title_ja_reading": "ざじぇねしす",
     "title_ko": "THE GENESIS",
@@ -1697,7 +1624,6 @@ const SONGS = [
     "units": [
       "Eden"
     ],
-    "unitGroup": "Eden",
     "title_ja": "Dance in the Apocalypse",
     "title_ja_reading": "だんすいんざあぽかりぷす",
     "title_ko": "Dance in the Apocalypse",
@@ -1721,7 +1647,6 @@ const SONGS = [
       "Eden",
       "Switch"
     ],
-    "unitGroup": "Eden",
     "title_ja": "Majestic Magic",
     "title_ja_reading": "まじぇすてぃっくまじっく",
     "title_ko": "Majestic Magic",
@@ -1744,7 +1669,6 @@ const SONGS = [
     "units": [
       "Eden"
     ],
-    "unitGroup": "Eden",
     "title_ja": "Awakening Myth",
     "title_ja_reading": "あうぇいくにんぐみす",
     "title_ko": "Awakening Myth",
@@ -1767,7 +1691,6 @@ const SONGS = [
     "units": [
       "Eden"
     ],
-    "unitGroup": "Eden",
     "title_ja": "KEEP OUT",
     "title_ja_reading": "きーぷあうと",
     "title_ko": "KEEP OUT",
@@ -1790,7 +1713,6 @@ const SONGS = [
     "units": [
       "Eden"
     ],
-    "unitGroup": "Eden",
     "title_ja": "Psyche's Butterfly",
     "title_ja_reading": "ぷしゅけずばたふらい",
     "title_ko": "Psyche's Butterfly",
@@ -1813,7 +1735,6 @@ const SONGS = [
     "units": [
       "Eden"
     ],
-    "unitGroup": "Eden",
     "title_ja": "楽園追放 -Faith Conquest-",
     "title_ja_reading": "らくえんついほう ふぇいす こんくえすと",
     "title_ko": "낙원추방 -Faith Conquest-",
@@ -1836,7 +1757,6 @@ const SONGS = [
     "units": [
       "Eden"
     ],
-    "unitGroup": "Eden",
     "title_ja": "EXCEED",
     "title_ja_reading": "えくしーど",
     "title_ko": "EXCEED",
@@ -1859,7 +1779,6 @@ const SONGS = [
     "units": [
       "Eden"
     ],
-    "unitGroup": "Eden",
     "title_ja": "Deep Eclipse",
     "title_ja_reading": "でぃーぷえくりぷす",
     "title_ko": "Deep Eclipse",
@@ -1882,7 +1801,6 @@ const SONGS = [
     "units": [
       "Eden"
     ],
-    "unitGroup": "Eden",
     "title_ja": "Absolute Perfection",
     "title_ja_reading": "あぶそりゅーとぱーふぇくしょん",
     "title_ko": "Absolute Perfection",
@@ -1905,7 +1823,6 @@ const SONGS = [
     "units": [
       "Eden"
     ],
-    "unitGroup": "Eden",
     "title_ja": "円環のRefraction",
     "title_ja_reading": "えんかんのりふらくしょん",
     "title_ko": "원환의 Refraction",
@@ -1928,7 +1845,6 @@ const SONGS = [
     "units": [
       "Eden"
     ],
-    "unitGroup": "Eden",
     "title_ja": "大いなる愛の前に全ては巡り来る",
     "title_ja_reading": "おおいなるあいのまえにすべてはめぐりくる",
     "title_ko": "위대한 사랑 앞에 모든 것은 돌아온다",
@@ -1951,7 +1867,6 @@ const SONGS = [
     "units": [
       "Eve"
     ],
-    "unitGroup": "Adam·Eve",
     "title_ja": "Sunlit Smile!",
     "title_ja_reading": "さんりっとすまいる",
     "title_ko": "Sunlit Smile!",
@@ -1974,7 +1889,6 @@ const SONGS = [
     "units": [
       "Adam"
     ],
-    "unitGroup": "Adam·Eve",
     "title_ja": "The Beast of the End",
     "title_ja_reading": "ざびーすとおぶじえんど",
     "title_ko": "The Beast of the End",
@@ -1997,7 +1911,6 @@ const SONGS = [
     "units": [
       "Eve"
     ],
-    "unitGroup": "Adam·Eve",
     "title_ja": "Trap For You",
     "title_ja_reading": "とらっぷふぉーゆー",
     "title_ko": "Trap For You",
@@ -2020,7 +1933,6 @@ const SONGS = [
     "units": [
       "Adam"
     ],
-    "unitGroup": "Adam·Eve",
     "title_ja": "Ruler’s Truth",
     "title_ja_reading": "るーらーずとぅるーす",
     "title_ko": "Ruler’s Truth",
@@ -2043,7 +1955,6 @@ const SONGS = [
     "units": [
       "Adam"
     ],
-    "unitGroup": "Adam·Eve",
     "title_ja": "Melting Rouge Soul",
     "title_ja_reading": "めるてぃんぐるーじゅそうる",
     "title_ko": "Melting Rouge Soul",
@@ -2066,7 +1977,6 @@ const SONGS = [
     "units": [
       "Eve"
     ],
-    "unitGroup": "Adam·Eve",
     "title_ja": "Ruby Love",
     "title_ja_reading": "るびーらぶ",
     "title_ko": "Ruby Love",
@@ -2089,7 +1999,6 @@ const SONGS = [
     "units": [
       "Valkyrie"
     ],
-    "unitGroup": "Valkyrie",
     "title_ja": "魅惑劇",
     "title_ja_reading": "みわくげき",
     "title_ko": "매혹극",
@@ -2112,7 +2021,6 @@ const SONGS = [
     "units": [
       "Valkyrie"
     ],
-    "unitGroup": "Valkyrie",
     "title_ja": "Mémoire Antique",
     "title_ja_reading": "めもわーるあんてぃーく",
     "title_ko": "Mémoire Antique",
@@ -2135,7 +2043,6 @@ const SONGS = [
     "units": [
       "Valkyrie"
     ],
-    "unitGroup": "Valkyrie",
     "title_ja": "Last Lament",
     "title_ja_reading": "らすとらめんと",
     "title_ko": "Last Lament",
@@ -2158,7 +2065,6 @@ const SONGS = [
     "units": [
       "Valkyrie"
     ],
-    "unitGroup": "Valkyrie",
     "title_ja": "今宵月の館にて",
     "title_ja_reading": "こよいつきのやかたにて",
     "title_ko": "오늘 밤 달의 저택에서",
@@ -2181,7 +2087,6 @@ const SONGS = [
     "units": [
       "Valkyrie"
     ],
-    "unitGroup": "Valkyrie",
     "title_ja": "凱旋歌",
     "title_ja_reading": "がいせんか",
     "title_ko": "개선가",
@@ -2204,7 +2109,6 @@ const SONGS = [
     "units": [
       "Valkyrie"
     ],
-    "unitGroup": "Valkyrie",
     "title_ja": "礼賛歌",
     "title_ja_reading": "らいさんか",
     "title_ko": "예찬가",
@@ -2227,7 +2131,6 @@ const SONGS = [
     "units": [
       "Valkyrie"
     ],
-    "unitGroup": "Valkyrie",
     "title_ja": "祝福のLibrary",
     "title_ja_reading": "しゅくふくのらいぶらりー",
     "title_ko": "축복의 Library",
@@ -2250,7 +2153,6 @@ const SONGS = [
     "units": [
       "Valkyrie"
     ],
-    "unitGroup": "Valkyrie",
     "title_ja": "麗しのナイチンゲール",
     "title_ja_reading": "うるわしのないちんげーる",
     "title_ko": "아름다운 나이팅게일",
@@ -2274,7 +2176,6 @@ const SONGS = [
       "Valkyrie",
       "홍월"
     ],
-    "unitGroup": "Valkyrie",
     "title_ja": "勇侠青春謳",
     "title_ja_reading": "ゆうきょうせいしゅんおう",
     "title_ko": "용협청춘구",
@@ -2297,7 +2198,6 @@ const SONGS = [
     "units": [
       "Valkyrie"
     ],
-    "unitGroup": "Valkyrie",
     "title_ja": "Eternal Weaving",
     "title_ja_reading": "えたーなるうぃーヴぃんぐ",
     "title_ko": "Eternal Weaving",
@@ -2320,7 +2220,6 @@ const SONGS = [
     "units": [
       "Valkyrie"
     ],
-    "unitGroup": "Valkyrie",
     "title_ja": "Acanthe",
     "title_ja_reading": "あかんと",
     "title_ko": "Acanthe",
@@ -2343,7 +2242,6 @@ const SONGS = [
     "units": [
       "Valkyrie"
     ],
-    "unitGroup": "Valkyrie",
     "title_ja": "迷宮電子回廊",
     "title_ja_reading": "めいきゅうでんしかいろう",
     "title_ko": "미궁전자회랑",
@@ -2366,7 +2264,6 @@ const SONGS = [
     "units": [
       "Valkyrie"
     ],
-    "unitGroup": "Valkyrie",
     "title_ja": "Le temps des fleurs",
     "title_ja_reading": "るたんでふるーる",
     "title_ko": "Le temps des fleurs",
@@ -2389,7 +2286,6 @@ const SONGS = [
     "units": [
       "Valkyrie"
     ],
-    "unitGroup": "Valkyrie",
     "title_ja": "星の鳴動響きし時に",
     "title_ja_reading": "ほしのめいどうひびきしときに",
     "title_ko": "별의 명동이 울릴 때에",
@@ -2412,7 +2308,6 @@ const SONGS = [
     "units": [
       "Valkyrie"
     ],
-    "unitGroup": "Valkyrie",
     "title_ja": "幸福論",
     "title_ja_reading": "こうふくろん",
     "title_ko": "행복론",
@@ -2435,7 +2330,6 @@ const SONGS = [
     "units": [
       "Crazy:B"
     ],
-    "unitGroup": "Crazy:B",
     "title_ja": "Crazy Roulette",
     "title_ja_reading": "くれいじーるーれっと",
     "title_ko": "Crazy Roulette",
@@ -2458,7 +2352,6 @@ const SONGS = [
     "units": [
       "Crazy:B"
     ],
-    "unitGroup": "Crazy:B",
     "title_ja": "Be The Party Bee!",
     "title_ja_reading": "びーざぱーてぃーびー",
     "title_ko": "Be The Party Bee!",
@@ -2481,7 +2374,6 @@ const SONGS = [
     "units": [
       "Crazy:B"
     ],
-    "unitGroup": "Crazy:B",
     "title_ja": "PARANOIA STREET",
     "title_ja_reading": "ぱらのいあすとりーと",
     "title_ko": "PARANOIA STREET",
@@ -2504,7 +2396,6 @@ const SONGS = [
     "units": [
       "Crazy:B"
     ],
-    "unitGroup": "Crazy:B",
     "title_ja": "RISKY VENUS",
     "title_ja_reading": "りすきーヴぃーなす",
     "title_ko": "RISKY VENUS",
@@ -2528,7 +2419,6 @@ const SONGS = [
       "Crazy:B",
       "2wink"
     ],
-    "unitGroup": "Crazy:B",
     "title_ja": "LEMON SQUASH CHEERS!",
     "title_ja_reading": "れもんすかっしゅちあーず",
     "title_ko": "LEMON SQUASH CHEERS!",
@@ -2551,7 +2441,6 @@ const SONGS = [
     "units": [
       "Crazy:B"
     ],
-    "unitGroup": "Crazy:B",
     "title_ja": "Noisy:Beep",
     "title_ja_reading": "のいじーびーぷ",
     "title_ko": "Noisy:Beep",
@@ -2574,7 +2463,6 @@ const SONGS = [
     "units": [
       "Crazy:B"
     ],
-    "unitGroup": "Crazy:B",
     "title_ja": "NA NA NA SUMMER NIGHT BeeAT",
     "title_ja_reading": "なななさまーないとびーと",
     "title_ko": "NA NA NA SUMMER NIGHT BeeAT",
@@ -2597,7 +2485,6 @@ const SONGS = [
     "units": [
       "Crazy:B"
     ],
-    "unitGroup": "Crazy:B",
     "title_ja": "Foolish Alien",
     "title_ja_reading": "ふーりっしゅえいりあん",
     "title_ko": "Foolish Alien",
@@ -2621,7 +2508,6 @@ const SONGS = [
       "Crazy:B",
       "UNDEAD"
     ],
-    "unitGroup": "Crazy:B",
     "title_ja": "U.S.A.",
     "title_ja_reading": "ゆーえすえー",
     "title_ko": "U.S.A.",
@@ -2644,7 +2530,6 @@ const SONGS = [
     "units": [
       "Crazy:B"
     ],
-    "unitGroup": "Crazy:B",
     "title_ja": "Honeycomb Summer",
     "title_ja_reading": "はにかむさまー",
     "title_ko": "Honeycomb Summer",
@@ -2667,7 +2552,6 @@ const SONGS = [
     "units": [
       "Crazy:B"
     ],
-    "unitGroup": "Crazy:B",
     "title_ja": "指先のアリアドネ",
     "title_ja_reading": "ゆびさきのありあどね",
     "title_ko": "손끝의 아리아드네",
@@ -2690,7 +2574,6 @@ const SONGS = [
     "units": [
       "Crazy:B"
     ],
-    "unitGroup": "Crazy:B",
     "title_ja": "Helter-Spider",
     "title_ja_reading": "へるたーすぱいだー",
     "title_ko": "Helter-Spider",
@@ -2713,7 +2596,6 @@ const SONGS = [
     "units": [
       "Crazy:B"
     ],
-    "unitGroup": "Crazy:B",
     "title_ja": "Crazy Anthem",
     "title_ja_reading": "くれいじーあんせむ",
     "title_ko": "Crazy Anthem",
@@ -2736,7 +2618,6 @@ const SONGS = [
     "units": [
       "Crazy:B"
     ],
-    "unitGroup": "Crazy:B",
     "title_ja": "UTAKATA DANCE FLOOR",
     "title_ja_reading": "うたかただんすふろあ",
     "title_ko": "UTAKATA DANCE FLOOR",
@@ -2759,7 +2640,6 @@ const SONGS = [
     "units": [
       "Crazy:B"
     ],
-    "unitGroup": "Crazy:B",
     "title_ja": "KING",
     "title_ja_reading": "きんぐ",
     "title_ko": "KING",
@@ -2782,7 +2662,6 @@ const SONGS = [
     "units": [
       "Crazy:B"
     ],
-    "unitGroup": "Crazy:B",
     "title_ja": "ハニートラップ・マリアージュ",
     "title_ja_reading": "はにーとらっぷまりあーじゅ",
     "title_ko": "허니트랩・마리아주",
@@ -2806,7 +2685,6 @@ const SONGS = [
       "Crazy:B",
       "홍월"
     ],
-    "unitGroup": "Crazy:B",
     "title_ja": "CIVIL WAR",
     "title_ja_reading": "しびるうぉー",
     "title_ko": "CIVIL WAR",
@@ -2829,7 +2707,6 @@ const SONGS = [
     "units": [
       "2wink"
     ],
-    "unitGroup": "2wink",
     "title_ja": "歓迎☆トゥ・ウィンク雑技団",
     "title_ja_reading": "かんげいとぅういんくざつぎだん",
     "title_ko": "환영☆투・윙크 기예단",
@@ -2852,7 +2729,6 @@ const SONGS = [
     "units": [
       "2wink"
     ],
-    "unitGroup": "2wink",
     "title_ja": "TRICK with TREAT!! with UNDEAD",
     "title_ja_reading": "とりっくうぃずとりーとうぃずあんでっど",
     "title_ko": "TRICK with TREAT!! with UNDEAD",
@@ -2875,7 +2751,6 @@ const SONGS = [
     "units": [
       "2wink"
     ],
-    "unitGroup": "2wink",
     "title_ja": "Play “Tag”",
     "title_ja_reading": "ぷれいたぐ",
     "title_ko": "Play “Tag”",
@@ -2898,7 +2773,6 @@ const SONGS = [
     "units": [
       "2wink"
     ],
-    "unitGroup": "2wink",
     "title_ja": "ハートプリズム・シンメトリー",
     "title_ja_reading": "はーとぷりずむ・しんめとりー",
     "title_ko": "하트 프리즘・시메트리",
@@ -2921,7 +2795,6 @@ const SONGS = [
     "units": [
       "2wink"
     ],
-    "unitGroup": "2wink",
     "title_ja": "Mischievous Party Time!!",
     "title_ja_reading": "みすちばすぱーてぃーたいむ",
     "title_ko": "Mischievous Party Time!!",
@@ -2944,7 +2817,6 @@ const SONGS = [
     "units": [
       "2wink"
     ],
-    "unitGroup": "2wink",
     "title_ja": "シュガー・スパイス方程式",
     "title_ja_reading": "しゅがーすぱいすほうていしき",
     "title_ko": "슈가・스파이스 방정식",
@@ -2967,7 +2839,6 @@ const SONGS = [
     "units": [
       "2wink"
     ],
-    "unitGroup": "2wink",
     "title_ja": "トゥウィンクル空中戦",
     "title_ja_reading": "とぅういんくるくうちゅうせん",
     "title_ko": "트윙클 공중전",
@@ -2990,7 +2861,6 @@ const SONGS = [
     "units": [
       "2wink"
     ],
-    "unitGroup": "2wink",
     "title_ja": "POLYPHONIC WORLD",
     "title_ja_reading": "ぽりふぉにっくわーるど",
     "title_ko": "POLYPHONIC WORLD",
@@ -3013,7 +2883,6 @@ const SONGS = [
     "units": [
       "2wink"
     ],
-    "unitGroup": "2wink",
     "title_ja": "2winkle Star Beat☆",
     "title_ja_reading": "とぅうぃんくるすたーびーと",
     "title_ko": "2winkle Star Beat☆",
@@ -3037,7 +2906,6 @@ const SONGS = [
       "2wink",
       "Switch"
     ],
-    "unitGroup": "2wink",
     "title_ja": "Tell Your World",
     "title_ja_reading": "てるゆあわーるど",
     "title_ko": "Tell Your World",
@@ -3060,7 +2928,6 @@ const SONGS = [
     "units": [
       "2wink"
     ],
-    "unitGroup": "2wink",
     "title_ja": "Fighting Dreamer",
     "title_ja_reading": "ふぁいてぃんぐどりーまー",
     "title_ko": "Fighting Dreamer",
@@ -3083,7 +2950,6 @@ const SONGS = [
     "units": [
       "2wink"
     ],
-    "unitGroup": "2wink",
     "title_ja": "Swee2wink Love Letter",
     "title_ja_reading": "すうぃーとうぃんくらぶれたー",
     "title_ko": "Swee2wink Love Letter",
@@ -3106,7 +2972,6 @@ const SONGS = [
     "units": [
       "2wink"
     ],
-    "unitGroup": "2wink",
     "title_ja": "Turbulent Storm",
     "title_ja_reading": "たーびゅれんとすとーむ",
     "title_ko": "Turbulent Storm",
@@ -3129,7 +2994,6 @@ const SONGS = [
     "units": [
       "2wink"
     ],
-    "unitGroup": "2wink",
     "title_ja": "Love×me⇄monsteR",
     "title_ja_reading": "らぶみーもんすたー",
     "title_ko": "Love×me⇄monsteR",
@@ -3152,7 +3016,6 @@ const SONGS = [
     "units": [
       "2wink"
     ],
-    "unitGroup": "2wink",
     "title_ja": "Twin Wedding Vows",
     "title_ja_reading": "ついんうぇでぃんぐばうす",
     "title_ko": "Twin Wedding Vows",
@@ -3175,7 +3038,6 @@ const SONGS = [
     "units": [
       "2wink"
     ],
-    "unitGroup": "2wink",
     "title_ja": "来来☆2winkイリュージョン",
     "title_ja_reading": "らいらいとぅういんくいりゅーじょん",
     "title_ko": "어서오세요☆트윙크 일루전",
@@ -3198,7 +3060,6 @@ const SONGS = [
     "units": [
       "UNDEAD"
     ],
-    "unitGroup": "UNDEAD",
     "title_ja": "Melody in the Dark",
     "title_ja_reading": "めろでぃいんざだーく",
     "title_ko": "Melody in the Dark",
@@ -3221,7 +3082,6 @@ const SONGS = [
     "units": [
       "UNDEAD"
     ],
-    "unitGroup": "UNDEAD",
     "title_ja": "Valentine Eve's Nightmare",
     "title_ja_reading": "ばれんたいんいぶずないとめあ",
     "title_ko": "Valentine Eve's Nightmare",
@@ -3244,7 +3104,6 @@ const SONGS = [
     "units": [
       "UNDEAD"
     ],
-    "unitGroup": "UNDEAD",
     "title_ja": "Gate of the Abyss",
     "title_ja_reading": "げーとおぶじあびす",
     "title_ko": "Gate of the Abyss",
@@ -3267,7 +3126,6 @@ const SONGS = [
     "units": [
       "UNDEAD"
     ],
-    "unitGroup": "UNDEAD",
     "title_ja": "DESTRUCTION ROAD",
     "title_ja_reading": "ですとらくしょんろーど",
     "title_ko": "DESTRUCTION ROAD",
@@ -3290,7 +3148,6 @@ const SONGS = [
     "units": [
       "UNDEAD"
     ],
-    "unitGroup": "UNDEAD",
     "title_ja": "IMMORAL WORLD",
     "title_ja_reading": "いんもらるわーるど",
     "title_ko": "IMMORAL WORLD",
@@ -3314,7 +3171,6 @@ const SONGS = [
       "UNDEAD",
       "홍월"
     ],
-    "unitGroup": "UNDEAD",
     "title_ja": "PERFECTLY-IMPERFECT",
     "title_ja_reading": "ぱーふぇくとりーいんぱーふぇくと",
     "title_ko": "PERFECTLY-IMPERFECT",
@@ -3337,7 +3193,6 @@ const SONGS = [
     "units": [
       "UNDEAD"
     ],
-    "unitGroup": "UNDEAD",
     "title_ja": "ハニーミルクはお好みで",
     "title_ja_reading": "はにーみるくはおこのみで",
     "title_ko": "허니밀크는 취향대로",
@@ -3360,7 +3215,6 @@ const SONGS = [
     "units": [
       "UNDEAD"
     ],
-    "unitGroup": "UNDEAD",
     "title_ja": "罪の底",
     "title_ja_reading": "つみのそこ",
     "title_ko": "죄의 밑바닥 ",
@@ -3383,7 +3237,6 @@ const SONGS = [
     "units": [
       "UNDEAD"
     ],
-    "unitGroup": "UNDEAD",
     "title_ja": "Savage Love Affair",
     "title_ja_reading": "さべーじらぶあふぇあ",
     "title_ko": "Savage Love Affair",
@@ -3406,7 +3259,6 @@ const SONGS = [
     "units": [
       "UNDEAD"
     ],
-    "unitGroup": "UNDEAD",
     "title_ja": "Darkness 4",
     "title_ja_reading": "だーくねすふぉー",
     "title_ko": "Darkness 4",
@@ -3429,7 +3281,6 @@ const SONGS = [
     "units": [
       "UNDEAD"
     ],
-    "unitGroup": "UNDEAD",
     "title_ja": "Nightless World",
     "title_ja_reading": "ないとれすわーるど",
     "title_ko": "Nightless World",
@@ -3452,7 +3303,6 @@ const SONGS = [
     "units": [
       "UNDEAD"
     ],
-    "unitGroup": "UNDEAD",
     "title_ja": "FORBIDDEN RAIN",
     "title_ja_reading": "ふぉーびどぅんれいん",
     "title_ko": "FORBIDDEN RAIN",
@@ -3475,7 +3325,6 @@ const SONGS = [
     "units": [
       "UNDEAD"
     ],
-    "unitGroup": "UNDEAD",
     "title_ja": "Sustain Memories",
     "title_ja_reading": "さすていんめもりーず",
     "title_ko": "Sustain Memories",
@@ -3498,7 +3347,6 @@ const SONGS = [
     "units": [
       "UNDEAD"
     ],
-    "unitGroup": "UNDEAD",
     "title_ja": "Resurrection of Soul",
     "title_ja_reading": "れざれくしょんおぶそうる",
     "title_ko": "Resurrection of Soul",
@@ -3521,7 +3369,6 @@ const SONGS = [
     "units": [
       "UNDEAD"
     ],
-    "unitGroup": "UNDEAD",
     "title_ja": "SWINGIN' PARONIRIA",
     "title_ja_reading": "すうぃんぎんぱろにりあ",
     "title_ko": "SWINGIN' PARONIRIA",
@@ -3544,7 +3391,6 @@ const SONGS = [
     "units": [
       "UNDEAD"
     ],
-    "unitGroup": "UNDEAD",
     "title_ja": "Wanderlust Sailing",
     "title_ja_reading": "わんだーらすとせいりんぐ",
     "title_ko": "Wanderlust Sailing",
@@ -3567,7 +3413,6 @@ const SONGS = [
     "units": [
       "Ra*bits"
     ],
-    "unitGroup": "Ra*bits",
     "title_ja": "Joyful×Box*",
     "title_ja_reading": "じょいふるぼっくす",
     "title_ko": "Joyful×Box*",
@@ -3590,7 +3435,6 @@ const SONGS = [
     "units": [
       "Ra*bits"
     ],
-    "unitGroup": "Ra*bits",
     "title_ja": "Love Ra*bits Party!!",
     "title_ja_reading": "らぶらびっつぱーてぃー",
     "title_ko": "Love Ra*bits Party!!",
@@ -3613,7 +3457,6 @@ const SONGS = [
     "units": [
       "Ra*bits"
     ],
-    "unitGroup": "Ra*bits",
     "title_ja": "メルティ♡キッチン",
     "title_ja_reading": "めるてぃきっちん",
     "title_ko": "멜티♡키친",
@@ -3636,7 +3479,6 @@ const SONGS = [
     "units": [
       "Ra*bits"
     ],
-    "unitGroup": "Ra*bits",
     "title_ja": "Milky Starry Charm",
     "title_ja_reading": "みるきーすたーりーちゃーむ",
     "title_ko": "Milky Starry Charm",
@@ -3660,7 +3502,6 @@ const SONGS = [
       "Ra*bits",
       "DF"
     ],
-    "unitGroup": "Ra*bits",
     "title_ja": "ポケットに宇宙",
     "title_ja_reading": "ぽけっとにうちゅう",
     "title_ko": "주머니 속의 우주",
@@ -3683,7 +3524,6 @@ const SONGS = [
     "units": [
       "Ra*bits"
     ],
-    "unitGroup": "Ra*bits",
     "title_ja": "メイド・イン・トキメキ♪",
     "title_ja_reading": "めいどいんときめき",
     "title_ko": "메이드・인・두근두근♪",
@@ -3706,7 +3546,6 @@ const SONGS = [
     "units": [
       "Ra*bits"
     ],
-    "unitGroup": "Ra*bits",
     "title_ja": "野うさぎマーチ♪",
     "title_ja_reading": "のうさぎまーち♪",
     "title_ko": "산토끼 행진곡♪",
@@ -3729,7 +3568,6 @@ const SONGS = [
     "units": [
       "Ra*bits"
     ],
-    "unitGroup": "Ra*bits",
     "title_ja": "ヒカリスペクトル",
     "title_ja_reading": "ひかりすぺくとる",
     "title_ko": "빛 스펙트럼",
@@ -3752,7 +3590,6 @@ const SONGS = [
     "units": [
       "Ra*bits"
     ],
-    "unitGroup": "Ra*bits",
     "title_ja": "うさぎの森の音楽会",
     "title_ja_reading": "うさぎのもりのおんがくかい",
     "title_ko": "토끼 숲의 음악회",
@@ -3775,7 +3612,6 @@ const SONGS = [
     "units": [
       "Ra*bits"
     ],
-    "unitGroup": "Ra*bits",
     "title_ja": "Dream Collection",
     "title_ja_reading": "どりーむこれくしょん",
     "title_ko": "Dream Collection",
@@ -3798,7 +3634,6 @@ const SONGS = [
     "units": [
       "Ra*bits"
     ],
-    "unitGroup": "Ra*bits",
     "title_ja": "Love it Love it",
     "title_ja_reading": "らびっとらびっと",
     "title_ko": "Love it Love it",
@@ -3821,7 +3656,6 @@ const SONGS = [
     "units": [
       "Ra*bits"
     ],
-    "unitGroup": "Ra*bits",
     "title_ja": "FALLIN' LOVE=IT'S WONDERLAND",
     "title_ja_reading": "ふぉーりんらぶいっつわんだーらんど",
     "title_ko": "FALLIN' LOVE=IT'S WONDERLAND",
@@ -3844,7 +3678,6 @@ const SONGS = [
     "units": [
       "Ra*bits"
     ],
-    "unitGroup": "Ra*bits",
     "title_ja": "ハレノヒSugar Wave",
     "title_ja_reading": "はれのひしゅがーうぇーぶ",
     "title_ko": "특별한 날 Sugar Wave",
@@ -3867,7 +3700,6 @@ const SONGS = [
     "units": [
       "Ra*bits"
     ],
-    "unitGroup": "Ra*bits",
     "title_ja": "パラレルメイズ",
     "title_ja_reading": "ぱられるめいず",
     "title_ko": "패러렐 메이즈",
@@ -3890,7 +3722,6 @@ const SONGS = [
     "units": [
       "Ra*bits"
     ],
-    "unitGroup": "Ra*bits",
     "title_ja": "JUMPIN' LUCK BEAT",
     "title_ja_reading": "じゃんぴんらっくびーと",
     "title_ko": "JUMPIN' LUCK BEAT",
@@ -3913,7 +3744,6 @@ const SONGS = [
     "units": [
       "Ra*bits"
     ],
-    "unitGroup": "Ra*bits",
     "title_ja": "RaRaRa＊Station!",
     "title_ja_reading": "らららすてーしょん",
     "title_ko": "RaRaRa＊Station!",
@@ -3936,7 +3766,6 @@ const SONGS = [
     "units": [
       "홍월"
     ],
-    "unitGroup": "홍월",
     "title_ja": "百花繚乱、紅月夜",
     "title_ja_reading": "ひゃっかりょうらん、あかつきよ",
     "title_ko": "백화요란, 홍월야",
@@ -3959,7 +3788,6 @@ const SONGS = [
     "units": [
       "홍월"
     ],
-    "unitGroup": "홍월",
     "title_ja": "薄紅色の約束",
     "title_ja_reading": "うすべにいろのやくそく",
     "title_ko": "연분홍색 약속",
@@ -3982,7 +3810,6 @@ const SONGS = [
     "units": [
       "홍월"
     ],
-    "unitGroup": "홍월",
     "title_ja": "斬 －決意ノ刃－",
     "title_ja_reading": "ざん けついのやいば",
     "title_ko": "참 -결의의 칼날-",
@@ -4005,7 +3832,6 @@ const SONGS = [
     "units": [
       "홍월"
     ],
-    "unitGroup": "홍월",
     "title_ja": "祭夜絵巻",
     "title_ja_reading": "さいやえまき",
     "title_ko": "축제의 밤 그림 두루마리",
@@ -4028,7 +3854,6 @@ const SONGS = [
     "units": [
       "홍월"
     ],
-    "unitGroup": "홍월",
     "title_ja": "月下無双、紅の舞",
     "title_ja_reading": "げっかむそう、くれないのまい",
     "title_ko": "월하무쌍, 붉은 춤",
@@ -4051,7 +3876,6 @@ const SONGS = [
     "units": [
       "홍월"
     ],
-    "unitGroup": "홍월",
     "title_ja": "剣戟の舞",
     "title_ja_reading": "けんげきのまい",
     "title_ko": "검극의 춤",
@@ -4074,7 +3898,6 @@ const SONGS = [
     "units": [
       "홍월"
     ],
-    "unitGroup": "홍월",
     "title_ja": "絲",
     "title_ja_reading": "いと",
     "title_ko": "실",
@@ -4097,7 +3920,6 @@ const SONGS = [
     "units": [
       "홍월"
     ],
-    "unitGroup": "홍월",
     "title_ja": "夜空、然りとて鵲は",
     "title_ja_reading": "よぞら、さりとてかささぎは",
     "title_ko": "밤하늘, 그럼에도 까치는",
@@ -4120,7 +3942,6 @@ const SONGS = [
     "units": [
       "홍월"
     ],
-    "unitGroup": "홍월",
     "title_ja": "百花繚乱、紅月夜 (2025 ver.)",
     "title_ja_reading": "ひゃっかりょうらん、あかつきよ ばーじょん",
     "title_ko": "백화요란, 홍월야 (2025 ver.)",
@@ -4143,7 +3964,6 @@ const SONGS = [
     "units": [
       "홍월"
     ],
-    "unitGroup": "홍월",
     "title_ja": "紅月いろは唄",
     "title_ja_reading": "あかつきいろはうた",
     "title_ko": "홍월 이로하 노래",
@@ -4166,7 +3986,6 @@ const SONGS = [
     "units": [
       "홍월"
     ],
-    "unitGroup": "홍월",
     "title_ja": "月光奇譚",
     "title_ja_reading": "げっこうきたん",
     "title_ko": "월광기담",
@@ -4189,7 +4008,6 @@ const SONGS = [
     "units": [
       "홍월"
     ],
-    "unitGroup": "홍월",
     "title_ja": "夏鳥の詩 -サマーバード-",
     "title_ja_reading": "なつどりのうた さまーばーど",
     "title_ko": "여름 새의 시 -서머버드-",
@@ -4212,7 +4030,6 @@ const SONGS = [
     "units": [
       "홍월"
     ],
-    "unitGroup": "홍월",
     "title_ja": "金色千夜夢舞台",
     "title_ja_reading": "こんじきせんやゆめぶたい",
     "title_ko": "금색천야몽무대",
@@ -4235,7 +4052,6 @@ const SONGS = [
     "units": [
       "홍월"
     ],
-    "unitGroup": "홍월",
     "title_ja": "天翔KAGETSU",
     "title_ja_reading": "てんしょうかげつ",
     "title_ko": "천상 KAGETSU",
@@ -4258,7 +4074,6 @@ const SONGS = [
     "units": [
       "홍월"
     ],
-    "unitGroup": "홍월",
     "title_ja": "LOUDEST BUGS",
     "title_ja_reading": "らうですとばぐず",
     "title_ko": "LOUDEST BUGS",
@@ -4281,7 +4096,6 @@ const SONGS = [
     "units": [
       "홍월"
     ],
-    "unitGroup": "홍월",
     "title_ja": "炎纏焰踊千変万火",
     "title_ja_reading": "えんてんえんようせんぺんばんか",
     "title_ko": "염전염용 천변만화",
@@ -4304,7 +4118,6 @@ const SONGS = [
     "units": [
       "MDU"
     ],
-    "unitGroup": "MDU",
     "title_ja": "Dear World (マスターピース ver.)",
     "title_ja_reading": "でぃあわーるど  ばーじょん",
     "title_ko": "Dear World (마스터피스 ver)",
@@ -4327,7 +4140,6 @@ const SONGS = [
     "units": [
       "MDU"
     ],
-    "unitGroup": "MDU",
     "title_ja": "Dear World",
     "title_ja_reading": "でぃあわーるど",
     "title_ko": "Dear World",
@@ -4350,7 +4162,6 @@ const SONGS = [
     "units": [
       "MDU"
     ],
-    "unitGroup": "MDU",
     "title_ja": "BUBBLE GUM DANCE",
     "title_ja_reading": "ばぶるがむだんす",
     "title_ko": "BUBBLE GUM DANCE",
@@ -4373,7 +4184,6 @@ const SONGS = [
     "units": [
       "Knights"
     ],
-    "unitGroup": "Knights",
     "title_ja": "Voice of Sword",
     "title_ja_reading": "ヴぉいすおぶそーど",
     "title_ko": "Voice of Sword",
@@ -4396,7 +4206,6 @@ const SONGS = [
     "units": [
       "Knights"
     ],
-    "unitGroup": "Knights",
     "title_ja": "Silent Oath",
     "title_ja_reading": "さいれんとおーす",
     "title_ko": "Silent Oath",
@@ -4419,7 +4228,6 @@ const SONGS = [
     "units": [
       "Knights"
     ],
-    "unitGroup": "Knights",
     "title_ja": "Grateful allegiance",
     "title_ja_reading": "ぐれいとふるあれじゃんす",
     "title_ko": "Grateful allegiance",
@@ -4442,7 +4250,6 @@ const SONGS = [
     "units": [
       "Knights"
     ],
-    "unitGroup": "Knights",
     "title_ja": "Fight for Judge",
     "title_ja_reading": "ふぁいとふぉーじゃっじ",
     "title_ko": "Fight for Judge",
@@ -4465,7 +4272,6 @@ const SONGS = [
     "units": [
       "Knights"
     ],
-    "unitGroup": "Knights",
     "title_ja": "Promise Swords",
     "title_ja_reading": "ぷろみすそーど",
     "title_ko": "Promise Swords",
@@ -4488,7 +4294,6 @@ const SONGS = [
     "units": [
       "Knights"
     ],
-    "unitGroup": "Knights",
     "title_ja": "Article of Faith",
     "title_ja_reading": "あーてぃくるおぶふぇいす",
     "title_ko": "Article of Faith",
@@ -4511,7 +4316,6 @@ const SONGS = [
     "units": [
       "Knights"
     ],
-    "unitGroup": "Knights",
     "title_ja": "Wonderful Happiness",
     "title_ja_reading": "わんだふるはぴねす",
     "title_ko": "Wonderful Happiness",
@@ -4534,7 +4338,6 @@ const SONGS = [
     "units": [
       "Knights"
     ],
-    "unitGroup": "Knights",
     "title_ja": "Castle of my Heart",
     "title_ja_reading": "きゃっするおぶまいはーと",
     "title_ko": "Castle of my Heart",
@@ -4557,7 +4360,6 @@ const SONGS = [
     "units": [
       "Knights"
     ],
-    "unitGroup": "Knights",
     "title_ja": "Knights the Phantom Thief",
     "title_ja_reading": "ないつざふぁんとむしーふ",
     "title_ko": "Knights the Phantom Thief",
@@ -4580,7 +4382,6 @@ const SONGS = [
     "units": [
       "Knights"
     ],
-    "unitGroup": "Knights",
     "title_ja": "Little Romance",
     "title_ja_reading": "りとるろまんす",
     "title_ko": "Little Romance",
@@ -4603,7 +4404,6 @@ const SONGS = [
     "units": [
       "Knights"
     ],
-    "unitGroup": "Knights",
     "title_ja": "Mystic Fragrance",
     "title_ja_reading": "みすてぃっくふれぐらんす",
     "title_ko": "Mystic Fragrance",
@@ -4626,7 +4426,6 @@ const SONGS = [
     "units": [
       "Knights"
     ],
-    "unitGroup": "Knights",
     "title_ja": "Coruscate Breeze",
     "title_ja_reading": "こるすけいとぶりーず",
     "title_ko": "Coruscate Breeze",
@@ -4649,7 +4448,6 @@ const SONGS = [
     "units": [
       "Knights"
     ],
-    "unitGroup": "Knights",
     "title_ja": "Or the Beautiful Golden Drop",
     "title_ja_reading": "おあざびゅーてぃふるごーるでんどろっぷ",
     "title_ko": "Or the Beautiful Golden Drop",
@@ -4672,7 +4470,6 @@ const SONGS = [
     "units": [
       "Knights"
     ],
-    "unitGroup": "Knights",
     "title_ja": "Luminous Crown",
     "title_ja_reading": "るみなすくらうん",
     "title_ko": "Luminous Crown",
@@ -4695,7 +4492,6 @@ const SONGS = [
     "units": [
       "Knights"
     ],
-    "unitGroup": "Knights",
     "title_ja": "Heart Collector",
     "title_ja_reading": "はーとこれくたー",
     "title_ko": "Heart Collector",
@@ -4718,7 +4514,6 @@ const SONGS = [
     "units": [
       "Knights"
     ],
-    "unitGroup": "Knights",
     "title_ja": "Secret Masquerade",
     "title_ja_reading": "しーくれっとますかれーど",
     "title_ko": "Secret Masquerade",
@@ -4741,7 +4536,6 @@ const SONGS = [
     "units": [
       "Switch"
     ],
-    "unitGroup": "Switch",
     "title_ja": "Temptation Magic",
     "title_ja_reading": "てんぷてーしょんまじっく",
     "title_ko": "Temptation Magic",
@@ -4764,7 +4558,6 @@ const SONGS = [
     "units": [
       "Switch"
     ],
-    "unitGroup": "Switch",
     "title_ja": "エメラルドプラネット",
     "title_ja_reading": "えめらるどぷらねっと",
     "title_ko": "에메랄드 플래닛",
@@ -4787,7 +4580,6 @@ const SONGS = [
     "units": [
       "Switch"
     ],
-    "unitGroup": "Switch",
     "title_ja": "Knockin' Fantasy",
     "title_ja_reading": "のっきんふぁんたじー",
     "title_ko": "Knockin' Fantasy",
@@ -4810,7 +4602,6 @@ const SONGS = [
     "units": [
       "Switch"
     ],
-    "unitGroup": "Switch",
     "title_ja": "I “Witch” You A Happy Halloween! ",
     "title_ja_reading": "あいうぃっちゆーあはっぴーはろうぃん",
     "title_ko": "I “Witch” You A Happy Halloween! ",
@@ -4833,7 +4624,6 @@ const SONGS = [
     "units": [
       "Switch"
     ],
-    "unitGroup": "Switch",
     "title_ja": "Magic for your “Switch”",
     "title_ja_reading": "まじっくふぉーゆあすうぃっち",
     "title_ko": "Magic for your “Switch”",
@@ -4856,7 +4646,6 @@ const SONGS = [
     "units": [
       "Switch"
     ],
-    "unitGroup": "Switch",
     "title_ja": "Galaxy Destiny",
     "title_ja_reading": "ぎゃらくしーですてぃにー",
     "title_ko": "Galaxy Destiny",
@@ -4879,7 +4668,6 @@ const SONGS = [
     "units": [
       "Switch"
     ],
-    "unitGroup": "Switch",
     "title_ja": "Seven Days “Prismagic”",
     "title_ja_reading": "せぶんでいずぷりずまじっく",
     "title_ko": "Seven Days “Prismagic”",
@@ -4902,7 +4690,6 @@ const SONGS = [
     "units": [
       "Switch"
     ],
-    "unitGroup": "Switch",
     "title_ja": "イースター・カーニバル",
     "title_ja_reading": "いーすたー・かーにばる",
     "title_ko": "이스터 카니발",
@@ -4925,7 +4712,6 @@ const SONGS = [
     "units": [
       "Switch"
     ],
-    "unitGroup": "Switch",
     "title_ja": "A little bit UP!!",
     "title_ja_reading": "ありとるびっとあっぷ",
     "title_ko": "A little bit UP!!",
@@ -4948,7 +4734,6 @@ const SONGS = [
     "units": [
       "Switch"
     ],
-    "unitGroup": "Switch",
     "title_ja": "オモイノカケラ",
     "title_ja_reading": "おもいのかけら",
     "title_ko": "마음의 조각",
@@ -4971,7 +4756,6 @@ const SONGS = [
     "units": [
       "Switch"
     ],
-    "unitGroup": "Switch",
     "title_ja": "Brilliant Smile",
     "title_ja_reading": "ぶりりあんとすまいる",
     "title_ko": "Brilliant Smile",
@@ -4994,7 +4778,6 @@ const SONGS = [
     "units": [
       "Switch"
     ],
-    "unitGroup": "Switch",
     "title_ja": "Romancing Cruise",
     "title_ja_reading": "ろまんちっくくるーず",
     "title_ko": "Romancing Cruise",
@@ -5017,7 +4800,6 @@ const SONGS = [
     "units": [
       "Switch"
     ],
-    "unitGroup": "Switch",
     "title_ja": "Chocola-Tic After School",
     "title_ja_reading": "しょこらてぃっくあふたーすくーる",
     "title_ko": "Chocola-Tic After School",
@@ -5040,7 +4822,6 @@ const SONGS = [
     "units": [
       "Switch"
     ],
-    "unitGroup": "Switch",
     "title_ja": "Wish upon a MUSIC!!",
     "title_ja_reading": "うぃっしゅあぽんあみゅーじっく",
     "title_ko": "Wish upon a MUSIC!!",
@@ -5063,7 +4844,6 @@ const SONGS = [
     "units": [
       "Switch"
     ],
-    "unitGroup": "Switch",
     "title_ja": "Switching Journey",
     "title_ja_reading": "すうぃっちんぐじゃーにー",
     "title_ko": "Switching Journey",
@@ -5086,7 +4866,6 @@ const SONGS = [
     "units": [
       "MaM"
     ],
-    "unitGroup": "MaM",
     "title_ja": "Blooming World",
     "title_ja_reading": "ぶるーみんぐわーるど",
     "title_ko": "Blooming World",
@@ -5109,7 +4888,6 @@ const SONGS = [
     "units": [
       "MaM"
     ],
-    "unitGroup": "MaM",
     "title_ja": "君印 Be Ambitious!!",
     "title_ja_reading": "きみじるし びー あんびしゃす",
     "title_ko": "너의 정표 Be Ambitious!!",
@@ -5132,7 +4910,6 @@ const SONGS = [
     "units": [
       "MaM"
     ],
-    "unitGroup": "MaM",
     "title_ja": "Festive!",
     "title_ja_reading": "ふぇすてぃてぃぶ",
     "title_ko": "Festive!",
@@ -5155,7 +4932,6 @@ const SONGS = [
     "units": [
       "MaM"
     ],
-    "unitGroup": "MaM",
     "title_ja": "愉快痛快 That's alright!",
     "title_ja_reading": "ゆかいつうかい ざっつ おーるらいと",
     "title_ko": "유쾌통쾌 That's alright!",
@@ -5178,7 +4954,6 @@ const SONGS = [
     "units": [
       "MaM"
     ],
-    "unitGroup": "MaM",
     "title_ja": "辻風に吹かれて",
     "title_ja_reading": "つむじかぜにふかれて",
     "title_ko": "선풍에 휘날려",
@@ -5201,7 +4976,6 @@ const SONGS = [
     "units": [
       "MaM"
     ],
-    "unitGroup": "MaM",
     "title_ja": "ハンズクラフト",
     "title_ja_reading": "はんずくらふと",
     "title_ko": "핸즈크래프트",
@@ -5224,7 +4998,6 @@ const SONGS = [
     "units": [
       "MaM"
     ],
-    "unitGroup": "MaM",
     "title_ja": "HELLO, NEW YEAR!",
     "title_ja_reading": "はろーにゅーいやー",
     "title_ko": "HELLO, NEW YEAR!",
@@ -5247,7 +5020,6 @@ const SONGS = [
     "units": [
       "MaM"
     ],
-    "unitGroup": "MaM",
     "title_ja": "ハロウィン・ランデブー",
     "title_ja_reading": "はろうぃん・らんでぶー",
     "title_ko": "할로윈・랑데부",
@@ -5270,7 +5042,6 @@ const SONGS = [
     "units": [
       "MaM"
     ],
-    "unitGroup": "MaM",
     "title_ja": "Light on the Orbit",
     "title_ja_reading": "らいとおんざおーびっと",
     "title_ko": "Light on the Orbit",
@@ -5293,7 +5064,6 @@ const SONGS = [
     "units": [
       "DF"
     ],
-    "unitGroup": "DF",
     "title_ja": "Stippling",
     "title_ja_reading": "すてぃっぷりんぐ",
     "title_ko": "Stippling",
@@ -5316,7 +5086,6 @@ const SONGS = [
     "units": [
       "DF"
     ],
-    "unitGroup": "DF",
     "title_ja": "ネビュラ",
     "title_ja_reading": "ねびゅら",
     "title_ko": "네뷸라",
@@ -5339,7 +5108,6 @@ const SONGS = [
     "units": [
       "DF"
     ],
-    "unitGroup": "DF",
     "title_ja": "=EYE=",
     "title_ja_reading": "あい",
     "title_ko": "=EYE=",
@@ -5362,7 +5130,6 @@ const SONGS = [
     "units": [
       "DF"
     ],
-    "unitGroup": "DF",
     "title_ja": "No name yet",
     "title_ja_reading": "のーねーむいぇっと",
     "title_ko": "No name yet",
@@ -5385,7 +5152,6 @@ const SONGS = [
     "units": [
       "DF"
     ],
-    "unitGroup": "DF",
     "title_ja": "Bye-Bye Buddy",
     "title_ja_reading": "ばいばいばでぃ",
     "title_ko": "Bye-Bye Buddy",
@@ -5408,7 +5174,6 @@ const SONGS = [
     "units": [
       "S-Pri"
     ],
-    "unitGroup": "S-Pri",
     "title_ja": "しょーがいゼッタイそーあい宣言♥",
     "title_ja_reading": "しょーがいぜったいそーあいせんげん",
     "title_ko": "일생 절대 상애 선언♥",
@@ -5431,7 +5196,6 @@ const SONGS = [
     "units": [
       "S-Pri"
     ],
-    "unitGroup": "S-Pri",
     "title_ja": "スキスキハンター♡",
     "title_ja_reading": "すきすきはんたー♡",
     "title_ko": "좋아 좋아 헌터♡",
@@ -5454,7 +5218,6 @@ const SONGS = [
     "units": [
       "S-Pri"
     ],
-    "unitGroup": "S-Pri",
     "title_ja": "Be My Princess♡",
     "title_ja_reading": "びーまいぷりんせす",
     "title_ko": "Be My Princess♡",
@@ -5477,7 +5240,6 @@ const SONGS = [
     "units": [
       "S-Pri"
     ],
-    "unitGroup": "S-Pri",
     "title_ja": "ベリイ・ベリイ・スイート・ホワイト♡",
     "title_ja_reading": "べりい・べりい・すいーと・ほわいと♡",
     "title_ko": "베리・베리・스위트・화이트♡",
@@ -5500,7 +5262,6 @@ const SONGS = [
     "units": [
       "S-Pri"
     ],
-    "unitGroup": "S-Pri",
     "title_ja": "メランコリーを駆け抜けろ♥",
     "title_ja_reading": "めらんこりーをかけぬけろ",
     "title_ko": "멜랑콜리를 달려나가라♥",
@@ -5523,7 +5284,6 @@ const SONGS = [
     "units": [
       "주년"
     ],
-    "unitGroup": "주년·기념",
     "title_ja": "BRAND NEW STARS!!",
     "title_ja_reading": "ぶらんにゅーすたーず",
     "title_ko": "BRAND NEW STARS!!",
@@ -5546,7 +5306,6 @@ const SONGS = [
     "units": [
       "기타"
     ],
-    "unitGroup": "기타",
     "title_ja": "Stars' Ensemble!",
     "title_ja_reading": "すたーずあんさんぶる",
     "title_ko": "Stars' Ensemble!",
@@ -5569,7 +5328,6 @@ const SONGS = [
     "units": [
       "J&A"
     ],
-    "unitGroup": "J&A",
     "title_ja": "Rainbow Stairway",
     "title_ja_reading": "れいんぼーすてあうぇい",
     "title_ko": "Rainbow Stairway",
@@ -5592,7 +5350,6 @@ const SONGS = [
     "units": [
       "추억"
     ],
-    "unitGroup": "기타",
     "title_ja": "Eccentric Party Night!!",
     "title_ja_reading": "えきせんとりっくぱーてぃーないと",
     "title_ko": "Eccentric Party Night!!",
@@ -5615,7 +5372,6 @@ const SONGS = [
     "units": [
       "추억"
     ],
-    "unitGroup": "기타",
     "title_ja": "Genuine Revelation",
     "title_ja_reading": "じぇにゅいんりヴぇれいしょん",
     "title_ko": "Genuine Revelation",
@@ -5638,7 +5394,6 @@ const SONGS = [
     "units": [
       "추억"
     ],
-    "unitGroup": "기타",
     "title_ja": "Death Game Holic",
     "title_ja_reading": "ですげーむほりっく",
     "title_ko": "Death Game Holic",
@@ -5661,7 +5416,6 @@ const SONGS = [
     "units": [
       "기타"
     ],
-    "unitGroup": "기타",
     "title_ja": "Crush of Judgment",
     "title_ja_reading": "くらっしゅおぶじゃっじめんと",
     "title_ko": "Crush of Judgment",
@@ -5684,7 +5438,6 @@ const SONGS = [
     "units": [
       "추억"
     ],
-    "unitGroup": "기타",
     "title_ja": "ROCK ROAR",
     "title_ja_reading": "ろっくろあ",
     "title_ko": "ROCK ROAR",
@@ -5707,7 +5460,6 @@ const SONGS = [
     "units": [
       "추억"
     ],
-    "unitGroup": "기타",
     "title_ja": "We'll be \"Knights\"",
     "title_ja_reading": "うぃるびーないつ",
     "title_ko": "We'll be \"Knights\"",
@@ -5730,7 +5482,6 @@ const SONGS = [
     "units": [
       "추억"
     ],
-    "unitGroup": "기타",
     "title_ja": "聖少年遊戯",
     "title_ja_reading": "せいしょうねんゆうぎ",
     "title_ko": "성소년 유희",
@@ -5753,7 +5504,6 @@ const SONGS = [
     "units": [
       "기타"
     ],
-    "unitGroup": "기타",
     "title_ja": "瞬きSign☆",
     "title_ja_reading": "まばたきさいん",
     "title_ko": "깜빡 Sign☆",
@@ -5776,7 +5526,6 @@ const SONGS = [
     "units": [
       "기타"
     ],
-    "unitGroup": "기타",
     "title_ja": "セツナDrops",
     "title_ja_reading": "せつなどろっぷす",
     "title_ko": "찰나 Drops",
@@ -5799,7 +5548,6 @@ const SONGS = [
     "units": [
       "기타"
     ],
-    "unitGroup": "기타",
     "title_ja": "LOCK YOUR GAZE",
     "title_ja_reading": "ろっくゆあげいず",
     "title_ko": "LOCK YOUR GAZE",
@@ -5822,7 +5570,6 @@ const SONGS = [
     "units": [
       "만우절"
     ],
-    "unitGroup": "주년·기념",
     "title_ja": "あんさんぶる体操!!",
     "title_ja_reading": "たいそう",
     "title_ko": "앙상블 체조!!",
@@ -5845,7 +5592,6 @@ const SONGS = [
     "units": [
       "셔플"
     ],
-    "unitGroup": "셔플",
     "title_ja": "デートプランA to Z",
     "title_ja_reading": "でーとぷらんえーとぅずぃー",
     "title_ko": "데이트 플랜 A to Z",
@@ -5868,7 +5614,6 @@ const SONGS = [
     "units": [
       "주년"
     ],
-    "unitGroup": "주년·기념",
     "title_ja": "Walk with your smile",
     "title_ja_reading": "うぉーくうぃずゆあすまいる",
     "title_ko": "Walk with your smile",
@@ -5891,7 +5636,6 @@ const SONGS = [
     "units": [
       "셔플"
     ],
-    "unitGroup": "셔플",
     "title_ja": "Midnight Butlers",
     "title_ja_reading": "みっどないとばとらーず",
     "title_ko": "Midnight Butlers",
@@ -5914,7 +5658,6 @@ const SONGS = [
     "units": [
       "셔플"
     ],
-    "unitGroup": "셔플",
     "title_ja": "Sweet Sweet White Song",
     "title_ja_reading": "すぃーとすぃーとほわいとそんぐ",
     "title_ko": "Sweet Sweet White Song",
@@ -5937,7 +5680,6 @@ const SONGS = [
     "units": [
       "새해"
     ],
-    "unitGroup": "주년·기념",
     "title_ja": "年越しあんさんぶる！！2020→2021",
     "title_ja_reading": "としこしあんさんぶる",
     "title_ko": "새해맞이 앙상블!! 2020→2021",
@@ -5960,7 +5702,6 @@ const SONGS = [
     "units": [
       "만우절"
     ],
-    "unitGroup": "주년·기념",
     "title_ja": "エンドレスヴィーデ",
     "title_ja_reading": "えんどれすヴぃーで",
     "title_ko": "엔들리스 뷔데",
@@ -5983,7 +5724,6 @@ const SONGS = [
     "units": [
       "주년"
     ],
-    "unitGroup": "주년·기념",
     "title_ja": "Walk with your smile (Acoustic Ver.)",
     "title_ja_reading": "うぉーくうぃずゆあすまいるあこーすてぃっく ばーじょん",
     "title_ko": "Walk with your smile (Acoustic Ver.)",
@@ -6006,7 +5746,6 @@ const SONGS = [
     "units": [
       "주년"
     ],
-    "unitGroup": "주년·기념",
     "title_ja": "FUSIONIC STARS!!",
     "title_ja_reading": "ふゅーじょにっくすたーず",
     "title_ko": "FUSIONIC STARS!!",
@@ -6029,7 +5768,6 @@ const SONGS = [
     "units": [
       "셔플"
     ],
-    "unitGroup": "셔플",
     "title_ja": "Aisle, be with you",
     "title_ja_reading": "あいるびーうぃずゆー",
     "title_ko": "Aisle, be with you",
@@ -6052,7 +5790,6 @@ const SONGS = [
     "units": [
       "셔플"
     ],
-    "unitGroup": "셔플",
     "title_ja": "ムーンライトディスコ",
     "title_ja_reading": "むーんらいとでぃすこ",
     "title_ko": "문라이트 디스코",
@@ -6075,7 +5812,6 @@ const SONGS = [
     "units": [
       "셔플"
     ],
-    "unitGroup": "셔플",
     "title_ja": "Noir Neige",
     "title_ja_reading": "のわーるねーじゅ",
     "title_ko": "Noir Neige",
@@ -6098,7 +5834,6 @@ const SONGS = [
     "units": [
       "새해"
     ],
-    "unitGroup": "주년·기념",
     "title_ja": "年越しあんさんぶる！！2021→2022",
     "title_ja_reading": "としこしあんさんぶる",
     "title_ko": "새해맞이 앙상블!! 2021→2022 ",
@@ -6121,7 +5856,6 @@ const SONGS = [
     "units": [
       "기타"
     ],
-    "unitGroup": "기타",
     "title_ja": "Life is so Dramatic!!",
     "title_ja_reading": "らいふいずそーでぃらまてぃっく",
     "title_ko": "Life is so Dramatic!!",
@@ -6144,7 +5878,6 @@ const SONGS = [
     "units": [
       "만우절"
     ],
-    "unitGroup": "주년·기념",
     "title_ja": "BUKUBU NEW STARS!!",
     "title_ja_reading": "ぶくぶにゅーすたーず",
     "title_ko": "BUKUBU NEW STARS!!",
@@ -6167,7 +5900,6 @@ const SONGS = [
     "units": [
       "셔플"
     ],
-    "unitGroup": "셔플",
     "title_ja": "パラダイム・リバーシ！",
     "title_ja_reading": "ぱらだいむ・りばーし！",
     "title_ko": "패러다임 ・ 리버시!",
@@ -6190,7 +5922,6 @@ const SONGS = [
     "units": [
       "주년"
     ],
-    "unitGroup": "주년·기념",
     "title_ja": "Surprising Thanks!!",
     "title_ja_reading": "さぷらいじんぐさんくす",
     "title_ko": "Surprising Thanks!!",
@@ -6213,7 +5944,6 @@ const SONGS = [
     "units": [
       "셔플"
     ],
-    "unitGroup": "셔플",
     "title_ja": "FIST OF SOUL",
     "title_ja_reading": "ふぃすとおぶそうる",
     "title_ko": "FIST OF SOUL",
@@ -6236,7 +5966,6 @@ const SONGS = [
     "units": [
       "셔플"
     ],
-    "unitGroup": "셔플",
     "title_ja": "Heart aid Cafeteria",
     "title_ja_reading": "はーとえいどかふぇてりあ",
     "title_ko": "Heart aid Cafeteria",
@@ -6259,7 +5988,6 @@ const SONGS = [
     "units": [
       "셔플"
     ],
-    "unitGroup": "셔플",
     "title_ja": "Have you been naughty or nice?",
     "title_ja_reading": "はヴゆーびーんのーてぃーおあないす",
     "title_ko": "Have you been naughty or nice?",
@@ -6282,7 +6010,6 @@ const SONGS = [
     "units": [
       "새해"
     ],
-    "unitGroup": "주년·기념",
     "title_ja": "年越しあんさんぶる！！2022→2023",
     "title_ja_reading": "としこしあんさんぶる",
     "title_ko": "새해맞이 앙상블!! 2022→2023",
@@ -6305,7 +6032,6 @@ const SONGS = [
     "units": [
       "만우절"
     ],
-    "unitGroup": "주년·기념",
     "title_ja": "あんさんぶるトレーニング",
     "title_ja_reading": "とれーにんぐ",
     "title_ko": "앙상블 트레이닝",
@@ -6328,7 +6054,6 @@ const SONGS = [
     "units": [
       "추억"
     ],
-    "unitGroup": "기타",
     "title_ja": "Eccentric Party Night!! Mix",
     "title_ja_reading": "えきせんとりっくぱーてぃーないとみっくす",
     "title_ko": "Eccentric Party Night!! Mix",
@@ -6351,7 +6076,6 @@ const SONGS = [
     "units": [
       "기타"
     ],
-    "unitGroup": "기타",
     "title_ja": "Twilight Pentagram",
     "title_ja_reading": "とわいらいとぺんたぐらむ",
     "title_ko": "Twilight Pentagram",
@@ -6374,7 +6098,6 @@ const SONGS = [
     "units": [
       "기타"
     ],
-    "unitGroup": "기타",
     "title_ja": "Dawning Angels",
     "title_ja_reading": "どーにんぐえんじぇるず",
     "title_ko": "Dawning Angels",
@@ -6397,7 +6120,6 @@ const SONGS = [
     "units": [
       "주년"
     ],
-    "unitGroup": "주년·기념",
     "title_ja": "One with One",
     "title_ja_reading": "わんうぃずわん",
     "title_ko": "One with One",
@@ -6420,7 +6142,6 @@ const SONGS = [
     "units": [
       "만우절"
     ],
-    "unitGroup": "주년·기념",
     "title_ja": "両片思いの交差点で、君にまた逢いたくて",
     "title_ja_reading": "りょうかたおもいのこうさてんで、きみにまたあいたくて",
     "title_ko": "양방향 짝사랑의 교차점에서, 너와 다시 만나고 싶어서",
@@ -6443,7 +6164,6 @@ const SONGS = [
     "units": [
       "주년"
     ],
-    "unitGroup": "주년·기념",
     "title_ja": "LIMIT BREAK DREAMERS",
     "title_ja_reading": "りみっとぶれいくどりーまーず",
     "title_ko": "LIMIT BREAK DREAMERS",
@@ -6466,7 +6186,6 @@ const SONGS = [
     "units": [
       "셔플"
     ],
-    "unitGroup": "셔플",
     "title_ja": "Ringing evil phone",
     "title_ja_reading": "りんぎんいーぶるふぉん",
     "title_ko": "Ringing evil phone",
@@ -6489,7 +6208,6 @@ const SONGS = [
     "units": [
       "셔플"
     ],
-    "unitGroup": "셔플",
     "title_ja": "喪失寓意 -LOST BALLADE-",
     "title_ja_reading": "そうしつぐうい ろすと ばらーど",
     "title_ko": "우의상실 -LOST BALLADE-",
@@ -6512,7 +6230,6 @@ const SONGS = [
     "units": [
       "콜라보"
     ],
-    "unitGroup": "콜라보",
     "title_ja": "We Are Light",
     "title_ja_reading": "うぃーあーらいと えりおす",
     "title_ko": "We Are Light",
@@ -6535,7 +6252,6 @@ const SONGS = [
     "units": [
       "콜라보"
     ],
-    "unitGroup": "콜라보",
     "title_ja": "フュージョン",
     "title_ja_reading": "ふゅーじょん",
     "title_ko": "퓨전",
@@ -6558,7 +6274,6 @@ const SONGS = [
     "units": [
       "콜라보"
     ],
-    "unitGroup": "콜라보",
     "title_ja": "B100d Hunter",
     "title_ja_reading": "ぶらっどはんたー",
     "title_ko": "B100d Hunter",
@@ -6581,7 +6296,6 @@ const SONGS = [
     "units": [
       "셔플"
     ],
-    "unitGroup": "셔플",
     "title_ja": "堕天使たちの晩餐会",
     "title_ja_reading": "だてんしたちのばんさんかい",
     "title_ko": "타천사들의 만찬회",
@@ -6604,7 +6318,6 @@ const SONGS = [
     "units": [
       "주년"
     ],
-    "unitGroup": "주년·기념",
     "title_ja": "BRIGHTEST STARS!!",
     "title_ja_reading": "ぶらいてすとすたーず",
     "title_ko": "BRIGHTEST STARS!!",
@@ -6627,7 +6340,6 @@ const SONGS = [
     "units": [
       "콜라보"
     ],
-    "unitGroup": "콜라보",
     "title_ja": "セイクリッド ルイン",
     "title_ja_reading": "せいくりっど るいん",
     "title_ko": "세이크리드 루인",
@@ -6650,7 +6362,6 @@ const SONGS = [
     "units": [
       "셔플"
     ],
-    "unitGroup": "셔플",
     "title_ja": "君恋志願",
     "title_ja_reading": "きみこいしがん",
     "title_ko": "너의 사랑을 바라며",
@@ -6673,7 +6384,6 @@ const SONGS = [
     "units": [
       "콜라보"
     ],
-    "unitGroup": "콜라보",
     "title_ja": "RISE STAR'S SPIRITS",
     "title_ja_reading": "らいずすたーずすぴりっつ えりおす",
     "title_ko": "RISE STAR'S SPIRITS",
@@ -6696,7 +6406,6 @@ const SONGS = [
     "units": [
       "셔플"
     ],
-    "unitGroup": "셔플",
     "title_ja": "クマクマレスＱ",
     "title_ja_reading": "くまくまれすきゅ",
     "title_ko": "곰곰 레스Q",
@@ -6719,7 +6428,6 @@ const SONGS = [
     "units": [
       "셔플_10주년"
     ],
-    "unitGroup": "셔플",
     "title_ja": "僕のウィーク・ポイント",
     "title_ja_reading": "ぼくのうぃーく・ぽいんと",
     "title_ko": "나의 위크 ・ 포인트",
@@ -6742,7 +6450,6 @@ const SONGS = [
     "units": [
       "셔플_10주년"
     ],
-    "unitGroup": "셔플",
     "title_ja": "Graceful Punishment",
     "title_ja_reading": "ぐれいすふるぱにっしゅめんと",
     "title_ko": "Graceful Punishment",
@@ -6765,7 +6472,6 @@ const SONGS = [
     "units": [
       "셔플_10주년"
     ],
-    "unitGroup": "셔플",
     "title_ja": "Deep into you",
     "title_ja_reading": "でぃーぷいんとぅゆー",
     "title_ko": "Deep into you",
@@ -6788,7 +6494,6 @@ const SONGS = [
     "units": [
       "셔플_10주년"
     ],
-    "unitGroup": "셔플",
     "title_ja": "らびゅ&ピース伝説",
     "title_ja_reading": "らびゅあんどぴーすでんせつ",
     "title_ko": "러브&피스 전설",
@@ -6811,7 +6516,6 @@ const SONGS = [
     "units": [
       "셔플_10주년"
     ],
-    "unitGroup": "셔플",
     "title_ja": "Ai☆$!!",
     "title_ja_reading": "あいどる",
     "title_ko": "Ai☆$!!",
@@ -6834,7 +6538,6 @@ const SONGS = [
     "units": [
       "셔플_10주년"
     ],
-    "unitGroup": "셔플",
     "title_ja": "It's (k)not lov?",
     "title_ja_reading": "いっつのっとらぶ",
     "title_ko": "It's (k)not lov?",
@@ -6857,7 +6560,6 @@ const SONGS = [
     "units": [
       "셔플_10주년"
     ],
-    "unitGroup": "셔플",
     "title_ja": "それは残像の消失点",
     "title_ja_reading": "それはざんぞうのしょうしつてん",
     "title_ko": "그것은 잔상의 소실점",
@@ -6880,7 +6582,6 @@ const SONGS = [
     "units": [
       "J&A"
     ],
-    "unitGroup": "J&A",
     "title_ja": "ハナニナレ！",
     "title_ja_reading": "はなになれ！",
     "title_ko": "꽃이 되어라!",
@@ -6903,7 +6604,6 @@ const SONGS = [
     "units": [
       "셔플_10주년"
     ],
-    "unitGroup": "셔플",
     "title_ja": "催花雨の片道切符",
     "title_ja_reading": "さいかうのかたみちきっぷ",
     "title_ko": "봄비의 편도 티켓",
@@ -6926,7 +6626,6 @@ const SONGS = [
     "units": [
       "셔플_10주년"
     ],
-    "unitGroup": "셔플",
     "title_ja": "Fight is Only Fate",
     "title_ja_reading": "ふぁいといずおんりーふぇいと",
     "title_ko": "Fight is Only Fate",
@@ -6949,7 +6648,6 @@ const SONGS = [
     "units": [
       "셔플_10주년"
     ],
-    "unitGroup": "셔플",
     "title_ja": "プロローグのそのあとへ",
     "title_ja_reading": "ぷろろーぐのそのあとへ",
     "title_ko": "프롤로그 그 이후에",
@@ -6972,7 +6670,6 @@ const SONGS = [
     "units": [
       "콜라보"
     ],
-    "unitGroup": "콜라보",
     "title_ja": "朧",
     "title_ja_reading": "おぼろ",
     "title_ko": "오보로",
@@ -6995,7 +6692,6 @@ const SONGS = [
     "units": [
       "주년"
     ],
-    "unitGroup": "주년·기념",
     "title_ja": "BRIGHTEST STARS!! (Mainstream Megasphere ver.)",
     "title_ja_reading": "ぶらいてすとすたーずめいんすとりーむめがふぃあ ばーじょん",
     "title_ko": "BRIGHTEST STARS!! (Mainstream Megasphere ver.)",
@@ -7018,7 +6714,6 @@ const SONGS = [
     "units": [
       "만우절"
     ],
-    "unitGroup": "주년·기념",
     "title_ja": "ペルソナアビス",
     "title_ja_reading": "ぺるそなあびす",
     "title_ko": "페르소나 어비스",
@@ -7041,7 +6736,6 @@ const SONGS = [
     "units": [
       "기타"
     ],
-    "unitGroup": "기타",
     "title_ja": "ONLY YOUR STARS! (10th Mix)",
     "title_ja_reading": "おんりー ゆあ すたーずみっくす",
     "title_ko": "ONLY YOUR STARS! (10th Mix)",
@@ -7064,7 +6758,6 @@ const SONGS = [
     "units": [
       "주년"
     ],
-    "unitGroup": "주년·기념",
     "title_ja": "Call Your Name",
     "title_ja_reading": "こーるゆあねーむ",
     "title_ko": "Call Your Name",

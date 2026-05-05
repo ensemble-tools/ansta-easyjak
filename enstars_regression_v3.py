@@ -109,7 +109,7 @@ def calc_midpoint_url(video_url: str, duration_str: str | None) -> str | None:
             return None
     except ValueError:
         return None
-    mid_sec = total_sec // 2
+    mid_sec = max(0, total_sec // 2 - 3)
     vid = extract_video_id(video_url)
     if not vid:
         return None

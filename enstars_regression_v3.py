@@ -8,7 +8,8 @@
   total_notes          ← 총 노트수
   et_start             ← 앙상블 타임 시작 콤보
   et_end               ← 앙상블 타임 종료 콤보
-  clear_start_measured ← 최종 시작점(실측, 학습용)
+  clear_start_measured ← 최종 시작점(실측, 표시용)
+  measured_train       ← 학습 전용 실측값 (표시값과 다를 때만 입력; 케이스 적으면 컬럼 삭제 가능)
   category             ← 소속사 (시트명)
   type                 ← 타입
   unit                 ← 유닛
@@ -47,8 +48,6 @@ from dotenv import load_dotenv
 _HERE = Path(__file__).parent
 load_dotenv(_HERE / ".env")
 CSV_PATH = str(_HERE / "es_regression.xlsx")
-
-FAIL_URL = "https://youtu.be/Cs8hEmAl8eI"
 
 # ── 유틸 ──────────────────────────────────────────────────
 def parse_duration(val) -> str | None:
@@ -222,7 +221,13 @@ def train_model(df: pd.DataFrame) -> dict:
         measured.loc[zero_mask, "et_end_ratio"] = mean_end
 
     X = measured[["total_notes", "et_start_ratio", "et_end_ratio"]]
-    y = measured["clear_start_measured"]
+    # measured_train: 영상 표시 구간과 실제 기준 콤보가 다를 때만 입력.
+    # 케이스가 적으면 이 컬럼과 관련 로직을 삭제해도 무방.
+    if "measured_train" in measured.columns:
+        y = measured["measured_train"].fillna(measured["clear_start_measured"])
+    else:
+        y = measured["clear_start_measured"]
+
     model = LinearRegression().fit(X, y)
     pred = model.predict(X)
 
@@ -439,8 +444,13 @@ def print_report(result: dict):
     print(f"  시작점 = {ms.coef_[0]:.6f} × total_notes + {ms.intercept_:.4f}")
 
     measured = r["measured"]
+    # measured_train: 케이스가 적으면 이 컬럼과 관련 로직을 삭제해도 무방.
     X = measured[["total_notes", "et_start_ratio", "et_end_ratio"]]
-    y = measured["clear_start_measured"].values
+    if "measured_train" in measured.columns:
+        y = measured["measured_train"].fillna(measured["clear_start_measured"]).values
+    else:
+        y = measured["clear_start_measured"].values
+
     residuals = y - m.predict(X)
     print(f"\n  [잔차 분포]")
     print(f"  평균={residuals.mean():.2f}  표준편차={residuals.std():.2f}")

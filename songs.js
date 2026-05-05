@@ -197,10 +197,10 @@ const SONGS = [
     "duration": "2:07",
     "etStart": 44,
     "etEnd": 81,
-    "measured": 81,
+    "measured": 82,
     "category": "starmaker",
     "video": "https://youtu.be/7YB0zKanNFE",
-    "videoClear": "https://youtu.be/7YB0zKanNFE?t=61",
+    "videoClear": "https://youtu.be/7YB0zKanNFE?t=75",
     "predicted": 79
   },
   {

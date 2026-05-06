@@ -1315,7 +1315,7 @@ function runPredict() {
 
 function showResult(notes, etS, etE) {
   if (currentSong) {
-    document.getElementById('resultTitle').textContent = currentSong.title_ja;
+    document.getElementById('resultTitle').textContent = getDisplayTitle(currentSong);
     const tc = TYPE_COLOR[currentSong.type] || TYPE_COLOR['All'];
     document.getElementById('resultMeta').innerHTML =
       `<span class="type-badge" style="background:${tc.bg};color:${tc.color};font-size:11px;padding:2px 7px;border-radius:4px;font-weight:600;margin-right:6px">${currentSong.type}</span>`

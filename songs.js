@@ -4055,7 +4055,7 @@ const SONGS = [
     "title_ja": "天翔KAGETSU",
     "title_ja_reading": "てんしょうかげつ",
     "title_ko": "천상 KAGETSU",
-    "title_ko_reading": null,
+    "title_ko_reading": "천상카게츠",
     "title_en": "Soaring Skies: KAGETSU",
     "title_en_reading": "Tenshou KAGETSU",
     "totalNotes": 198,

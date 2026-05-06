@@ -737,7 +737,11 @@ const SHOW_TITLE_HOVER = true;
 const SUPPORTED_LANGS = ['ko', 'ja'];
 let currentLang = (() => {
   const p = new URLSearchParams(location.search).get('lang');
-  return SUPPORTED_LANGS.includes(p) ? p : 'ko';
+  if (SUPPORTED_LANGS.includes(p)) return p;
+  const saved = localStorage.getItem('lang');
+  if (SUPPORTED_LANGS.includes(saved)) return saved;
+  const nav = (navigator.language || '').slice(0, 2);
+  return nav === 'ja' ? 'ja' : 'ko';
 })();
 
 // ── i18n 사전 ──────────────────────────────────────
@@ -897,6 +901,7 @@ function applyI18n() {
 
 function toggleLang() {
   const newLang = currentLang === 'ko' ? 'ja' : 'ko';
+  localStorage.setItem('lang', newLang);
   const url = new URL(location.href);
   url.searchParams.set('lang', newLang);
   location.replace(url.toString());

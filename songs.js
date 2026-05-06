@@ -2046,7 +2046,7 @@ const SONGS = [
     "title_ja": "Last Lament",
     "title_ja_reading": "らすとらめんと",
     "title_ko": "Last Lament",
-    "title_ko_reading": null,
+    "title_ko_reading": "라스트 라멘트 라라멘",
     "title_en": "Last Lament",
     "title_en_reading": null,
     "totalNotes": 110,

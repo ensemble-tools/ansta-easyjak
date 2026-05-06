@@ -1326,8 +1326,7 @@ function runPredict() {
   } else {
     startPt = SIMPLE_COEF*notes + SIMPLE_INT;
   }
-  startPt = Math.round(startPt*10)/10;
-  predictedValue = Math.ceil(startPt);
+  predictedValue = Math.round(startPt);
 
   measuredValue = null;
   if (currentSong && currentSong.measured !== null) measuredValue = currentSong.measured;
@@ -1672,36 +1671,48 @@ function sortBy(key) {
   renderTable();
 }
 
-function renderTable() {
+function getClearValue(s) {
+  return s.measured !== null ? s.measured : s.predicted;
+}
+
+function getSortValue(s, key) {
+  return key === 'predicted' ? getClearValue(s) : s[key];
+}
+
+function songMatchesFilters(s, q) {
+  if (activeType !== null && s.type !== activeType) return false;
+  if (activeUnits && !s.units.some(u => activeUnits.has(u))) return false;
+  if (activeDur==='short' && s.durationSec>140) return false;
+  if (activeDur==='mid1' && (s.durationSec<141||s.durationSec>150)) return false;
+  if (activeDur==='mid2' && (s.durationSec<151||s.durationSec>160)) return false;
+  if (activeDur==='long' && s.durationSec<161) return false;
+  if (activeClear==='yes' && s.measured==null) return false;
+  if (activeClear==='no' && s.measured!=null) return false;
+  if (!q) return true;
+  return (
+    normalize(s.title_ja).includes(q) ||
+    (s.title_ja_reading && normalize(s.title_ja_reading).includes(q)) ||
+    (s.title_ko && normalize(s.title_ko).includes(q)) ||
+    (s.title_ko_reading && normalize(s.title_ko_reading).includes(q)) ||
+    (s.title_en && normalize(s.title_en).includes(q)) ||
+    (s.title_en_reading && normalize(s.title_en_reading).includes(q)) ||
+    s.units.some(u => normalize(u).includes(q)) ||
+    Object.entries(UNIT_KO_MAP).some(([ko, en]) => ko.includes(q) && s.units.includes(en)) ||
+    Object.entries(UNIT_JA_MAP).some(([ja, en]) => ja.includes(q) && s.units.includes(en))
+  );
+}
+
+function getFilteredSongs() {
   const q = searchMode === 'song' ? normalize((document.getElementById('tableSearch')||{value:''}).value) : '';
-  let list = SONGS.filter(s => {
-    if (activeType !== null && s.type !== activeType) return false;
-    if (activeUnits && !s.units.some(u => activeUnits.has(u))) return false;
-    if (activeDur==='short' && s.durationSec>140) return false;
-    if (activeDur==='mid1' && (s.durationSec<141||s.durationSec>150)) return false;
-    if (activeDur==='mid2' && (s.durationSec<151||s.durationSec>160)) return false;
-    if (activeDur==='long' && s.durationSec<161) return false;
-    if (activeClear==='yes' && s.measured==null) return false;
-    if (activeClear==='no' && s.measured!=null) return false;
-    if (q) {
-      const match =
-        normalize(s.title_ja).includes(q) ||
-        (s.title_ja_reading && normalize(s.title_ja_reading).includes(q)) ||
-        (s.title_ko && normalize(s.title_ko).includes(q)) ||
-        (s.title_ko_reading && normalize(s.title_ko_reading).includes(q)) ||
-        (s.title_en && normalize(s.title_en).includes(q)) ||
-        (s.title_en_reading && normalize(s.title_en_reading).includes(q)) ||
-        s.units.some(u => normalize(u).includes(q)) ||
-        Object.entries(UNIT_KO_MAP).some(([ko, en]) => ko.includes(q) && s.units.includes(en)) ||
-        Object.entries(UNIT_JA_MAP).some(([ja, en]) => ja.includes(q) && s.units.includes(en));
-      if (!match) return false;
-    }
-    return true;
-  });
+  return SONGS.filter(s => songMatchesFilters(s, q));
+}
+
+function renderTable() {
+  let list = getFilteredSongs();
 
   if (sortKey) {
     list.sort((a,b) => {
-      const av=a[sortKey], bv=b[sortKey];
+      const av=getSortValue(a, sortKey), bv=getSortValue(b, sortKey);
       if (av===null||av===undefined) return 1;
       if (bv===null||bv===undefined) return -1;
       if (typeof av==='string') return av.localeCompare(bv)*sortDir;
@@ -1729,7 +1740,7 @@ function renderTable() {
     const dot = s.measured !== null
       ? `<span class="clear-dot" style="background:#059669"></span>`
       : `<span class="clear-dot" style="background:#d1d5db"></span>`;
-    const clearVal = s.measured !== null ? s.measured : s.predicted;
+    const clearVal = getClearValue(s);
     const videoIcon = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
     const videoCell = (s.measured !== null && s.video)
       ? `<a class="video-link" href="${s.video}" target="_blank">${videoIcon}</a>`
@@ -1828,31 +1839,7 @@ function renderPaging(totalPages, totalCount) {
 }
 
 function goPage(p) {
-  const totalPages = Math.ceil(SONGS.filter(s => {
-    if (activeType!==null && s.type!==activeType) return false;
-    if (activeUnits && !s.units.some(u => activeUnits.has(u))) return false;
-    const q = searchMode === 'song' ? normalize((document.getElementById('tableSearch')||{value:''}).value) : '';
-    if (activeDur==='short' && s.durationSec>140) return false;
-    if (activeDur==='mid1' && (s.durationSec<141||s.durationSec>150)) return false;
-    if (activeDur==='mid2' && (s.durationSec<151||s.durationSec>160)) return false;
-    if (activeDur==='long' && s.durationSec<161) return false;
-    if (activeClear==='yes' && s.measured==null) return false;
-    if (activeClear==='no' && s.measured!=null) return false;
-    if (q) {
-      const match =
-        normalize(s.title_ja).includes(q) ||
-        (s.title_ja_reading && normalize(s.title_ja_reading).includes(q)) ||
-        (s.title_ko && normalize(s.title_ko).includes(q)) ||
-        (s.title_ko_reading && normalize(s.title_ko_reading).includes(q)) ||
-        (s.title_en && normalize(s.title_en).includes(q)) ||
-        (s.title_en_reading && normalize(s.title_en_reading).includes(q)) ||
-        s.units.some(u => normalize(u).includes(q)) ||
-        Object.entries(UNIT_KO_MAP).some(([ko, en]) => ko.includes(q) && s.units.includes(en)) ||
-        Object.entries(UNIT_JA_MAP).some(([ja, en]) => ja.includes(q) && s.units.includes(en));
-      if (!match) return false;
-    }
-    return true;
-  }).length / PAGE_SIZE);
+  const totalPages = Math.ceil(getFilteredSongs().length / PAGE_SIZE);
   currentPage = Math.max(1, Math.min(p, totalPages));
   renderTable();
 }

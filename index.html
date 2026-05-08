@@ -608,12 +608,6 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
           <button class="unit-reset-btn" id="sidebarFilterResetBtn" onclick="resetSidebarFilters()" style="display:none" data-i18n="sidebarFilterReset">필터 해제</button>
         </div>
 
-        <div style="margin-top:16px;padding-top:14px;border-top:0.5px solid var(--border)">
-          <button class="cal-open-btn" onclick="openCalModal()">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            <span data-i18n="calBtn">스케쥴</span>
-          </button>
-        </div>
 
       </div>
 
@@ -705,6 +699,19 @@ body { font-family: 'Noto Sans KR', 'Noto Sans JP', 'Inter', sans-serif; backgro
           <div>
             <div class="contact-email"><a id="tallyLink" href="https://tally.so/r/yPeYr8" target="_blank" rel="noopener">Report an Issue</a></div>
           </div>
+        </div>
+      </div>
+
+      <div class="info-card full">
+        <div class="info-card-title">
+          <svg class="info-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span data-i18n="calCardTitle">캠페인 스케쥴</span>
+        </div>
+        <div style="margin-top:12px">
+          <button class="cal-open-btn" onclick="openCalModal()">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span data-i18n="calBtn">스케쥴</span>
+          </button>
         </div>
       </div>
 
@@ -854,7 +861,7 @@ const I18N = {
     homeIosStep2: '<strong>홈 화면에 추가</strong> 선택',
     homeIosStep3: '이름 확인 후 추가',
     langToggle: '日本語',
-    calBtn: '스케쥴',
+    calBtn: '스케쥴', calCardTitle: '캠페인 스케쥴',
     calScoutA: '스카우트A', calScoutB: '스카우트B', calEvent: '이벤트',
     calLegendPre: '연한색 = 예고', calLegendStart: '진한색 = 시작',
     calScoutAPreLabel: '스카우트A 예고', calScoutAStartLabel: '스카우트A 시작',
@@ -912,7 +919,7 @@ const I18N = {
     homeIosStep2: '<strong>ホーム画面に追加</strong>を選択',
     homeIosStep3: '名前を確認して追加',
     langToggle: '한국어',
-    calBtn: 'スケジュール',
+    calBtn: 'スケジュール', calCardTitle: 'キャンペーンスケジュール',
     calScoutA: 'スカウトA', calScoutB: 'スカウトB', calEvent: 'イベント',
     calLegendPre: '薄色 = 予告', calLegendStart: '濃色 = 開始',
     calScoutAPreLabel: 'スカウトA予告', calScoutAStartLabel: 'スカウトA開始',

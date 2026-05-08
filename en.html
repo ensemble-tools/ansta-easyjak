@@ -608,12 +608,6 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
           <button class="unit-reset-btn" id="sidebarFilterResetBtn" onclick="resetSidebarFilters()" style="display:none" data-i18n="sidebarFilterReset">Clear Filters</button>
         </div>
 
-        <div style="margin-top:16px;padding-top:14px;border-top:0.5px solid var(--border)">
-          <button class="cal-open-btn" onclick="openCalModal()">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            Schedule
-          </button>
-        </div>
 
       </div>
 
@@ -705,6 +699,19 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
           <div>
             <div class="contact-email"><a id="tallyLink" href="https://tally.so/r/kdOEL1" target="_blank" rel="noopener">Report an Issue</a></div>
           </div>
+        </div>
+      </div>
+
+      <div class="info-card full">
+        <div class="info-card-title">
+          <svg class="info-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span data-i18n="calCardTitle">Campaign Schedule</span>
+        </div>
+        <div style="margin-top:12px">
+          <button class="cal-open-btn" onclick="openCalModal()">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Schedule
+          </button>
         </div>
       </div>
 
@@ -854,6 +861,7 @@ const I18N = {
     homeIosStep2: 'Select <strong>Add to Home Screen</strong>',
     homeIosStep3: 'Confirm name and tap Add',
     langToggle: '日本語',
+    calCardTitle: 'Campaign Schedule',
     calScoutAPreLabel: 'Scout A Preview', calScoutAStartLabel: 'Scout A Start',
     calScoutBPreLabel: 'Scout B Preview', calScoutBStartLabel: 'Scout B Start',
     calEventPreLabel: 'Event Preview', calEventStartLabel: 'Event Start',
@@ -909,6 +917,7 @@ const I18N = {
     homeIosStep2: '<strong>ホーム画面に追加</strong>を選択',
     homeIosStep3: '名前を確認して追加',
     langToggle: 'English',
+    calCardTitle: 'キャンペーンスケジュール',
     calScoutAPreLabel: 'スカウトA予告', calScoutAStartLabel: 'スカウトA開始',
     calScoutBPreLabel: 'スカウトB予告', calScoutBStartLabel: 'スカウトB開始',
     calEventPreLabel: 'イベント予告', calEventStartLabel: 'イベント開始',

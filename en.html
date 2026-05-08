@@ -769,13 +769,13 @@ body { font-family: 'Inter', 'Noto Sans JP', sans-serif; background: var(--bg); 
     <div class="cal-grid" id="calGrid"></div>
     <div class="cal-legend">
       <div class="cal-legend-top">
-        <div class="cal-legend-item"><div class="cal-legend-dot" style="background:var(--scoutA-start)"></div>Scout A</div>
-        <div class="cal-legend-item"><div class="cal-legend-dot" style="background:var(--scoutB-start)"></div>Scout B</div>
-        <div class="cal-legend-item"><div class="cal-legend-dot" style="background:var(--event-start)"></div>Event</div>
+        <div class="cal-legend-item"><div class="cal-legend-dot" style="background:var(--scoutA-start)"></div><span data-i18n="calScoutA">Scout A</span></div>
+        <div class="cal-legend-item"><div class="cal-legend-dot" style="background:var(--scoutB-start)"></div><span data-i18n="calScoutB">Scout B</span></div>
+        <div class="cal-legend-item"><div class="cal-legend-dot" style="background:var(--event-start)"></div><span data-i18n="calEvent">Event</span></div>
       </div>
       <div class="cal-legend-rule">
-        <span class="cal-rule-dot" style="background:var(--scoutA-pre)"></span>Light = Preview
-        <span class="cal-rule-dot" style="background:var(--scoutA-start);margin-left:8px"></span>Dark = Start
+        <span class="cal-rule-dot" style="background:var(--scoutA-pre)"></span><span data-i18n="calLegendPre">Light = Preview</span>
+        <span class="cal-rule-dot" style="background:var(--scoutA-start);margin-left:8px"></span><span data-i18n="calLegendStart">Dark = Start</span>
       </div>
     </div>
   </div>
@@ -862,6 +862,8 @@ const I18N = {
     homeIosStep3: 'Confirm name and tap Add',
     langToggle: '日本語',
     calCardTitle: 'Campaign Schedule',
+    calScoutA: 'Scout A', calScoutB: 'Scout B', calEvent: 'Event',
+    calLegendPre: 'Light = Preview', calLegendStart: 'Dark = Start',
     calScoutAPreLabel: 'Scout A Preview', calScoutAStartLabel: 'Scout A Start',
     calScoutBPreLabel: 'Scout B Preview', calScoutBStartLabel: 'Scout B Start',
     calEventPreLabel: 'Event Preview', calEventStartLabel: 'Event Start',
@@ -918,6 +920,8 @@ const I18N = {
     homeIosStep3: '名前を確認して追加',
     langToggle: 'English',
     calCardTitle: 'キャンペーンスケジュール',
+    calScoutA: 'スカウトA', calScoutB: 'スカウトB', calEvent: 'イベント',
+    calLegendPre: '薄色 = 予告', calLegendStart: '濃色 = 開始',
     calScoutAPreLabel: 'スカウトA予告', calScoutAStartLabel: 'スカウトA開始',
     calScoutBPreLabel: 'スカウトB予告', calScoutBStartLabel: 'スカウトB開始',
     calEventPreLabel: 'イベント予告', calEventStartLabel: 'イベント開始',

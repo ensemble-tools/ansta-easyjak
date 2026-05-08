@@ -854,6 +854,9 @@ const I18N = {
     homeIosStep2: 'Select <strong>Add to Home Screen</strong>',
     homeIosStep3: 'Confirm name and tap Add',
     langToggle: '日本語',
+    calScoutAPreLabel: 'Scout A Preview', calScoutAStartLabel: 'Scout A Start',
+    calScoutBPreLabel: 'Scout B Preview', calScoutBStartLabel: 'Scout B Start',
+    calEventPreLabel: 'Event Preview', calEventStartLabel: 'Event Start',
     notices: [
       { badge: 'INFO', cls: 'badge-info', text: '<b>Easy-jak</b>: A method of clearing a live in Easy mode by hitting only enough notes to cross the clear threshold.' },
       { badge: 'NOTE', cls: 'badge-note', text: 'This app aims for clears even if you miss up to one note. (Exceptions may apply)' },
@@ -906,6 +909,9 @@ const I18N = {
     homeIosStep2: '<strong>ホーム画面に追加</strong>を選択',
     homeIosStep3: '名前を確認して追加',
     langToggle: 'English',
+    calScoutAPreLabel: 'スカウトA予告', calScoutAStartLabel: 'スカウトA開始',
+    calScoutBPreLabel: 'スカウトB予告', calScoutBStartLabel: 'スカウトB開始',
+    calEventPreLabel: 'イベント予告', calEventStartLabel: 'イベント開始',
     notices: [
       { badge: 'INFO', cls: 'badge-info', text: '<b>イージー作</b>: Easy難易度で最低限の入力でボルテージを維持しライブをクリアする方法。' },
       { badge: 'NOTE', cls: 'badge-note', text: 'ここではノート1個を見逃してもクリアできるよう余裕分を設けて計算しています。' },
@@ -1958,6 +1964,11 @@ function goPage(p) {
       { day: 31, type: 'event-start',  label: 'Event Start' },
     ],
   };
+  const TYPE_I18N_KEY = {
+    'scoutA-pre': 'calScoutAPreLabel', 'scoutA-start': 'calScoutAStartLabel',
+    'scoutB-pre': 'calScoutBPreLabel', 'scoutB-start': 'calScoutBStartLabel',
+    'event-pre':  'calEventPreLabel',  'event-start':  'calEventStartLabel',
+  };
   const DOT_COLOR = {
     'scoutA-pre':   'var(--scoutA-pre)',
     'scoutA-start': 'var(--scoutA-start)',
@@ -2027,7 +2038,7 @@ function goPage(p) {
         });
         cell.appendChild(dotsEl);
         cell.setAttribute('data-events', '1');
-        cell.setAttribute('data-tooltip', events.map(e => e.label).join('\n'));
+        cell.setAttribute('data-tooltip', events.map(e => t(TYPE_I18N_KEY[e.type])).join('\n'));
         cell.style.cursor = 'pointer';
       }
 

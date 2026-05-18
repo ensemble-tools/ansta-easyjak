@@ -1,5 +1,5 @@
 // songs.js — easyjak 곡 데이터 & 모델 파라미터
-// 총 307곡 | R²=0.9720 | MAE=2.50콤보
+// 총 308곡 | R²=0.9720 | MAE=2.50콤보
 // ※ enstars_regression_v3.py 로 자동 생성 — 직접 수정 비권장
 
 const SONGS = [
@@ -820,6 +820,28 @@ const SONGS = [
     "video": "https://youtu.be/50kz0jhNNZY",
     "videoClear": "https://youtu.be/50kz0jhNNZY?t=71",
     "predicted": 85
+  },
+  {
+    "type": "Glitter",
+    "unit": "fine",
+    "units": [
+      "fine"
+    ],
+    "title_ja": "RED GARDEN",
+    "title_ja_reading": "れっどがーでん",
+    "title_ko": "RED GARDEN",
+    "title_ko_reading": "레드 가든",
+    "title_en": "RED GARDEN",
+    "title_en_reading": null,
+    "totalNotes": 225,
+    "duration": "2:55",
+    "etStart": 131,
+    "etEnd": 188,
+    "measured": null,
+    "category": "starmaker",
+    "video": "https://youtu.be/50cKsdBNeSY",
+    "videoClear": "https://youtu.be/50cKsdBNeSY?t=85",
+    "predicted": 123
   },
   {
     "type": "Flash",

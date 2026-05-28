@@ -1,5 +1,5 @@
 // songs.js — easyjak 곡 데이터 & 모델 파라미터
-// 총 308곡 | R²=0.9720 | MAE=2.50콤보
+// 총 309곡 | R²=0.9720 | MAE=2.50콤보
 // ※ enstars_regression_v3.py 로 자동 생성 — 직접 수정 비권장
 
 const SONGS = [
@@ -6795,6 +6795,28 @@ const SONGS = [
     "video": "https://youtu.be/ig0Woj-R-PQ",
     "videoClear": "https://youtu.be/ig0Woj-R-PQ?t=92",
     "predicted": 108
+  },
+  {
+    "type": "Brilliant",
+    "unit": "기타",
+    "units": [
+      "기타"
+    ],
+    "title_ja": "ソロメドレー(こはく·晃牙·忍·弓弦)",
+    "title_ja_reading": "そろめどれー(こはく·こうが·しのぶ·ゆづる)",
+    "title_ko": "솔로 메들리(코하쿠·코가·시노부·유즈루)",
+    "title_ko_reading": null,
+    "title_en": "Solo Medley(Kohaku·Koga·Shinobu·Yuzuru)",
+    "title_en_reading": null,
+    "totalNotes": 202,
+    "duration": "2:53",
+    "etStart": 0,
+    "etEnd": 0,
+    "measured": null,
+    "category": "others",
+    "video": "https://youtu.be/v2IHIcctpzk",
+    "videoClear": "https://youtu.be/v2IHIcctpzk?t=84",
+    "predicted": 109
   }
 ];
 
@@ -6811,5 +6833,5 @@ const MODEL_PARAMS = {
   "meanEtEnd": 0.6554810481118903,
   "trainSize": 185,
   "r2": 0.9720041436099582,
-  "mae": 2.5034388338542044
+  "mae": 2.503438833854205
 };

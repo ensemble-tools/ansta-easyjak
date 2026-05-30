@@ -1,5 +1,5 @@
 // songs.js — easyjak 곡 데이터 & 모델 파라미터
-// 총 309곡 | R²=0.9720 | MAE=2.50콤보
+// 총 309곡 | R²=0.9725 | MAE=2.50콤보
 // ※ enstars_regression_v3.py 로 자동 생성 — 직접 수정 비권장
 
 const SONGS = [
@@ -290,7 +290,7 @@ const SONGS = [
     "category": "starmaker",
     "video": null,
     "videoClear": null,
-    "predicted": 100
+    "predicted": 101
   },
   {
     "type": "Flash",
@@ -837,10 +837,10 @@ const SONGS = [
     "duration": "2:55",
     "etStart": 131,
     "etEnd": 188,
-    "measured": null,
+    "measured": 131,
     "category": "starmaker",
     "video": "https://youtu.be/50cKsdBNeSY",
-    "videoClear": "https://youtu.be/50cKsdBNeSY?t=85",
+    "videoClear": "https://youtu.be/50cKsdBNeSY?t=94",
     "predicted": 123
   },
   {
@@ -2698,7 +2698,7 @@ const SONGS = [
     "category": "cosmic",
     "video": "https://youtu.be/rbswb1AtcMI",
     "videoClear": "https://youtu.be/rbswb1AtcMI?t=75",
-    "predicted": 105
+    "predicted": 106
   },
   {
     "type": "Flash",
@@ -4088,7 +4088,7 @@ const SONGS = [
     "category": "rhythm_link",
     "video": "https://youtu.be/iI7IE1ZbDUg?si=N3jxe0eHlE8JPqwL",
     "videoClear": "https://youtu.be/iI7IE1ZbDUg?t=89",
-    "predicted": 106
+    "predicted": 107
   },
   {
     "type": "Glitter",
@@ -5628,7 +5628,7 @@ const SONGS = [
     "category": "others",
     "video": "https://youtu.be/HJl5V28SjCM",
     "videoClear": "https://youtu.be/HJl5V28SjCM?t=86",
-    "predicted": 81
+    "predicted": 80
   },
   {
     "type": "All",
@@ -6548,10 +6548,10 @@ const SONGS = [
     "duration": "2:32",
     "etStart": 142,
     "etEnd": 206,
-    "measured": 132,
+    "measured": 142,
     "category": "others",
     "video": "https://youtu.be/7Yn1DNogFtU?si=OMcESI8CFW0h9Otg",
-    "videoClear": "https://youtu.be/7Yn1DNogFtU?t=66",
+    "videoClear": "https://youtu.be/7Yn1DNogFtU?t=71",
     "predicted": 133
   },
   {
@@ -6802,11 +6802,11 @@ const SONGS = [
     "units": [
       "기타"
     ],
-    "title_ja": "ソロメドレー(こはく·晃牙·忍·弓弦)",
-    "title_ja_reading": "そろめどれー(こはく·こうが·しのぶ·ゆづる)",
-    "title_ko": "솔로 메들리(코하쿠·코가·시노부·유즈루)",
+    "title_ja": "ソロメドレー (こはく·晃牙·忍·弓弦)",
+    "title_ja_reading": "そろめどれー (こはく·こうが·しのぶ·ゆづる)",
+    "title_ko": "솔로 메들리 (코하쿠·코가·시노부·유즈루)",
     "title_ko_reading": null,
-    "title_en": "Solo Medley(Kohaku·Koga·Shinobu·Yuzuru)",
+    "title_en": "Solo Medley (Kohaku·Koga·Shinobu·Yuzuru)",
     "title_en_reading": null,
     "totalNotes": 202,
     "duration": "2:53",
@@ -6821,17 +6821,17 @@ const SONGS = [
 ];
 
 const MODEL_PARAMS = {
-  "intercept": -2.973350853924032,
+  "intercept": -3.058524711180141,
   "coefs": [
-    0.5330936033886732,
-    -2.5136584223390437,
-    8.66232113323652
+    0.5334651335600277,
+    -2.643024779005427,
+    8.804385298603323
   ],
-  "simpleCoef": 0.5272011821044171,
-  "simpleInt": 2.4486696578921965,
-  "meanEtStart": 0.4889338176602998,
-  "meanEtEnd": 0.6554810481118903,
-  "trainSize": 185,
-  "r2": 0.9720041436099582,
-  "mae": 2.503438833854205
+  "simpleCoef": 0.5279374844923942,
+  "simpleInt": 2.3426016921858377,
+  "meanEtStart": 0.48946995791640274,
+  "meanEtEnd": 0.6565159590742103,
+  "trainSize": 186,
+  "r2": 0.9724642859897312,
+  "mae": 2.497688372632225
 };

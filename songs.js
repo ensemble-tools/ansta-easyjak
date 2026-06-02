@@ -1,5 +1,5 @@
 // songs.js — easyjak 곡 데이터 & 모델 파라미터
-// 총 309곡 | R²=0.9725 | MAE=2.50콤보
+// 총 310곡 | R²=0.9725 | MAE=2.50콤보
 // ※ enstars_regression_v3.py 로 자동 생성 — 직접 수정 비권장
 
 const SONGS = [
@@ -445,6 +445,29 @@ const SONGS = [
     "video": "https://youtu.be/7wCP6U9RQxw",
     "videoClear": "https://youtu.be/7wCP6U9RQxw?t=74",
     "predicted": 65
+  },
+  {
+    "type": "Glitter",
+    "unit": "Trickstar / Knights",
+    "units": [
+      "Trickstar",
+      "Knights"
+    ],
+    "title_ja": "Unbalanced Triangle",
+    "title_ja_reading": "あんばらんすどとらいあんぐる",
+    "title_ko": "Unbalanced Triangle",
+    "title_ko_reading": "언밸런스드 트라이앵글",
+    "title_en": "Unbalanced Triangle",
+    "title_en_reading": null,
+    "totalNotes": 212,
+    "duration": "2:39",
+    "etStart": 103,
+    "etEnd": 132,
+    "measured": null,
+    "category": "starmaker",
+    "video": "https://youtu.be/lrJfIk6M4Eo",
+    "videoClear": "https://youtu.be/lrJfIk6M4Eo?t=77",
+    "predicted": 114
   },
   {
     "type": "Flash",

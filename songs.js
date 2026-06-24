@@ -1,5 +1,5 @@
 // songs.js — easyjak 곡 데이터 & 모델 파라미터
-// 총 311곡 | R²=0.9726 | MAE=2.48콤보
+// 총 312곡 | R²=0.9727 | MAE=2.47콤보
 // ※ enstars_regression_v3.py 로 자동 생성 — 직접 수정 비권장
 
 const SONGS = [
@@ -4246,6 +4246,28 @@ const SONGS = [
     "predicted": 82
   },
   {
+    "type": "Sparkle",
+    "unit": "MDU",
+    "units": [
+      "MDU"
+    ],
+    "title_ja": "Mellow Addiction",
+    "title_ja_reading": "めろうあでぃくしょん めろーあでぃくしょん",
+    "title_ko": "Mellow Addiction",
+    "title_ko_reading": "멜로우 어딕션",
+    "title_en": "Mellow Addiction",
+    "title_en_reading": null,
+    "totalNotes": 128,
+    "duration": "2:20",
+    "etStart": 86,
+    "etEnd": 121,
+    "measured": 71,
+    "category": "rhythm_link",
+    "video": "https://youtu.be/iEeAzMmqLQk",
+    "videoClear": "https://youtu.be/iEeAzMmqLQk?t=68",
+    "predicted": 72
+  },
+  {
     "type": "Glitter",
     "unit": "Knights",
     "units": [
@@ -6866,17 +6888,17 @@ const SONGS = [
 ];
 
 const MODEL_PARAMS = {
-  "intercept": -2.848722557181432,
+  "intercept": -2.8423809720877955,
   "coefs": [
-    0.5327412532537452,
-    -2.4534213217188405,
-    8.55942289238979
+    0.5328038237694828,
+    -2.392871081812559,
+    8.481470181676881
   ],
-  "simpleCoef": 0.5276829882024795,
-  "simpleInt": 2.3996603644182244,
-  "meanEtStart": 0.4884793233401175,
-  "meanEtEnd": 0.6552033866179047,
-  "trainSize": 191,
-  "r2": 0.9725629817783223,
-  "mae": 2.478337777330838
+  "simpleCoef": 0.5275191136213778,
+  "simpleInt": 2.4323034546597597,
+  "meanEtStart": 0.48950388019296603,
+  "meanEtEnd": 0.6568241079217153,
+  "trainSize": 192,
+  "r2": 0.9726895078689455,
+  "mae": 2.4700127462712906
 };

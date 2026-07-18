@@ -1,8 +1,4 @@
-// songs.js — easyjak 곡 데이터 & 모델 파라미터
-// 총 314곡 | R²=0.9727 | MAE=2.47콤보
-// ※ enstars_regression_v3.py 로 자동 생성 — 직접 수정 비권장
-
-const SONGS = [
+[
   {
     "type": "Brilliant",
     "unit": "Trickstar",
@@ -6930,20 +6926,4 @@ const SONGS = [
     "videoClear": "https://youtu.be/v2IHIcctpzk?t=95",
     "predicted": 109
   }
-];
-
-const MODEL_PARAMS = {
-  "intercept": -2.8423809720877955,
-  "coefs": [
-    0.5328038237694828,
-    -2.392871081812559,
-    8.481470181676881
-  ],
-  "simpleCoef": 0.5275191136213778,
-  "simpleInt": 2.4323034546597597,
-  "meanEtStart": 0.48950388019296603,
-  "meanEtEnd": 0.6568241079217153,
-  "trainSize": 192,
-  "r2": 0.9726895078689455,
-  "mae": 2.4700127462712906
-};
+]

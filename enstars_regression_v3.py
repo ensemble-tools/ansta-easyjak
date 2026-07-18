@@ -2,7 +2,7 @@
 앙스타 VOLTAGE 이지작 클리어 노트수 예측 회귀 모델 v3
 ──────────────────────────────────────────────────
 3변수 OLS: R²=0.9722 / MAE=2.50콤보 (184곡)
-출력: songs.js → index.html / en.html 연동
+출력: songs.js + data/*.json → index.html / en.html / React 연동
 
 [엑셀 헤더 대응표]
   total_notes          ← 총 노트수
@@ -25,7 +25,7 @@
   # 엑셀 파일 직접 지정
   python3 enstars_regression_v3.py es_regression.xlsx
 
-  # songs.js 바로 출력 (대화 없이)
+  # songs.js + data/*.json 바로 출력 (대화 없이)
   python3 enstars_regression_v3.py --export
   python3 enstars_regression_v3.py es_regression.xlsx --export
 
@@ -34,6 +34,7 @@
 """
 
 import json
+import hashlib
 import sys
 import re
 import requests
@@ -399,6 +400,31 @@ def export_songs_js(df_pred: pd.DataFrame, result: dict, out_path: str = "songs.
 
     songs_json  = json.dumps(songs,  ensure_ascii=False, indent=2)
     params_json = json.dumps(params, ensure_ascii=False, indent=2)
+    payload_hash = hashlib.sha256(
+        json.dumps(
+            {"songs": songs, "model": params},
+            ensure_ascii=False,
+            sort_keys=True,
+            separators=(",", ":"),
+        ).encode("utf-8")
+    ).hexdigest()[:12]
+    manifest = {
+        "schemaVersion": 1,
+        "version": payload_hash,
+        "files": {
+            "songs": f"songs.json?v={payload_hash}",
+            "model": f"model.json?v={payload_hash}",
+        },
+        "songCount": len(songs),
+        "measuredCount": sum(1 for s in songs if s["measured"] is not None),
+        "predictedOnlyCount": sum(1 for s in songs if s["measured"] is None),
+        "model": {
+            "trainSize": params["trainSize"],
+            "r2": params["r2"],
+            "mae": params["mae"],
+        },
+    }
+    manifest_json = json.dumps(manifest, ensure_ascii=False, indent=2)
 
     js_content = f"""\
 // songs.js — easyjak 곡 데이터 & 모델 파라미터
@@ -414,7 +440,15 @@ const MODEL_PARAMS = {params_json};
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(js_content)
 
+    data_dir = Path(out_path).parent / "data"
+    data_dir.mkdir(parents=True, exist_ok=True)
+    (data_dir / "songs.json").write_text(f"{songs_json}\n", encoding="utf-8")
+    (data_dir / "model.json").write_text(f"{params_json}\n", encoding="utf-8")
+    (data_dir / "manifest.json").write_text(f"{manifest_json}\n", encoding="utf-8")
+
     print(f"\n✓ songs.js 저장 완료: {out_path}")
+    print(f"✓ 정적 데이터 저장 완료: {data_dir}")
+    print(f"  데이터 버전: {payload_hash}")
     print(f"  수록곡 {len(songs)}곡 | 실측 {sum(1 for s in songs if s['measured'] is not None)}곡")
     print(f"  모델: R²={result['r2']:.4f}  MAE={result['mae']:.2f}콤보")
 

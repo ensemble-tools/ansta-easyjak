@@ -1,5 +1,5 @@
 // songs.js — easyjak 곡 데이터 & 모델 파라미터
-// 총 312곡 | R²=0.9727 | MAE=2.47콤보
+// 총 314곡 | R²=0.9727 | MAE=2.47콤보
 // ※ enstars_regression_v3.py 로 자동 생성 — 직접 수정 비권장
 
 const SONGS = [
@@ -3122,6 +3122,28 @@ const SONGS = [
     "predicted": 99
   },
   {
+    "type": "Sparkle",
+    "unit": "2wink",
+    "units": [
+      "2wink"
+    ],
+    "title_ja": "SPLASHING WHIRLPOOL!!",
+    "title_ja_reading": "すぷらっしんぐ ほわーるぷーる!!",
+    "title_ko": "SPLASHING WHIRLPOOL!!",
+    "title_ko_reading": "스플래싱 월풀!!",
+    "title_en": "SPLASHING WHIRLPOOL!!",
+    "title_en_reading": null,
+    "totalNotes": 231,
+    "duration": "2:49",
+    "etStart": 67,
+    "etEnd": 88,
+    "measured": null,
+    "category": "cosmic",
+    "video": "https://youtu.be/wRB4w80oP7o",
+    "videoClear": "https://youtu.be/wRB4w80oP7o?t=82",
+    "predicted": 123
+  },
+  {
     "type": "Flash",
     "unit": "UNDEAD",
     "units": [
@@ -3826,6 +3848,29 @@ const SONGS = [
     "video": "https://youtu.be/R7FmVIDgs_w",
     "videoClear": "https://youtu.be/R7FmVIDgs_w?t=88",
     "predicted": 103
+  },
+  {
+    "type": "Flash",
+    "unit": "Ra*bits / S-Pri",
+    "units": [
+      "Ra*bits",
+      "S-Pri"
+    ],
+    "title_ja": "The・プリティカルパレード♪ ",
+    "title_ja_reading": "ざぷりてぃかるぱれーど",
+    "title_ko": "The・프리티컬 퍼레이드♪",
+    "title_ko_reading": "더 프리티컬 퍼레이드",
+    "title_en": "The・Prettycal Parade♪",
+    "title_en_reading": null,
+    "totalNotes": 194,
+    "duration": "162:00",
+    "etStart": 56,
+    "etEnd": 88,
+    "measured": null,
+    "category": "rhythm_link",
+    "video": "https://youtu.be/T89L92U4EFc",
+    "videoClear": "https://youtu.be/T89L92U4EFc?t=4858",
+    "predicted": 104
   },
   {
     "type": "Brilliant",

@@ -1,0 +1,27 @@
+{
+  "name": "easyjak-react-preview",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync:data": "node scripts/sync-songs.mjs",
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "build:preview": "EASYJAK_BASE=/react/ vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "check:prediction": "node scripts/check-prediction.mjs",
+    "check:data": "npm run sync:data && node scripts/check-data.mjs",
+    "check:helpers": "npm run sync:data && node scripts/check-helpers.mjs",
+    "check:search": "npm run sync:data && node scripts/check-search.mjs",
+    "check:table": "npm run sync:data && node scripts/check-table.mjs",
+    "check:info": "node scripts/check-info.mjs",
+    "check:pwa": "node scripts/check-pwa.mjs"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^5.1.1",
+    "vite": "^7.2.7",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
+  },
+  "devDependencies": {}
+}

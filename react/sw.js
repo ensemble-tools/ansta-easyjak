@@ -1,5 +1,5 @@
-const CACHE_VERSION = 'easyjak-react-preview-v1';
-const BASE_PATH = '/ansta-easyjak/react/';
+const CACHE_VERSION = 'easyjak-react-preview-v2';
+const BASE_PATH = '/react/';
 const PRECACHE_URLS = [
   BASE_PATH,
   `${BASE_PATH}index.html`,
@@ -48,6 +48,10 @@ function isReactStaticAsset(url) {
     || url.pathname === `${BASE_PATH}img.png`
     || url.pathname.startsWith(`${BASE_PATH}icons/`)
   );
+}
+
+function isDataRequest(url) {
+  return url.pathname.startsWith('/data/') || url.pathname.startsWith(`${BASE_PATH}data/`);
 }
 
 async function cacheFirst(request) {
@@ -101,8 +105,13 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(request.url);
   if (isYoutubeRequest(url)) return;
   if (url.origin !== self.location.origin) return;
-  if (!url.pathname.startsWith(BASE_PATH)) return;
+  if (!url.pathname.startsWith(BASE_PATH) && !url.pathname.startsWith('/data/')) return;
   if (url.pathname === `${BASE_PATH}sw.js`) return;
+
+  if (isDataRequest(url)) {
+    event.respondWith(fetch(request, { cache: 'no-store' }));
+    return;
+  }
 
   if (request.mode === 'navigate') {
     event.respondWith(navigationFallback(request));

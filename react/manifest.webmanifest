@@ -1,10 +1,10 @@
 {
-  "id": "/ansta-easyjak/react/",
+  "id": "/react/",
   "name": "앙스타 이지작 계산기 React Preview",
   "short_name": "easyjak",
   "description": "앙상블 스타즈!! Music Easy 난이도 클리어 시작 콤보 계산기 React preview.",
-  "start_url": "/ansta-easyjak/react/",
-  "scope": "/ansta-easyjak/react/",
+  "start_url": "/react/",
+  "scope": "/react/",
   "display": "standalone",
   "background_color": "#f0f3f9",
   "theme_color": "#1e3a6e",

@@ -210,39 +210,43 @@ export function App({ songData }) {
   return (
     <div className="app-shell">
       <header className="app-nav">
-        <div>
-          <h1>{t('app.title')}</h1>
-        </div>
+        <div className="app-nav-inner">
+          <div className="app-nav-brand-row">
+            <h1>{t('app.title')}</h1>
+          </div>
 
-        <div className="language-switcher" aria-label={t('language.label')}>
-          {LOCALES.map((item) => (
-            <button
-              key={item}
-              type="button"
-              className={item === locale ? 'active' : ''}
-              onClick={() => changeLocale(item)}
-              aria-pressed={item === locale}
-            >
-              {LOCALE_LABELS[item]}
-            </button>
-          ))}
+          <div className="app-nav-bottom-row">
+            <nav className="tab-preview" aria-label={t('tabs.label')}>
+              {TABS.map((tab) => (
+                <button
+                  key={tab}
+                  type="button"
+                  className={activeTab === tab ? 'active' : ''}
+                  onClick={() => changeTab(tab)}
+                >
+                  {t(`tabs.${tab}`)}
+                </button>
+              ))}
+            </nav>
+
+            <div className="language-switcher" aria-label={t('language.label')}>
+              {LOCALES.map((item) => (
+                <button
+                  key={item}
+                  type="button"
+                  className={item === locale ? 'active' : ''}
+                  onClick={() => changeLocale(item)}
+                  aria-pressed={item === locale}
+                >
+                  {LOCALE_LABELS[item]}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       </header>
 
       <main className="preview-panel">
-        <nav className="tab-preview" aria-label={t('tabs.label')}>
-          {TABS.map((tab) => (
-            <button
-              key={tab}
-              type="button"
-              className={activeTab === tab ? 'active' : ''}
-              onClick={() => changeTab(tab)}
-            >
-              {t(`tabs.${tab}`)}
-            </button>
-          ))}
-        </nav>
-
         {activeTab === 'predict' && (
         <>
         <PredictNoticeCard t={t} />

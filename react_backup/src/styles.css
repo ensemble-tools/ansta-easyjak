@@ -50,21 +50,43 @@ select:focus-visible {
 }
 
 .app-shell {
-  width: min(1200px, calc(100% - 48px));
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
   padding: 0 0 56px;
 }
 
 .app-nav {
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 6px 6px 0 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.app-nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.app-nav-brand-row {
+  display: flex;
+  align-items: center;
+  padding: 14px 0 10px;
+}
+
+.app-nav-bottom-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 16px 24px 14px;
-  background: var(--navy);
-  color: var(--white);
-  border-radius: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 4px 0 10px;
 }
 
 .app-kicker,
@@ -128,12 +150,13 @@ h1 {
 }
 
 .preview-panel {
-  padding: 0 24px 24px;
-  border: 0.5px solid var(--border);
-  border-top: 0;
-  border-radius: 0 0 14px 14px;
-  background: var(--bg);
-  box-shadow: var(--shadow-md);
+  width: min(1200px, calc(100% - 48px));
+  margin: 24px auto 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .app-state-panel {
@@ -143,23 +166,24 @@ h1 {
 .tab-preview {
   display: flex;
   gap: 2px;
-  padding: 5px 0 0;
-  margin: 0 -24px 20px;
+  flex: 0 1 auto;
+  padding: 0;
+  margin: 0;
   border-bottom: 0;
   border-radius: 0;
-  background: var(--navy);
+  background: transparent;
 }
 
 .tab-preview button {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 1;
-  min-height: 38px;
-  padding: 0 10px;
+  flex: 0 0 auto;
+  min-height: 34px;
+  padding: 6px 15px;
   border: 0;
   border-bottom: 2px solid transparent;
-  border-radius: 6px 6px 0 0;
+  border-radius: 0;
   background: transparent;
   color: rgba(255, 255, 255, 0.68);
   cursor: default;
@@ -172,14 +196,6 @@ h1 {
   color: var(--navy);
   border-bottom-color: var(--bg);
   box-shadow: none;
-}
-
-.tab-preview button.active:first-child {
-  border-top-left-radius: 0;
-}
-
-.tab-preview button.active:last-child {
-  border-top-right-radius: 0;
 }
 
 .tab-preview button:not(.active) {
@@ -1915,15 +1931,19 @@ h1 {
 }
 
 @media (max-width: 640px) {
-  .app-shell {
-    width: min(100% - 16px, 1200px);
+  .app-nav-inner {
+    padding: 0 16px;
   }
 
-  .app-nav {
+  .app-nav-brand-row {
+    padding: 14px 0 8px;
+  }
+
+  .app-nav-bottom-row {
     align-items: stretch;
     flex-direction: column;
-    padding: 16px;
-    border-radius: 0;
+    gap: 8px;
+    padding: 4px 0 10px;
   }
 
   .language-switcher {
@@ -1931,18 +1951,18 @@ h1 {
   }
 
   .preview-panel {
-    padding: 0 14px 14px;
+    width: min(100% - 16px, 1200px);
+    margin-top: 16px;
   }
 
   .tab-preview {
     gap: 2px;
-    padding: 5px 0 0;
-    margin: 0 -14px 16px;
+    overflow-x: auto;
   }
 
   .tab-preview button {
     min-height: 36px;
-    padding: 0 8px;
+    padding: 6px 12px;
     font-size: 13px;
   }
 

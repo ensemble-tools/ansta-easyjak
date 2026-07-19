@@ -1,18 +1,24 @@
-const CACHE_VERSION = 'easyjak-react-main-v1';
-const BASE_PATH = '/';
+const CACHE_VERSION = 'easyjak-react-v2';
+const BASE_URL = new URL('./', self.registration.scope);
+const BASE_PATH = BASE_URL.pathname.endsWith('/') ? BASE_URL.pathname : `${BASE_URL.pathname}/`;
+
+function appPath(path = '') {
+  return new URL(path, BASE_URL).pathname;
+}
+
 const PRECACHE_URLS = [
-  BASE_PATH,
-  `${BASE_PATH}index.html`,
-  `${BASE_PATH}manifest.webmanifest`,
-  `${BASE_PATH}img.png`,
-  `${BASE_PATH}icons/icon-192.png`,
-  `${BASE_PATH}icons/icon-512.png`,
-  `${BASE_PATH}icons/apple-touch-icon.png`,
+  appPath(),
+  appPath('index.html'),
+  appPath('manifest.webmanifest'),
+  appPath('img.png'),
+  appPath('icons/icon-192.png'),
+  appPath('icons/icon-512.png'),
+  appPath('icons/apple-touch-icon.png'),
 ];
 
 async function getBuildAssetUrls() {
   try {
-    const response = await fetch(`${BASE_PATH}index.html`, { cache: 'no-store' });
+    const response = await fetch(appPath('index.html'), { cache: 'no-store' });
     if (!response.ok) return [];
 
     const html = await response.text();
@@ -21,7 +27,7 @@ async function getBuildAssetUrls() {
     let match = assetPattern.exec(html);
 
     while (match) {
-      urls.add(new URL(match[1], self.location.origin).pathname);
+      urls.add(new URL(match[1], BASE_URL).pathname);
       match = assetPattern.exec(html);
     }
 
@@ -43,15 +49,15 @@ function isYoutubeRequest(url) {
 
 function isReactStaticAsset(url) {
   return (
-    url.pathname.startsWith(`${BASE_PATH}assets/`)
-    || url.pathname === `${BASE_PATH}manifest.webmanifest`
-    || url.pathname === `${BASE_PATH}img.png`
-    || url.pathname.startsWith(`${BASE_PATH}icons/`)
+    url.pathname.startsWith(appPath('assets/'))
+    || url.pathname === appPath('manifest.webmanifest')
+    || url.pathname === appPath('img.png')
+    || url.pathname.startsWith(appPath('icons/'))
   );
 }
 
 function isDataRequest(url) {
-  return url.pathname.startsWith('/data/');
+  return url.pathname.startsWith(appPath('data/'));
 }
 
 async function cacheFirst(request) {
@@ -71,11 +77,11 @@ async function navigationFallback(request) {
     const response = await fetch(request);
     if (response.ok && response.type === 'basic') {
       const cache = await caches.open(CACHE_VERSION);
-      cache.put(BASE_PATH, response.clone());
+      cache.put(appPath(), response.clone());
     }
     return response;
   } catch (error) {
-    const cached = await caches.match(BASE_PATH);
+    const cached = await caches.match(appPath());
     if (cached) return cached;
     throw error;
   }
@@ -106,7 +112,7 @@ self.addEventListener('fetch', (event) => {
   if (isYoutubeRequest(url)) return;
   if (url.origin !== self.location.origin) return;
   if (!url.pathname.startsWith(BASE_PATH)) return;
-  if (url.pathname === `${BASE_PATH}sw.js`) return;
+  if (url.pathname === appPath('sw.js')) return;
 
   if (isDataRequest(url)) {
     event.respondWith(fetch(request, { cache: 'no-store' }));

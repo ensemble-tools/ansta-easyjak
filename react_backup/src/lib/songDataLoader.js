@@ -1,22 +1,14 @@
-function normalizeBasePath(basePath) {
-  if (!basePath || basePath === './') return '/';
-  return basePath.endsWith('/') ? basePath : `${basePath}/`;
-}
-
-function getSiteBasePath(basePath = import.meta.env.BASE_URL) {
-  return normalizeBasePath(basePath).replace(/react\/$/, '');
-}
-
 function unique(values) {
   return [...new Set(values)];
 }
 
+function resolveAppUrl(path, basePath = import.meta.env.BASE_URL) {
+  return new URL(path, new URL(basePath || './', window.location.href)).toString();
+}
+
 export function getDataManifestUrlCandidates(basePath = import.meta.env.BASE_URL) {
-  const normalizedBase = normalizeBasePath(basePath);
-  const siteBase = getSiteBasePath(normalizedBase);
   return unique([
-    `${siteBase}data/manifest.json`,
-    `${normalizedBase}data/manifest.json`,
+    resolveAppUrl('data/manifest.json', basePath),
   ]);
 }
 

@@ -7,7 +7,6 @@
     "sync:data": "node scripts/sync-songs.mjs",
     "dev": "vite --host 127.0.0.1",
     "build": "vite build",
-    "build:preview": "EASYJAK_BASE=/react/ vite build",
     "preview": "vite preview --host 127.0.0.1",
     "check:prediction": "node scripts/check-prediction.mjs",
     "check:data": "npm run sync:data && node scripts/check-data.mjs",

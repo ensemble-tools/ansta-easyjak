@@ -3,7 +3,7 @@
 __pycache__/
 *.pyc
 node_modules/
-react_backup/dist/
+app/dist/
 dev_notes.txt
 *.xlsx
 *.csv

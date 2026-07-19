@@ -7,20 +7,20 @@ echo "▶ songs.js 재생성..."
 python3 enstars_regression_v3.py --export
 
 echo "▶ React 데이터 동기화..."
-cd react_backup && npm run sync:data
+cd app && npm run sync:data
 
 echo "▶ React 빌드..."
 npm run build
 
 echo "▶ 루트 배포 파일 갱신..."
 cd ..
-rsync -a --delete react_backup/dist/assets/ assets/
-rsync -a --delete react_backup/dist/icons/ icons/
-cp react_backup/dist/index.html index.html
-cp react_backup/dist/en.html en.html
-cp react_backup/dist/manifest.webmanifest manifest.webmanifest
-cp react_backup/dist/sw.js sw.js
-cp react_backup/dist/img.png img.png
+rsync -a --delete app/dist/assets/ assets/
+rsync -a --delete app/dist/icons/ icons/
+cp app/dist/index.html index.html
+cp app/dist/en.html en.html
+cp app/dist/manifest.webmanifest manifest.webmanifest
+cp app/dist/sw.js sw.js
+cp app/dist/img.png img.png
 
 echo "▶ /react 호환 리다이렉트 갱신..."
 rm -rf react

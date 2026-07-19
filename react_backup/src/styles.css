@@ -1942,6 +1942,7 @@ h1 {
   }
 
   .language-switcher {
+    order: 1;
     align-self: flex-end;
   }
 
@@ -1951,6 +1952,7 @@ h1 {
   }
 
   .tab-preview {
+    order: 2;
     gap: 2px;
     overflow-x: auto;
   }

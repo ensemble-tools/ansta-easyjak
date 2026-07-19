@@ -16,6 +16,9 @@ const TYPE_FILTERS = [null, 'All', 'Sparkle', 'Brilliant', 'Glitter', 'Flash'];
 const DURATION_FILTERS = ['all', 'short', 'mid1', 'mid2', 'long'];
 const CLEAR_FILTERS = ['all', 'yes', 'no'];
 const SORT_KEYS = ['type', 'unit', 'totalNotes', 'durationSec', 'predicted'];
+const DESKTOP_THUMBNAIL_SIZE = 294;
+const DESKTOP_THUMBNAIL_GAP = 18;
+const DESKTOP_THUMBNAIL_MARGIN = 8;
 
 function getSongKey(song) {
   return `${song.title_ja}-${song.unit}-${song.totalNotes}`;
@@ -311,29 +314,48 @@ export function SongTableTab({ songs, locale, t }) {
     setActiveThumbnailKey((current) => (current === songKey ? null : songKey));
   }
 
+  function getDesktopThumbnailPosition(event) {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    const maxLeft = Math.max(DESKTOP_THUMBNAIL_MARGIN, viewportWidth - DESKTOP_THUMBNAIL_MARGIN - DESKTOP_THUMBNAIL_SIZE);
+    const maxTop = Math.max(DESKTOP_THUMBNAIL_MARGIN, viewportHeight - DESKTOP_THUMBNAIL_MARGIN - DESKTOP_THUMBNAIL_SIZE);
+    const hasPointerPosition = event.type !== 'focus' && Number.isFinite(event.clientX) && Number.isFinite(event.clientY);
+
+    if (hasPointerPosition) {
+      const preferredLeft = event.clientX + DESKTOP_THUMBNAIL_GAP;
+      const rawLeft = preferredLeft + DESKTOP_THUMBNAIL_SIZE <= viewportWidth - DESKTOP_THUMBNAIL_MARGIN
+        ? preferredLeft
+        : event.clientX - DESKTOP_THUMBNAIL_GAP - DESKTOP_THUMBNAIL_SIZE;
+
+      return {
+        left: Math.min(Math.max(rawLeft, DESKTOP_THUMBNAIL_MARGIN), maxLeft),
+        top: Math.min(Math.max(event.clientY - 80, DESKTOP_THUMBNAIL_MARGIN), maxTop),
+      };
+    }
+
+    const fitsRight = rect.right + DESKTOP_THUMBNAIL_GAP + DESKTOP_THUMBNAIL_SIZE <= viewportWidth - DESKTOP_THUMBNAIL_MARGIN;
+    const rawLeft = fitsRight
+      ? rect.right + DESKTOP_THUMBNAIL_GAP
+      : rect.left - DESKTOP_THUMBNAIL_GAP - DESKTOP_THUMBNAIL_SIZE;
+    const top = Math.min(
+      Math.max(rect.top + rect.height / 2 - DESKTOP_THUMBNAIL_SIZE / 2, DESKTOP_THUMBNAIL_MARGIN),
+      maxTop,
+    );
+
+    return {
+      left: Math.min(Math.max(rawLeft, DESKTOP_THUMBNAIL_MARGIN), maxLeft),
+      top,
+    };
+  }
+
   function showDesktopThumbnail(song, event) {
     if (!getSongThumbnail(song)) {
       setHoverThumbnail(null);
       return;
     }
 
-    const rect = event.currentTarget.getBoundingClientRect();
-    const size = 294;
-    const gap = 18;
-    const margin = 12;
-    const viewportWidth = window.innerWidth;
-    const viewportHeight = window.innerHeight;
-    const fitsRight = rect.right + gap + size <= viewportWidth - margin;
-    const left = fitsRight
-      ? rect.right + gap
-      : Math.max(margin, rect.left - gap - size);
-    const rawTop = rect.top + rect.height / 2;
-    const top = Math.min(
-      Math.max(rawTop, margin + size / 2),
-      viewportHeight - margin - size / 2,
-    );
-
-    setHoverThumbnail({ song, left, top });
+    setHoverThumbnail({ song, ...getDesktopThumbnailPosition(event) });
   }
 
   useEffect(() => {
@@ -529,6 +551,7 @@ export function SongTableTab({ songs, locale, t }) {
                       className="col-title"
                       data-label={t('col.title')}
                       onMouseEnter={(event) => showDesktopThumbnail(song, event)}
+                      onMouseMove={(event) => showDesktopThumbnail(song, event)}
                       onMouseLeave={() => setHoverThumbnail(null)}
                       onFocus={(event) => showDesktopThumbnail(song, event)}
                       onBlur={() => setHoverThumbnail(null)}

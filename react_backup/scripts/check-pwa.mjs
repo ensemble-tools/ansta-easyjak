@@ -49,9 +49,8 @@ assert.match(registerSource, /navigator\.serviceWorker\.register\(swUrl, \{ scop
 
 const mainSource = readFileSync(mainPath, 'utf8');
 assert.match(mainSource, /registerServiceWorker/, 'main must import/call registerServiceWorker');
-assert.match(mainSource, /LOADING_MESSAGE_DELAY_MS = 300/, 'loading message must be delayed to avoid first-paint flicker');
-assert.match(mainSource, /setShowLoadingMessage\(true\)/, 'loading message delay state must be enabled by timer');
-assert.match(mainSource, /if \(!showLoadingMessage\) return null/, 'loading state must render nothing before the delay');
+assert.match(mainSource, /if \(state\.status === 'loading'\) {\s*return null;\s*}/, 'loading state must render nothing');
+assert.doesNotMatch(mainSource, /데이터 불러오는 중/, 'loading message should not be shown');
 
 const serviceWorkerSource = readFileSync(serviceWorkerPath, 'utf8');
 assert.match(serviceWorkerSource, /CACHE_VERSION = 'easyjak-react-v2'/, 'service worker must use current React cache version');

@@ -107,12 +107,9 @@ export function App({ songData }) {
   const [error, setError] = useState(null);
   const [activeTab, setActiveTab] = useState('predict');
   const [myPoints, setMyPoints] = useState([]);
-  const [showDevPredicted, setShowDevPredicted] = useState(false);
-
-  const isDevSite = window.location.hostname === 'ensemble-tools.github.io';
 
   useEffect(() => {
-    if (!selectedSong) { setMyPoints([]); setShowDevPredicted(false); return; }
+    if (!selectedSong) { setMyPoints([]); return; }
     try {
       const raw = JSON.parse(localStorage.getItem(`easyjak-mypoints-${selectedSong.title_ja}`) ?? '[]');
       const pts = Array.isArray(raw)
@@ -238,9 +235,6 @@ export function App({ songData }) {
   }
 
   const resultMode = prediction?.source === 'song' && prediction.song.measured !== null ? 'measured' : 'predicted';
-  const devDisplayValue = isDevSite && showDevPredicted && resultMode === 'measured'
-    ? prediction.song.predicted
-    : prediction?.displayValue;
   const stats = useMemo(() => ({
     total: songs.length - 1,
     measured: songs.filter((song) => song.measured !== null).length - 1,
@@ -383,20 +377,11 @@ export function App({ songData }) {
                     </p>
                   )}
                 </div>
-                <span className={`result-mode-badge ${isDevSite && showDevPredicted && resultMode === 'measured' ? 'predicted' : resultMode}`}>{t(`result.${isDevSite && showDevPredicted && resultMode === 'measured' ? 'predicted' : resultMode}`)}</span>
-                {isDevSite && resultMode === 'measured' && (
-                  <button
-                    type="button"
-                    className="dev-toggle-btn"
-                    onClick={() => setShowDevPredicted((v) => !v)}
-                  >
-                    {showDevPredicted ? `실측: ${prediction.song.measured}` : `예측: ${prediction.song.predicted}`}
-                  </button>
-                )}
+                <span className={`result-mode-badge ${resultMode}`}>{t(`result.${resultMode}`)}</span>
               </div>
 
               <div className="combo-display">
-                <span className="combo-num">{devDisplayValue}</span>
+                <span className="combo-num">{prediction.displayValue}</span>
                 <span className="combo-word">{t('result.combo')}</span>
                 <span className="combo-unit">{t('result.comboUnit')}</span>
               </div>
@@ -404,7 +389,7 @@ export function App({ songData }) {
               <ResultBar
                 labels={{ clear: t('legend.clear'), et: t('legend.et') }}
                 notes={prediction.parsed.notes}
-                value={devDisplayValue}
+                value={prediction.displayValue}
                 etStart={prediction.parsed.etStart}
                 etEnd={prediction.parsed.etEnd}
                 customPoints={myPoints.map((pt, i) => ({ value: pt.value, color: MY_POINT_COLORS[i] }))}
